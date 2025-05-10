@@ -1,0 +1,63 @@
+country_decisions = {
+
+	set_gold_dev = {
+		major = yes
+		potential = {
+			ai = no
+		}
+		provinces_to_highlight = {
+			OR = {
+				trade_goods = gold
+				trade_goods = silver
+			}
+		}
+		allow = {
+			ai = no
+		}
+		effect = {
+			country_event = { 
+				id = gold_upgrade_events.1
+			}
+		}
+	}
+
+	upgrade_gold_dev = {
+		major = yes
+		potential = {
+			ai = no
+		}
+		provinces_to_highlight = {
+			OR = {
+				trade_goods = gold
+				trade_goods = silver
+			}
+		}
+		allow = {
+			ai = no
+		}
+		effect = {
+			country_event = { id = gold_upgrade_events.2 } 
+		}
+	}
+
+
+	discount_gold_dev = {
+		major = yes
+		potential = {
+			ai = no
+		}
+		provinces_to_highlight = {
+			OR = {
+				trade_goods = gold
+				trade_goods = silver
+			}
+		}
+		allow = {
+			ai = no
+		}
+		effect = {
+			country_event = { id = gold_upgrade_events.3 } 
+		}
+	}
+
+}

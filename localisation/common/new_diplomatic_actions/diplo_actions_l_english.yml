@@ -1,0 +1,5 @@
+﻿l_english:
+ # Diplo interaction
+ establish_chinese_tributary_title: "Establish Chinese Imperial Tributary"
+ establish_chinese_tributary_tooltip: "Demand that §Y[From.GetName]§! becomes a Chinese Imperial Tributary"
+ establish_chinese_tributary_desc: "Do you want to ask §Y[From.GetName]§! to become a Chinese Imperial Tributary? A Chinese Imperial Tributary is a more centralized form of tributary where the overlord may divert trade from the subject."

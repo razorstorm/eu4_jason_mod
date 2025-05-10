@@ -1,0 +1,38 @@
+﻿l_english:
+ # Subject type
+ chinese_tributary_state: "Chinese Imperial Tributary"
+ chinese_tributary_state_title: "Chinese Imperial Tributary"
+ chinese_tributary_state_plural: "Chinese Imperial Tributaries"
+ chinese_tributary_state_title_plural: "Chinese Imperial Tributaries"
+ chinese_tributary_state_is_our: "§Y$NAME$§! is our Chinese Imperial Tributary."
+ chinese_tributary_state_long_desc: "A §YChinese Imperial Tributary§! is a more centralized form of tributary where the overlord may divert trade from the subject."
+
+ chinese_tributary_state_subject: "Chinese Imperial Tributary Subject"
+ chinese_tributary_state_overlord: "Chinese Imperial Overlord"
+
+ free_vassal: "Free Vassal"
+ free_vassal_title: "Free Vassal"
+ free_vassal_plural: "Free Vassals"
+ free_vassal_title_plural: "Free Vassals"
+ free_vassal_is_our: "§Y$NAME$§! is our Free Vassal."
+ free_vassal_long_desc: "A §YFree Vassal§! is a vassal that's exempt from paying taxes to its overlord."
+ free_vassal_subject: "Free Vassal Subject"
+ free_vassal_overlord: "Free Vassal Overlord"
+
+ semi_free_vassal: "Semi-Free Vassal"
+ semi_free_vassal_title: "Semi-Free Vassal"
+ semi_free_vassal_plural: "Semi-Free Vassals"
+ semi_free_vassal_title_plural: "Semi-Free Vassals"
+ semi_free_vassal_is_our: "§Y$NAME$§! is our Semi-Free Vassal."
+ semi_free_vassal_long_desc: "A §Semi-Free Vassal§! is a vassal that's mostly exempt from paying taxes to its overlord."
+ semi_free_vassal_subject: "Semi-Free Vassal Subject"
+ semi_free_vassal_overlord: "Semi-Free Vassal Overlord"
+
+ imperial_city: "Imperial City"
+ imperial_city_title: "Imperial City"
+ imperial_city_plural: "Imperial Cities"
+ imperial_city_title_plural: "Imperial Cities"
+ imperial_city_is_our: "§Y$NAME$§! is our Imperial City."
+ imperial_city_long_desc: "An §Imperial City§! is a municipality that is directly ruled by the central government. These are typically large metropolises that have comparable power, population, and wealth as that of an entire subject nation. Comparable to free cities in the Holy Roman Empire, these cities are often granted a certain degree of autonomy and privileges. They are often used as a means to control over highly productive urban cities that require a certain degree of decentralization for various reasons. Metropolises that reside in core regions are typically directly annexed into the empire, whereas important cities far away from the capital can often be granted the status of an imperial city."
+ imperial_city_subject: "Imperial City"
+ imperial_city_overlord: "Imperial City Overlord"

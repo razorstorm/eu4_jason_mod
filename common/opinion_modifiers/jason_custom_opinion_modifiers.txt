@@ -1,0 +1,7 @@
+hegemonic_oblige = {
+    opinion = 50    
+}
+
+is_hegemon = {
+    opinion = 0
+}

@@ -1,0 +1,12 @@
+﻿l_english: 
+ gold_upgrade_events.1.t: "Set Development In Gold Provinces"
+ gold_upgrade_events.1.d: "Setting development in gold provinces to 20/25/15."
+
+ gold_upgrade_events.2.t: "Add Development In Gold Provinces"
+ gold_upgrade_events.2.d: "Adding development in gold provinces by 3/5/2."
+
+ gold_upgrade_events.3.t: "Discount Developing In Gold Provinces"
+ gold_upgrade_events.3.d: "Discounting development in gold provinces by 550%."
+ 
+ ok_option_name: "OK"
+ cancel_option_name: "Cancel"

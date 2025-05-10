@@ -1,0 +1,46 @@
+# Triggers and effects will be given the Actor's scope, with the Recipient's as FROM
+# Icons are used from the messageicons.dds
+
+
+# Establish Chinese Tributary
+establish_chinese_tributary = {
+    category = influence
+
+    require_acceptance = no
+
+    is_visible = {
+        # has_global_flag = eoc_vassalize_tributaries
+        is_emperor_of_china = yes
+        FROM = {
+            is_subject_of = ROOT
+            OR = {
+                is_subject_of_type = tributary_state
+                is_subject_of_type = vassal
+            }
+        }
+    }
+    is_allowed = {
+        if = {
+            limit = {
+                FROM = { liberty_desire = 50 }
+            }
+            custom_trigger_tooltip = {
+                tooltip = FROM_IS_REBELLIOUS_TT
+                FROM = { liberty_desire = 50 }
+            }
+        }
+    }
+    on_accept = {
+        FROM = { grant_independence = yes }
+        create_subject = {
+            subject_type = chinese_tributary_state
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}

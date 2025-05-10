@@ -1,0 +1,433 @@
+prussian_cheat_modifier = {
+    monthly_militarized_society = 5.20
+    monthly_prussian_militarized_society_1 = 5.20
+    monthly_prussian_militarized_society_2 = 5.20
+    monthly_prussian_militarized_society_3 = 5.20
+}
+
+jason_more_policy_slots = {
+    possible_policy = 17
+    free_policy = 20
+}
+
+supply_cheat_modifier = {
+    global_supply_limit_modifier = 1000
+}
+
+liberalism_cheat = {
+    monthly_liberalism = 100
+}
+
+free_income_cheat = {
+    global_tax_income = 360 # 30 a month
+}
+
+ultra_free_income_cheat = {
+    global_tax_income = 3600 # 300 a month
+}
+
+zero_vassal_income = {
+    vassal_income = -100
+}
+
+jason_vassal_income_minus_1_1 = {
+    vassal_income = -0.01
+}
+jason_vassal_income_minus_1_2 = {
+    vassal_income = -0.01
+}
+jason_vassal_income_minus_1_3 = {
+    vassal_income = -0.01
+}
+jason_vassal_income_minus_1_4 = {
+    vassal_income = -0.01
+}
+jason_vassal_income_minus_1_5 = {
+    vassal_income = -0.01
+}
+jason_vassal_income_minus_5_1 = {
+    vassal_income = -0.05
+}
+jason_vassal_income_minus_5_2 = {
+    vassal_income = -0.05
+}
+jason_vassal_income_minus_5_3 = {
+    vassal_income = -0.05
+}
+jason_vassal_income_minus_5_4 = {
+    vassal_income = -0.05
+}
+jason_vassal_income_minus_10_1 = {
+    vassal_income = -0.10
+}
+jason_vassal_income_minus_10_2 = {
+    vassal_income = -0.10
+}
+
+# -344.4% target
+jason_dev_cost_reduction_350_1 = {
+	local_development_cost = -3.5
+}
+jason_dev_cost_reduction_300_1 = {
+	local_development_cost = -3
+}
+jason_dev_cost_reduction_100_1 = {
+	local_development_cost = -1
+}
+jason_dev_cost_reduction_100_2 = {
+	local_development_cost = -1
+}
+jason_dev_cost_reduction_100_3 = {
+	local_development_cost = -1
+}
+jason_dev_cost_reduction_100_4 = {
+	local_development_cost = -1
+}
+jason_dev_cost_reduction_100_5 = {
+	local_development_cost = -1
+}
+jason_dev_cost_reduction_50_1 = {
+	local_development_cost = -0.50
+}
+jason_dev_cost_reduction_50_2 = {
+	local_development_cost = -0.50
+}
+jason_dev_cost_reduction_50_3 = {
+	local_development_cost = -0.50
+}
+jason_dev_cost_reduction_50_4 = {
+	local_development_cost = -0.50
+}
+jason_dev_cost_reduction_50_5 = {
+	local_development_cost = -0.50
+}
+
+client_states_cheat = {
+    allow_client_states = yes
+}
+
+allow_frontiers_cheat = {
+    may_establish_frontier = yes
+}
+
+harmony_cheat = {
+    yearly_harmony = 10
+}
+
+may_explore_cheat = {
+    may_explore = yes
+}
+
+trade_range_modifier_cheat = {
+    trade_range_modifier = 10
+}
+
+num_estate_privileges_cheat = {
+    all_estate_possible_privileges = 10
+}
+
+local_autonomy_cheat = {
+    min_local_autonomy = -100
+}
+
+administrative_efficiency_loss = {
+    administrative_efficiency = -0.20
+}
+
+administrative_efficiency_cheat = {
+    administrative_efficiency = 1.00
+}
+
+range_cheat = {
+    range = 10
+}
+
+culture_conversion_cost_cheat = {
+    culture_conversion_cost = -100
+}
+
+absolutism_cheat = {
+    max_absolutism = 300
+}
+
+drill_cheat = {
+    drill_decay_modifier = -1
+    drill_gain_modifier = 10 
+}
+
+envoy_travel_time_cheats = {
+    envoy_travel_time = -100
+}
+
+gold_depletion_cheat = {
+    gold_depletion_chance_modifier = -100
+}
+
+more_generals_cheat = {
+    free_leader_pool = 100
+}
+
+jason_more_merchants_cheat = {
+    merchants = 100 
+}
+
+min_autonomy_in_territories_cheat = {
+    min_autonomy_in_territories = -1
+}
+
+province_trade_power_modifier_cheat = {
+    province_trade_power_modifier = 20
+}
+
+has_parliament_cheat = {
+    has_parliament = yes
+}
+
+papal_influence_cheat = {
+    papal_influence = 100
+}
+
+yearly_revolutionary_zeal_cheat = {
+    yearly_revolutionary_zeal = 10
+}
+
+global_ship_recruit_speed_cheat = {
+    global_ship_recruit_speed = -1
+}
+
+local_ship_recruit_speed_cheat = {
+    ship_recruit_speed  = -1
+}
+
+jason_building_slots_cheats = {
+    allowed_num_of_buildings = 25
+}
+
+more_fervor_cheat = {
+    monthly_fervor_increase = 15
+}
+
+imperial_authority_cheat = {
+    imperial_authority = 1
+    imperial_authority_value = 1
+}
+
+
+
+# =============================== From Cheats Mod
+
+
+jason_mod_less_ae_25 = {
+    ae_impact = -0.25
+}
+jason_mod_less_ae_50 = {
+    ae_impact = -0.50
+}
+jason_mod_less_ae_75 = {
+    ae_impact = -0.75
+}
+jason_mod_less_ae_100 = {
+    ae_impact = -1.00
+}
+jason_mod_more_leader_limit = {
+    free_leader_pool = 20
+}
+jason_mod_more_forcelimit = {
+    land_forcelimit_modifier = 2
+    naval_forcelimit_modifier = 2
+}
+jason_mod_more_land_morale = {
+    land_morale = 0.5
+}
+jason_mod_more_disc = {
+    discipline = 0.3
+}
+jason_mod_more_army_ability = {
+    infantry_power = 0.3
+    cavalry_power = 0.3
+    artillery_power = 0.3
+}
+jason_mod_more_navy_ability = {
+    heavy_ship_power = 0.3
+    light_ship_power = 0.3
+    galley_power = 0.3
+    transport_power = 0.3
+}
+jason_mod_less_nat_unrest = {
+    global_unrest = -20
+}
+jason_mod_more_absolutism_max = {
+    max_absolutism = 100
+}
+jason_mod_more_acc_cultures = {
+    num_accepted_cultures = 10
+}
+jason_mod_way_more_acc_cultures = {
+    num_accepted_cultures = 100
+}
+jason_mod_more_GC = {
+    governing_capacity_modifier = 30
+}
+jason_mod_more_merchants = {
+    merchants = 10
+}
+jason_mod_more_trade_eff = {
+    trade_efficiency = 3
+}
+jason_mod_more_trade_range = {
+    trade_range_modifier = 2
+}
+jason_mod_more_trade_steer = {
+    trade_steering = 3
+}
+jason_mod_more_goods_prod = {
+    global_trade_goods_size_modifier = 3
+}
+jason_mod_more_cols = {
+    colonists = 10
+}
+jason_mod_more_range = {
+    range = 10
+}
+jason_mod_more_col_grow = {
+    global_colonial_growth = 200
+}
+jason_mod_more_dips = {
+    diplomats = 20
+}
+jason_mod_more_dip_upkeep = {
+    diplomatic_upkeep = 1000
+}
+jason_mod_extremely_more_dip_upkeep = {
+    diplomatic_upkeep = 10000
+}
+jason_mod_more_dip_rep = {
+    diplomatic_reputation = 10
+}
+jason_mod_more_missionary_strength = {
+    global_missionary_strength = 3
+}
+jason_mod_more_tradition = {
+    army_tradition = 5
+    navy_tradition = 5
+}
+jason_mod_more_imperial_authority = {
+    imperial_authority = 0.75
+}
+jason_mod_more_inflation_reduction = {
+    inflation_reduction = 0.5
+}
+jason_mod_more_ccr = {
+    core_creation = -0.75
+}
+jason_mod_more_tech = {
+    technology_cost = -0.5
+}
+jason_mod_more_idea = {
+    idea_cost = -0.5
+}
+jason_mod_more_missionaries = {
+    missionaries = 10
+}
+jason_mod_more_ls = {
+    reduced_liberty_desire = 100
+}
+jason_mod_more_relation = {
+    improve_relation_modifier = 1
+}
+jason_mod_more_siege = {
+    siege_ability = 0.25
+}
+jason_mod_more_culture_speed = {
+    culture_conversion_cost = -10
+}
+jason_mod_more_fort = {
+    defensiveness = 1
+}
+jason_mod_less_attrition = {
+    land_attrition = -100
+    naval_attrition = -0.75
+}
+jason_mod_faster_envoy = {
+    envoy_travel_time = -10
+}
+jason_mod_more_missionary_strength2 = {
+    global_missionary_strength = 0.5
+}
+jason_mod_lessAN_maintenance = {
+    naval_maintenance_modifier = -0.5
+    land_maintenance_modifier = -0.5
+}
+jason_mod_lessTime = {
+    build_time = -100
+}
+jason_mod_lessBCost = {
+    build_cost = -0.5
+}
+jason_global_more_building_slots = {
+    global_allowed_num_of_buildings = 100
+}
+
+jason_naval_movespeed_1_1 = {
+    movement_speed_in_fleet_modifier = 1
+}
+jason_naval_movespeed_1_2 = {
+    movement_speed_in_fleet_modifier = 1
+}
+jason_naval_movespeed_1_3 = {
+    movement_speed_in_fleet_modifier = 1
+}
+jason_naval_movespeed_1_4 = {
+    movement_speed_in_fleet_modifier = 1
+}
+jason_naval_movespeed_1_5 = {
+    movement_speed_in_fleet_modifier = 1
+}
+jason_naval_movespeed_1 = {
+    movement_speed_in_fleet_modifier = 1
+}
+jason_naval_movespeed_2_1 = {
+    movement_speed_in_fleet_modifier = 2
+}
+jason_naval_movespeed_2_2 = {
+    movement_speed_in_fleet_modifier = 2
+}
+jason_naval_movespeed_2_3 = {
+    movement_speed_in_fleet_modifier = 2
+}
+jason_naval_movespeed_5_1 = {
+    movement_speed_in_fleet_modifier = 5
+}
+jason_naval_movespeed_5_2 = {
+    movement_speed_in_fleet_modifier = 5
+}
+jason_naval_movespeed_5_3 = {
+    movement_speed_in_fleet_modifier = 5
+}
+jason_naval_movespeed_5_4 = {
+    movement_speed_in_fleet_modifier = 5
+}
+jason_naval_movespeed_5_5 = {
+    movement_speed_in_fleet_modifier = 5
+}
+jason_naval_movespeed_5_6 = {
+    movement_speed_in_fleet_modifier = 5
+}
+jason_naval_movespeed_10_1 = {
+    movement_speed_in_fleet_modifier = 10
+}
+jason_naval_movespeed_10_2 = {
+    movement_speed_in_fleet_modifier = 10
+}
+jason_naval_movespeed_20 = {
+    movement_speed_in_fleet_modifier = 20
+}
+jason_naval_movespeed_20_2 = {
+    movement_speed_in_fleet_modifier = 20
+}
+jason_naval_movespeed_50 = {
+    movement_speed_in_fleet_modifier = 50
+}
+
+
+

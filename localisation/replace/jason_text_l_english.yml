@@ -1,0 +1,9 @@
+﻿l_english:
+ set_gold_dev_title: "Set Development on Gold Provinces"
+ set_gold_dev_desc: "Sets all gold producing provinces to 20/25/15."
+
+ upgrade_gold_dev_title: "Upgrade Development on Gold Provinces"
+ upgrade_gold_dev_desc: "Upgrades all gold producing provinces by 3/5/2."
+
+ discount_gold_dev_title: "Discount Development on Gold Provinces"
+ discount_gold_dev_desc: "Discounts all gold producing provinces by 550%."
