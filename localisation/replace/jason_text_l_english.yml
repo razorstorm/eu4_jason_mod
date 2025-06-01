@@ -7,3 +7,9 @@
 
  discount_gold_dev_title: "Discount Development on Gold Provinces"
  discount_gold_dev_desc: "Discounts all gold producing provinces by 550%."
+
+ upgrade_silk_dev_title: "Upgrade Development on Silk and Dye Provinces"
+ upgrade_silk_dev_desc: "Upgrades all Silk and Dye producing provinces by 2/3/1"
+
+ set_silk_dev_title: "Set Development on Silk and Dye Provinces"
+ set_silk_dev_desc: "Sets all silk/dye producing provinces to 20/25/15."

@@ -5,3 +5,23 @@ hegemonic_oblige = {
 is_hegemon = {
     opinion = 0
 }
+
+concentration_camp = {
+    opinion = -100
+}
+
+is_concentration_camp_overlord = {
+    opinion = -200
+}
+
+is_concentration_camp_subject = {
+    opinion = -200
+}
+
+is_tropical_resort_overlord = {
+    opinion = 100
+}
+
+is_tropical_resort_subject = {
+    opinion = 20
+}

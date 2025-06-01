@@ -2,6 +2,8 @@
 chinese_tributary_state = {}
 free_vassal = {}
 imperial_city = {}
+concentration_camp = {} 
+tropical_resort = {} 
 
 
 free_vassal = {
@@ -16,6 +18,70 @@ semi_free_vassal = {
 
     pays_overlord = 0.5
     max_government_rank = 2
+}
+
+
+concentration_camp = {
+    copy_from = vassal
+
+    pays_overlord = 0.0
+    max_government_rank = 1
+
+	# Graphics:
+	sprite = GFX_icon_administrative_region
+	diplomacy_overlord_sprite = GFX_diplomacy_leadadministrative_region
+	diplomacy_subject_sprite = GFX_diplomacy_amadministrative_region
+
+	# Triggers:
+	is_potential_overlord = {
+		total_development = 100
+	}
+
+	# Properties:
+	transfer_trade_if_merchant_republic = yes
+	joins_overlords_wars = no
+	takes_diplo_slot = no
+	has_power_projection = no
+	can_use_claims = no
+	uses_military_focus = yes
+	can_set_mil_focus = yes
+    counts_for_borders = yes
+	extend_trading_range = yes
+    overlord_protects_external = yes
+    overlord_enforce_peace_attacking = yes
+    extend_trading_range = yes
+
+	liberty_desire_development_ratio = 1
+	liberty_desire_same_dynasty = 1
+	forcelimit_to_overlord = 2
+	military_focus = 1
+
+	relative_power_class = 1
+	diplomacy_view_class = 1
+
+	can_fight = {
+	}
+	can_rival = {
+	}
+	can_ally = {
+	}
+	can_marry = {
+	}
+
+	# Subject Interactions:
+	# (immediate)
+	siphon_income = yes
+	contribute_to_capital = yes
+	divert_trade = yes
+
+    # Modifiers:
+	modifier_subject = clear
+	modifier_subject = {
+		modifier = slave_state_modifiers
+	}
+
+    overlord_opinion_modifier = is_concentration_camp_overlord
+	subject_opinion_modifier = is_concentration_camp_subject
 }
 
 imperial_city = {
@@ -83,7 +149,89 @@ imperial_city = {
 	divert_trade = yes
 }
 
+tropical_resort = {
+    copy_from = imperial_city
 
+    pays_overlord = 0.9
+    max_government_rank = 1
+
+	# Graphics:
+	sprite = GFX_icon_annexable_colony
+	diplomacy_overlord_sprite = GFX_diplomacy_leadannexable_colony
+	diplomacy_subject_sprite = GFX_diplomacy_amannexable_colony
+
+	# Triggers:
+	is_potential_overlord = {
+		is_subject = no
+		total_development = 100
+	}
+
+	# Properties:
+    uses_tariffs = yes
+    can_be_integrated = no
+    can_fight_independence_war = no
+    is_voluntary = no	
+    transfer_trade_power = yes
+	transfer_trade_if_merchant_republic = yes
+	joins_overlords_wars = no
+	takes_diplo_slot = no
+	has_power_projection = no
+	can_use_claims = no
+	uses_military_focus = no
+	can_set_mil_focus = yes
+    counts_for_borders = yes
+	extend_trading_range = yes
+    overlord_protects_external = yes
+    overlord_enforce_peace_attacking = yes
+    extend_trading_range = yes
+
+	liberty_desire_development_ratio = 0.5 # These resorts should be tiny. If they have a lot of dev, they will have very high liberty desire.
+	liberty_desire_same_dynasty = 0.0 # Dynastic management makes no difference for these subjects.
+	forcelimit_to_overlord = 0
+	military_focus = 0.1
+
+	relative_power_class = 0
+	diplomacy_view_class = 1
+
+	can_fight = {
+	}
+	can_rival = {
+	}
+	can_ally = {
+	}
+	can_marry = {
+	}
+
+	# Subject Interactions:
+	# (immediate)
+	siphon_income = yes
+	divert_trade = yes
+    bestow_gifts = yes
+    demand_artifacts = yes 
+    force_isolation = yes
+    takeondebt = yes
+    enforce_religion = yes
+    enforce_culture = yes
+    placate_rulers = yes
+    place_relative_on_throne = yes
+    customize_subject = yes
+    scutage = yes
+
+    # Modifiers:
+	modifier_subject = clear # Use this to clear after copy_from.
+	modifier_subject = { 
+		modifier = tropical_resort_modifier_subject
+	}
+
+    modifier_overlord = clear
+	modifier_overlord = {
+		modifier = tropical_resort_modifier_overlord
+	}
+
+    overlord_opinion_modifier = is_tropical_resort_overlord
+	subject_opinion_modifier = is_tropical_resort_subject
+
+}
 
 chinese_tributary_state = {
     #If similar subject added check if it needs to be added to these scripted triggers:

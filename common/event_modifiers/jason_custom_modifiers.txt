@@ -18,6 +18,44 @@ liberalism_cheat = {
     monthly_liberalism = 100
 }
 
+perma_broke_cheat = {
+    global_tax_income = -36000 # -3000 a month
+}
+
+no_production_cheat = {
+    trade_goods_size = -100
+    trade_goods_size_modifier = -100
+    trade_value = -10
+    trade_value_modifier = 0
+}
+
+no_mana_cheat = {
+    country_admin_power = -100
+    country_diplomatic_power = -100
+    country_military_power = -100
+}
+
+slave_state_modifiers = {
+    country_admin_power = -100
+    country_diplomatic_power = -100
+    country_military_power = -100
+
+    trade_goods_size = -100
+    trade_goods_size_modifier = -100
+    trade_value = -10
+    trade_value_modifier = 0
+
+    global_tax_income = -36000 # -3000 a month
+
+    inflation_reduction = -100
+    yearly_corruption  = 100
+    prestige_decay = 100
+    advisor_cost = 100
+    advisor_pool = 0
+
+    monthly_splendor = -1000
+}
+
 free_income_cheat = {
     global_tax_income = 360 # 30 a month
 }
@@ -176,7 +214,16 @@ min_autonomy_in_territories_cheat = {
 }
 
 province_trade_power_modifier_cheat = {
-    province_trade_power_modifier = 20
+    province_trade_power_modifier = 20 # 20* 100
+}
+province_trade_power_modifier_cheat_10k = {
+    province_trade_power_modifier = 100 # 100 * 100
+}
+province_trade_power_modifier_cheat_100k = {
+    province_trade_power_modifier = 1000 # 1000 * 100
+}
+province_trade_power_modifier_cheat_1m = {
+    province_trade_power_modifier = 10000 # 10000 * 100
 }
 
 has_parliament_cheat = {
@@ -212,6 +259,87 @@ imperial_authority_cheat = {
     imperial_authority_value = 1
 }
 
+
+jason_global_foreign_trade_power_cheat_1_1 = {
+    global_foreign_trade_power = 0.01
+}
+jason_global_foreign_trade_power_cheat_1_2 = {
+    global_foreign_trade_power = 0.01
+}
+jason_global_foreign_trade_power_cheat_10_1 = {
+    global_foreign_trade_power = 0.1
+}
+jason_global_foreign_trade_power_cheat_5_1 = {
+    global_foreign_trade_power = 0.05
+}
+jason_global_foreign_trade_power_cheat_5_2 = {
+    global_foreign_trade_power = 0.05
+}
+jason_global_foreign_trade_power_cheat_10_2 = {
+    global_foreign_trade_power = 0.1
+}
+jason_global_foreign_trade_power_cheat_25 = {
+    global_foreign_trade_power = 0.25
+}
+jason_global_foreign_trade_power_cheat_50 = {
+    global_foreign_trade_power = 0.5
+}
+jason_global_foreign_trade_power_cheat_100 = {
+    global_foreign_trade_power = 1
+}
+jason_global_foreign_trade_power_cheat_500 = {
+    global_foreign_trade_power = 5
+}
+jason_global_foreign_trade_power_cheat_1000 = {
+    global_foreign_trade_power = 10
+}
+jason_global_foreign_trade_power_cheat_10000 = {
+    global_foreign_trade_power = 100
+}
+jason_global_foreign_trade_power_cheat_1000000 = {
+    global_foreign_trade_power = 10000
+}
+
+
+jason_global_own_trade_power_cheat_1_1 = {
+    global_own_trade_power = 0.01
+}
+jason_global_own_trade_power_cheat_1_2 = {
+    global_own_trade_power = 0.01
+}
+jason_global_own_trade_powercheat_10_1 = {
+    global_own_trade_power = 0.1
+}
+jason_global_own_trade_power_cheat_5_1 = {
+    global_own_trade_power = 0.05
+}
+jason_global_own_trade_power_cheat_5_2 = {
+    global_own_trade_power = 0.05
+}
+jason_global_own_trade_power_cheat_10_2 = {
+    global_own_trade_power = 0.1
+}
+jason_global_own_trade_power_cheat_25 = {
+    global_own_trade_power = 0.25
+}
+jason_global_own_trade_power_cheat_50 = {
+    global_own_trade_power = 0.5
+}
+jason_global_own_trade_power_cheat_100 = {
+    global_own_trade_power = 1
+}
+jason_global_own_trade_power_cheat_500 = {
+    global_own_trade_power = 5
+}
+jason_global_own_trade_power_cheat_1000 = {
+    global_own_trade_power = 10
+}
+jason_global_own_trade_power_cheat_10000 = {
+    global_own_trade_power = 100
+}
+jason_global_own_trade_power_cheat_1000000 = {
+    global_own_trade_power = 10000
+}
 
 
 # =============================== From Cheats Mod
@@ -429,5 +557,34 @@ jason_naval_movespeed_50 = {
     movement_speed_in_fleet_modifier = 50
 }
 
+tropical_resort_modifier_subject = {
+    trade_efficiency = 2 # Tourism counts as trade
+    global_monthly_devastation = 0.1 # Tourists destroy things
+    global_tax_income = 360 # Tourism income
+    tolerance_heretic = 2 # Tolerance happens with tourism
+    tolerance_heathen = 1 # Tolerance happens with tourism
 
+    development_cost = -0.5 # Massive reduction in development cost due to investments from overlord
+}
 
+tropical_resort_modifier_overlord = {
+    stability_cost_modifier = -0.15 # People are happy to have a resort town
+    prestige = 1 # yearly prestige from tourism
+    land_morale = 0.05 # People are happy to have a resort town
+    global_tax_income = -360 # Tourism expenses
+    tolerance_heretic = 2 # Tolerance happens with tourism
+    tolerance_heathen = 1 # Tolerance happens with tourism
+
+    manpower_recovery_speed = 0.20 # Vacations are conducive to babies
+
+    global_unrest = -1 # People are happy to have a resort town
+
+    burghers_loyalty_modifier = 0.2 # Burghers are happy to have a resort town
+	burghers_influence_modifier = 0.15 # Burghers tend to run these towns and build up influence
+
+    nobles_loyalty_modifier = 0.1 # Nobles are happy to have a resort town
+    nobles_influence_modifier = 0.05 # Nobles also tend to run these towns and build up influence
+
+    church_loyalty_modifier = -0.1 # Church is unhappy to have a resort town which invites sinful behaviors
+    church_influence_modifier = -0.05 # Churches do not run these resort towns and lose influence
+}
