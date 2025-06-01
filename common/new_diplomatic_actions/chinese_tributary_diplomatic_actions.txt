@@ -44,3 +44,60 @@ establish_chinese_tributary = {
         always = no
     }
 }
+
+# Establish Tropical Resort
+establish_tropical_resort = {
+    category = influence
+
+    require_acceptance = no
+
+    is_visible = {
+        FROM = {
+            is_subject_of = ROOT
+            CAPITAL_SCOPE = {
+                OR = {
+                    has_terrain = coastline
+                    has_terrain = coastal_desert
+                    has_terrain = jungle
+                    has_terrain = savannah
+                    has_terrain = desert
+                    has_terrain = desert_mountain
+                    has_terrain = hills
+                }
+            }
+        }
+    }
+    is_allowed = {
+        if = {
+            limit = {
+                FROM = { 
+                    is_subject_of = ROOT
+                    liberty_desire = 50 
+                    NOT = {
+                        OR = {
+                            is_subject_of_type = chinese_tributary_state
+                            is_subject_of_type = tributary_state
+                            is_subject_of_type = tropical_resort
+                        }
+                    }
+                }
+            }
+            custom_trigger_tooltip = {
+                tooltip = FROM_IS_REBELLIOUS_TT
+                FROM = { liberty_desire = 50 }
+            }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = tropical_resort
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}

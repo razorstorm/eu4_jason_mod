@@ -3,3 +3,9 @@
  establish_chinese_tributary_title: "Establish Chinese Imperial Tributary"
  establish_chinese_tributary_tooltip: "Demand that §Y[From.GetName]§! becomes a Chinese Imperial Tributary"
  establish_chinese_tributary_desc: "Do you want to ask §Y[From.GetName]§! to become a Chinese Imperial Tributary? A Chinese Imperial Tributary is a more centralized form of tributary where the overlord may divert trade from the subject."
+
+ establish_tropical_resort_title: "Establish Tropical Resort"
+ establish_tropical_resort_tooltip: "Set up a Tropical Resort in §Y[From.GetName]§!"
+ establish_tropical_resort_desc: "Do you want to set up a Tropical Resort in §Y[From.GetName]§!?"
+
+
