@@ -11,8 +11,9 @@
  upgrade_silk_dev_title: "Upgrade Development on Silk and Dye Provinces"
  upgrade_silk_dev_desc: "Upgrades all Silk and Dye producing provinces by 2/3/1"
 
+ clear_foreign_claims_title: "Remove Foreign Cores and Claims"
+ clear_foreign_claims_desc: "Removes all foreign cores and claims from your provinces and those of your subjects."
+ 
  set_silk_dev_title: "Set Development on Silk and Dye Provinces"
  set_silk_dev_desc: "Sets all silk/dye producing provinces to 20/25/15."
 
- clear_foreign_claims_title: "Remove Foreign Cores and Claims"
- clear_foreign_claims_desc: "Removes all foreign cores and claims from your provinces and those of your subjects."
