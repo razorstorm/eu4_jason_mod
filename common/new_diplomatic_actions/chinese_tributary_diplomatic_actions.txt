@@ -54,6 +54,11 @@ establish_tropical_resort = {
     is_visible = {
         FROM = {
             is_subject_of = ROOT
+            NOT = {
+                OR = {
+                    is_subject_of_type = tropical_resort
+                }
+            }
             CAPITAL_SCOPE = {
                 OR = {
                     has_terrain = coastline

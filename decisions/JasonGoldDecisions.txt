@@ -1,111 +1,144 @@
 country_decisions = {
 
-	set_gold_dev = {
-		major = yes
-		potential = {
-			ai = no
-		}
-		provinces_to_highlight = {
-			OR = {
-				trade_goods = gold
-				trade_goods = silver
-			}
-		}
-		effect = {
-			country_event = { 
-				id = gold_upgrade_events.1
-			}
-		}
-	}
+    set_gold_dev = {
+        major = yes
+        potential = {
+            ai = no
+        }
+        provinces_to_highlight = {
+            OR = {
+                trade_goods = gold
+                trade_goods = silver
+            }
+        }
+        effect = {
+            country_event = { 
+                id = gold_upgrade_events.1
+            }
+        }
+    }
 
-	upgrade_gold_dev = {
-		major = yes
-		potential = {
-			ai = no
-		}
-		provinces_to_highlight = {
-			OR = {
-				trade_goods = gold
-				trade_goods = silver
-			}
-		}
-		effect = {
-			country_event = { id = gold_upgrade_events.2 } 
-		}
-	}
+    upgrade_gold_dev = {
+        major = yes
+        potential = {
+            ai = no
+        }
+        provinces_to_highlight = {
+            OR = {
+                trade_goods = gold
+                trade_goods = silver
+            }
+        }
+        effect = {
+            country_event = { id = gold_upgrade_events.2 } 
+        }
+    }
 
-	upgrade_silk_dev = {
-		major = yes
-		potential = {
-			ai = no
-		}
-		provinces_to_highlight = {
-			OR = {
-				trade_goods = silk
-				trade_goods = dyes
-			}
-		}
-		effect = {
-			every_owned_province = {
-				limit = {
-					OR = {
-						trade_goods = silk
-						trade_goods = dyes
-					}
-				}
-				add_base_tax = 2
-				add_base_production = 3
-				add_base_manpower = 1
-			}
-		}
-	}
+    upgrade_silk_dev = {
+        major = yes
+        potential = {
+            ai = no
+        }
+        provinces_to_highlight = {
+            OR = {
+                trade_goods = silk
+                trade_goods = dyes
+            }
+        }
+        effect = {
+            every_owned_province = {
+                limit = {
+                    OR = {
+                        trade_goods = silk
+                        trade_goods = dyes
+                    }
+                }
+                add_base_tax = 2
+                add_base_production = 3
+                add_base_manpower = 1
+            }
+        }
+    }
 
-	set_silk_dev = {
-		major = yes
-		potential = {
-			ai = no
-		}
-		provinces_to_highlight = {
-			OR = {
-				trade_goods = silk
-				trade_goods = dyes
-			}
-		}
-		effect = {
-			every_owned_province = {
-			limit = {
-				OR = {
-					trade_goods = silk
-					trade_goods = dyes
-				}
-				NOT = {
-					# Ignore provinces that are already highly devved 
-					base_production = 25
-				}
-			}
-			if = {
-				set_base_tax = 20
-				set_base_production = 25
-				set_base_manpower = 15
-			}
-		}
-	}
+    set_silk_dev = {
+        major = yes
+        potential = {
+            ai = no
+        }
+        provinces_to_highlight = {
+            OR = {
+                trade_goods = silk
+                trade_goods = dyes
+            }
+        }
+        effect = {
+            every_owned_province = {
+                limit = {
+                    OR = {
+                        trade_goods = silk
+                        trade_goods = dyes
+                    }
+                    NOT = {
+                        # Ignore provinces that are already highly devved 
+                        base_production = 25
+                    }
+                }
+                if = {
+                    set_base_tax = 20
+                    set_base_production = 25
+                    set_base_manpower = 15
+                }
+            }
+        }
+    }
 
 
-	discount_gold_dev = {
-		major = yes
-		potential = {
-			ai = no
-		}
-		provinces_to_highlight = {
-			OR = {
-				trade_goods = gold
-				trade_goods = silver
-			}
-		}
-		effect = {
-			country_event = { id = gold_upgrade_events.3 } 
-		}
-	}
+    discount_gold_dev = {
+        major = yes
+        potential = {
+            ai = no
+        }
+        provinces_to_highlight = {
+            OR = {
+                trade_goods = gold
+                trade_goods = silver
+            }
+        }
+        effect = {
+            country_event = { id = gold_upgrade_events.3 } 
+        }
+    }
+
+    clear_foreign_claims = {
+            major = yes
+            potential = {
+                    ai = no
+            }
+            effect = {
+                every_country = {
+                    limit = {
+                        NOT = { tag = ROOT }
+                    }
+                    save_event_target_as = foreign_country
+                    ROOT = {
+                        every_owned_province = {
+                            remove_core = event_target:foreign_country
+                            remove_claim = event_target:foreign_country
+                            log = "Removing foreign cores from [This.GetName] for [event_target:foreign_country]"
+                        }
+                        every_subject_country = {
+                            limit = {
+                                NOT = { tag = event_target:foreign_country }
+                            }
+                            every_owned_province = {
+                                remove_core = event_target:foreign_country
+                                remove_claim = event_target:foreign_country
+                                log = "Removing foreign cores from [This.GetName] for [event_target:foreign_country]"
+                            }
+                        }
+                    }
+                }
+            }
+    }
 
 }
