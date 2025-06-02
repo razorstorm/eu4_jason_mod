@@ -5,6 +5,15 @@ country_decisions = {
         potential = {
             ai = no
         }
+        allow = {
+            any_owned_province = {
+                OR = {
+                    trade_goods = gold
+                    trade_goods = silver
+                }
+                NOT = { base_production = 25 }
+            }
+        }
         provinces_to_highlight = {
             OR = {
                 trade_goods = gold
@@ -64,6 +73,15 @@ country_decisions = {
         major = yes
         potential = {
             ai = no
+        }
+        allow = {
+            any_owned_province = {
+                OR = {
+                    trade_goods = silk
+                    trade_goods = dyes
+                }
+                NOT = { base_production = 25 }
+            }
         }
         provinces_to_highlight = {
             OR = {
