@@ -19,6 +19,7 @@ country_decisions = {
                 trade_goods = gold
                 trade_goods = silver
             }
+            NOT = { base_production = 25 }
             country_or_subject_holds = ROOT
         }
         effect = {
@@ -152,6 +153,7 @@ country_decisions = {
                 trade_goods = silk
                 trade_goods = dyes
             }
+            NOT = { base_production = 25 }
             owned_by = ROOT
         }
         effect = {
