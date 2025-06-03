@@ -1,5 +1,4 @@
 country_decisions = {
-
     set_gold_dev = {
         major = yes
         potential = {
@@ -19,10 +18,45 @@ country_decisions = {
                 trade_goods = gold
                 trade_goods = silver
             }
+            country_or_subject_holds = ROOT
         }
         effect = {
-            country_event = { 
-                id = gold_upgrade_events.1
+            every_owned_province = {
+                limit = {
+                    OR = {
+                        trade_goods = gold
+                        trade_goods = silver
+                    }
+                    NOT = {
+                        # Ignore provinces that are already highly devved 
+                        base_production = 25
+                    }
+                }
+                set_base_tax = 20
+                set_base_production = 25
+                set_base_manpower = 15
+    
+                set_local_autonomy = 0
+            }
+        
+            every_subject_country = {
+                every_owned_province = {
+                    limit = {
+                        OR = {
+                            trade_goods = gold
+                            trade_goods = silver
+                        }
+                        NOT = {
+                            # Ignore provinces that are already highly devved 
+                            base_production = 25
+                        }
+                    }
+                    set_base_tax = 20
+                    set_base_production = 25
+                    set_base_manpower = 15
+        
+                    set_local_autonomy = 0
+                }
             }
         }
     }
@@ -37,9 +71,20 @@ country_decisions = {
                 trade_goods = gold
                 trade_goods = silver
             }
+            country_or_subject_holds = ROOT
         }
         effect = {
-            country_event = { id = gold_upgrade_events.2 } 
+            every_owned_province = {
+                limit = {
+                    OR = {
+                        trade_goods = gold
+                        trade_goods = silver
+                    }
+                }
+                add_base_tax = 2
+                add_base_production = 3
+                add_base_manpower = 1
+            }
         }
     }
 
@@ -53,6 +98,7 @@ country_decisions = {
                 trade_goods = silk
                 trade_goods = dyes
             }
+            country_or_subject_holds = ROOT
         }
         effect = {
             every_owned_province = {
@@ -88,6 +134,7 @@ country_decisions = {
                 trade_goods = silk
                 trade_goods = dyes
             }
+            country_or_subject_holds = ROOT
         }
         effect = {
             every_owned_province = {
@@ -101,15 +148,131 @@ country_decisions = {
                         base_production = 25
                     }
                 }
-                if = {
-                    set_base_tax = 20
-                    set_base_production = 25
-                    set_base_manpower = 15
-                }
+                set_base_tax = 20
+                set_base_production = 25
+                set_base_manpower = 15
+
+                set_local_autonomy = 0
             }
         }
     }
 
+    monopolize_silk = {
+        major = yes
+        potential = {
+            ai = no
+        }
+        allow = {
+            any_province = {
+                trade_goods = silk
+                NOT = { owned_by = ROOT }
+            }
+        }
+        provinces_to_highlight = {
+            trade_goods = silk
+            NOT = { owned_by = ROOT }
+        }
+        effect = {
+            log = "Monopolizing silk into home country"
+            ROOT = {
+                set_variable = {
+                    which = numProvincesAffected
+                    value = 0
+                }
+
+                set_variable = {
+                    which = provincesAvailable
+                    value = 0
+                }
+            }
+            every_province = {
+                limit = {
+                    trade_goods = silk
+                    NOT = { owned_by = ROOT }
+                }
+
+                change_trade_goods = cloth
+
+                ROOT = {
+                    change_variable = {
+                        which = numProvincesAffected
+                        value = 1
+                    }
+                }
+                log = "Removed silk from [This.GetName] and changed to cloth, # provinces modified so far: [ROOT.numProvincesAffected.GetValue]"
+            }
+            log = "Finished removing silk from foreign provinces. Total # of modified provinces: [ROOT.numProvincesAffected.GetValue]"
+
+            every_owned_province = {
+                limit = {
+                    NOT = { trade_goods = silk }
+                    NOT = { trade_goods = gold }
+                    NOT = { trade_goods = silver }
+                }
+                ROOT = {
+                    change_variable = {
+                        which = provincesAvailable
+                        value = 1
+                    }
+                }
+                log = "Found [This.GetName] as a valid province to change into silk, # provinces available so far: [ROOT.provincesAvailable.GetValue]"
+            }
+            ROOT = {
+                while = {
+                    limit = {
+                        ROOT = {
+                            check_variable = {
+                                which = numProvincesAffected
+                                value = 1
+                            }
+                            check_variable = {
+                                which = provincesAvailable
+                                value = 1
+                            }
+                        }
+                    }
+        
+                    random_owned_province = {
+                        limit = {
+                            NOT = { trade_goods = silk }
+                            NOT = { trade_goods = gold }
+                            NOT = { trade_goods = silver }
+                        }
+                        change_trade_goods = silk
+                        ROOT = {
+                            change_variable = {
+                                which = numProvincesAffected
+                                value = -1
+                            }
+                            change_variable = {
+                                which = provincesAvailable
+                                value = -1
+                            }
+                        }
+                        log = "Added silk to [This.GetName], provinces left to modify: [ROOT.numProvincesAffected.GetValue], valid provinces left: [ROOT.provincesAvailable.GetValue]"
+                    }
+
+                    if = {
+                        limit = {
+                            ROOT = {
+                                NOT = {
+                                    check_variable = {
+                                        which = provincesAvailable
+                                        value = 1
+                                    }
+                                }
+                                check_variable = {
+                                    which = numProvincesAffected
+                                    value = 1
+                                }
+                            }
+                        }
+                        log = "No more valid provinces to change into silk, but still have [ROOT.numProvincesAffected.GetValue] provinces left to modify, stopping loop early"
+                    }
+                }
+            }
+        }
+    }
 
     discount_gold_dev = {
         major = yes
@@ -121,6 +284,7 @@ country_decisions = {
                 trade_goods = gold
                 trade_goods = silver
             }
+            country_or_subject_holds = ROOT
         }
         effect = {
             country_event = { id = gold_upgrade_events.3 } 
@@ -128,35 +292,35 @@ country_decisions = {
     }
 
     clear_foreign_claims = {
-            major = yes
-            potential = {
-                    ai = no
-            }
-            effect = {
-                every_country = {
-                    limit = {
-                        NOT = { tag = ROOT }
+        major = yes
+        potential = {
+            ai = no
+        }
+        effect = {
+            every_country = {
+                limit = {
+                    NOT = { tag = ROOT }
+                }
+                save_event_target_as = foreign_country
+                ROOT = {
+                    every_owned_province = {
+                        remove_core = event_target:foreign_country
+                        remove_claim = event_target:foreign_country
+                        log = "Removing foreign cores from [This.GetName] for [event_target:foreign_country]"
                     }
-                    save_event_target_as = foreign_country
-                    ROOT = {
+                    every_subject_country = {
+                        limit = {
+                            NOT = { tag = event_target:foreign_country }
+                        }
                         every_owned_province = {
                             remove_core = event_target:foreign_country
                             remove_claim = event_target:foreign_country
                             log = "Removing foreign cores from [This.GetName] for [event_target:foreign_country]"
                         }
-                        every_subject_country = {
-                            limit = {
-                                NOT = { tag = event_target:foreign_country }
-                            }
-                            every_owned_province = {
-                                remove_core = event_target:foreign_country
-                                remove_claim = event_target:foreign_country
-                                log = "Removing foreign cores from [This.GetName] for [event_target:foreign_country]"
-                            }
-                        }
                     }
                 }
             }
+        }
     }
 
 }
