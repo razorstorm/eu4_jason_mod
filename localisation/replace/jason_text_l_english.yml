@@ -17,3 +17,5 @@
  set_silk_dev_title: "Set Development on Silk and Dye Provinces"
  set_silk_dev_desc: "Sets all silk/dye producing provinces to 20/25/15."
 
+ monopolize_silk_title: "Monopolize Silk Trade"
+ monopolize_silk_desc: "Monopolizes the Silk Trade by converting all foreign silk provinces into cloth provinces and setting an equal number of our own (not silk/gold/silver producing) provinces into silk producing provinces. If we run out of valid provinces, the process will end early."

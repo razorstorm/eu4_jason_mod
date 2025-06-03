@@ -7,173 +7,173 @@
 namespace = jason_cheat_events
 
 country_event = {
-	id = gold_upgrade_events.1
-	title = gold_upgrade_events.1.t
-	desc = gold_upgrade_events.1.d
-	is_triggered_only = yes
-	
-	trigger = {
-		ai = no
-	}
-	mean_time_to_happen = {
-		days = 10000
-	}	
+    id = gold_upgrade_events.1
+    title = gold_upgrade_events.1.t
+    desc = gold_upgrade_events.1.d
+    is_triggered_only = yes
+    
+    trigger = {
+        ai = no
+    }
+    mean_time_to_happen = {
+        days = 10000
+    }    
 
-	immediate = {
-		every_owned_province = {
-			limit = {
-				OR = {
-					trade_goods = gold
-					trade_goods = silver
-				}
-			}
-			if = {
-				limit = {
-					NOT = {
-						# Ignore provinces that are already highly devved 
-						base_production = 25
-					}
-				}
-				set_base_tax = 20
-				set_base_production = 25
-				set_base_manpower = 15
-			}
+    immediate = {
+        every_owned_province = {
+            limit = {
+                OR = {
+                    trade_goods = gold
+                    trade_goods = silver
+                }
+            }
+            if = {
+                limit = {
+                    NOT = {
+                        # Ignore provinces that are already highly devved 
+                        base_production = 25
+                    }
+                }
+                set_base_tax = 20
+                set_base_production = 25
+                set_base_manpower = 15
+            }
 
-			set_local_autonomy = 0
-		}
-		every_subject_country = {
-			every_owned_province = {
-				limit = {
-					OR = {
-						trade_goods = gold
-						trade_goods = silver
-					}
-				}
-				if = {
-					limit = {
-						NOT = {
-							# Ignore provinces that are already highly devved 
-							base_production = 25
-						}
-					}
-					set_base_tax = 20
-					set_base_production = 25
-					set_base_manpower = 15
-				}
-	
-				set_local_autonomy = 0
-			}
-		}
-	}
+            set_local_autonomy = 0
+        }
+        every_subject_country = {
+            every_owned_province = {
+                limit = {
+                    OR = {
+                        trade_goods = gold
+                        trade_goods = silver
+                    }
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            # Ignore provinces that are already highly devved 
+                            base_production = 25
+                        }
+                    }
+                    set_base_tax = 20
+                    set_base_production = 25
+                    set_base_manpower = 15
+                }
+    
+                set_local_autonomy = 0
+            }
+        }
+    }
 
-	option = {
-		name = ok_option_name
-	}
+    option = {
+        name = ok_option_name
+    }
 }
 
 country_event = {
-	id = gold_upgrade_events.2
-	title = gold_upgrade_events.2.t
-	desc = gold_upgrade_events.2.d
-	is_triggered_only = yes
-	
-	trigger = {
-		ai = no
-	}
-	
-	mean_time_to_happen = {
-		days = 10000
-	}	
-	option = {
-		name = ok_option_name
-		every_owned_province = {
-			limit = {
-				OR = {
-					trade_goods = gold
-					trade_goods = silver
-				}
-			}
-			add_base_tax = 3
-			add_base_production = 5
-			add_base_manpower = 2
+    id = gold_upgrade_events.2
+    title = gold_upgrade_events.2.t
+    desc = gold_upgrade_events.2.d
+    is_triggered_only = yes
+    
+    trigger = {
+        ai = no
+    }
+    
+    mean_time_to_happen = {
+        days = 10000
+    }    
+    option = {
+        name = ok_option_name
+        every_owned_province = {
+            limit = {
+                OR = {
+                    trade_goods = gold
+                    trade_goods = silver
+                }
+            }
+            add_base_tax = 3
+            add_base_production = 5
+            add_base_manpower = 2
 
-			set_local_autonomy = 0
-		}
-		every_subject_country = {
-			every_owned_province = {
-				limit = {
-					OR = {
-						trade_goods = gold
-						trade_goods = silver
-					}
-				}
-				add_base_tax = 3
-				add_base_production = 5
-				add_base_manpower = 2
-	
-				set_local_autonomy = 0
-			}
-		}
-	}
+            set_local_autonomy = 0
+        }
+        every_subject_country = {
+            every_owned_province = {
+                limit = {
+                    OR = {
+                        trade_goods = gold
+                        trade_goods = silver
+                    }
+                }
+                add_base_tax = 3
+                add_base_production = 5
+                add_base_manpower = 2
+    
+                set_local_autonomy = 0
+            }
+        }
+    }
 }
 
 country_event = {
-	id = gold_upgrade_events.3
-	title = gold_upgrade_events.3.t
-	desc = gold_upgrade_events.3.d
-	is_triggered_only = yes
-	
-	trigger = {
-		ai = no
-	}
-	mean_time_to_happen = {
-		days = 10000
-	}	
+    id = gold_upgrade_events.3
+    title = gold_upgrade_events.3.t
+    desc = gold_upgrade_events.3.d
+    is_triggered_only = yes
+    
+    trigger = {
+        ai = no
+    }
+    mean_time_to_happen = {
+        days = 10000
+    }    
 
-	option = {
-		name = ok_option_name
-		every_owned_province = {
-			limit = {
-				OR = {
-					trade_goods = gold
-					trade_goods = silver
-				}
-			}
-			add_province_modifier = {
-				name = jason_dev_cost_reduction_350_1
-				duration = -1
-			}
-			add_province_modifier = {
-				name = jason_dev_cost_reduction_100_1
-				duration = -1
-			}
-			add_province_modifier = {
-				name = jason_dev_cost_reduction_100_2
-				duration = -1
-			}	
-		}
+    option = {
+        name = ok_option_name
+        every_owned_province = {
+            limit = {
+                OR = {
+                    trade_goods = gold
+                    trade_goods = silver
+                }
+            }
+            add_province_modifier = {
+                name = jason_dev_cost_reduction_350_1
+                duration = -1
+            }
+            add_province_modifier = {
+                name = jason_dev_cost_reduction_100_1
+                duration = -1
+            }
+            add_province_modifier = {
+                name = jason_dev_cost_reduction_100_2
+                duration = -1
+            }    
+        }
 
-		every_subject_country = {
-			every_owned_province = {
-				limit = {
-					OR = {
-						trade_goods = gold
-						trade_goods = silver
-					}
-				}
-				add_province_modifier = {
-					name = jason_dev_cost_reduction_350_1
-					duration = -1
-				}
-				add_province_modifier = {
-					name = jason_dev_cost_reduction_100_1
-					duration = -1
-				}
-				add_province_modifier = {
-					name = jason_dev_cost_reduction_100_2
-					duration = -1
-				}	
-			}
-		}
-	}
+        every_subject_country = {
+            every_owned_province = {
+                limit = {
+                    OR = {
+                        trade_goods = gold
+                        trade_goods = silver
+                    }
+                }
+                add_province_modifier = {
+                    name = jason_dev_cost_reduction_350_1
+                    duration = -1
+                }
+                add_province_modifier = {
+                    name = jason_dev_cost_reduction_100_1
+                    duration = -1
+                }
+                add_province_modifier = {
+                    name = jason_dev_cost_reduction_100_2
+                    duration = -1
+                }    
+            }
+        }
+    }
 }
