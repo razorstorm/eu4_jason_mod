@@ -5,12 +5,13 @@ country_decisions = {
             ai = no
         }
         allow = {
-            any_owned_province = {
+            any_province = {
                 OR = {
                     trade_goods = gold
                     trade_goods = silver
                 }
                 NOT = { base_production = 25 }
+                country_or_subject_holds = ROOT
             }
         }
         provinces_to_highlight = {
@@ -73,6 +74,15 @@ country_decisions = {
             }
             country_or_subject_holds = ROOT
         }
+        allow = {
+            any_province = {
+                OR = {
+                    trade_goods = gold
+                    trade_goods = silver
+                }
+                country_or_subject_holds = ROOT
+            }
+        }
         effect = {
             every_owned_province = {
                 limit = {
@@ -98,7 +108,15 @@ country_decisions = {
                 trade_goods = silk
                 trade_goods = dyes
             }
-            country_or_subject_holds = ROOT
+            owned_by = ROOT
+        }
+        allow = {
+            any_owned_province = {
+                OR = {
+                    trade_goods = silk
+                    trade_goods = dyes
+                }
+            }
         }
         effect = {
             every_owned_province = {
@@ -134,7 +152,7 @@ country_decisions = {
                 trade_goods = silk
                 trade_goods = dyes
             }
-            country_or_subject_holds = ROOT
+            owned_by = ROOT
         }
         effect = {
             every_owned_province = {
@@ -199,9 +217,14 @@ country_decisions = {
                         value = 1
                     }
                 }
-                log = "Removed silk from [This.GetName] and changed to cloth, # provinces modified so far: [ROOT.numProvincesAffected.GetValue]"
+                log = "Removed silk from [This.GetName] and changed to cloth"
+                ROOT = {
+                    log = "# provinces modified so far: [ROOT.numProvincesAffected.GetValue]"
+                }
             }
-            log = "Finished removing silk from foreign provinces. Total # of modified provinces: [ROOT.numProvincesAffected.GetValue]"
+            ROOT = {
+                log = "Finished removing silk from foreign provinces. Total # of modified provinces: [ROOT.numProvincesAffected.GetValue]"
+            }
 
             every_owned_province = {
                 limit = {
@@ -215,7 +238,10 @@ country_decisions = {
                         value = 1
                     }
                 }
-                log = "Found [This.GetName] as a valid province to change into silk, # provinces available so far: [ROOT.provincesAvailable.GetValue]"
+                # log = "Found [This.GetName] as a valid province to change into silk, # provinces available so far: [ROOT.provincesAvailable.GetValue]"
+            }
+            ROOT = {
+                log = "Finished counting number of valid provinces. # provinces available: [ROOT.provincesAvailable.GetValue]"
             }
             ROOT = {
                 while = {
@@ -249,7 +275,11 @@ country_decisions = {
                                 value = -1
                             }
                         }
-                        log = "Added silk to [This.GetName], provinces left to modify: [ROOT.numProvincesAffected.GetValue], valid provinces left: [ROOT.provincesAvailable.GetValue]"
+                        log = "Added silk to [This.GetName]"
+                        
+                        ROOT = {
+                            log = "Provinces left to modify: [ROOT.numProvincesAffected.GetValue], valid provinces left: [ROOT.provincesAvailable.GetValue]"
+                        }
                     }
 
                     if = {
@@ -267,7 +297,9 @@ country_decisions = {
                                 }
                             }
                         }
-                        log = "No more valid provinces to change into silk, but still have [ROOT.numProvincesAffected.GetValue] provinces left to modify, stopping loop early"
+                        ROOT = {
+                            log = "No more valid provinces to change into silk, but still have [ROOT.numProvincesAffected.GetValue] provinces left to modify, stopping loop early"
+                        }
                     }
                 }
             }
