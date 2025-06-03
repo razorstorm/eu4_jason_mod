@@ -313,6 +313,15 @@ country_decisions = {
         potential = {
             ai = no
         }
+        allow = {
+            any_province = {
+                OR = {
+                    trade_goods = gold
+                    trade_goods = silver
+                }
+                country_or_subject_holds = ROOT
+            }
+        }
         provinces_to_highlight = {
             OR = {
                 trade_goods = gold
@@ -321,7 +330,49 @@ country_decisions = {
             country_or_subject_holds = ROOT
         }
         effect = {
-            country_event = { id = gold_upgrade_events.3 } 
+            every_owned_province = {
+                limit = {
+                    OR = {
+                        trade_goods = gold
+                        trade_goods = silver
+                    }
+                }
+                add_province_modifier = {
+                    name = jason_dev_cost_reduction_350_1
+                    duration = -1
+                }
+                add_province_modifier = {
+                    name = jason_dev_cost_reduction_100_1
+                    duration = -1
+                }
+                add_province_modifier = {
+                    name = jason_dev_cost_reduction_100_2
+                    duration = -1
+                }    
+            }
+    
+            every_subject_country = {
+                every_owned_province = {
+                    limit = {
+                        OR = {
+                            trade_goods = gold
+                            trade_goods = silver
+                        }
+                    }
+                    add_province_modifier = {
+                        name = jason_dev_cost_reduction_350_1
+                        duration = -1
+                    }
+                    add_province_modifier = {
+                        name = jason_dev_cost_reduction_100_1
+                        duration = -1
+                    }
+                    add_province_modifier = {
+                        name = jason_dev_cost_reduction_100_2
+                        duration = -1
+                    }    
+                }
+            }
         }
     }
 
