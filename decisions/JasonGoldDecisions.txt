@@ -177,23 +177,29 @@ country_decisions = {
         }
     }
 
-    monopolize_silk = {
+    monopolize_silk_and_dyes = {
         major = yes
         potential = {
             ai = no
         }
         allow = {
             any_province = {
-                trade_goods = silk
+                OR = {
+                    trade_goods = silk
+                    trade_goods = dyes
+                }
                 NOT = { owned_by = ROOT }
             }
         }
         provinces_to_highlight = {
-            trade_goods = silk
+            OR = {
+                trade_goods = silk
+                trade_goods = dyes
+            }
             NOT = { owned_by = ROOT }
         }
         effect = {
-            log = "Monopolizing silk into home country"
+            log = "Monopolizing silk and dyes into home country"
             ROOT = {
                 set_variable = {
                     which = numProvincesAffected
@@ -207,7 +213,10 @@ country_decisions = {
             }
             every_province = {
                 limit = {
-                    trade_goods = silk
+                    OR = {
+                        trade_goods = silk
+                        trade_goods = dyes
+                    }
                     NOT = { owned_by = ROOT }
                 }
 
@@ -233,6 +242,7 @@ country_decisions = {
                     NOT = { trade_goods = silk }
                     NOT = { trade_goods = gold }
                     NOT = { trade_goods = silver }
+                    NOT = { trade_goods = dyes }
                 }
                 ROOT = {
                     change_variable = {
@@ -265,6 +275,7 @@ country_decisions = {
                             NOT = { trade_goods = silk }
                             NOT = { trade_goods = gold }
                             NOT = { trade_goods = silver }
+                            NOT = { trade_goods = dyes }
                         }
                         change_trade_goods = silk
                         ROOT = {
