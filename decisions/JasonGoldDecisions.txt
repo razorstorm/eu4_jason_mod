@@ -5,23 +5,13 @@ country_decisions = {
             ai = no
         }
         allow = {
-            OR = {
-                any_owned_province = {
-                    OR = {
-                        trade_goods = gold
-                        trade_goods = silver
-                    }
-                    NOT = { base_production = 25 }
+            any_province = {
+                OR = {
+                    trade_goods = gold
+                    trade_goods = silver
                 }
-                every_subject_country = {
-                    any_owned_province = {
-                        OR = {
-                            trade_goods = gold
-                            trade_goods = silver
-                        }
-                        NOT = { base_production = 25 }
-                    }
-                }
+                NOT = { base_production = 25 }
+                country_or_subject_holds = ROOT
             }
         }
         provinces_to_highlight = {
@@ -85,21 +75,12 @@ country_decisions = {
             country_or_subject_holds = ROOT
         }
         allow = {
-            OR = {
-                any_owned_province = {
-                    OR = {
-                        trade_goods = gold
-                        trade_goods = silver
-                    }
+            any_province = {
+                OR = {
+                    trade_goods = gold
+                    trade_goods = silver
                 }
-                every_subject_country = {
-                    any_owned_province = {
-                        OR = {
-                            trade_goods = gold
-                            trade_goods = silver
-                        }
-                    }
-                }
+                country_or_subject_holds = ROOT
             }
         }
         effect = {
