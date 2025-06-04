@@ -139,3 +139,12 @@
 
  IBERIAN_LOWLANDS_NAME: "Iberian Lowlands"
  IBERIAN_LOWLANDS_NAME_ADJ: "Iberian Lowlander"
+
+ PERSIAN_EMPIRE_NAME: "Persian Empire"
+ PERSIAN_EMPIRE_NAME_ADJ: "Imperial Persian"
+
+ BRITISH_EMPIRE_NAME: "British Empire"
+ BRITISH_EMPIRE_NAME_ADJ: "Imperial British"
+
+ GREAT_QING_EMPIRE_NAME: "Da Qing Empire"
+ GREAT_QING_EMPIRE_NAME_ADJ: "Da Qing"
