@@ -1,0 +1,17 @@
+sold_prov_to_early = {
+	opinion = -10
+	yearly_decay = 0.75
+	min = -250
+}
+
+bought_colonial_nation = {
+	opinion = -50
+	min = -100
+	months = 60
+}
+
+sold_colonial_nation = {
+	opinion = 50
+	max = 100
+	yearly_decay = 1
+}

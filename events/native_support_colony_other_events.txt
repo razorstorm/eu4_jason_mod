@@ -1,0 +1,208 @@
+namespace = native_support_colony_other_events
+
+# Increase population in ROOT (colonial province)
+province_event = {
+	id = native_support_colony_other_events.1
+	title = "native_support_colony_other_events.EVTNAME1"
+	desc = "native_support_colony_other_events.EVTDESC1"
+	picture = NATIVES_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = { has_province_flag = will_be_supported_by_natives }
+	
+	option = { 
+		name = "native_support_colony_other_events1.EVTOPT1"
+		
+		owner = {
+			add_treasury = -100
+			add_country_modifier = {
+				name = countdown_native_support
+				duration = 150
+				hidden = yes
+			}
+		}
+		
+		random_list = {
+			35 = {
+				multiply_colonysize = 1.10
+				change_native_size = -1
+			}
+			30 = {
+				multiply_colonysize = 1.15
+				change_native_size = -1
+			}
+			25 = {
+				multiply_colonysize = 1.20
+				change_native_size = -1
+			}
+			10 = { custom_tooltip = NATIVES_WILL_NOT_SETTLE }
+		}
+		clr_province_flag = will_be_supported_by_natives
+		set_province_flag = already_supported_by_natives
+		
+		owner = {
+			clr_country_flag = gets_native_support
+			clr_global_flag = player_gets_native_support
+			custom_tooltip = NEXT_SUPPORT_AVAILABLE_IN_150
+		}
+	}
+	
+	option = { 
+		name = "native_support_colony_other_events1.EVTOPT2"
+		
+		owner = {
+			add_treasury = -200
+			add_country_modifier = {
+				name = countdown_native_support
+				duration = 200
+				hidden = yes
+			}
+		}
+		
+		clr_province_flag = will_be_supported_by_natives
+		change_native_hostileness = -1
+		add_province_modifier = {
+			name = native_support_for_province
+			duration = -1
+		}
+		set_province_flag = already_supported_by_natives
+		
+		owner = {
+			clr_country_flag = gets_native_support
+			clr_global_flag = player_gets_native_support
+			custom_tooltip = NEXT_SUPPORT_AVAILABLE_IN_200
+		}
+	}
+	
+	option = { 
+		name = "native_support_colony_other_events1.EVTOPT3"
+		
+		trigger = {
+			owner = {
+				capital_scope = {
+					base_manpower = 2
+				}
+				any_owned_province = {
+					has_province_flag = will_be_supported_by_natives
+					NOT = { colonysize = 800 }
+				}
+			}
+		}
+		
+		owner = {
+			if = {
+				limit = {
+					NOT = { treasury = 1000 }
+				}
+				add_treasury = -500
+			}
+			if = {
+				limit = {
+					treasury = 1000
+					NOT = { treasury = 10000 }
+				}
+				add_treasury = -1000
+			}
+			if = {
+				limit = {
+					treasury = 10000
+					NOT = { treasury = 100000 }
+				}
+				add_treasury = -2500
+			}
+			if = {
+				limit = {
+					treasury = 100000
+				}
+				add_treasury = -5000
+			}
+			capital_scope = {
+				add_base_manpower = -1
+				add_province_modifier = {
+					name = sent_farmers_to_colony_capital_modifier
+					duration = 1825
+				}
+			}
+			add_country_modifier = {
+				name = countdown_native_support
+				duration = 300
+				hidden = yes
+			}
+		}
+		
+		clr_province_flag = will_be_supported_by_natives
+		add_colonysize = 200
+		change_native_hostileness = 1
+		add_province_modifier = {
+			name = sent_farmers_to_colony
+			duration = 3650
+		}
+		set_province_flag = already_supported_by_natives
+		
+		owner = {
+			clr_country_flag = gets_native_support
+			clr_global_flag = player_gets_native_support
+			custom_tooltip = NEXT_SUPPORT_AVAILABLE_IN_300
+		}
+	}
+	
+	option = { 
+		name = "native_support_colony_other_events1.EVTOPT4"
+		
+		owner = {
+			if = {
+				limit = {
+					NOT = { treasury = 1000 }
+				}
+				add_treasury = -300
+			}
+			if = {
+				limit = {
+					treasury = 1000
+					NOT = { treasury = 10000 }
+				}
+				add_treasury = -700
+			}
+			if = {
+				limit = {
+					treasury = 10000
+					NOT = { treasury = 100000 }
+				}
+				add_treasury = -2000
+			}
+			if = {
+				limit = {
+					treasury = 100000
+				}
+				add_treasury = -3500
+			}
+			capital_scope = {
+				add_province_modifier = {
+					name = sent_prisoners_to_colony_capital_modifier
+					duration = 730
+				}
+			}
+			add_country_modifier = {
+				name = countdown_native_support
+				duration = 300
+				hidden = yes
+			}
+		}
+		
+		clr_province_flag = will_be_supported_by_natives
+		add_colonysize = 150
+		change_native_hostileness = 2
+		add_province_modifier = {
+			name = sent_prisoners_to_colony_colony_modifier
+			duration = 3650
+		}
+		set_province_flag = already_supported_by_natives
+		
+		owner = {
+			clr_country_flag = gets_native_support
+			clr_global_flag = player_gets_native_support
+			custom_tooltip = NEXT_SUPPORT_AVAILABLE_IN_300
+		}
+	}
+}

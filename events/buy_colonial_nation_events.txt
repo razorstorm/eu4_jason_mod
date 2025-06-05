@@ -1,0 +1,81 @@
+namespace = buy_colonial_nation_events
+
+# Bought Colonial Nation receives +10% liberty desire after the sell, if ROOT doesn't replace its ruler
+country_event = {
+	id = buy_colonial_nation_events.1
+	title = "buy_colonial_nation_events.EVTNAME1"
+	desc = "buy_colonial_nation_events.EVTDESC1"
+	picture = UNIVERSITY_eventPicture
+
+	trigger = {
+		has_country_flag = bought_a_colonial_nation_flag
+		any_subject_country = {
+			any_owned_province = {
+				has_province_flag = cn_was_sold_to_@ROOT
+			}
+		}
+	}
+
+	mean_time_to_happen = { days = 10 }
+
+	immediate = {
+		hidden_effect = {
+			random_subject_country = {
+				limit = {
+					any_owned_province = {
+						has_province_flag = cn_was_sold_to_@ROOT
+					}
+				}
+				save_event_target_as = bought_colonial_nation
+				every_owned_province = {
+					limit = { has_province_flag = cn_was_sold_to_@ROOT }
+					clr_province_flag = cn_was_sold_to_@ROOT
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						any_subject_country = {
+							any_owned_province = {
+								has_province_flag = cn_was_sold_to_@ROOT
+							}
+						}
+					}
+				}
+				clr_country_flag = bought_a_colonial_nation_flag
+			}
+		}
+	}
+
+	option = {	# Let the Governor stay
+		name = "buy_colonial_nation_events1.EVTOPT1"
+
+		event_target:bought_colonial_nation = {
+			add_liberty_desire = 10
+		}
+	}
+
+	option = {	# Sent new Governor
+		name = "buy_colonial_nation_events1.EVTOPT2"
+
+		event_target:bought_colonial_nation = {
+			add_tariff_value = -0.05
+			kill_ruler = yes
+		}
+	}
+}
+
+# FROM bought colonial nation of ROOT (global message)
+country_event = {
+	id = buy_colonial_nation_events.2
+	title = "buy_colonial_nation_events.EVTNAME2"
+	desc = "buy_colonial_nation_events.EVTDESC2"
+	picture = CORRUPTION_eventPicture
+
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		name = "buy_colonial_nation_events2.EVTOPT1"
+	}
+}

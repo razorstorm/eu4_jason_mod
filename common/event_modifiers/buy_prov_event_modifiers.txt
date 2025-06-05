@@ -1,0 +1,46 @@
+countdown_next_buy_prov = {
+}
+
+countdown_next_buy_prov_of_colony = {
+}
+
+countdown_next_buy_prov_of_subject = {
+}
+
+cooldown_colonial_nation_not_sold = {
+}
+
+bought_colonial_nation_countdown = {
+}
+
+countdown_sold_prov = {
+}
+
+countdown_native_support = {
+}
+
+native_support_for_province = {
+	local_colonial_growth = 20
+	native_uprising_chance = -0.1
+}
+
+sent_prisoners_to_colony_capital_modifier = {
+	local_tax_modifier = 0.05
+	local_production_efficiency = -0.05
+	local_unrest = -1
+}
+
+sent_prisoners_to_colony_colony_modifier = {
+	local_colonial_growth = -10
+	native_uprising_chance = 0.25
+	local_unrest = 10
+}
+
+sent_farmers_to_colony = {
+	native_uprising_chance = 0.1
+}
+
+sent_farmers_to_colony_capital_modifier = {
+	local_tax_modifier = -0.1
+	local_production_efficiency = -0.1
+}

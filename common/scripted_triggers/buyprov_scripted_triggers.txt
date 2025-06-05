@@ -1,0 +1,160 @@
+province_is_in_wrong_cr = {
+	is_colony = no
+	OR = { 
+		AND = {
+			owner = {
+				capital_scope = { colonial_region = colonial_alaska }
+			}
+			NOT = { colonial_region = colonial_alaska }
+		}
+		AND = {
+			owner = {
+				capital_scope = { colonial_region = colonial_canada }
+			}
+			NOT = { colonial_region = colonial_canada }
+		}
+		AND = {
+			owner = {
+				capital_scope = { colonial_region = colonial_eastern_america }
+			}
+			NOT = { colonial_region = colonial_eastern_america }
+		}
+		AND = {
+			owner = {
+				capital_scope = { colonial_region = colonial_louisiana }
+			}
+			NOT = { colonial_region = colonial_louisiana }
+		}
+		AND = {
+			owner = {
+				capital_scope = { colonial_region = colonial_california }
+			}
+			NOT = { colonial_region = colonial_california }
+		}
+		AND = {
+			owner = {
+				capital_scope = { colonial_region = colonial_mexico }
+			}
+			NOT = { colonial_region = colonial_mexico }
+		}
+		AND = {
+			owner = {
+				capital_scope = { colonial_region = colonial_the_carribean }
+			}
+			NOT = { colonial_region = colonial_the_carribean }
+		}
+		AND = {
+			owner = {
+				capital_scope = { colonial_region = colonial_colombia }
+			}
+			NOT = { colonial_region = colonial_colombia }
+		}
+		AND = {
+			owner = {
+				capital_scope = { colonial_region = colonial_peru }
+			}
+			NOT = { colonial_region = colonial_peru }
+		}
+		AND = {
+			owner = {
+				capital_scope = { colonial_region = colonial_la_plata }
+			}
+			NOT = { colonial_region = colonial_la_plata }
+		}
+		AND = {
+			owner = {
+				capital_scope = { colonial_region = colonial_brazil }
+			}
+			NOT = { colonial_region = colonial_brazil }
+		}
+		AND = {
+			owner = {
+				capital_scope = { colonial_region = colonial_oceania }
+			}
+			NOT = { colonial_region = colonial_oceania }
+		}
+		AND = {
+			owner = {
+				capital_scope = { colonial_region = colonial_south_africa }
+			}
+			NOT = { colonial_region = colonial_south_africa }
+		}
+		AND = {
+			owner = {
+				capital_scope = { colonial_region = colonial_zambezi }
+			}
+			NOT = { colonial_region = colonial_zambezi }
+		}
+		AND = {
+			owner = {
+				capital_scope = { colonial_region = colonial_congo }
+			}
+			NOT = { colonial_region = colonial_congo }
+		}
+		AND = {
+			owner = {
+				capital_scope = { colonial_region = colonial_east_africa }
+			}
+			NOT = { colonial_region = colonial_east_africa }
+		}
+		AND = {
+			owner = {
+				capital_scope = { colonial_region = colonial_ethiopia }
+			}
+			NOT = { colonial_region = colonial_ethiopia }
+		}
+		AND = {
+			owner = {
+				capital_scope = { colonial_region = colonial_sudan }
+			}
+			NOT = { colonial_region = colonial_sudan }
+		}
+		AND = {
+			owner = {
+				capital_scope = { colonial_region = colonial_central_africa }
+			}
+			NOT = { colonial_region = colonial_central_africa }
+		}
+		AND = {
+			owner = {
+				capital_scope = { colonial_region = colonial_niger }
+			}
+			NOT = { colonial_region = colonial_niger }
+		}
+		AND = {
+			owner = {
+				capital_scope = { colonial_region = colonial_ivory_coast }
+			}
+			NOT = { colonial_region = colonial_ivory_coast }
+		}
+		AND = {
+			owner = {
+				capital_scope = { colonial_region = colonial_mali }
+			}
+			NOT = { colonial_region = colonial_mali }
+		}
+		AND = {
+			owner = {
+				capital_scope = { colonial_region = colonial_west_africa }
+			}
+			NOT = { colonial_region = colonial_west_africa }
+		}
+	}
+}
+
+province_is_objective_of_current_age = {
+	OR = {
+		AND = {
+			current_age = dark_age
+			province_id = 118
+		}
+		AND = {
+			current_age = high_middle_ages
+			province_id = 379
+		}
+		AND = {
+			current_age = industrial_age
+			region = japan_region
+		}
+	}
+}

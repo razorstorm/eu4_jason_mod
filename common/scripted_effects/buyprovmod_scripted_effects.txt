@@ -1,0 +1,431 @@
+pay_for_prov = {
+	if = {
+		limit = {
+			NOT = { development = 11 }
+		}
+		ROOT = {
+			add_treasury = -500
+		}
+		hidden_effect = {
+			$who$ = { set_variable = { which = payment_for_province value = 500 } }
+		}
+	}
+	if = {
+		limit = {
+			development = 11
+			NOT = { development = 21 }
+		}
+		ROOT = {
+			add_treasury = -1000
+		}
+		hidden_effect = {
+			$who$ = { set_variable = { which = payment_for_province value = 1000 } }
+		}
+	}
+	if = {
+		limit = {
+			development = 21
+			NOT = { development = 31 }
+		}
+		ROOT = {
+			add_treasury = -2000
+		}
+		hidden_effect = {
+			$who$ = { set_variable = { which = payment_for_province value = 2000 } }
+		}
+	}
+	if = {
+		limit = {
+			development = 31
+			NOT = { development = 41 }
+		}
+		ROOT = {
+			add_treasury = -2500
+		}
+		hidden_effect = {
+			$who$ = { set_variable = { which = payment_for_province value = 2500 } }
+		}
+	}
+	if = {
+		limit = {
+			development = 41
+			NOT = { development = 51 }
+		}
+		ROOT = {
+			add_treasury = -3000
+		}
+		hidden_effect = {
+			$who$ = { set_variable = { which = payment_for_province value = 3000 } }
+		}
+	}
+	if = {
+		limit = {
+			development = 51
+			NOT = { development = 61 }
+		}
+		ROOT = {
+			add_treasury = -3500
+		}
+		hidden_effect = {
+			$who$ = { set_variable = { which = payment_for_province value = 3500 } }
+		}
+	}
+	if = {
+		limit = {
+			development = 61
+			NOT = { development = 71 }
+		}
+		ROOT = {
+			add_treasury = -4000
+		}
+		hidden_effect = {
+			$who$ = { set_variable = { which = payment_for_province value = 4000 } }
+		}
+	}
+	if = {
+		limit = {
+			development = 71
+			NOT = { development = 81 }
+		}
+		ROOT = {
+			add_treasury = -4500
+		}
+		hidden_effect = {
+			$who$ = { set_variable = { which = payment_for_province value = 4500 } }
+		}
+	}
+	if = {
+		limit = {
+			development = 81
+			NOT = { development = 91 }
+		}
+		ROOT = {
+			add_treasury = -5000
+		}
+		hidden_effect = {
+			$who$ = { set_variable = { which = payment_for_province value = 5000 } }
+		}
+	}
+	if = {
+		limit = {
+			development = 91
+			NOT = { development = 101 }
+		}
+		ROOT = {
+			add_treasury = -5500
+		}
+		hidden_effect = {
+			$who$ = { set_variable = { which = payment_for_province value = 5500 } }
+		}
+	}
+	if = {
+		limit = {
+			development = 101
+		}
+		ROOT = {
+			add_treasury = -6000
+		}
+		hidden_effect = {
+			$who$ = { set_variable = { which = payment_for_province value = 6000 } }
+		}
+	}
+	
+	if = {
+		limit = {
+			$who$ = {
+				NOT = { is_subject_of = ROOT }
+			}
+			owner = {
+				NOT = { is_subject_of = ROOT }
+				is_colonial_nation = no
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_capital = yes
+					has_province_flag = was_capital_before_it_was_bought
+				}
+			}
+			custom_tooltip = " "
+			custom_tooltip = EXTRA_X_DUCATS_BECAUSE_PROV_IS_CAPITAL
+			hidden_effect = {
+				if = {
+					limit = {
+						has_province_flag = was_capital_before_it_was_bought
+					}
+					clr_province_flag = was_capital_before_it_was_bought
+				}
+				ROOT = { add_treasury = -300 }
+				$who$ = { change_variable = { which = payment_for_province value = 300 } }
+			}
+		}
+		if = {
+			limit = {
+				province_is_objective_of_current_age = yes
+			}
+			custom_tooltip = " "
+			custom_tooltip = EXTRA_X_DUCATS_BECAUSE_PROV_IS_OBJECTIVE_OF_AGE
+			hidden_effect = {
+				ROOT = { add_treasury = -1000 }
+				$who$ = { change_variable = { which = payment_for_province value = 1000 } }
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					any_trade_node_member_province = {
+						NOT = { province_id = PREV }
+						NOT = { owned_by = ROOT }
+						NOT = { owner = { is_subject_of = ROOT } }
+						variable_arithmetic_trigger = {
+							custom_tooltip = CHECK_BASE_TRADE_POWER
+							export_to_variable = {
+								which = province_base_trade_power_variable
+								value = modifier:province_trade_power_value
+							}
+							export_to_variable = {
+								which = PREV_province_base_trade_power_variable
+								value = modifier:province_trade_power_value
+								who = PREV
+							}
+							check_variable = { which = province_base_trade_power_variable which = PREV_province_base_trade_power_variable }
+						}
+					}
+				}
+			}
+			custom_tooltip = " "
+			custom_tooltip = EXTRA_X_DUCATS_BECAUSE_PROV_HAS_HIGH_TRADE_POWER
+			hidden_effect = {
+				$who$ = {
+					set_variable = { which = province_trade_power_variable which = PREV }
+					change_variable = { which = payment_for_province which = province_trade_power_variable }
+				}
+				ROOT = {
+					set_variable = { which = province_trade_power_variable which = PREV }
+					while = {
+						limit = {
+							check_variable = { which = province_trade_power_variable value = 10000 }
+						}
+						add_treasury = -10000
+						change_variable = { which = province_trade_power_variable value = -10000 }
+					}
+					while = {
+						limit = {
+							check_variable = { which = province_trade_power_variable value = 1000 }
+						}
+						add_treasury = -1000
+						change_variable = { which = province_trade_power_variable value = -1000 }
+					}
+					while = {
+						limit = {
+							check_variable = { which = province_trade_power_variable value = 100 }
+						}
+						add_treasury = -100
+						change_variable = { which = province_trade_power_variable value = -100 }
+					}
+					while = {
+						limit = {
+							check_variable = { which = province_trade_power_variable value = 10 }
+						}
+						add_treasury = -10
+						change_variable = { which = province_trade_power_variable value = -10 }
+					}
+					while = {
+						limit = {
+							check_variable = { which = province_trade_power_variable value = 1 }
+						}
+						add_treasury = -1
+						change_variable = { which = province_trade_power_variable value = -1 }
+					}
+				}
+			}
+		}
+	}
+	custom_tooltip = " "
+}
+
+get_paid_for_prov = {
+	custom_tooltip = WE_RECEIVE_X_DUCATS_FOR_PROVINCE
+	hidden_effect = {
+		while = {
+			limit = {
+				check_variable = { which = payment_for_province value = 10000 }
+			}
+			add_treasury = 10000
+			change_variable = { which = payment_for_province value = -10000 }
+		}
+		while = {
+			limit = {
+				check_variable = { which = payment_for_province value = 1000 }
+			}
+			add_treasury = 1000
+			change_variable = { which = payment_for_province value = -1000 }
+		}
+		while = {
+			limit = {
+				check_variable = { which = payment_for_province value = 100 }
+			}
+			add_treasury = 100
+			change_variable = { which = payment_for_province value = -100 }
+		}
+		while = {
+			limit = {
+				check_variable = { which = payment_for_province value = 10 }
+			}
+			add_treasury = 10
+			change_variable = { which = payment_for_province value = -10 }
+		}
+		while = {
+			limit = {
+				check_variable = { which = payment_for_province value = 1 }
+			}
+			add_treasury = 1
+			change_variable = { which = payment_for_province value = -1 }
+		}
+	}
+}
+
+set_time_til_next_prov_could_be_sold = {
+	set_variable = { which = last_sell_year_variable which = year_of_last_sell } # this date is shown in description of the diplomatic action
+	if = {	# Big Nation = 5 years cooldown
+		limit = {
+			OR = {
+				num_of_cities = 30
+				variable_arithmetic_trigger = {
+					custom_tooltip = COMPARE_NUM_OF_PROVS
+					export_to_variable = {
+						which = our_num_of_provs
+						value = trigger_value:num_of_cities
+						who = FROM
+					}
+					export_to_variable = {
+						which = their_num_of_provs
+						value = trigger_value:num_of_cities
+					}
+					divide_variable = { which = their_num_of_provs value = 2 }
+					NOT = { check_variable = { which = our_num_of_provs which = their_num_of_provs } }
+				}
+			}
+		}
+		add_country_modifier = {
+			name = countdown_sold_prov
+			duration = 1825
+			hidden = yes
+		}
+		change_variable = { which = year_of_last_sell value = 5 }
+	}
+	else_if = {	# Medium Sized Nation = 10 years cooldown
+		limit = {
+			OR = {
+				AND = {
+					num_of_cities = 20
+					NOT = { num_of_cities = 30 }
+				}
+				variable_arithmetic_trigger = {
+					custom_tooltip = COMPARE_NUM_OF_PROVS
+					export_to_variable = {
+						which = our_num_of_provs
+						value = trigger_value:num_of_cities
+						who = FROM
+					}
+					export_to_variable = {
+						which = their_num_of_provs
+						value = trigger_value:num_of_cities
+					}
+					divide_variable = { which = their_num_of_provs value = 3 }
+					NOT = { check_variable = { which = our_num_of_provs which = their_num_of_provs } }
+				}
+			}
+		}
+		add_country_modifier = {
+			name = countdown_sold_prov
+			duration = 3650
+			hidden = yes
+		}
+		change_variable = { which = year_of_last_sell value = 10 }
+	}
+	else = {	# Small Nation = 15 years cooldown
+		add_country_modifier = {
+			name = countdown_sold_prov
+			duration = 5475
+			hidden = yes
+		}
+		change_variable = { which = year_of_last_sell value = 15 }
+	}
+	if = {
+		limit = {
+			is_month = 11
+		}
+		set_variable = { which = month_of_last_sell value = 12 }
+	}
+	else_if = {
+		limit = {
+			is_month = 10
+		}
+		set_variable = { which = month_of_last_sell value = 11 }
+	}
+	else_if = {
+		limit = {
+			is_month = 9
+		}
+		set_variable = { which = month_of_last_sell value = 10 }
+	}
+	else_if = {
+		limit = {
+			is_month = 8
+		}
+		set_variable = { which = month_of_last_sell value = 9 }
+	}
+	else_if = {
+		limit = {
+			is_month = 7
+		}
+		set_variable = { which = month_of_last_sell value = 8 }
+	}
+	else_if = {
+		limit = {
+			is_month = 6
+		}
+		set_variable = { which = month_of_last_sell value = 7 }
+	}
+	else_if = {
+		limit = {
+			is_month = 5
+		}
+		set_variable = { which = month_of_last_sell value = 6 }
+	}
+	else_if = {
+		limit = {
+			is_month = 4
+		}
+		set_variable = { which = month_of_last_sell value = 5 }
+	}
+	else_if = {
+		limit = {
+			is_month = 3
+		}
+		set_variable = { which = month_of_last_sell value = 4 }
+	}
+	else_if = {
+		limit = {
+			is_month = 2
+		}
+		set_variable = { which = month_of_last_sell value = 3 }
+	}
+	else_if = {
+		limit = {
+			is_month = 1
+		}
+		set_variable = { which = month_of_last_sell value = 2 }
+	}
+	else = {
+		set_variable = { which = month_of_last_sell value = 1 }
+	}
+}
+
+save_year_of_last_sell = {
+	# Save current year in one variable
+	export_to_variable = { which = year_of_last_sell value = trigger_value:is_year }
+	change_variable = { which = year_of_last_sell value = -1 }
+}

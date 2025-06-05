@@ -1,0 +1,40 @@
+﻿l_english:
+ # Buy Prov Diplo Actions (tooltips for the AI acceptence are located in 'buy_prov_diplo_actions_l_<language>.yml')
+ IS_NEIGHBOR_OF_FROM: "§Y[Root.GetName]§! is a neighbor of §Y[From.GetName]§!"
+ NOT_JUST_HAS_BOUGHT_A_PROVINCE: "§Y[Root.GetName]§! did NOT buy a province within the last §Y183§! days of a independent country"
+ NOT_JUST_HAS_BOUGHT_A_PROVINCE_OF_COLONY: "§Y[Root.GetName]§! did NOT buy a province within the last §Y50§! days of a [Root.GetAdjective] colonial nation"
+ NOT_JUST_HAS_BOUGHT_A_PROVINCE_OF_SUBJECT: "§Y[Root.GetName]§! did NOT buy a province within the last §Y75§! days of a [Root.GetAdjective] subject"
+ FROM_HAS_NOT_JUST_SOLD_A_PROVINCE: "§Y[From.GetName]§! (number of currently sold provinces: §Y[From.sold_prov.GetValue]§!) did NOT sell a province within the last years (possible again in §Y[From.GetMonthOfLastSell] [From.year_of_last_sell.GetValue]§!)"
+ ANY_OWNED_PROVINCE_IN_WRONG_CR: "At least one owned province is NOT in the same colonial region as §Y[From.Capital.GetName]§! (§l[From.Capital.GetColonialRegionName]§!)"
+ NOT_JUST_HAS_BOUGHT_A_CN: "§Y[Root.GetName]§! did NOT buy a colonial nation within the last §Y1095§! days"
+ NEEDS_MONEY_THE_CN_IS_WORTH: "Have more than §Y[From.GetColonialNationPrice].0§! ¤\n"
+ FROM_OVERLORD_HAS_TO_BE_AI: "The overlord of §Y[From.GetName]§! is AI"
+ DOES_NOT_HAVE_1_5_YEAR_COOLDOWN_CN: "Nobody tried to buy §Y[From.GetName]§! within the last §Y1½§! years"
+
+ NO_OTHER_PLAYER_BUYS_PROV: "Neither you are nor another player is buying a province or a colonial nation at the moment"
+ NO_OTHER_PLAYER_GETS_NATIVE_SUPPORT: "Neither you nor another player increase(s) population of a colony at the moment"
+ NOT_IN_COLONIAL_REGION: "Is NOT in a colonial region"
+ 
+ 
+ # Buy Prov Events
+ NO_FITTING_PROVINCE_TO_BUY_FROM_NEIGHBOR: "§Y[From.GetName]§! does not have a matching province. Maybe it does not have a province that is a neighbor province of one of your §Ycore provinces§!."
+ NO_FITTING_PROVINCE_TO_BUY: "This colonial nation sadly doesn't own a province that is in the wrong colonial region."
+ EXTRA_X_DUCATS_BECAUSE_PROV_IS_CAPITAL: "Since §Y[This.GetName]§! is the capital of §Y[From.GetName]§!, we have to pay §R300.00§! ducats additionally."
+ EXTRA_X_DUCATS_BECAUSE_PROV_HAS_HIGH_TRADE_POWER: "Since §Y[This.GetName]§! is the province with the highest §Ybase trade power§! in its trade node that isn't owned by §Y[Root.GetName]§!, we have to pay §R[This.province_trade_power_variable.GetValue].00§! ducats additionally."
+ EXTRA_X_DUCATS_BECAUSE_PROV_IS_OBJECTIVE_OF_AGE: "Since §Y[This.GetName]§! is part of an objective of the age \"§Y[Root.GetCurrentAgeName]§!\", we have to pay §R1000.0§! dacats additionally."
+ 
+ 
+ # Native Support Colony Events
+ NATIVES_WILL_NOT_SETTLE: "The natives refuse to settle down in that colony."
+ NEXT_SUPPORT_AVAILABLE_IN_150: "\nAfterwards you can try to increase the population in a colony only in §Y150§! days again."
+ NEXT_SUPPORT_AVAILABLE_IN_200: "\nAfterwards you can try to increase the population in a colony only in §Y200§! days again."
+ NEXT_SUPPORT_AVAILABLE_IN_300: "\nAfterwards you can try to increase the population in a colony only in §Y300§! days again."
+ 
+ 
+ # Support Colony Decisions
+ HAS_MATCHING_COLONY_PROVINCE: "You own a matching colony (province)"
+ 
+ 
+ # Sold Prov Events
+ WE_RECEIVE_X_DUCATS_FOR_PROVINCE: "Gain §G[Root.payment_for_province.GetValue].00§! Ducats."
+ 

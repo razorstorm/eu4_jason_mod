@@ -1,0 +1,11 @@
+﻿l_english:
+ native_support_for_province: "Bribed natives"
+ desc_native_support_for_province: "The native population living in this province was bribed, in the hope that they will ignore the settlers and don't try to attack the colony."
+ sent_prisoners_to_colony_capital_modifier: "Sent prisoners to colony"
+ desc_sent_prisoners_to_colony_capital_modifier: "Some prisoners from this province were sent to a colony , which leads to a relief of the local prisons and population."
+ sent_prisoners_to_colony_colony_modifier: "New settlers are prisoners"
+ desc_sent_prisoners_to_colony_colony_modifier: "Prisoners were sent to this colony in order to empty prisons in the capital and to give them the chance to build up a new life far far away."
+ sent_farmers_to_colony: "Big wave of settlement arrived recently"
+ desc_sent_farmers_to_colony: "Within the last wave of settlement many farmers and their families arrived in this colony. They seem to be an enrichment for the whole village."
+ sent_farmers_to_colony_capital_modifier: "Farmers were sent to colony"
+ desc_sent_farmers_to_colony_capital_modifier: "Farmers from the catchment area of this province moved to a colony, which could lead to a production drop here."

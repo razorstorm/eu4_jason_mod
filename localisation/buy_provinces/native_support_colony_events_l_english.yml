@@ -1,0 +1,23 @@
+﻿l_english:
+ native_support_colony_other_events.EVTNAME1: "§O$PROVINCENAME$§!: Increase population"
+ native_support_colony_other_events.EVTDESC1: "After you have chosen, in which colony you want to increase the population, you now have to choose, how you want to achieve that. \n\n\nYou can choose between 4 options: \n\nYou can try to \"convince\" some natives to settle down in your colony. This will result in a growth of the population of either 10%, 15% or 20%, but it also can fail and you can't try to increase the population in that colony again. \n\nYou can bribe the natives, so that they will ignore your settlers. Because of that the colony will be safer and attract more settlers. \n\nYou also can send some farmers from your capital to the colony, which will achieve a fast rise of population. But this will have effects for the colony and your capital. \n\nFinally you have the option to send prisoners from your capital to the colony. This will achieve a fast increase of population, but this will have effects for the colony and your capital."
+ native_support_colony_other_events1.EVTOPT1: "\"Convince\" some natives to settle down in that colony."
+ native_support_colony_other_events1.EVTOPT2: "Bribe the natives to ignore our settlers."
+ native_support_colony_other_events1.EVTOPT3: "Send farmers from our capital."
+ native_support_colony_other_events1.EVTOPT4: "Send prisoners from our capital."
+ 
+
+ native_support_colony_events.EVTNAME1: "Choose the colony"
+ native_support_colony_events.EVTDESC1: "In which colony do you want to increase the population? \nNote that, no matter which option you choose or if it is successful, you can only try to increase the population once per colony (province)."
+ native_support_colony_events1.EVTOPT1: "We will increase the population in §Y[possible_support_from_natives_no_1.GetName]§!."
+ native_support_colony_events1.EVTOPT2: "We will increase the population in §Y[possible_support_from_natives_no_2.GetName]§!."
+ native_support_colony_events1.EVTOPT3: "We will increase the population in §Y[possible_support_from_natives_no_3.GetName]§!."
+ native_support_colony_events1.EVTOPT4: "We will increase the population in §Y[possible_support_from_natives_no_4.GetName]§!."
+ native_support_colony_events1.EVTOPT5: "We will increase the population in §Y[possible_support_from_natives_no_5.GetName]§!."
+ native_support_colony_events1.EVTOPT6: "We will increase the population in §Y[possible_support_from_natives_no_6.GetName]§!."
+ native_support_colony_events1.EVTOPT7: "We will increase the population in §Y[possible_support_from_natives_no_7.GetName]§!."
+ native_support_colony_events1.EVTOPT8: "We will increase the population in §Y[possible_support_from_natives_no_8.GetName]§!."
+ native_support_colony_events1.EVTOPT9: "We will increase the population in §Y[possible_support_from_natives_no_9.GetName]§!."
+ native_support_colony_events1.EVTOPT10: "We will increase the population in §Y[possible_support_from_natives_no_10.GetName]§!."
+ native_support_colony_events1.EVTOPT11: "I want to increase the population in another colony."
+ native_support_colony_events1.EVTOPT12: "Cancel."

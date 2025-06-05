@@ -1,0 +1,977 @@
+defined_text = {
+	name = GetColonialRegionName
+
+	text = {
+		localisation_key = string_colonial_alaska
+		trigger = {
+			colonial_region = colonial_alaska
+		}
+	}
+	text = {
+		localisation_key = string_colonial_brazil
+		trigger = {
+			colonial_region = colonial_brazil
+		}
+	}
+	text = {
+		localisation_key = string_colonial_california
+		trigger = {
+			colonial_region = colonial_california
+		}
+	}
+	text = {
+		localisation_key = string_colonial_canada
+		trigger = {
+			colonial_region = colonial_canada
+		}
+	}
+	text = {
+		localisation_key = string_colonial_central_africa
+		trigger = {
+			colonial_region = colonial_central_africa
+		}
+	}
+	text = {
+		localisation_key = string_colonial_colombia
+		trigger = {
+			colonial_region = colonial_colombia
+		}
+	}
+	text = {
+		localisation_key = string_colonial_congo
+		trigger = {
+			colonial_region = colonial_congo
+		}
+	}
+	text = {
+		localisation_key = string_colonial_east_africa
+		trigger = {
+			colonial_region = colonial_east_africa
+		}
+	}
+	text = {
+		localisation_key = string_colonial_eastern_america
+		trigger = {
+			colonial_region = colonial_eastern_america
+		}
+	}
+	text = {
+		localisation_key = string_colonial_ethiopia
+		trigger = {
+			colonial_region = colonial_ethiopia
+		}
+	}
+	text = {
+		localisation_key = string_colonial_ivory_coast
+		trigger = {
+			colonial_region = colonial_ivory_coast
+		}
+	}
+	text = {
+		localisation_key = string_colonial_la_plata
+		trigger = {
+			colonial_region = colonial_la_plata
+		}
+	}
+	text = {
+		localisation_key = string_colonial_louisiana
+		trigger = {
+			colonial_region = colonial_louisiana
+		}
+	}
+	text = {
+		localisation_key = string_colonial_mali
+		trigger = {
+			colonial_region = colonial_mali
+		}
+	}
+	text = {
+		localisation_key = string_colonial_mexico
+		trigger = {
+			colonial_region = colonial_mexico
+		}
+	}
+	text = {
+		localisation_key = string_colonial_niger
+		trigger = {
+			colonial_region = colonial_niger
+		}
+	}
+	text = {
+		localisation_key = string_colonial_oceania
+		trigger = {
+			colonial_region = colonial_oceania
+		}
+	}
+	text = {
+		localisation_key = string_colonial_peru
+		trigger = {
+			colonial_region = colonial_peru
+		}
+	}
+	text = {
+		localisation_key = string_colonial_south_africa
+		trigger = {
+			colonial_region = colonial_south_africa
+		}
+	}
+	text = {
+		localisation_key = string_colonial_sudan
+		trigger = {
+			colonial_region = colonial_sudan
+		}
+	}
+	text = {
+		localisation_key = string_colonial_the_carribean
+		trigger = {
+			colonial_region = colonial_the_carribean
+		}
+	}
+	text = {
+		localisation_key = string_colonial_west_africa
+		trigger = {
+			colonial_region = colonial_west_africa
+		}
+	}
+	text = {
+		localisation_key = string_colonial_zambezi
+		trigger = {
+			colonial_region = colonial_zambezi
+		}
+	}
+	text = {
+		localisation_key = string_unkown_colonial_region
+		trigger = {
+			NOT = {
+				colonial_region = colonial_alaska
+				colonial_region = colonial_brazil
+				colonial_region = colonial_california
+				colonial_region = colonial_canada
+				colonial_region = colonial_central_africa
+				colonial_region = colonial_colombia
+				colonial_region = colonial_congo
+				colonial_region = colonial_east_africa
+				colonial_region = colonial_eastern_america
+				colonial_region = colonial_ethiopia
+				colonial_region = colonial_ivory_coast
+				colonial_region = colonial_la_plata
+				colonial_region = colonial_louisiana
+				colonial_region = colonial_mali
+				colonial_region = colonial_mexico
+				colonial_region = colonial_niger
+				colonial_region = colonial_oceania
+				colonial_region = colonial_peru
+				colonial_region = colonial_south_africa
+				colonial_region = colonial_sudan
+				colonial_region = colonial_the_carribean
+				colonial_region = colonial_west_africa
+				colonial_region = colonial_zambezi
+			}
+		}
+	}
+}
+
+defined_text = {
+	name = GetColonialNationPrice
+
+	text = {
+		localisation_key = string_price_1500
+		trigger = {
+			NOT = { num_of_cities = 1 }
+		}
+	}
+	text = {
+		localisation_key = string_price_1600
+		trigger = {
+			num_of_cities = 1
+			NOT = { num_of_cities = 2 }
+		}
+	}
+	text = {
+		localisation_key = string_price_1700
+		trigger = {
+			num_of_cities = 2
+			NOT = { num_of_cities = 3 }
+		}
+	}
+	text = {
+		localisation_key = string_price_1800
+		trigger = {
+			num_of_cities = 3
+			NOT = { num_of_cities = 4 }
+		}
+	}
+	text = {
+		localisation_key = string_price_1900
+		trigger = {
+			num_of_cities = 4
+			NOT = { num_of_cities = 5 }
+		}
+	}
+	text = {
+		localisation_key = string_price_2000
+		trigger = {
+			num_of_cities = 5
+			NOT = { num_of_cities = 6 }
+		}
+	}
+	text = {
+		localisation_key = string_price_2100
+		trigger = {
+			num_of_cities = 6
+			NOT = { num_of_cities = 7 }
+		}
+	}
+	text = {
+		localisation_key = string_price_2200
+		trigger = {
+			num_of_cities = 7
+			NOT = { num_of_cities = 8 }
+		}
+	}
+	text = {
+		localisation_key = string_price_2300
+		trigger = {
+			num_of_cities = 8
+			NOT = { num_of_cities = 9 }
+		}
+	}
+	text = {
+		localisation_key = string_price_2400
+		trigger = {
+			num_of_cities = 9
+			NOT = { num_of_cities = 10 }
+		}
+	}
+	text = {
+		localisation_key = string_price_2500
+		trigger = {
+			num_of_cities = 10
+			NOT = { num_of_cities = 11 }
+		}
+	}
+	text = {
+		localisation_key = string_price_2600
+		trigger = {
+			num_of_cities = 11
+			NOT = { num_of_cities = 12 }
+		}
+	}
+	text = {
+		localisation_key = string_price_2700
+		trigger = {
+			num_of_cities = 12
+			NOT = { num_of_cities = 13 }
+		}
+	}
+	text = {
+		localisation_key = string_price_2800
+		trigger = {
+			num_of_cities = 13
+			NOT = { num_of_cities = 14 }
+		}
+	}
+	text = {
+		localisation_key = string_price_2900
+		trigger = {
+			num_of_cities = 14
+			NOT = { num_of_cities = 15 }
+		}
+	}
+	text = {
+		localisation_key = string_price_3000
+		trigger = {
+			num_of_cities = 15
+			NOT = { num_of_cities = 16 }
+		}
+	}
+	text = {
+		localisation_key = string_price_3100
+		trigger = {
+			num_of_cities = 16
+			NOT = { num_of_cities = 17 }
+		}
+	}
+	text = {
+		localisation_key = string_price_3200
+		trigger = {
+			num_of_cities = 17
+			NOT = { num_of_cities = 18 }
+		}
+	}
+	text = {
+		localisation_key = string_price_3300
+		trigger = {
+			num_of_cities = 18
+			NOT = { num_of_cities = 19 }
+		}
+	}
+	text = {
+		localisation_key = string_price_3400
+		trigger = {
+			num_of_cities = 19
+			NOT = { num_of_cities = 20 }
+		}
+	}
+	text = {
+		localisation_key = string_price_3500
+		trigger = {
+			num_of_cities = 20
+			NOT = { num_of_cities = 21 }
+		}
+	}
+	text = {
+		localisation_key = string_price_3600
+		trigger = {
+			num_of_cities = 21
+			NOT = { num_of_cities = 22 }
+		}
+	}
+	text = {
+		localisation_key = string_price_3700
+		trigger = {
+			num_of_cities = 22
+			NOT = { num_of_cities = 23 }
+		}
+	}
+	text = {
+		localisation_key = string_price_3800
+		trigger = {
+			num_of_cities = 23
+			NOT = { num_of_cities = 24 }
+		}
+	}
+	text = {
+		localisation_key = string_price_3900
+		trigger = {
+			num_of_cities = 24
+			NOT = { num_of_cities = 25 }
+		}
+	}
+	text = {
+		localisation_key = string_price_4000
+		trigger = {
+			num_of_cities = 25
+			NOT = { num_of_cities = 26 }
+		}
+	}
+	text = {
+		localisation_key = string_price_4100
+		trigger = {
+			num_of_cities = 26
+			NOT = { num_of_cities = 27 }
+		}
+	}
+	text = {
+		localisation_key = string_price_4200
+		trigger = {
+			num_of_cities = 27
+			NOT = { num_of_cities = 28 }
+		}
+	}
+	text = {
+		localisation_key = string_price_4300
+		trigger = {
+			num_of_cities = 28
+			NOT = { num_of_cities = 29 }
+		}
+	}
+	text = {
+		localisation_key = string_price_4400
+		trigger = {
+			num_of_cities = 29
+			NOT = { num_of_cities = 30 }
+		}
+	}
+	text = {
+		localisation_key = string_price_4500
+		trigger = {
+			num_of_cities = 30
+			NOT = { num_of_cities = 31 }
+		}
+	}
+	text = {
+		localisation_key = string_price_4600
+		trigger = {
+			num_of_cities = 31
+			NOT = { num_of_cities = 32 }
+		}
+	}
+	text = {
+		localisation_key = string_price_4700
+		trigger = {
+			num_of_cities = 32
+			NOT = { num_of_cities = 33 }
+		}
+	}
+	text = {
+		localisation_key = string_price_4800
+		trigger = {
+			num_of_cities = 33
+			NOT = { num_of_cities = 34 }
+		}
+	}
+	text = {
+		localisation_key = string_price_4900
+		trigger = {
+			num_of_cities = 34
+			NOT = { num_of_cities = 35 }
+		}
+	}
+	text = {
+		localisation_key = string_price_5000
+		trigger = {
+			num_of_cities = 35
+			NOT = { num_of_cities = 36 }
+		}
+	}
+	text = {
+		localisation_key = string_price_5100
+		trigger = {
+			num_of_cities = 36
+			NOT = { num_of_cities = 37 }
+		}
+	}
+	text = {
+		localisation_key = string_price_5200
+		trigger = {
+			num_of_cities = 37
+			NOT = { num_of_cities = 38 }
+		}
+	}
+	text = {
+		localisation_key = string_price_5300
+		trigger = {
+			num_of_cities = 38
+			NOT = { num_of_cities = 39 }
+		}
+	}
+	text = {
+		localisation_key = string_price_5400
+		trigger = {
+			num_of_cities = 39
+			NOT = { num_of_cities = 40 }
+		}
+	}
+	text = {
+		localisation_key = string_price_5500
+		trigger = {
+			num_of_cities = 40
+			NOT = { num_of_cities = 41 }
+		}
+	}
+	text = {
+		localisation_key = string_price_5600
+		trigger = {
+			num_of_cities = 41
+			NOT = { num_of_cities = 42 }
+		}
+	}
+	text = {
+		localisation_key = string_price_5700
+		trigger = {
+			num_of_cities = 42
+			NOT = { num_of_cities = 43 }
+		}
+	}
+	text = {
+		localisation_key = string_price_5800
+		trigger = {
+			num_of_cities = 43
+			NOT = { num_of_cities = 44 }
+		}
+	}
+	text = {
+		localisation_key = string_price_5900
+		trigger = {
+			num_of_cities = 44
+			NOT = { num_of_cities = 45 }
+		}
+	}
+	text = {
+		localisation_key = string_price_6000
+		trigger = {
+			num_of_cities = 45
+			NOT = { num_of_cities = 46 }
+		}
+	}
+	text = {
+		localisation_key = string_price_6100
+		trigger = {
+			num_of_cities = 46
+			NOT = { num_of_cities = 47 }
+		}
+	}
+	text = {
+		localisation_key = string_price_6200
+		trigger = {
+			num_of_cities = 47
+			NOT = { num_of_cities = 48 }
+		}
+	}
+	text = {
+		localisation_key = string_price_6300
+		trigger = {
+			num_of_cities = 48
+			NOT = { num_of_cities = 49 }
+		}
+	}
+	text = {
+		localisation_key = string_price_6400
+		trigger = {
+			num_of_cities = 49
+			NOT = { num_of_cities = 50 }
+		}
+	}
+	text = {
+		localisation_key = string_price_6500
+		trigger = {
+			num_of_cities = 50
+			NOT = { num_of_cities = 51 }
+		}
+	}
+	text = {
+		localisation_key = string_price_6600
+		trigger = {
+			num_of_cities = 51
+			NOT = { num_of_cities = 52 }
+		}
+	}
+	text = {
+		localisation_key = string_price_6700
+		trigger = {
+			num_of_cities = 52
+			NOT = { num_of_cities = 53 }
+		}
+	}
+	text = {
+		localisation_key = string_price_6800
+		trigger = {
+			num_of_cities = 53
+			NOT = { num_of_cities = 54 }
+		}
+	}
+	text = {
+		localisation_key = string_price_6900
+		trigger = {
+			num_of_cities = 54
+			NOT = { num_of_cities = 55 }
+		}
+	}
+	text = {
+		localisation_key = string_price_7000
+		trigger = {
+			num_of_cities = 55
+			NOT = { num_of_cities = 56 }
+		}
+	}
+	text = {
+		localisation_key = string_price_7100
+		trigger = {
+			num_of_cities = 56
+			NOT = { num_of_cities = 57 }
+		}
+	}
+	text = {
+		localisation_key = string_price_7200
+		trigger = {
+			num_of_cities = 57
+			NOT = { num_of_cities = 58 }
+		}
+	}
+	text = {
+		localisation_key = string_price_7300
+		trigger = {
+			num_of_cities = 58
+			NOT = { num_of_cities = 59 }
+		}
+	}
+	text = {
+		localisation_key = string_price_7400
+		trigger = {
+			num_of_cities = 59
+			NOT = { num_of_cities = 60 }
+		}
+	}
+	text = {
+		localisation_key = string_price_7500
+		trigger = {
+			num_of_cities = 60
+			NOT = { num_of_cities = 61 }
+		}
+	}
+	text = {
+		localisation_key = string_price_7600
+		trigger = {
+			num_of_cities = 61
+			NOT = { num_of_cities = 62 }
+		}
+	}
+	text = {
+		localisation_key = string_price_7700
+		trigger = {
+			num_of_cities = 62
+			NOT = { num_of_cities = 63 }
+		}
+	}
+	text = {
+		localisation_key = string_price_7800
+		trigger = {
+			num_of_cities = 63
+			NOT = { num_of_cities = 64 }
+		}
+	}
+	text = {
+		localisation_key = string_price_7900
+		trigger = {
+			num_of_cities = 64
+			NOT = { num_of_cities = 65 }
+		}
+	}
+	text = {
+		localisation_key = string_price_8000
+		trigger = {
+			num_of_cities = 65
+			NOT = { num_of_cities = 66 }
+		}
+	}
+	text = {
+		localisation_key = string_price_8100
+		trigger = {
+			num_of_cities = 66
+			NOT = { num_of_cities = 67 }
+		}
+	}
+	text = {
+		localisation_key = string_price_8200
+		trigger = {
+			num_of_cities = 67
+			NOT = { num_of_cities = 68 }
+		}
+	}
+	text = {
+		localisation_key = string_price_8300
+		trigger = {
+			num_of_cities = 68
+			NOT = { num_of_cities = 69 }
+		}
+	}
+	text = {
+		localisation_key = string_price_8400
+		trigger = {
+			num_of_cities = 69
+			NOT = { num_of_cities = 70 }
+		}
+	}
+	text = {
+		localisation_key = string_price_8500
+		trigger = {
+			num_of_cities = 70
+			NOT = { num_of_cities = 71 }
+		}
+	}
+	text = {
+		localisation_key = string_price_8600
+		trigger = {
+			num_of_cities = 71
+			NOT = { num_of_cities = 72 }
+		}
+	}
+	text = {
+		localisation_key = string_price_8700
+		trigger = {
+			num_of_cities = 72
+			NOT = { num_of_cities = 73 }
+		}
+	}
+	text = {
+		localisation_key = string_price_8800
+		trigger = {
+			num_of_cities = 73
+			NOT = { num_of_cities = 74 }
+		}
+	}
+	text = {
+		localisation_key = string_price_8900
+		trigger = {
+			num_of_cities = 74
+			NOT = { num_of_cities = 75 }
+		}
+	}
+	text = {
+		localisation_key = string_price_9000
+		trigger = {
+			num_of_cities = 75
+			NOT = { num_of_cities = 76 }
+		}
+	}
+	text = {
+		localisation_key = string_price_9100
+		trigger = {
+			num_of_cities = 76
+			NOT = { num_of_cities = 77 }
+		}
+	}
+	text = {
+		localisation_key = string_price_9200
+		trigger = {
+			num_of_cities = 77
+			NOT = { num_of_cities = 78 }
+		}
+	}
+	text = {
+		localisation_key = string_price_9300
+		trigger = {
+			num_of_cities = 78
+			NOT = { num_of_cities = 79 }
+		}
+	}
+	text = {
+		localisation_key = string_price_9400
+		trigger = {
+			num_of_cities = 79
+			NOT = { num_of_cities = 80 }
+		}
+	}
+	text = {
+		localisation_key = string_price_9500
+		trigger = {
+			num_of_cities = 80
+			NOT = { num_of_cities = 81 }
+		}
+	}
+	text = {
+		localisation_key = string_price_9600
+		trigger = {
+			num_of_cities = 81
+			NOT = { num_of_cities = 82 }
+		}
+	}
+	text = {
+		localisation_key = string_price_9700
+		trigger = {
+			num_of_cities = 82
+			NOT = { num_of_cities = 83 }
+		}
+	}
+	text = {
+		localisation_key = string_price_9800
+		trigger = {
+			num_of_cities = 83
+			NOT = { num_of_cities = 84 }
+		}
+	}
+	text = {
+		localisation_key = string_price_9900
+		trigger = {
+			num_of_cities = 84
+			NOT = { num_of_cities = 85 }
+		}
+	}
+	text = {
+		localisation_key = string_price_10000
+		trigger = {
+			num_of_cities = 85
+		}
+	}
+}
+
+defined_text = {
+	name = GetIfExtraMoneyAndMPMustBePayed
+
+	text = {
+		localisation_key = string_must_pay_extra_price_and_mp
+		trigger = {
+			has_country_modifier = countdown_sold_prov
+		}
+	}
+	text = {
+		localisation_key = string_must_not_pay_extra_price_and_mp
+		trigger = {
+			NOT = { has_country_modifier = countdown_sold_prov }
+		}
+	}
+}
+
+defined_text = {
+	name = GetIfExtraMoneyAndMPIsPayedToUs
+
+	text = {
+		localisation_key = string_gets_payed_extra_price_and_mp
+		trigger = {
+			has_country_modifier = countdown_sold_prov
+		}
+	}
+	text = {
+		localisation_key = string_does_not_get_payed_extra_price_and_mp
+		trigger = {
+			NOT = { has_country_modifier = countdown_sold_prov }
+		}
+	}
+}
+
+defined_text = {
+	name = GetMonthOfLastSell
+
+	text = {
+		localisation_key = string_month_of_last_sell_1
+		trigger = {
+			is_variable_equal = { which = month_of_last_sell value = 1 }
+		}
+	}
+	text = {
+		localisation_key = string_month_of_last_sell_2
+		trigger = {
+			is_variable_equal = { which = month_of_last_sell value = 2 }
+		}
+	}
+	text = {
+		localisation_key = string_month_of_last_sell_3
+		trigger = {
+			is_variable_equal = { which = month_of_last_sell value = 3 }
+		}
+	}
+	text = {
+		localisation_key = string_month_of_last_sell_4
+		trigger = {
+			is_variable_equal = { which = month_of_last_sell value = 4 }
+		}
+	}
+	text = {
+		localisation_key = string_month_of_last_sell_5
+		trigger = {
+			is_variable_equal = { which = month_of_last_sell value = 5 }
+		}
+	}
+	text = {
+		localisation_key = string_month_of_last_sell_6
+		trigger = {
+			is_variable_equal = { which = month_of_last_sell value = 6 }
+		}
+	}
+	text = {
+		localisation_key = string_month_of_last_sell_7
+		trigger = {
+			is_variable_equal = { which = month_of_last_sell value = 7 }
+		}
+	}
+	text = {
+		localisation_key = string_month_of_last_sell_8
+		trigger = {
+			is_variable_equal = { which = month_of_last_sell value = 8 }
+		}
+	}
+	text = {
+		localisation_key = string_month_of_last_sell_9
+		trigger = {
+			is_variable_equal = { which = month_of_last_sell value = 9 }
+		}
+	}
+	text = {
+		localisation_key = string_month_of_last_sell_10
+		trigger = {
+			is_variable_equal = { which = month_of_last_sell value = 10 }
+		}
+	}
+	text = {
+		localisation_key = string_month_of_last_sell_11
+		trigger = {
+			is_variable_equal = { which = month_of_last_sell value = 11 }
+		}
+	}
+	text = {
+		localisation_key = string_month_of_last_sell_12
+		trigger = {
+			is_variable_equal = { which = month_of_last_sell value = 12 }
+		}
+	}
+}
+
+defined_text = {
+	name = GetYearsTilNextPossibleSell
+	random = no
+
+	text = {
+		localisation_key = string_5_years_til_next_possible_sell
+		trigger = {
+			OR = {
+				num_of_cities = 31
+				variable_arithmetic_trigger = {
+					custom_tooltip = COMPARE_NUM_OF_PROVS
+					export_to_variable = {
+						which = our_num_of_provs
+						value = trigger_value:num_of_cities
+						who = ROOT
+					}
+					export_to_variable = {
+						which = their_num_of_provs
+						value = trigger_value:num_of_cities
+					}
+					variable_arithmetic_trigger = {
+						change_variable = { which = their_num_of_provs value = 1 }
+					}
+					divide_variable = { which = their_num_of_provs value = 2 }
+					NOT = { check_variable = { which = our_num_of_provs which = their_num_of_provs } }
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = string_10_years_til_next_possible_sell
+		trigger = {
+			OR = {
+				AND = {
+					num_of_cities = 21
+					NOT = { num_of_cities = 31 }
+				}
+				variable_arithmetic_trigger = {
+					custom_tooltip = COMPARE_NUM_OF_PROVS
+					export_to_variable = {
+						which = our_num_of_provs
+						value = trigger_value:num_of_cities
+						who = ROOT
+					}
+					export_to_variable = {
+						which = their_num_of_provs
+						value = trigger_value:num_of_cities
+					}
+					variable_arithmetic_trigger = {
+						change_variable = { which = their_num_of_provs value = 1 }
+					}
+					divide_variable = { which = their_num_of_provs value = 3 }
+					NOT = { check_variable = { which = our_num_of_provs which = their_num_of_provs } }
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = string_15_years_til_next_possible_sell
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+defined_text = {
+	name = GetCurrentAgeName
+	random = no
+
+	text = {
+		localisation_key = dark_age
+		trigger = {
+			current_age = dark_age
+		}
+	}
+	text = {
+		localisation_key = high_middle_ages
+		trigger = {
+			current_age = high_middle_ages
+		}
+	}
+	text = {
+		localisation_key = industrial_age
+		trigger = {
+			current_age = industrial_age
+		}
+	}
+}

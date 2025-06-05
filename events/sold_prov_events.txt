@@ -1,0 +1,226 @@
+namespace = sold_prov_events
+
+# FROM bought a province from ROOT, ROOT is neighbor of FROM
+country_event = {
+	id = sold_prov_events.1
+	title = "sold_prov_events.EVTNAME1"
+	desc = "sold_prov_events.EVTDESC1"
+	picture = CORRUPTION_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "sold_prov_events1.EVTOPT1"
+		
+		hidden_effect = {
+			change_variable = { which = sold_prov value = 1 }
+			# Save current year in one variable
+			export_to_variable = {
+				which = year_of_last_sell
+				value = trigger_value:is_year
+			}
+			change_variable = { which = year_of_last_sell value = -1 }
+			
+			if = {
+				limit = {
+					has_country_modifier = countdown_sold_prov
+				}
+				remove_country_modifier = countdown_sold_prov
+			}
+			# Set time til next province could be sold
+			set_variable = { which = last_sell_year_variable which = year_of_last_sell } # this date is shown in description of the diplomatic action
+			if = {	# Big Nation = 1 year cooldown
+				limit = {
+					OR = {
+						num_of_cities = 30
+						variable_arithmetic_trigger = {
+							custom_tooltip = COMPARE_NUM_OF_PROVS
+							export_to_variable = {
+								which = our_num_of_provs
+								value = trigger_value:num_of_cities
+								who = FROM
+							}
+							export_to_variable = {
+								which = their_num_of_provs
+								value = trigger_value:num_of_cities
+							}
+							divide_variable = { which = their_num_of_provs value = 2 }
+							NOT = { check_variable = { which = our_num_of_provs which = their_num_of_provs } }
+						}
+					}
+				}
+				add_country_modifier = {
+					name = countdown_sold_prov
+					duration = 365
+					hidden = yes
+				}
+				change_variable = { which = year_of_last_sell value = 5 }
+			}
+			else_if = {	# Medium Sized Nation = 5 years cooldown
+				limit = {
+					OR = {
+						AND = {
+							num_of_cities = 20
+							NOT = { num_of_cities = 30 }
+						}
+						variable_arithmetic_trigger = {
+							custom_tooltip = COMPARE_NUM_OF_PROVS
+							export_to_variable = {
+								which = our_num_of_provs
+								value = trigger_value:num_of_cities
+								who = FROM
+							}
+							export_to_variable = {
+								which = their_num_of_provs
+								value = trigger_value:num_of_cities
+							}
+							divide_variable = { which = their_num_of_provs value = 3 }
+							NOT = { check_variable = { which = our_num_of_provs which = their_num_of_provs } }
+						}
+					}
+				}
+				add_country_modifier = {
+					name = countdown_sold_prov
+					duration = 1825
+					hidden = yes
+				}
+				change_variable = { which = year_of_last_sell value = 10 }
+			}
+			else = {	# Small Nation = 10 years cooldown
+				add_country_modifier = {
+					name = countdown_sold_prov
+					duration = 3650
+					hidden = yes
+				}
+				change_variable = { which = year_of_last_sell value = 15 }
+			}
+			export_to_variable = {
+				which = month_of_last_sell
+				value = trigger_value:is_month
+			}
+			
+			clear_global_event_target = selected_neighbor_country
+		}
+		
+		get_paid_for_prov = yes
+		
+		FROM = {
+			add_country_modifier = {
+				name = countdown_next_buy_prov
+				duration = 5
+				hidden = yes
+			}
+			clr_country_flag = asked_to_buy_province
+		}
+		
+		add_prestige = -10
+		clr_global_flag = player_bought_province
+	}
+	
+}
+
+# FROM bought a province from ROOT, ROOT is colonial nation of FROM
+country_event = {
+	id = sold_prov_events.2
+	title = "sold_prov_events.EVTNAME2"
+	desc = "sold_prov_events.EVTDESC2"
+	picture = CORRUPTION_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "sold_prov_events2.EVTOPT1"
+		
+		hidden_effect = {
+			change_variable = { which = sold_prov value = 1 }
+			clear_global_event_target = selected_colonial_nation
+		}
+		
+		get_paid_for_prov = yes
+		
+		FROM = {
+			add_country_modifier = {
+				name = countdown_next_buy_prov_of_colony
+				duration = 50
+				hidden = yes
+			}
+			clr_country_flag = asked_to_buy_province_of_colony
+		}
+		
+		add_liberty_desire = -5
+		clr_global_flag = player_bought_province
+	}
+}
+
+# FROM bought a province from ROOT, ROOT is subject (not colonial nation) of FROM
+country_event = {
+	id = sold_prov_events.3
+	title = "sold_prov_events.EVTNAME3"
+	desc = "sold_prov_events.EVTDESC3"
+	picture = CORRUPTION_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "sold_prov_events3.EVTOPT1"
+		
+		hidden_effect = {
+			change_variable = { which = sold_prov value = 1 }
+			clear_global_event_target = selected_subject
+		}
+		
+		get_paid_for_prov = yes
+		
+		FROM = {
+			add_country_modifier = {
+				name = countdown_next_buy_prov_of_subject
+				duration = 75
+				hidden = yes
+			}
+			clr_country_flag = asked_to_buy_province_of_subject
+		}
+		
+		if = {
+			limit = {
+				NOT = { religion = secularism }
+				FROM = { NOT = { religion = secularism } }
+				NOT = { religion = FROM }
+			}
+			add_liberty_desire = -5
+		}
+		clr_global_flag = player_bought_province
+	}
+}
+
+# FROM bought a province from ROOT, ROOT is colonial nation of FROM's personal union
+country_event = {
+	id = sold_prov_events.4
+	title = "sold_prov_events.EVTNAME4"
+	desc = "sold_prov_events.EVTDESC4"
+	picture = CORRUPTION_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "sold_prov_events4.EVTOPT1"
+		
+		hidden_effect = {
+			change_variable = { which = sold_prov value = 1 }
+			clear_global_event_target = selected_colonial_nation
+			clear_global_event_target = selected_colonial_nation_overlord
+		}
+		
+		get_paid_for_prov = yes
+		
+		FROM = {
+			add_country_modifier = {
+				name = countdown_next_buy_prov_of_colony
+				duration = 50
+				hidden = yes
+			}
+			clr_country_flag = asked_to_buy_province_of_colony
+		}
+		
+		clr_global_flag = player_bought_province
+	}
+}

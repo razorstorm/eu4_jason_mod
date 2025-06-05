@@ -1,0 +1,128 @@
+﻿l_english:
+ # Neighbors (no subjects)
+ buy_prov_events.EVTNAME1: "Request to buy a province accepted"
+ buy_prov_events.EVTDESC1: "You accepted to sell [From.GetName] a province."
+ buy_prov_events1.EVTOPT1: "OK."
+ 
+ buy_prov_events.EVTNAME2: "Request denied"
+ buy_prov_events.EVTDESC2: "[From.GetName] rejected your request to buy a province. \nBut you can try it again with this or another neighbor country."
+ buy_prov_events2.EVTOPT1: "All right."
+ 
+ buy_prov_events.EVTNAME3: "Choose the province"
+ buy_prov_events.EVTDESC3: "[selected_neighbor_country.GetName] accepted to sell us a province. \nChoose here, which province you want to buy. \nThe higher the province is developed the more ducats it will cost you (max. price: 6000¤). The price is increased, if the province is the capital of [From.GetName] (additional price: 300¤) or if the province has the highest base trade power of all provinces in its trade node that aren't owned by you or your subjects (the additional price is calculated by multiplying the province's base trade power with 10)."
+ buy_prov_events3.EVTOPT1: "We will buy §Y[possible_prov_no_1.GetName]§!."
+ buy_prov_events3.EVTOPT2: "We will buy §Y[possible_prov_no_2.GetName]§!."
+ buy_prov_events3.EVTOPT3: "We will buy §Y[possible_prov_no_3.GetName]§!."
+ buy_prov_events3.EVTOPT4: "We will buy §Y[possible_prov_no_4.GetName]§!."
+ buy_prov_events3.EVTOPT5: "We will buy §Y[possible_prov_no_5.GetName]§!."
+ buy_prov_events3.EVTOPT6: "We will buy §Y[possible_prov_no_6.GetName]§!."
+ buy_prov_events3.EVTOPT7: "We will buy §Y[possible_prov_no_7.GetName]§!."
+ buy_prov_events3.EVTOPT8: "We will buy §Y[possible_prov_no_8.GetName]§!."
+ buy_prov_events3.EVTOPT9: "We will buy §Y[possible_prov_no_9.GetName]§!."
+ buy_prov_events3.EVTOPT10: "We will buy §Y[possible_prov_no_10.GetName]§!."
+ buy_prov_events3.EVTOPT11: "I want to buy another province."
+ buy_prov_events3.EVTOPT12: "No matching province available."
+ buy_prov_events3.EVTOPT13: "Cancel."
+   
+ # Colonial Nations
+ buy_prov_colony_events.EVTNAME1: "Request to buy a province accepted"
+ buy_prov_colony_events.EVTDESC1: "You accepted to sell a province to your colonial parent country ([From.GetName])."
+ buy_prov_colony_events1.EVTOPT1: "OK."
+ 
+ buy_prov_colony_events.EVTNAME2: "Request denied"
+ buy_prov_colony_events.EVTDESC2: "[From.GetName] rejected your request to buy a province. \nBut you can try it again with this or another colonial nation."
+ buy_prov_colony_events2.EVTOPT1: "All right."
+ 
+ buy_prov_colony_events.EVTNAME3: "Choose the province"
+ buy_prov_colony_events.EVTDESC3: "[selected_colonial_nation.GetName] accepted to sell us a province. \nChoose here, which province you want to buy. \nThe higher the province is developed the more ducats it will cost you (max. price: 6000¤)."
+ buy_prov_colony_events3.EVTOPT1: "We will buy §Y[possible_prov_no_1.GetName]§! (§l[possible_prov_no_1.GetColonialRegionName]§!)."
+ buy_prov_colony_events3.EVTOPT2: "We will buy §Y[possible_prov_no_2.GetName]§! (§l[possible_prov_no_2.GetColonialRegionName]§!)."
+ buy_prov_colony_events3.EVTOPT3: "We will buy §Y[possible_prov_no_3.GetName]§! (§l[possible_prov_no_3.GetColonialRegionName]§!)."
+ buy_prov_colony_events3.EVTOPT4: "We will buy §Y[possible_prov_no_4.GetName]§! (§l[possible_prov_no_4.GetColonialRegionName]§!)."
+ buy_prov_colony_events3.EVTOPT5: "We will buy §Y[possible_prov_no_5.GetName]§! (§l[possible_prov_no_5.GetColonialRegionName]§!)."
+ buy_prov_colony_events3.EVTOPT6: "We will buy §Y[possible_prov_no_6.GetName]§! (§l[possible_prov_no_6.GetColonialRegionName]§!)."
+ buy_prov_colony_events3.EVTOPT7: "We will buy §Y[possible_prov_no_7.GetName]§! (§l[possible_prov_no_7.GetColonialRegionName]§!)."
+ buy_prov_colony_events3.EVTOPT8: "We will buy §Y[possible_prov_no_8.GetName]§! (§l[possible_prov_no_8.GetColonialRegionName]§!)."
+ buy_prov_colony_events3.EVTOPT9: "We will buy §Y[possible_prov_no_9.GetName]§! (§l[possible_prov_no_9.GetColonialRegionName]§!)."
+ buy_prov_colony_events3.EVTOPT10: "We will buy §Y[possible_prov_no_10.GetName]§! (§l[possible_prov_no_10.GetColonialRegionName]§!)."
+ buy_prov_colony_events3.EVTOPT11: "I want to buy another province."
+ buy_prov_colony_events3.EVTOPT12: "Sadly there is no matching province."
+ buy_prov_colony_events3.EVTOPT13: "Cancel."
+ 
+ # Unions' colonial Nations
+ buy_prov_union_colony_events.EVTNAME1: "Request to buy a province accepted"
+ buy_prov_union_colony_events.EVTDESC1: "You accepted to sell a province to your colonial parent country's overlord ([From.GetName]), which will be ceded to your overlord ([Root.Overlord.GetName]) afterwards."
+ buy_prov_union_colony_events1.EVTOPT1: "OK."
+ 
+ buy_prov_union_colony_events.EVTNAME2: "Request denied"
+ buy_prov_union_colony_events.EVTDESC2: "[From.GetName] rejected your request to buy a province. \nBut you can try it again with this or another colonial nation."
+ buy_prov_union_colony_events2.EVTOPT1: "All right."
+ 
+ buy_prov_union_colony_events.EVTNAME3: "Choose the province"
+ buy_prov_union_colony_events.EVTDESC3: "[selected_colonial_nation.GetName] accepted to sell us a province. \nChoose here, which province you want to buy. \nThe higher the province is developed the more ducats it will cost you (max. price: 6000¤). Since [selected_colonial_nation.GetName] is a colonial nation of one of your subjects, the province will not be ceded to you, but to [selected_colonial_nation_overlord.GetName] afterwards."
+ buy_prov_union_colony_events3.EVTOPT1: "We will buy §Y[possible_prov_no_1.GetName]§! (§l[possible_prov_no_1.GetColonialRegionName]§!)."
+ buy_prov_union_colony_events3.EVTOPT2: "We will buy §Y[possible_prov_no_2.GetName]§! (§l[possible_prov_no_2.GetColonialRegionName]§!)."
+ buy_prov_union_colony_events3.EVTOPT3: "We will buy §Y[possible_prov_no_3.GetName]§! (§l[possible_prov_no_3.GetColonialRegionName]§!)."
+ buy_prov_union_colony_events3.EVTOPT4: "We will buy §Y[possible_prov_no_4.GetName]§! (§l[possible_prov_no_4.GetColonialRegionName]§!)."
+ buy_prov_union_colony_events3.EVTOPT5: "We will buy §Y[possible_prov_no_5.GetName]§! (§l[possible_prov_no_5.GetColonialRegionName]§!)."
+ buy_prov_union_colony_events3.EVTOPT6: "We will buy §Y[possible_prov_no_6.GetName]§! (§l[possible_prov_no_6.GetColonialRegionName]§!)."
+ buy_prov_union_colony_events3.EVTOPT7: "We will buy §Y[possible_prov_no_7.GetName]§! (§l[possible_prov_no_7.GetColonialRegionName]§!)."
+ buy_prov_union_colony_events3.EVTOPT8: "We will buy §Y[possible_prov_no_8.GetName]§! (§l[possible_prov_no_8.GetColonialRegionName]§!)."
+ buy_prov_union_colony_events3.EVTOPT9: "We will buy §Y[possible_prov_no_9.GetName]§! (§l[possible_prov_no_9.GetColonialRegionName]§!)."
+ buy_prov_union_colony_events3.EVTOPT10: "We will buy §Y[possible_prov_no_10.GetName]§! (§l[possible_prov_no_10.GetColonialRegionName]§!)."
+ buy_prov_union_colony_events3.EVTOPT11: "I want to buy another province."
+ buy_prov_union_colony_events3.EVTOPT12: "Sadly there is no matching province."
+ buy_prov_union_colony_events3.EVTOPT13: "Cancel."
+ 
+ # Subjects (no CNs)
+ buy_prov_subject_events.EVTNAME1: "Request to buy a province accepted"
+ buy_prov_subject_events.EVTDESC1: "You accepted to sell a province to your overlord ([From.GetName])."
+ buy_prov_subject_events1.EVTOPT1: "OK."
+ 
+ buy_prov_subject_events.EVTNAME2: "Request denied"
+ buy_prov_subject_events.EVTDESC2: "[From.GetName] rejected your request to buy a province. \nBut you can try it again with this or another subject."
+ buy_prov_subject_events2.EVTOPT1: "All right."
+ 
+ buy_prov_subject_events.EVTNAME3: "Choose the province"
+ buy_prov_subject_events.EVTDESC3: "[selected_subject_nation.GetName] acceded to sell us a province. \nChoose here, which province you want to buy. \nThe higher the province is developed the more ducats it will cost you (max. price: 6000¤)."
+ buy_prov_subject_events3.EVTOPT1: "We will buy §Y[possible_prov_no_1.GetName]§!."
+ buy_prov_subject_events3.EVTOPT2: "We will buy §Y[possible_prov_no_2.GetName]§!."
+ buy_prov_subject_events3.EVTOPT3: "We will buy §Y[possible_prov_no_3.GetName]§!."
+ buy_prov_subject_events3.EVTOPT4: "We will buy §Y[possible_prov_no_4.GetName]§!."
+ buy_prov_subject_events3.EVTOPT5: "We will buy §Y[possible_prov_no_5.GetName]§!."
+ buy_prov_subject_events3.EVTOPT6: "We will buy §Y[possible_prov_no_6.GetName]§!."
+ buy_prov_subject_events3.EVTOPT7: "We will buy §Y[possible_prov_no_7.GetName]§!."
+ buy_prov_subject_events3.EVTOPT8: "We will buy §Y[possible_prov_no_8.GetName]§!."
+ buy_prov_subject_events3.EVTOPT9: "We will buy §Y[possible_prov_no_9.GetName]§!."
+ buy_prov_subject_events3.EVTOPT10: "We will buy §Y[possible_prov_no_10.GetName]§!."
+ buy_prov_subject_events3.EVTOPT11: "I want to buy another province."
+ buy_prov_subject_events3.EVTOPT12: "Sadly there is no matching province."
+ buy_prov_subject_events3.EVTOPT13: "Cancel."
+ 
+ # Province sold
+ sold_prov_events.EVTNAME1: "Province sold"
+ sold_prov_events.EVTDESC1: "You sold a province to [From.GetName]."
+ sold_prov_events1.EVTOPT1: "All right."
+ 
+ sold_prov_events.EVTNAME2: "Province sold"
+ sold_prov_events.EVTDESC2: "You sold a province to [From.GetName]."
+ sold_prov_events2.EVTOPT1: "All right."
+ 
+ sold_prov_events.EVTNAME3: "Province sold"
+ sold_prov_events.EVTDESC3: "You sold a province to [From.GetName]."
+ sold_prov_events3.EVTOPT1: "All right."
+ 
+ sold_prov_events.EVTNAME4: "Province sold"
+ sold_prov_events.EVTDESC4: "You sold a province to [From.GetName]."
+ sold_prov_events4.EVTOPT1: "All right."
+  
+ # Buy a CN
+ buy_colonial_nation_events.EVTNAME1: "New colonial government in §Y[bought_colonial_nation.GetName]§!?"
+ buy_colonial_nation_events.EVTDESC1: "We successfully bought the colonial nation §Y[bought_colonial_nation.GetName]§! from another country. Since they our now our subject, we should replace their current government, because they could be more rebillious otherwise. If we appoint a new [bought_colonial_nation.Monarch.GetTitle], we should also decrease the tariff rate for this colonial nation to calm the population."
+ buy_colonial_nation_events1.EVTOPT1: "Keep the [bought_colonial_nation.Monarch.GetTitle] §Y[bought_colonial_nation.Monarch.GetName]§!."
+ buy_colonial_nation_events1.EVTOPT2: "Appoint a new [bought_colonial_nation.Monarch.GetTitle]."
+ 
+ buy_colonial_nation_events.EVTNAME2: "§Y[Root.GetName]§! sells a colonial nation to §Y[From.GetName]§!"
+ buy_colonial_nation_events.EVTDESC2: "Mainly because of their debts and corruption, [Root.GetName] sold one of their colonial nations to [From.GetName]. Only the future can show, if this decision will have terrible consequences for them."
+ buy_colonial_nation_events2.EVTOPT1: "Interesting."
+ 

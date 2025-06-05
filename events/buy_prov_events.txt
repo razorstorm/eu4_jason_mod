@@ -1,0 +1,1574 @@
+namespace = buy_prov_events
+
+# ROOT is marked as 'selected_neighbor_country'
+country_event = {
+	id = buy_prov_events.1
+	title = "buy_prov_events.EVTNAME1"
+	desc = "buy_prov_events.EVTDESC1"
+	picture = CITY_VIEW_eventPicture
+
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			save_global_event_target_as = selected_neighbor_country
+			every_owned_province = {
+				limit = {
+					OR = {
+						AND = {
+							has_port = yes
+							sea_zone = {
+								any_neighbor_province = {
+									has_port = yes
+									OR = {
+										AND = {
+											owned_by = FROM
+											is_core = FROM
+										}
+										AND = {
+											owner = { is_colonial_nation_of = FROM }
+											is_core = owner
+										}
+									}
+								}
+							}
+						}
+						any_neighbor_province = {
+							OR = {
+								AND = {
+									owned_by = FROM
+									is_core = FROM
+								}
+								AND = {
+									owner = { is_colonial_nation_of = FROM }
+									is_core = owner
+								}
+							}
+						}
+					}
+				}
+				set_province_flag = counted_as_possible_province
+
+				# Calculate additional price for province, which has to be paid, if province has much trade influence
+				# Export province's base trade power
+				export_to_variable = {
+					which = province_trade_power_variable
+					value = modifier:province_trade_power_value
+				}
+				# Export province's trade power modifier
+				export_to_variable = {
+					which = province_trade_power_modifier_variable
+					value = modifier:province_trade_power_modifier
+				}
+				# Export province's owner's trade power modifier
+				export_to_variable = {
+					which = owner_trade_power_modifier_variable
+					value = modifier:global_prov_trade_power_modifier
+					who = ROOT
+				}
+				# Add 1.0 to province's trade power modifier, because it is 100% by default
+				change_variable = { which = province_trade_power_modifier_variable value = 1.0 }
+				# Add both trade power modifier variables
+				change_variable = { which = province_trade_power_modifier_variable which = owner_trade_power_modifier_variable }
+				# Multiply province's base trade power with total trade power modifier to get current total province trade power
+				multiply_variable = { which = province_trade_power_variable which = province_trade_power_modifier_variable }
+
+				# Round variable
+				change_variable = { which = province_trade_power_variable value = 0.5 }
+				divide_variable = { which = province_trade_power_variable value = 1000 }
+				multiply_variable = { which = province_trade_power_variable value = 1000 }
+
+				# Multiply current total province trade power with VALUE to get additional price
+				multiply_variable = { which = province_trade_power_variable value = 10 }
+			}
+			FROM = { country_event = { id = buy_prov_events.3 } }	# AI accepted
+		}
+	}
+
+	option = {
+		name = "buy_prov_events1.EVTOPT1"
+		ai_chance = { factor = 100 }
+	}
+}
+
+# FROM rejected to sell a province
+country_event = {
+	id = buy_prov_events.2
+	title = "buy_prov_events.EVTNAME2"
+	desc = "buy_prov_events.EVTDESC2"
+	picture = CITY_VIEW_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		always = no # Not needed anymore
+	}
+
+	option = { # was NOT allowed to buy province
+		name = "buy_prov_events2.EVTOPT1"
+		ai_chance = { factor = 100 }
+	}
+}
+
+# Choose province you want to buy (1. Event)
+country_event = {
+	id = buy_prov_events.3
+	title = "buy_prov_events.EVTNAME3"
+	desc = "buy_prov_events.EVTDESC3"
+	picture = CITY_VIEW_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			# Save 1. Province
+			random_province = {
+				limit = {
+					owned_by = event_target:selected_neighbor_country
+					has_province_flag = counted_as_possible_province
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_prov_no_1
+			}
+			# Save 2. Province
+			random_province = {
+				limit = {
+					owned_by = event_target:selected_neighbor_country
+					has_province_flag = counted_as_possible_province
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_prov_no_2
+			}
+			# Save 3. Province
+			random_province = {
+				limit = {
+					owned_by = event_target:selected_neighbor_country
+					has_province_flag = counted_as_possible_province
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_prov_no_3
+			}
+			# Save 4. Province
+			random_province = {
+				limit = {
+					owned_by = event_target:selected_neighbor_country
+					has_province_flag = counted_as_possible_province
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_prov_no_4
+			}
+			# Save 5. Province
+			random_province = {
+				limit = {
+					owned_by = event_target:selected_neighbor_country
+					has_province_flag = counted_as_possible_province
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_prov_no_5
+			}
+			# Save 6. Province
+			random_province = {
+				limit = {
+					owned_by = event_target:selected_neighbor_country
+					has_province_flag = counted_as_possible_province
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_prov_no_6
+			}
+			# Save 7. Province
+			random_province = {
+				limit = {
+					owned_by = event_target:selected_neighbor_country
+					has_province_flag = counted_as_possible_province
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_prov_no_7
+			}
+			# Save 8. Province
+			random_province = {
+				limit = {
+					owned_by = event_target:selected_neighbor_country
+					has_province_flag = counted_as_possible_province
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_prov_no_8
+			}
+			# Save 9. Province
+			random_province = {
+				limit = {
+					owned_by = event_target:selected_neighbor_country
+					has_province_flag = counted_as_possible_province
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_prov_no_9
+			}
+			# Save 10. Province
+			random_province = {
+				limit = {
+					owned_by = event_target:selected_neighbor_country
+					has_province_flag = counted_as_possible_province
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_prov_no_10
+			}
+		}
+	}
+
+	option = { # 1. saved Province
+		name = "buy_prov_events3.EVTOPT1"
+
+		goto = possible_prov_no_1
+
+		trigger = {
+			event_target:possible_prov_no_1 = {
+				owned_by = event_target:selected_neighbor_country
+				NOT = { has_province_flag = already_rejected_prov }
+			}
+		}
+
+		event_target:possible_prov_no_1 = {
+			if = {
+				limit = {
+					is_capital = yes
+				}
+				set_province_flag = was_capital_before_it_was_bought
+			}
+			cede_province = ROOT
+			remove_core = event_target:selected_neighbor_country
+
+			pay_for_prov = { who = event_target:selected_neighbor_country }
+		}
+
+		event_target:selected_neighbor_country = { country_event = { id = sold_prov_events.1 } }
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_prov
+				}
+				clr_province_flag = already_rejected_prov
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_as_possible_province
+				}
+				clr_province_flag = counted_as_possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+		}
+	}
+
+	option = { # 2. saved Province
+		name = "buy_prov_events3.EVTOPT2"
+
+		goto = possible_prov_no_2
+
+		trigger = {
+			event_target:possible_prov_no_2 = {
+				owned_by = event_target:selected_neighbor_country
+				NOT = { has_province_flag = already_rejected_prov }
+			}
+		}
+
+		event_target:possible_prov_no_2 = {
+			if = {
+				limit = {
+					is_capital = yes
+				}
+				set_province_flag = was_capital_before_it_was_bought
+			}
+			cede_province = ROOT
+			remove_core = event_target:selected_neighbor_country
+
+			pay_for_prov = { who = event_target:selected_neighbor_country }
+		}
+
+		event_target:selected_neighbor_country = { country_event = { id = sold_prov_events.1 } }
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_prov
+				}
+				clr_province_flag = already_rejected_prov
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_as_possible_province
+				}
+				clr_province_flag = counted_as_possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+		}
+	}
+
+	option = { # 3. saved Province
+		name = "buy_prov_events3.EVTOPT3"
+
+		goto = possible_prov_no_3
+
+		trigger = {
+			event_target:possible_prov_no_3 = {
+				owned_by = event_target:selected_neighbor_country
+				NOT = { has_province_flag = already_rejected_prov }
+			}
+		}
+
+		event_target:possible_prov_no_3 = {
+			if = {
+				limit = {
+					is_capital = yes
+				}
+				set_province_flag = was_capital_before_it_was_bought
+			}
+			cede_province = ROOT
+			remove_core = event_target:selected_neighbor_country
+
+			pay_for_prov = { who = event_target:selected_neighbor_country }
+		}
+
+		event_target:selected_neighbor_country = { country_event = { id = sold_prov_events.1 } }
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_prov
+				}
+				clr_province_flag = already_rejected_prov
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_as_possible_province
+				}
+				clr_province_flag = counted_as_possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+		}
+	}
+
+	option = { # 4. saved Province
+		name = "buy_prov_events3.EVTOPT4"
+
+		goto = possible_prov_no_4
+
+		trigger = {
+			event_target:possible_prov_no_4 = {
+				owned_by = event_target:selected_neighbor_country
+				NOT = { has_province_flag = already_rejected_prov }
+			}
+		}
+
+		event_target:possible_prov_no_4 = {
+			if = {
+				limit = {
+					is_capital = yes
+				}
+				set_province_flag = was_capital_before_it_was_bought
+			}
+			cede_province = ROOT
+			remove_core = event_target:selected_neighbor_country
+
+			pay_for_prov = { who = event_target:selected_neighbor_country }
+		}
+
+		event_target:selected_neighbor_country = { country_event = { id = sold_prov_events.1 } }
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_prov
+				}
+				clr_province_flag = already_rejected_prov
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_as_possible_province
+				}
+				clr_province_flag = counted_as_possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+		}
+	}
+
+	option = { # 5. saved Province
+		name = "buy_prov_events3.EVTOPT5"
+
+		goto = possible_prov_no_5
+
+		trigger = {
+			event_target:possible_prov_no_5 = {
+				owned_by = event_target:selected_neighbor_country
+				NOT = { has_province_flag = already_rejected_prov }
+			}
+		}
+
+		event_target:possible_prov_no_5 = {
+			if = {
+				limit = {
+					is_capital = yes
+				}
+				set_province_flag = was_capital_before_it_was_bought
+			}
+			cede_province = ROOT
+			remove_core = event_target:selected_neighbor_country
+
+			pay_for_prov = { who = event_target:selected_neighbor_country }
+		}
+
+		event_target:selected_neighbor_country = { country_event = { id = sold_prov_events.1 } }
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_prov
+				}
+				clr_province_flag = already_rejected_prov
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_as_possible_province
+				}
+				clr_province_flag = counted_as_possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+		}
+	}
+
+	option = { # 6. saved Province
+		name = "buy_prov_events3.EVTOPT6"
+
+		goto = possible_prov_no_6
+
+		trigger = {
+			event_target:possible_prov_no_6 = {
+				owned_by = event_target:selected_neighbor_country
+				NOT = { has_province_flag = already_rejected_prov }
+			}
+		}
+
+		event_target:possible_prov_no_6 = {
+			if = {
+				limit = {
+					is_capital = yes
+				}
+				set_province_flag = was_capital_before_it_was_bought
+			}
+			cede_province = ROOT
+			remove_core = event_target:selected_neighbor_country
+
+			pay_for_prov = { who = event_target:selected_neighbor_country }
+		}
+
+		event_target:selected_neighbor_country = { country_event = { id = sold_prov_events.1 } }
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_prov
+				}
+				clr_province_flag = already_rejected_prov
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_as_possible_province
+				}
+				clr_province_flag = counted_as_possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+		}
+	}
+
+	option = { # 7. saved Province
+		name = "buy_prov_events3.EVTOPT7"
+
+		goto = possible_prov_no_7
+
+		trigger = {
+			event_target:possible_prov_no_7 = {
+				owned_by = event_target:selected_neighbor_country
+				NOT = { has_province_flag = already_rejected_prov }
+			}
+		}
+
+		event_target:possible_prov_no_7 = {
+			if = {
+				limit = {
+					is_capital = yes
+				}
+				set_province_flag = was_capital_before_it_was_bought
+			}
+			cede_province = ROOT
+			remove_core = event_target:selected_neighbor_country
+
+			pay_for_prov = { who = event_target:selected_neighbor_country }
+		}
+
+		event_target:selected_neighbor_country = { country_event = { id = sold_prov_events.1 } }
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_prov
+				}
+				clr_province_flag = already_rejected_prov
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_as_possible_province
+				}
+				clr_province_flag = counted_as_possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+		}
+	}
+
+	option = { # 8. saved Province
+		name = "buy_prov_events3.EVTOPT8"
+
+		goto = possible_prov_no_8
+
+		trigger = {
+			event_target:possible_prov_no_8 = {
+				owned_by = event_target:selected_neighbor_country
+				NOT = { has_province_flag = already_rejected_prov }
+			}
+		}
+
+		event_target:possible_prov_no_8 = {
+			if = {
+				limit = {
+					is_capital = yes
+				}
+				set_province_flag = was_capital_before_it_was_bought
+			}
+			cede_province = ROOT
+			remove_core = event_target:selected_neighbor_country
+
+			pay_for_prov = { who = event_target:selected_neighbor_country }
+		}
+
+		event_target:selected_neighbor_country = { country_event = { id = sold_prov_events.1 } }
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_prov
+				}
+				clr_province_flag = already_rejected_prov
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_as_possible_province
+				}
+				clr_province_flag = counted_as_possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+		}
+	}
+
+	option = { # 9. saved Province
+		name = "buy_prov_events3.EVTOPT9"
+
+		goto = possible_prov_no_9
+
+		trigger = {
+			event_target:possible_prov_no_9 = {
+				owned_by = event_target:selected_neighbor_country
+				NOT = { has_province_flag = already_rejected_prov }
+			}
+		}
+
+		event_target:possible_prov_no_9 = {
+			if = {
+				limit = {
+					is_capital = yes
+				}
+				set_province_flag = was_capital_before_it_was_bought
+			}
+			cede_province = ROOT
+			remove_core = event_target:selected_neighbor_country
+
+			pay_for_prov = { who = event_target:selected_neighbor_country }
+		}
+
+		event_target:selected_neighbor_country = { country_event = { id = sold_prov_events.1 } }
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_prov
+				}
+				clr_province_flag = already_rejected_prov
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_as_possible_province
+				}
+				clr_province_flag = counted_as_possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+		}
+	}
+
+	option = { # 10. saved Province
+		name = "buy_prov_events3.EVTOPT10"
+
+		goto = possible_prov_no_10
+
+		trigger = {
+			event_target:possible_prov_no_10 = {
+				owned_by = event_target:selected_neighbor_country
+				NOT = { has_province_flag = already_rejected_prov }
+			}
+		}
+
+		event_target:possible_prov_no_10 = {
+			if = {
+				limit = {
+					is_capital = yes
+				}
+				set_province_flag = was_capital_before_it_was_bought
+			}
+			cede_province = ROOT
+			remove_core = event_target:selected_neighbor_country
+
+			pay_for_prov = { who = event_target:selected_neighbor_country }
+		}
+
+		event_target:selected_neighbor_country = { country_event = { id = sold_prov_events.1 } }
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_prov
+				}
+				clr_province_flag = already_rejected_prov
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_as_possible_province
+				}
+				clr_province_flag = counted_as_possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+		}
+	}
+
+	option = { # The next 10 provinces
+		name = "buy_prov_events3.EVTOPT11"
+
+		trigger = {
+			any_province = {
+				owned_by = event_target:selected_neighbor_country
+				has_province_flag = counted_as_possible_province
+				NOT = { has_province_flag = already_rejected_prov }
+				NOT = { has_province_flag = possible_province }
+			}
+		}
+
+		every_province = {
+			limit = {
+				OR = {
+					province_id = event_target:possible_prov_no_1
+					province_id = event_target:possible_prov_no_2
+					province_id = event_target:possible_prov_no_3
+					province_id = event_target:possible_prov_no_4
+					province_id = event_target:possible_prov_no_5
+					province_id = event_target:possible_prov_no_6
+					province_id = event_target:possible_prov_no_7
+					province_id = event_target:possible_prov_no_8
+					province_id = event_target:possible_prov_no_9
+					province_id = event_target:possible_prov_no_10
+				}
+			}
+			set_province_flag = already_rejected_prov
+		}
+
+		country_event = { id = buy_prov_events.4 }
+	}
+
+	option = { # No matching Province (e.g. no owned core province is a neighbor province)
+		name = "buy_prov_events3.EVTOPT12"
+
+		trigger = {
+			event_target:selected_neighbor_country = {
+				all_owned_province = {
+					NOT = { province_id = event_target:possible_prov_no_1 }
+					NOT = { province_id = event_target:possible_prov_no_2 }
+					NOT = { province_id = event_target:possible_prov_no_3 }
+					NOT = { province_id = event_target:possible_prov_no_4 }
+					NOT = { province_id = event_target:possible_prov_no_5 }
+					NOT = { province_id = event_target:possible_prov_no_6 }
+					NOT = { province_id = event_target:possible_prov_no_7 }
+					NOT = { province_id = event_target:possible_prov_no_8 }
+					NOT = { province_id = event_target:possible_prov_no_9 }
+					NOT = { province_id = event_target:possible_prov_no_10 }
+				}
+			}
+		}
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_prov
+				}
+				clr_province_flag = already_rejected_prov
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_as_possible_province
+				}
+				clr_province_flag = counted_as_possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+		}
+
+		custom_tooltip = NO_FITTING_PROVINCE_TO_BUY_FROM_NEIGHBOR
+		clr_country_flag = asked_to_buy_province
+		clr_global_flag = player_bought_province
+	}
+
+	option = { # Cancel
+		name = "buy_prov_events3.EVTOPT13"
+
+		trigger = {
+			event_target:selected_neighbor_country = {
+				any_owned_province = {
+					OR = {
+						province_id = event_target:possible_prov_no_1
+						province_id = event_target:possible_prov_no_2
+						province_id = event_target:possible_prov_no_3
+						province_id = event_target:possible_prov_no_4
+						province_id = event_target:possible_prov_no_5
+						province_id = event_target:possible_prov_no_6
+						province_id = event_target:possible_prov_no_7
+						province_id = event_target:possible_prov_no_8
+						province_id = event_target:possible_prov_no_9
+						province_id = event_target:possible_prov_no_10
+					}
+				}
+			}
+		}
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_prov
+				}
+				clr_province_flag = already_rejected_prov
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_as_possible_province
+				}
+				clr_province_flag = counted_as_possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+		}
+
+		clr_country_flag = asked_to_buy_province
+		clr_global_flag = player_bought_province
+	}
+}
+
+# Choose province you want to buy (2. Event)
+country_event = {
+	id = buy_prov_events.4
+	title = "buy_prov_events.EVTNAME3"
+	desc = "buy_prov_events.EVTDESC3"
+	picture = CITY_VIEW_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			# Save 1. Province
+			random_province = {
+				limit = {
+					owned_by = event_target:selected_neighbor_country
+					has_province_flag = counted_as_possible_province
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_prov_no_1
+			}
+			# Save 2. Province
+			random_province = {
+				limit = {
+					owned_by = event_target:selected_neighbor_country
+					has_province_flag = counted_as_possible_province
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_prov_no_2
+			}
+			# Save 3. Province
+			random_province = {
+				limit = {
+					owned_by = event_target:selected_neighbor_country
+					has_province_flag = counted_as_possible_province
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_prov_no_3
+			}
+			# Save 4. Province
+			random_province = {
+				limit = {
+					owned_by = event_target:selected_neighbor_country
+					has_province_flag = counted_as_possible_province
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_prov_no_4
+			}
+			# Save 5. Province
+			random_province = {
+				limit = {
+					owned_by = event_target:selected_neighbor_country
+					has_province_flag = counted_as_possible_province
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_prov_no_5
+			}
+			# Save 6. Province
+			random_province = {
+				limit = {
+					owned_by = event_target:selected_neighbor_country
+					has_province_flag = counted_as_possible_province
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_prov_no_6
+			}
+			# Save 7. Province
+			random_province = {
+				limit = {
+					owned_by = event_target:selected_neighbor_country
+					has_province_flag = counted_as_possible_province
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_prov_no_7
+			}
+			# Save 8. Province
+			random_province = {
+				limit = {
+					owned_by = event_target:selected_neighbor_country
+					has_province_flag = counted_as_possible_province
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_prov_no_8
+			}
+			# Save 9. Province
+			random_province = {
+				limit = {
+					owned_by = event_target:selected_neighbor_country
+					has_province_flag = counted_as_possible_province
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_prov_no_9
+			}
+			# Save 10. Province
+			random_province = {
+				limit = {
+					owned_by = event_target:selected_neighbor_country
+					has_province_flag = counted_as_possible_province
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_prov_no_10
+			}
+		}
+	}
+
+	option = { # 1. saved Province
+		name = "buy_prov_events3.EVTOPT1"
+
+		goto = possible_prov_no_1
+
+		trigger = {
+			event_target:possible_prov_no_1 = {
+				owned_by = event_target:selected_neighbor_country
+				NOT = { has_province_flag = already_rejected_prov }
+			}
+		}
+
+		event_target:possible_prov_no_1 = {
+			if = {
+				limit = {
+					is_capital = yes
+				}
+				set_province_flag = was_capital_before_it_was_bought
+			}
+			cede_province = ROOT
+			remove_core = event_target:selected_neighbor_country
+
+			pay_for_prov = { who = event_target:selected_neighbor_country }
+		}
+
+		event_target:selected_neighbor_country = { country_event = { id = sold_prov_events.1 } }
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_prov
+				}
+				clr_province_flag = already_rejected_prov
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_as_possible_province
+				}
+				clr_province_flag = counted_as_possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+		}
+	}
+
+	option = { # 2. saved Province
+		name = "buy_prov_events3.EVTOPT2"
+
+		goto = possible_prov_no_2
+
+		trigger = {
+			event_target:possible_prov_no_2 = {
+				owned_by = event_target:selected_neighbor_country
+				NOT = { has_province_flag = already_rejected_prov }
+			}
+		}
+
+		event_target:possible_prov_no_2 = {
+			if = {
+				limit = {
+					is_capital = yes
+				}
+				set_province_flag = was_capital_before_it_was_bought
+			}
+			cede_province = ROOT
+			remove_core = event_target:selected_neighbor_country
+
+			pay_for_prov = { who = event_target:selected_neighbor_country }
+		}
+
+		event_target:selected_neighbor_country = { country_event = { id = sold_prov_events.1 } }
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_prov
+				}
+				clr_province_flag = already_rejected_prov
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_as_possible_province
+				}
+				clr_province_flag = counted_as_possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+		}
+	}
+
+	option = { # 3. saved Province
+		name = "buy_prov_events3.EVTOPT3"
+
+		goto = possible_prov_no_3
+
+		trigger = {
+			event_target:possible_prov_no_3 = {
+				owned_by = event_target:selected_neighbor_country
+				NOT = { has_province_flag = already_rejected_prov }
+			}
+		}
+
+		event_target:possible_prov_no_3 = {
+			if = {
+				limit = {
+					is_capital = yes
+				}
+				set_province_flag = was_capital_before_it_was_bought
+			}
+			cede_province = ROOT
+			remove_core = event_target:selected_neighbor_country
+
+			pay_for_prov = { who = event_target:selected_neighbor_country }
+		}
+
+		event_target:selected_neighbor_country = { country_event = { id = sold_prov_events.1 } }
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_prov
+				}
+				clr_province_flag = already_rejected_prov
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_as_possible_province
+				}
+				clr_province_flag = counted_as_possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+		}
+	}
+
+	option = { # 4. saved Province
+		name = "buy_prov_events3.EVTOPT4"
+
+		goto = possible_prov_no_4
+
+		trigger = {
+			event_target:possible_prov_no_4 = {
+				owned_by = event_target:selected_neighbor_country
+				NOT = { has_province_flag = already_rejected_prov }
+			}
+		}
+
+		event_target:possible_prov_no_4 = {
+			if = {
+				limit = {
+					is_capital = yes
+				}
+				set_province_flag = was_capital_before_it_was_bought
+			}
+			cede_province = ROOT
+			remove_core = event_target:selected_neighbor_country
+
+			pay_for_prov = { who = event_target:selected_neighbor_country }
+		}
+
+		event_target:selected_neighbor_country = { country_event = { id = sold_prov_events.1 } }
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_prov
+				}
+				clr_province_flag = already_rejected_prov
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_as_possible_province
+				}
+				clr_province_flag = counted_as_possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+		}
+	}
+
+	option = { # 5. saved Province
+		name = "buy_prov_events3.EVTOPT5"
+
+		goto = possible_prov_no_5
+
+		trigger = {
+			event_target:possible_prov_no_5 = {
+				owned_by = event_target:selected_neighbor_country
+				NOT = { has_province_flag = already_rejected_prov }
+			}
+		}
+
+		event_target:possible_prov_no_5 = {
+			if = {
+				limit = {
+					is_capital = yes
+				}
+				set_province_flag = was_capital_before_it_was_bought
+			}
+			cede_province = ROOT
+			remove_core = event_target:selected_neighbor_country
+
+			pay_for_prov = { who = event_target:selected_neighbor_country }
+		}
+
+		event_target:selected_neighbor_country = { country_event = { id = sold_prov_events.1 } }
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_prov
+				}
+				clr_province_flag = already_rejected_prov
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_as_possible_province
+				}
+				clr_province_flag = counted_as_possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+		}
+	}
+
+	option = { # 6. saved Province
+		name = "buy_prov_events3.EVTOPT6"
+
+		goto = possible_prov_no_6
+
+		trigger = {
+			event_target:possible_prov_no_6 = {
+				owned_by = event_target:selected_neighbor_country
+				NOT = { has_province_flag = already_rejected_prov }
+			}
+		}
+
+		event_target:possible_prov_no_6 = {
+			if = {
+				limit = {
+					is_capital = yes
+				}
+				set_province_flag = was_capital_before_it_was_bought
+			}
+			cede_province = ROOT
+			remove_core = event_target:selected_neighbor_country
+
+			pay_for_prov = { who = event_target:selected_neighbor_country }
+		}
+
+		event_target:selected_neighbor_country = { country_event = { id = sold_prov_events.1 } }
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_prov
+				}
+				clr_province_flag = already_rejected_prov
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_as_possible_province
+				}
+				clr_province_flag = counted_as_possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+		}
+	}
+
+	option = { # 7. saved Province
+		name = "buy_prov_events3.EVTOPT7"
+
+		goto = possible_prov_no_7
+
+		trigger = {
+			event_target:possible_prov_no_7 = {
+				owned_by = event_target:selected_neighbor_country
+				NOT = { has_province_flag = already_rejected_prov }
+			}
+		}
+
+		event_target:possible_prov_no_7 = {
+			if = {
+				limit = {
+					is_capital = yes
+				}
+				set_province_flag = was_capital_before_it_was_bought
+			}
+			cede_province = ROOT
+			remove_core = event_target:selected_neighbor_country
+
+			pay_for_prov = { who = event_target:selected_neighbor_country }
+		}
+
+		event_target:selected_neighbor_country = { country_event = { id = sold_prov_events.1 } }
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_prov
+				}
+				clr_province_flag = already_rejected_prov
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_as_possible_province
+				}
+				clr_province_flag = counted_as_possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+		}
+	}
+
+	option = { # 8. saved Province
+		name = "buy_prov_events3.EVTOPT8"
+
+		goto = possible_prov_no_8
+
+		trigger = {
+			event_target:possible_prov_no_8 = {
+				owned_by = event_target:selected_neighbor_country
+				NOT = { has_province_flag = already_rejected_prov }
+			}
+		}
+
+		event_target:possible_prov_no_8 = {
+			if = {
+				limit = {
+					is_capital = yes
+				}
+				set_province_flag = was_capital_before_it_was_bought
+			}
+			cede_province = ROOT
+			remove_core = event_target:selected_neighbor_country
+
+			pay_for_prov = { who = event_target:selected_neighbor_country }
+		}
+
+		event_target:selected_neighbor_country = { country_event = { id = sold_prov_events.1 } }
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_prov
+				}
+				clr_province_flag = already_rejected_prov
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_as_possible_province
+				}
+				clr_province_flag = counted_as_possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+		}
+	}
+
+	option = { # 9. saved Province
+		name = "buy_prov_events3.EVTOPT9"
+
+		goto = possible_prov_no_9
+
+		trigger = {
+			event_target:possible_prov_no_9 = {
+				owned_by = event_target:selected_neighbor_country
+				NOT = { has_province_flag = already_rejected_prov }
+			}
+		}
+
+		event_target:possible_prov_no_9 = {
+			if = {
+				limit = {
+					is_capital = yes
+				}
+				set_province_flag = was_capital_before_it_was_bought
+			}
+			cede_province = ROOT
+			remove_core = event_target:selected_neighbor_country
+
+			pay_for_prov = { who = event_target:selected_neighbor_country }
+		}
+
+		event_target:selected_neighbor_country = { country_event = { id = sold_prov_events.1 } }
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_prov
+				}
+				clr_province_flag = already_rejected_prov
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_as_possible_province
+				}
+				clr_province_flag = counted_as_possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+		}
+	}
+
+	option = { # 10. saved Province
+		name = "buy_prov_events3.EVTOPT10"
+
+		goto = possible_prov_no_10
+
+		trigger = {
+			event_target:possible_prov_no_10 = {
+				owned_by = event_target:selected_neighbor_country
+				NOT = { has_province_flag = already_rejected_prov }
+			}
+		}
+
+		event_target:possible_prov_no_10 = {
+			if = {
+				limit = {
+					is_capital = yes
+				}
+				set_province_flag = was_capital_before_it_was_bought
+			}
+			cede_province = ROOT
+			remove_core = event_target:selected_neighbor_country
+
+			pay_for_prov = { who = event_target:selected_neighbor_country }
+		}
+
+		event_target:selected_neighbor_country = { country_event = { id = sold_prov_events.1 } }
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_prov
+				}
+				clr_province_flag = already_rejected_prov
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_as_possible_province
+				}
+				clr_province_flag = counted_as_possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+		}
+	}
+
+	option = { # The next 10 provinces
+		name = "buy_prov_events3.EVTOPT11"
+
+		trigger = {
+			any_province = {
+				owned_by = event_target:selected_neighbor_country
+				has_province_flag = counted_as_possible_province
+				NOT = { has_province_flag = already_rejected_prov }
+				NOT = { has_province_flag = possible_province }
+			}
+		}
+
+		every_province = {
+			limit = {
+				OR = {
+					province_id = event_target:possible_prov_no_1
+					province_id = event_target:possible_prov_no_2
+					province_id = event_target:possible_prov_no_3
+					province_id = event_target:possible_prov_no_4
+					province_id = event_target:possible_prov_no_5
+					province_id = event_target:possible_prov_no_6
+					province_id = event_target:possible_prov_no_7
+					province_id = event_target:possible_prov_no_8
+					province_id = event_target:possible_prov_no_9
+					province_id = event_target:possible_prov_no_10
+				}
+			}
+			set_province_flag = already_rejected_prov
+		}
+
+		country_event = { id = buy_prov_events.3 }
+	}
+
+	option = { # No matching Province (e.g. no owned core province is a neighbor province)
+		name = "buy_prov_events3.EVTOPT12"
+
+		trigger = {
+			event_target:selected_neighbor_country = {
+				all_owned_province = {
+					NOT = { province_id = event_target:possible_prov_no_1 }
+					NOT = { province_id = event_target:possible_prov_no_2 }
+					NOT = { province_id = event_target:possible_prov_no_3 }
+					NOT = { province_id = event_target:possible_prov_no_4 }
+					NOT = { province_id = event_target:possible_prov_no_5 }
+					NOT = { province_id = event_target:possible_prov_no_6 }
+					NOT = { province_id = event_target:possible_prov_no_7 }
+					NOT = { province_id = event_target:possible_prov_no_8 }
+					NOT = { province_id = event_target:possible_prov_no_9 }
+					NOT = { province_id = event_target:possible_prov_no_10 }
+				}
+			}
+		}
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_prov
+				}
+				clr_province_flag = already_rejected_prov
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_as_possible_province
+				}
+				clr_province_flag = counted_as_possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+		}
+
+		custom_tooltip = NO_FITTING_PROVINCE_TO_BUY_FROM_NEIGHBOR
+		clr_country_flag = asked_to_buy_province
+		clr_global_flag = player_bought_province
+	}
+
+	option = { # Cancel
+		name = "buy_prov_events3.EVTOPT13"
+
+		trigger = {
+			event_target:selected_neighbor_country = {
+				any_owned_province = {
+					OR = {
+						province_id = event_target:possible_prov_no_1
+						province_id = event_target:possible_prov_no_2
+						province_id = event_target:possible_prov_no_3
+						province_id = event_target:possible_prov_no_4
+						province_id = event_target:possible_prov_no_5
+						province_id = event_target:possible_prov_no_6
+						province_id = event_target:possible_prov_no_7
+						province_id = event_target:possible_prov_no_8
+						province_id = event_target:possible_prov_no_9
+						province_id = event_target:possible_prov_no_10
+					}
+				}
+			}
+		}
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_prov
+				}
+				clr_province_flag = already_rejected_prov
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_as_possible_province
+				}
+				clr_province_flag = counted_as_possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+		}
+
+		clr_country_flag = asked_to_buy_province
+		clr_global_flag = player_bought_province
+	}
+}

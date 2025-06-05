@@ -296,10 +296,23 @@ jason_global_foreign_trade_power_cheat_1000 = {
 jason_global_foreign_trade_power_cheat_10000 = {
     global_foreign_trade_power = 100
 }
+jason_global_foreign_trade_power_cheat_100000 = {
+    global_foreign_trade_power = 1000
+}
+jason_global_foreign_trade_power_cheat_100000_2 = {
+    global_foreign_trade_power = 1000
+}
 jason_global_foreign_trade_power_cheat_1000000 = {
     global_foreign_trade_power = 10000
 }
 
+
+jason_global_foreign_trade_power_reduction_100000 = {
+    global_foreign_trade_power = -1000
+}
+jason_global_foreign_trade_power_reduction_10000 = {
+    global_foreign_trade_power = -100
+}
 
 jason_global_own_trade_power_cheat_1_1 = {
     global_own_trade_power = 0.01
@@ -337,8 +350,33 @@ jason_global_own_trade_power_cheat_1000 = {
 jason_global_own_trade_power_cheat_10000 = {
     global_own_trade_power = 100
 }
+jason_global_own_trade_power_cheat_10000_2 = {
+    global_own_trade_power = 100
+}
+jason_global_own_trade_power_cheat_50000 = {
+    global_own_trade_power = 500
+}
+jason_global_own_trade_power_cheat_50000_2 = {
+    global_own_trade_power = 500
+}
+jason_global_own_trade_power_cheat_100000 = {
+    global_own_trade_power = 1000
+}
+jason_global_own_trade_power_cheat_100000_2 = {
+    global_own_trade_power = 1000
+}
+jason_global_own_trade_power_cheat_100000_3 = {
+    global_own_trade_power = 1000
+}
 jason_global_own_trade_power_cheat_1000000 = {
     global_own_trade_power = 10000
+}
+
+jason_global_own_trade_power_reduction_100000 = {
+    global_own_trade_power = -1000
+}
+jason_global_own_trade_power_reduction_10000 = {
+    global_own_trade_power = -100
 }
 
 

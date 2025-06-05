@@ -1,0 +1,1149 @@
+namespace = native_support_colony_events
+
+# Choose Province (colony) to increase population in it (1. Event)
+country_event = {
+	id = native_support_colony_events.1
+	title = "native_support_colony_events.EVTNAME1"
+	desc = "native_support_colony_events.EVTDESC1"
+	picture = COLONIZATION_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			# Save 1. Colonial Province
+			random_province = {
+				limit = {
+					controlled_by = ROOT
+					has_province_flag = counted_for_natives
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_support_from_natives_no_1
+			}
+			# Save 2. Colonial Province
+			random_province = {
+				limit = {
+					controlled_by = ROOT
+					has_province_flag = counted_for_natives
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_support_from_natives_no_2
+			}
+			# Save 3. Colonial Province
+			random_province = {
+				limit = {
+					controlled_by = ROOT
+					has_province_flag = counted_for_natives
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_support_from_natives_no_3
+			}
+			# Save 4. Colonial Province
+			random_province = {
+				limit = {
+					controlled_by = ROOT
+					has_province_flag = counted_for_natives
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_support_from_natives_no_4
+			}
+			# Save 5. Colonial Province
+			random_province = {
+				limit = {
+					controlled_by = ROOT
+					has_province_flag = counted_for_natives
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_support_from_natives_no_5
+			}
+			# Save 6. Colonial Province
+			random_province = {
+				limit = {
+					controlled_by = ROOT
+					has_province_flag = counted_for_natives
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_support_from_natives_no_6
+			}
+			# Save 7. Colonial Province
+			random_province = {
+				limit = {
+					controlled_by = ROOT
+					has_province_flag = counted_for_natives
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_support_from_natives_no_7
+			}
+			# Save 8. Colonial Province
+			random_province = {
+				limit = {
+					controlled_by = ROOT
+					has_province_flag = counted_for_natives
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_support_from_natives_no_8
+			}
+			# Save 9. Colonial Province
+			random_province = {
+				limit = {
+					controlled_by = ROOT
+					has_province_flag = counted_for_natives
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_support_from_natives_no_9
+			}
+			# Save 10. Colonial Province
+			random_province = {
+				limit = {
+					controlled_by = ROOT
+					has_province_flag = counted_for_natives
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_support_from_natives_no_10
+			}
+		}
+	}
+
+	option = { 	# 1. saved Province
+		name = "native_support_colony_events1.EVTOPT1"
+
+		goto = possible_support_from_natives_no_1
+
+		trigger = {
+			event_target:possible_support_from_natives_no_1 = {
+				is_city = no
+				NOT = { has_province_flag = already_rejected_natives }
+			}
+		}
+
+		event_target:possible_support_from_natives_no_1 = {
+			set_province_flag = will_be_supported_by_natives
+			province_event = { id = native_support_colony_other_events.1 }
+		}
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_natives
+				}
+				clr_province_flag = already_rejected_natives
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_for_natives
+				}
+				clr_province_flag = counted_for_natives
+			}
+		}
+	}
+
+	option = { 	# 2. saved Province
+		name = "native_support_colony_events1.EVTOPT2"
+
+		goto = possible_support_from_natives_no_2
+
+		trigger = {
+			event_target:possible_support_from_natives_no_2 = {
+				is_city = no
+				NOT = { has_province_flag = already_rejected_natives }
+			}
+		}
+
+		event_target:possible_support_from_natives_no_2 = {
+			set_province_flag = will_be_supported_by_natives
+			province_event = { id = native_support_colony_other_events.1 }
+		}
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_natives
+				}
+				clr_province_flag = already_rejected_natives
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_for_natives
+				}
+				clr_province_flag = counted_for_natives
+			}
+		}
+	}
+
+	option = { 	# 3. saved Province
+		name = "native_support_colony_events1.EVTOPT3"
+
+		goto = possible_support_from_natives_no_3
+
+		trigger = {
+			event_target:possible_support_from_natives_no_3 = {
+				is_city = no
+				NOT = { has_province_flag = already_rejected_natives }
+			}
+		}
+
+		event_target:possible_support_from_natives_no_3 = {
+			set_province_flag = will_be_supported_by_natives
+			province_event = { id = native_support_colony_other_events.1 }
+		}
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_natives
+				}
+				clr_province_flag = already_rejected_natives
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_for_natives
+				}
+				clr_province_flag = counted_for_natives
+			}
+		}
+	}
+
+	option = { 	# 4. saved Province
+		name = "native_support_colony_events1.EVTOPT4"
+
+		goto = possible_support_from_natives_no_4
+
+		trigger = {
+			event_target:possible_support_from_natives_no_4 = {
+				is_city = no
+				NOT = { has_province_flag = already_rejected_natives }
+			}
+		}
+
+		event_target:possible_support_from_natives_no_4 = {
+			set_province_flag = will_be_supported_by_natives
+			province_event = { id = native_support_colony_other_events.1 }
+		}
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_natives
+				}
+				clr_province_flag = already_rejected_natives
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_for_natives
+				}
+				clr_province_flag = counted_for_natives
+			}
+		}
+	}
+
+	option = { 	# 5. saved Province
+		name = "native_support_colony_events1.EVTOPT5"
+
+		goto = possible_support_from_natives_no_5
+
+		trigger = {
+			event_target:possible_support_from_natives_no_5 = {
+				is_city = no
+				NOT = { has_province_flag = already_rejected_natives }
+			}
+		}
+
+		event_target:possible_support_from_natives_no_5 = {
+			set_province_flag = will_be_supported_by_natives
+			province_event = { id = native_support_colony_other_events.1 }
+		}
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_natives
+				}
+				clr_province_flag = already_rejected_natives
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_for_natives
+				}
+				clr_province_flag = counted_for_natives
+			}
+		}
+	}
+
+	option = { 	# 6. saved Province
+		name = "native_support_colony_events1.EVTOPT6"
+
+		goto = possible_support_from_natives_no_6
+
+		trigger = {
+			event_target:possible_support_from_natives_no_6 = {
+				is_city = no
+				NOT = { has_province_flag = already_rejected_natives }
+			}
+		}
+
+		event_target:possible_support_from_natives_no_6 = {
+			set_province_flag = will_be_supported_by_natives
+			province_event = { id = native_support_colony_other_events.1 }
+		}
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_natives
+				}
+				clr_province_flag = already_rejected_natives
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_for_natives
+				}
+				clr_province_flag = counted_for_natives
+			}
+		}
+	}
+
+	option = { 	# 7. saved Province
+		name = "native_support_colony_events1.EVTOPT7"
+
+		goto = possible_support_from_natives_no_7
+
+		trigger = {
+			event_target:possible_support_from_natives_no_7 = {
+				is_city = no
+				NOT = { has_province_flag = already_rejected_natives }
+			}
+		}
+
+		event_target:possible_support_from_natives_no_7 = {
+			set_province_flag = will_be_supported_by_natives
+			province_event = { id = native_support_colony_other_events.1 }
+		}
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_natives
+				}
+				clr_province_flag = already_rejected_natives
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_for_natives
+				}
+				clr_province_flag = counted_for_natives
+			}
+		}
+	}
+
+	option = { 	# 8. saved Province
+		name = "native_support_colony_events1.EVTOPT8"
+
+		goto = possible_support_from_natives_no_8
+
+		trigger = {
+			event_target:possible_support_from_natives_no_8 = {
+				is_city = no
+				NOT = { has_province_flag = already_rejected_natives }
+			}
+		}
+
+		event_target:possible_support_from_natives_no_8 = {
+			set_province_flag = will_be_supported_by_natives
+			province_event = { id = native_support_colony_other_events.1 }
+		}
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_natives
+				}
+				clr_province_flag = already_rejected_natives
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_for_natives
+				}
+				clr_province_flag = counted_for_natives
+			}
+		}
+	}
+
+	option = { 	# 9. saved Province
+		name = "native_support_colony_events1.EVTOPT9"
+
+		goto = possible_support_from_natives_no_9
+
+		trigger = {
+			event_target:possible_support_from_natives_no_9 = {
+				is_city = no
+				NOT = { has_province_flag = already_rejected_natives }
+			}
+		}
+
+		event_target:possible_support_from_natives_no_9 = {
+			set_province_flag = will_be_supported_by_natives
+			province_event = { id = native_support_colony_other_events.1 }
+		}
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_natives
+				}
+				clr_province_flag = already_rejected_natives
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_for_natives
+				}
+				clr_province_flag = counted_for_natives
+			}
+		}
+	}
+
+	option = { 	# 10. saved Province
+		name = "native_support_colony_events1.EVTOPT10"
+
+		goto = possible_support_from_natives_no_10
+
+		trigger = {
+			event_target:possible_support_from_natives_no_10 = {
+				is_city = no
+				NOT = { has_province_flag = already_rejected_natives }
+			}
+		}
+
+		event_target:possible_support_from_natives_no_10 = {
+			set_province_flag = will_be_supported_by_natives
+			province_event = { id = native_support_colony_other_events.1 }
+		}
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_natives
+				}
+				clr_province_flag = already_rejected_natives
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_for_natives
+				}
+				clr_province_flag = counted_for_natives
+			}
+		}
+	}
+
+	option = { 	# The next 10 provinces
+		name = "native_support_colony_events1.EVTOPT11"
+
+		trigger = {
+			any_province = {
+				has_province_flag = counted_for_natives
+				NOT = { has_province_flag = already_rejected_natives }
+				NOT = { has_province_flag = already_supported_by_natives }
+				controlled_by = ROOT
+				is_city = no
+				native_size = 1
+				NOT = { native_hostileness = 7 }
+				colonysize = 100
+				NOT = { colonysize = 900 }
+				NOT = { has_province_flag = possible_province }
+			}
+		}
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					OR = {
+						province_id = event_target:possible_support_from_natives_no_1
+						province_id = event_target:possible_support_from_natives_no_2
+						province_id = event_target:possible_support_from_natives_no_3
+						province_id = event_target:possible_support_from_natives_no_4
+						province_id = event_target:possible_support_from_natives_no_5
+						province_id = event_target:possible_support_from_natives_no_6
+						province_id = event_target:possible_support_from_natives_no_7
+						province_id = event_target:possible_support_from_natives_no_8
+						province_id = event_target:possible_support_from_natives_no_9
+						province_id = event_target:possible_support_from_natives_no_10
+					}
+				}
+				set_province_flag = already_rejected_natives
+			}
+		}
+
+		country_event = { id = native_support_colony_events.2 }
+	}
+
+	option = { # Cancel
+		name = "native_support_colony_events1.EVTOPT12"
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_natives
+				}
+				clr_province_flag = already_rejected_natives
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_for_natives
+				}
+				clr_province_flag = counted_for_natives
+			}
+		}
+
+		clr_country_flag = gets_native_support
+		clr_global_flag = player_gets_native_support
+	}
+}
+
+# Choose Province (colony) to increase population in it (2. Event)
+country_event = {
+	id = native_support_colony_events.2
+	title = "native_support_colony_events.EVTNAME1"
+	desc = "native_support_colony_events.EVTDESC1"
+	picture = COLONIZATION_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			# Save 1. Colonial Province
+			random_province = {
+				limit = {
+					controlled_by = ROOT
+					has_province_flag = counted_for_natives
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_support_from_natives_no_1
+			}
+			# Save 2. Colonial Province
+			random_province = {
+				limit = {
+					controlled_by = ROOT
+					has_province_flag = counted_for_natives
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_support_from_natives_no_2
+			}
+			# Save 3. Colonial Province
+			random_province = {
+				limit = {
+					controlled_by = ROOT
+					has_province_flag = counted_for_natives
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_support_from_natives_no_3
+			}
+			# Save 4. Colonial Province
+			random_province = {
+				limit = {
+					controlled_by = ROOT
+					has_province_flag = counted_for_natives
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_support_from_natives_no_4
+			}
+			# Save 5. Colonial Province
+			random_province = {
+				limit = {
+					controlled_by = ROOT
+					has_province_flag = counted_for_natives
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_support_from_natives_no_5
+			}
+			# Save 6. Colonial Province
+			random_province = {
+				limit = {
+					controlled_by = ROOT
+					has_province_flag = counted_for_natives
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_support_from_natives_no_6
+			}
+			# Save 7. Colonial Province
+			random_province = {
+				limit = {
+					controlled_by = ROOT
+					has_province_flag = counted_for_natives
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_support_from_natives_no_7
+			}
+			# Save 8. Colonial Province
+			random_province = {
+				limit = {
+					controlled_by = ROOT
+					has_province_flag = counted_for_natives
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_support_from_natives_no_8
+			}
+			# Save 9. Colonial Province
+			random_province = {
+				limit = {
+					controlled_by = ROOT
+					has_province_flag = counted_for_natives
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_support_from_natives_no_9
+			}
+			# Save 10. Colonial Province
+			random_province = {
+				limit = {
+					controlled_by = ROOT
+					has_province_flag = counted_for_natives
+					NOT = { has_province_flag = possible_province }
+				}
+				set_province_flag = possible_province
+				save_event_target_as = possible_support_from_natives_no_10
+			}
+		}
+	}
+
+	option = { 	# 1. saved Province
+		name = "native_support_colony_events1.EVTOPT1"
+
+		goto = possible_support_from_natives_no_1
+
+		trigger = {
+			event_target:possible_support_from_natives_no_1 = {
+				is_city = no
+				NOT = { has_province_flag = already_rejected_natives }
+			}
+		}
+
+		event_target:possible_support_from_natives_no_1 = {
+			set_province_flag = will_be_supported_by_natives
+			province_event = { id = native_support_colony_other_events.1 }
+		}
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_natives
+				}
+				clr_province_flag = already_rejected_natives
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_for_natives
+				}
+				clr_province_flag = counted_for_natives
+			}
+		}
+	}
+
+	option = { 	# 2. saved Province
+		name = "native_support_colony_events1.EVTOPT2"
+
+		goto = possible_support_from_natives_no_2
+
+		trigger = {
+			event_target:possible_support_from_natives_no_2 = {
+				is_city = no
+				NOT = { has_province_flag = already_rejected_natives }
+			}
+		}
+
+		event_target:possible_support_from_natives_no_2 = {
+			set_province_flag = will_be_supported_by_natives
+			province_event = { id = native_support_colony_other_events.1 }
+		}
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_natives
+				}
+				clr_province_flag = already_rejected_natives
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_for_natives
+				}
+				clr_province_flag = counted_for_natives
+			}
+		}
+	}
+
+	option = { 	# 3. saved Province
+		name = "native_support_colony_events1.EVTOPT3"
+
+		goto = possible_support_from_natives_no_3
+
+		trigger = {
+			event_target:possible_support_from_natives_no_3 = {
+				is_city = no
+				NOT = { has_province_flag = already_rejected_natives }
+			}
+		}
+
+		event_target:possible_support_from_natives_no_3 = {
+			set_province_flag = will_be_supported_by_natives
+			province_event = { id = native_support_colony_other_events.1 }
+		}
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_natives
+				}
+				clr_province_flag = already_rejected_natives
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_for_natives
+				}
+				clr_province_flag = counted_for_natives
+			}
+		}
+	}
+
+	option = { 	# 4. saved Province
+		name = "native_support_colony_events1.EVTOPT4"
+
+		goto = possible_support_from_natives_no_4
+
+		trigger = {
+			event_target:possible_support_from_natives_no_4 = {
+				is_city = no
+				NOT = { has_province_flag = already_rejected_natives }
+			}
+		}
+
+		event_target:possible_support_from_natives_no_4 = {
+			set_province_flag = will_be_supported_by_natives
+			province_event = { id = native_support_colony_other_events.1 }
+		}
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_natives
+				}
+				clr_province_flag = already_rejected_natives
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_for_natives
+				}
+				clr_province_flag = counted_for_natives
+			}
+		}
+	}
+
+	option = { 	# 5. saved Province
+		name = "native_support_colony_events1.EVTOPT5"
+
+		goto = possible_support_from_natives_no_5
+
+		trigger = {
+			event_target:possible_support_from_natives_no_5 = {
+				is_city = no
+				NOT = { has_province_flag = already_rejected_natives }
+			}
+		}
+
+		event_target:possible_support_from_natives_no_5 = {
+			set_province_flag = will_be_supported_by_natives
+			province_event = { id = native_support_colony_other_events.1 }
+		}
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_natives
+				}
+				clr_province_flag = already_rejected_natives
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_for_natives
+				}
+				clr_province_flag = counted_for_natives
+			}
+		}
+	}
+
+	option = { 	# 6. saved Province
+		name = "native_support_colony_events1.EVTOPT6"
+
+		goto = possible_support_from_natives_no_6
+
+		trigger = {
+			event_target:possible_support_from_natives_no_6 = {
+				is_city = no
+				NOT = { has_province_flag = already_rejected_natives }
+			}
+		}
+
+		event_target:possible_support_from_natives_no_6 = {
+			set_province_flag = will_be_supported_by_natives
+			province_event = { id = native_support_colony_other_events.1 }
+		}
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_natives
+				}
+				clr_province_flag = already_rejected_natives
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_for_natives
+				}
+				clr_province_flag = counted_for_natives
+			}
+		}
+	}
+
+	option = { 	# 7. saved Province
+		name = "native_support_colony_events1.EVTOPT7"
+
+		goto = possible_support_from_natives_no_7
+
+		trigger = {
+			event_target:possible_support_from_natives_no_7 = {
+				is_city = no
+				NOT = { has_province_flag = already_rejected_natives }
+			}
+		}
+
+		event_target:possible_support_from_natives_no_7 = {
+			set_province_flag = will_be_supported_by_natives
+			province_event = { id = native_support_colony_other_events.1 }
+		}
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_natives
+				}
+				clr_province_flag = already_rejected_natives
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_for_natives
+				}
+				clr_province_flag = counted_for_natives
+			}
+		}
+	}
+
+	option = { 	# 8. saved Province
+		name = "native_support_colony_events1.EVTOPT8"
+
+		goto = possible_support_from_natives_no_8
+
+		trigger = {
+			event_target:possible_support_from_natives_no_8 = {
+				is_city = no
+				NOT = { has_province_flag = already_rejected_natives }
+			}
+		}
+
+		event_target:possible_support_from_natives_no_8 = {
+			set_province_flag = will_be_supported_by_natives
+			province_event = { id = native_support_colony_other_events.1 }
+		}
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_natives
+				}
+				clr_province_flag = already_rejected_natives
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_for_natives
+				}
+				clr_province_flag = counted_for_natives
+			}
+		}
+	}
+
+	option = { 	# 9. saved Province
+		name = "native_support_colony_events1.EVTOPT9"
+
+		goto = possible_support_from_natives_no_9
+
+		trigger = {
+			event_target:possible_support_from_natives_no_9 = {
+				is_city = no
+				NOT = { has_province_flag = already_rejected_natives }
+			}
+		}
+
+		event_target:possible_support_from_natives_no_9 = {
+			set_province_flag = will_be_supported_by_natives
+			province_event = { id = native_support_colony_other_events.1 }
+		}
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_natives
+				}
+				clr_province_flag = already_rejected_natives
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_for_natives
+				}
+				clr_province_flag = counted_for_natives
+			}
+		}
+	}
+
+	option = { 	# 10. saved Province
+		name = "native_support_colony_events1.EVTOPT10"
+
+		goto = possible_support_from_natives_no_10
+
+		trigger = {
+			event_target:possible_support_from_natives_no_10 = {
+				is_city = no
+				NOT = { has_province_flag = already_rejected_natives }
+			}
+		}
+
+		event_target:possible_support_from_natives_no_10 = {
+			set_province_flag = will_be_supported_by_natives
+			province_event = { id = native_support_colony_other_events.1 }
+		}
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_natives
+				}
+				clr_province_flag = already_rejected_natives
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_for_natives
+				}
+				clr_province_flag = counted_for_natives
+			}
+		}
+	}
+
+	option = { 	# The next 10 provinces
+		name = "native_support_colony_events1.EVTOPT11"
+
+		trigger = {
+			any_province = {
+				has_province_flag = counted_for_natives
+				NOT = { has_province_flag = already_rejected_natives }
+				NOT = { has_province_flag = already_supported_by_natives }
+				controlled_by = ROOT
+				is_city = no
+				native_size = 1
+				NOT = { native_hostileness = 7 }
+				colonysize = 100
+				NOT = { colonysize = 900 }
+				NOT = { has_province_flag = possible_province }
+			}
+		}
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					OR = {
+						province_id = event_target:possible_support_from_natives_no_1
+						province_id = event_target:possible_support_from_natives_no_2
+						province_id = event_target:possible_support_from_natives_no_3
+						province_id = event_target:possible_support_from_natives_no_4
+						province_id = event_target:possible_support_from_natives_no_5
+						province_id = event_target:possible_support_from_natives_no_6
+						province_id = event_target:possible_support_from_natives_no_7
+						province_id = event_target:possible_support_from_natives_no_8
+						province_id = event_target:possible_support_from_natives_no_9
+						province_id = event_target:possible_support_from_natives_no_10
+					}
+				}
+				set_province_flag = already_rejected_natives
+			}
+		}
+
+		country_event = { id = native_support_colony_events.1 }
+	}
+
+	option = { # Cancel
+		name = "native_support_colony_events1.EVTOPT12"
+
+		hidden_effect = {
+			every_province = {
+				limit = {
+					has_province_flag = already_rejected_natives
+				}
+				clr_province_flag = already_rejected_natives
+			}
+			every_province = {
+				limit = {
+					has_province_flag = possible_province
+				}
+				clr_province_flag = possible_province
+			}
+			every_province = {
+				limit = {
+					has_province_flag = counted_for_natives
+				}
+				clr_province_flag = counted_for_natives
+			}
+		}
+
+		clr_country_flag = gets_native_support
+		clr_global_flag = player_gets_native_support
+	}
+}
