@@ -1,0 +1,6 @@
+is_mining_corporation = {
+    OR = {
+        is_subject_of_type = mining_corporation
+        is_subject_of_type = mining_corporation_fallback
+    }
+}

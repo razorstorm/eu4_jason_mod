@@ -1,0 +1,70 @@
+change_all_provinces_to_gold = {
+    log = "Running change_all_provinces_to_gold scripted effect"
+    every_owned_province = {
+        limit = {
+            NOT = { trade_goods = gold }
+            NOT = { trade_goods = silver }
+        }
+        change_trade_goods = gold
+    }
+}
+
+
+set_high_dev_cost_reduction_on_prov = {
+    add_province_modifier = {
+        name = jason_dev_cost_reduction_350_1
+        duration = -1
+    }
+    add_province_modifier = {
+        name = jason_dev_cost_reduction_100_1
+        duration = -1
+    }
+    add_province_modifier = {
+        name = jason_dev_cost_reduction_100_2
+        duration = -1
+    }    
+}
+
+set_high_dev_cost_reduction_on_all_gold_and_silver_prov = {
+    every_owned_province = {
+        limit = {
+            OR = {
+                trade_goods = gold
+                trade_goods = silver
+            }
+        }
+        set_high_dev_cost_reduction_on_prov = yes
+    }
+}
+
+set_high_dev_resource_gathering_operation = {
+    if = {
+        limit = {
+            NOT = {
+                # Ignore provinces that are already highly devved 
+                base_production = 25
+            }
+        }
+    }
+    set_base_tax = 20
+    set_base_production = 25
+    set_base_manpower = 15
+
+    set_local_autonomy = 0
+}
+
+set_high_dev_on_all_gold_prov = {
+    every_owned_province = {
+        limit = {
+            OR = {
+                trade_goods = gold
+                trade_goods = silver
+            }
+            NOT = {
+                # Ignore provinces that are already highly devved 
+                base_production = 25
+            }
+        }
+        set_high_dev_resource_gathering_operation = yes
+    }
+}

@@ -1,0 +1,27 @@
+# ROOT = province, FROM = old owner
+on_province_owner_change = {
+    if = {
+        limit = {
+            owner = {
+                is_mining_corporation = yes
+            }
+        }
+        change_trade_goods = gold
+        set_high_dev_resource_gathering_operation = yes
+        set_high_dev_cost_reduction_on_prov = yes
+    }
+}
+
+# ROOT = overlord, FROM = subject
+on_dependency_gained = {
+	FROM = {
+		if = {
+			limit = {
+                is_mining_corporation = yes
+			}
+            change_all_provinces_to_gold = yes
+            set_high_dev_on_all_gold_prov = yes
+            set_high_dev_cost_reduction_on_all_gold_and_silver_prov = yes
+		}
+	}
+}

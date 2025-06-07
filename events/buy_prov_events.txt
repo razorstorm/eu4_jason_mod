@@ -17,31 +17,35 @@ country_event = {
 				limit = {
 					OR = {
 						AND = {
+                            # Costal Provinces are eligible if:
 							has_port = yes
-							sea_zone = {
-								any_neighbor_province = {
-									has_port = yes
-									OR = {
-										AND = {
-											owned_by = FROM
-											is_core = FROM
-										}
-										AND = {
-											owner = { is_colonial_nation_of = FROM }
-											is_core = owner
-										}
-									}
-								}
-							}
+                            OR = {
+                                # Request sender has at least 1 coastal province OR
+                                FROM = {
+                                    any_owned_province = {
+                                        has_port = yes
+                                    }
+                                }
+                                # Request sender has any subjects with at least 1 coastal province
+                                FROM = {
+                                    any_subject_country = {
+                                        any_owned_province = {
+                                            has_port = yes
+                                        }
+                                    }
+                                }
+                            }
 						}
+                        # Province is eligible if it is a neighbor of the sender country OR
 						any_neighbor_province = {
 							OR = {
 								AND = {
 									owned_by = FROM
 									is_core = FROM
 								}
+                                # any of the sender country's subjects
 								AND = {
-									owner = { is_colonial_nation_of = FROM }
+									owner = { is_subject_of = FROM }
 									is_core = owner
 								}
 							}

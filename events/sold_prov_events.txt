@@ -107,7 +107,7 @@ country_event = {
 		FROM = {
 			add_country_modifier = {
 				name = countdown_next_buy_prov
-				duration = 5
+				duration = 30
 				hidden = yes
 			}
 			clr_country_flag = asked_to_buy_province

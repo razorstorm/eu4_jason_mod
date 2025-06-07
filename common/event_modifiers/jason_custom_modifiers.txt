@@ -446,6 +446,9 @@ jason_mod_more_trade_range = {
 jason_mod_more_trade_steer = {
     trade_steering = 3
 }
+jason_mod_more_trade_steer_max = {
+    trade_steering = 300
+}
 jason_mod_more_goods_prod = {
     global_trade_goods_size_modifier = 3
 }
@@ -509,6 +512,15 @@ jason_mod_more_culture_speed = {
 }
 jason_mod_more_fort = {
     defensiveness = 1
+}
+jason_mod_more_garrison = {
+    garrison_size = 2
+}
+jason_mod_more_garrison_huge = {
+    garrison_size = 10
+}
+jason_mod_more_garrison_growth = {
+    global_garrison_growth = 100
 }
 jason_mod_less_attrition = {
     land_attrition = -100

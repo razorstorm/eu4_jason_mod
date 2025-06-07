@@ -28,6 +28,9 @@ buy_prov_neighbor = {
 				ai = yes
 			}
 		}
+        NOT = {
+            has_country_modifier = countdown_next_buy_prov
+        }
 		treasury = 500
 		custom_trigger_tooltip = {
 			tooltip = IS_NEIGHBOR_OF_FROM
@@ -67,186 +70,7 @@ buy_prov_neighbor = {
 				}
 			}
 		}
-		custom_trigger_tooltip = {
-			tooltip = NOT_JUST_HAS_BOUGHT_A_PROVINCE
-			NOT = { has_country_modifier = countdown_next_buy_prov }
-		}
-		if = {
-			limit = {
-				has_global_flag = player_bought_province
-			}
-			custom_trigger_tooltip = {
-				tooltip = NO_OTHER_PLAYER_BUYS_PROV
-				# NOT = { has_global_flag = player_bought_province }
-				always = no
-			}
-		}
-		if = {
-			limit = {
-				has_global_flag = player_gets_native_support
-			}
-			custom_trigger_tooltip = {
-				tooltip = NO_OTHER_PLAYER_GETS_NATIVE_SUPPORT
-				# NOT = { has_global_flag = player_gets_native_support }
-				always = no
-			}
-		}
-		if = {
-			limit = {
-				FROM = {
-					has_country_modifier = countdown_sold_prov
-				}
-			}
-			if = {
-				limit = {
-					FROM = {
-						OR = {
-							num_of_cities = 30
-							variable_arithmetic_trigger = {
-								custom_tooltip = COMPARE_NUM_OF_PROVS
-								export_to_variable = {
-									which = our_num_of_provs
-									value = trigger_value:num_of_cities
-								}
-								export_to_variable = {
-									which = their_num_of_provs
-									value = trigger_value:num_of_cities
-									who = ROOT
-								}
-								divide_variable = { which = their_num_of_provs value = 2 }
-								NOT = { check_variable = { which = our_num_of_provs which = their_num_of_provs } }
-							}
-						}
-					}
-				}
-				OR = {
-					custom_trigger_tooltip = {
-						tooltip = FROM_HAS_NOT_JUST_SOLD_A_PROVINCE
-						always = no
-					}
-					AND = {
-						years_of_income = 3
-						adm_power = 100
-						dip_power = 100
-						mil_power = 100
-					}
-				}
-			}
-			if = {
-				limit = {
-					FROM = {
-						NOT = {
-							OR = {
-								num_of_cities = 30
-								variable_arithmetic_trigger = {
-									custom_tooltip = COMPARE_NUM_OF_PROVS
-									export_to_variable = {
-										which = our_num_of_provs
-										value = trigger_value:num_of_cities
-									}
-									export_to_variable = {
-										which = their_num_of_provs
-										value = trigger_value:num_of_cities
-										who = ROOT
-									}
-									divide_variable = { which = their_num_of_provs value = 2 }
-									NOT = { check_variable = { which = our_num_of_provs which = their_num_of_provs } }
-								}
-							}
-						}
-						OR = {
-							AND = {
-								num_of_cities = 20
-								NOT = { num_of_cities = 30 }
-							}
-							variable_arithmetic_trigger = {
-								custom_tooltip = COMPARE_NUM_OF_PROVS
-								export_to_variable = {
-									which = our_num_of_provs
-									value = trigger_value:num_of_cities
-								}
-								export_to_variable = {
-									which = their_num_of_provs
-									value = trigger_value:num_of_cities
-									who = ROOT
-								}
-								divide_variable = { which = their_num_of_provs value = 3 }
-								NOT = { check_variable = { which = our_num_of_provs which = their_num_of_provs } }
-							}
-						}
-					}
-				}
-				OR = {
-					custom_trigger_tooltip = {
-						tooltip = FROM_HAS_NOT_JUST_SOLD_A_PROVINCE
-						always = no
-					}
-					AND = {
-						years_of_income = 4
-						adm_power = 100
-						dip_power = 100
-						mil_power = 100
-					}
-				}
-			}
-			if = {
-				limit = {
-					FROM = {
-						NOT = {
-							OR = {
-								num_of_cities = 30
-								variable_arithmetic_trigger = {
-									custom_tooltip = COMPARE_NUM_OF_PROVS
-									export_to_variable = {
-										which = our_num_of_provs
-										value = trigger_value:num_of_cities
-									}
-									export_to_variable = {
-										which = their_num_of_provs
-										value = trigger_value:num_of_cities
-										who = ROOT
-									}
-									divide_variable = { which = their_num_of_provs value = 2 }
-									NOT = { check_variable = { which = our_num_of_provs which = their_num_of_provs } }
-								}
-							}
-							OR = {
-								AND = {
-									num_of_cities = 20
-									NOT = { num_of_cities = 30 }
-								}
-								variable_arithmetic_trigger = {
-									custom_tooltip = COMPARE_NUM_OF_PROVS
-									export_to_variable = {
-										which = our_num_of_provs
-										value = trigger_value:num_of_cities
-									}
-									export_to_variable = {
-										which = their_num_of_provs
-										value = trigger_value:num_of_cities
-										who = ROOT
-									}
-									divide_variable = { which = their_num_of_provs value = 3 }
-									NOT = { check_variable = { which = our_num_of_provs which = their_num_of_provs } }
-								}
-							}
-						}
-					}
-				}
-				OR = {
-					custom_trigger_tooltip = {
-						tooltip = FROM_HAS_NOT_JUST_SOLD_A_PROVINCE
-						always = no
-					}
-					AND = {
-						years_of_income = 5
-						adm_power = 100
-						dip_power = 100
-						mil_power = 100
-					}
-				}
-			}
-		}
+	
 	}
 	on_accept = {
 		set_country_flag = asked_to_buy_province
@@ -257,20 +81,6 @@ buy_prov_neighbor = {
 				FROM = {
 					has_country_modifier = countdown_sold_prov
 				}
-			}
-			FROM = {
-				add_opinion = {
-					who = ROOT
-					modifier = sold_prov_to_early
-				}
-			}
-			add_adm_power = -100
-			add_dip_power = -100
-			add_mil_power = -100
-			FROM = {
-				add_adm_power = 100
-				add_dip_power = 100
-				add_mil_power = 100
 			}
 			set_variable = { which = amount_of_ducats_to_pay_extra value = 0 }
 			export_to_variable = {
