@@ -345,4 +345,69 @@ country_decisions = {
         }
     }
 
+    enable_high_defensiveness_bonus_on_defensive_marches = {
+        major = yes
+        potential = {
+            ai = no
+            NOT = {
+                has_country_flag = jason_defensive_march_enable_high_defensiveness
+            }
+        }
+        allow = {
+            ai = no
+            NOT = {
+                has_country_flag = jason_defensive_march_enable_high_defensiveness
+            }
+        }
+        provinces_to_highlight = {
+            owner = {
+                is_subject_of_type = defensive_march
+            }
+        }
+        effect = {
+            set_country_flag = jason_defensive_march_enable_high_defensiveness
+            log = "Enabling high defensiveness bonus on defensive marches"
+
+            every_subject_country = {
+                limit = {
+                    is_subject_of_type = defensive_march
+                }
+                set_high_defensiveness_on_country = yes
+                every_owned_province = {
+                    set_high_defensiveness_on_prov = yes
+                }
+            }
+        }
+    }
+
+    disable_high_defensiveness_bonus_on_defensive_marches = {
+        major = yes
+        potential = {
+            ai = no
+            has_country_flag = jason_defensive_march_enable_high_defensiveness
+        }
+        allow = {
+            ai = no
+            has_country_flag = jason_defensive_march_enable_high_defensiveness
+        }
+        provinces_to_highlight = {
+            owner = {
+                is_subject_of_type = defensive_march
+            }
+        }
+        effect = {
+            clr_country_flag = jason_defensive_march_enable_high_defensiveness
+            log = "Disabling high defensiveness bonus on defensive marches"
+
+            every_subject_country = {
+                limit = {
+                    is_subject_of_type = defensive_march
+                }
+                remove_high_defensiveness_on_country = yes
+                every_owned_province = {
+                    remove_high_defensiveness_on_prov = yes
+                }
+            }
+        }
+    }
 }

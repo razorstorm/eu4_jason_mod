@@ -10,6 +10,22 @@ on_province_owner_change = {
         set_high_dev_resource_gathering_operation = yes
         set_high_dev_cost_reduction_on_prov = yes
     }
+
+    if = {
+        limit = {
+            owner = {
+                is_subject_of_type = defensive_march 
+                overlord = {
+                    has_country_flag = jason_defensive_march_enable_high_defensiveness
+                }
+            }
+        }
+        set_high_defensiveness_on_prov = yes
+            
+        owner = {
+            set_high_defensiveness_on_country = yes
+        }
+    }
 }
 
 # ROOT = overlord, FROM = subject
@@ -23,5 +39,20 @@ on_dependency_gained = {
             set_high_dev_on_all_gold_prov = yes
             set_high_dev_cost_reduction_on_all_gold_and_silver_prov = yes
 		}
+
+        if = {
+            limit = {
+                is_subject_of_type = defensive_march 
+                ROOT = {
+                    has_country_flag = jason_defensive_march_enable_high_defensiveness
+                }
+            }
+
+            every_owned_province = {
+                set_high_defensiveness_on_prov = yes
+            }
+                
+            set_high_defensiveness_on_country = yes
+        }
 	}
 }

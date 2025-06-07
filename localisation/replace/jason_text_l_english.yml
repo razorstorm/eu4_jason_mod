@@ -19,3 +19,8 @@
 
  monopolize_silk_and_dyes_title: "Monopolize The Silk Trade"
  monopolize_silk_and_dyes_desc: "Monopolizes the Silk Trade by converting all foreign silk and dyes provinces into cloth provinces and setting an equal number of our own (not silk/gold/silver/dyes producing) provinces into silk producing provinces. If we run out of valid provinces, the process will end early."
+
+ enable_high_defensiveness_bonus_on_defensive_marches_title: "Enable High Defensiveness Bonus on Defensive Marches"
+ enable_high_defensiveness_bonus_on_defensive_marches_desc: "Enables the high defensiveness cheat on defensive marches, which massively increases the defensiveness and garrison sizes of the defensive march."
+ disable_high_defensiveness_bonus_on_defensive_marches_title: "Disable High Defensiveness Bonus on Defensive Marches"
+ disable_high_defensiveness_bonus_on_defensive_marches_desc: "Disables the high defensiveness cheat on defensive marches, which massively increases the defensiveness and garrison sizes of the defensive march."

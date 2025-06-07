@@ -9,7 +9,6 @@ change_all_provinces_to_gold = {
     }
 }
 
-
 set_high_dev_cost_reduction_on_prov = {
     add_province_modifier = {
         name = jason_dev_cost_reduction_350_1
@@ -67,4 +66,58 @@ set_high_dev_on_all_gold_prov = {
         }
         set_high_dev_resource_gathering_operation = yes
     }
+}
+
+set_high_defensiveness_on_prov = {
+    add_province_modifier = {
+        name = jason_mod_more_garrison
+        duration = -1
+    }
+    add_province_modifier = {
+        name = jason_mod_more_garrison_huge
+        duration = -1
+    }
+    add_province_modifier = {
+        name = jason_mod_more_garrison_growth
+        duration = -1
+    }
+    add_province_modifier = {
+        name = jason_mod_more_fort
+        duration = -1
+    }
+    # log = "Added Defensiveness on Province [This.GetName]" # This stackoverflows for some reason
+}
+
+remove_high_defensiveness_on_prov = {
+    remove_province_modifier = jason_mod_more_garrison
+    remove_province_modifier = jason_mod_more_garrison_huge
+    remove_province_modifier = jason_mod_more_garrison_growth
+    remove_province_modifier = jason_mod_more_fort
+}
+
+set_high_defensiveness_on_country = {
+    add_country_modifier = {
+        name = jason_mod_more_garrison
+        duration = -1
+    }
+    add_country_modifier = {
+        name = jason_mod_more_garrison_huge
+        duration = -1
+    }
+    add_country_modifier = {
+        name = jason_mod_more_garrison_growth
+        duration = -1
+    }
+    add_country_modifier = {
+        name = jason_mod_more_fort
+        duration = -1
+    }
+    # log = "Added Defensiveness on Country [This.GetName]"
+}
+
+remove_high_defensiveness_on_country = {
+    remove_country_modifier = jason_mod_more_garrison
+    remove_country_modifier = jason_mod_more_garrison_huge
+    remove_country_modifier = jason_mod_more_garrison_growth
+    remove_country_modifier = jason_mod_more_fort
 }
