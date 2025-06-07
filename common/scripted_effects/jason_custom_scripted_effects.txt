@@ -1,5 +1,4 @@
 change_all_provinces_to_gold = {
-    log = "Running change_all_provinces_to_gold scripted effect"
     every_owned_province = {
         limit = {
             NOT = { trade_goods = gold }
@@ -112,7 +111,6 @@ set_high_defensiveness_on_country = {
         name = jason_mod_more_fort
         duration = -1
     }
-    # log = "Added Defensiveness on Country [This.GetName]"
 }
 
 remove_high_defensiveness_on_country = {
@@ -120,4 +118,179 @@ remove_high_defensiveness_on_country = {
     remove_country_modifier = jason_mod_more_garrison_huge
     remove_country_modifier = jason_mod_more_garrison_growth
     remove_country_modifier = jason_mod_more_fort
+}
+
+fix_zero_dev = {
+    every_province = {
+        if = {
+            limit = {
+                NOT = {
+                    base_manpower = 1
+                }
+            }
+            add_base_manpower = 1
+        }
+        if = {
+            limit = {
+                NOT = {
+                    base_tax = 1
+                }
+            }
+            add_base_tax = 1
+        }
+        if = {
+            limit = {
+                NOT = {
+                    base_production = 1
+                }
+            }
+            add_base_production = 1
+        }
+    }
+}
+
+make_immortal_ruling_family = {
+    if = {
+        limit = {
+            OR = {
+                has_consort = no
+                NOT = { consort_adm = 6 }
+                NOT = { consort_dip = 6 }
+                NOT = { consort_mil = 6 }
+            }
+        }
+
+        define_consort = {
+            culture = ROOT
+            adm = 6
+            dip = 6
+            mil = 6
+            female = yes
+        }
+
+        add_queen_personality = immortal_personality
+    }
+
+    if = {
+        limit = {
+            OR = {
+                has_heir = no
+                NOT = { heir_adm = 6 }
+                NOT = { heir_dip = 6 }
+                NOT = { heir_mil = 6 }
+            }
+        }
+
+        define_heir = {
+            culture = ROOT
+            dynasty = ROOT
+            claim = 100
+            adm = 6
+            dip = 6
+            mil = 6
+            female = no
+        }
+
+        add_heir_personality = immortal_personality
+    }
+    
+    if = {
+        limit = {
+            NOT = {
+                has_country_flag = fee_events_for_student_of_language_active 
+            }
+            NOT = {
+                has_ruler_modifier = fee_advisor_multilingual_ruler
+            }
+        }
+        add_ruler_modifier = {
+            name = fee_ruler_trait_diligent
+            duration = -1
+        }
+        add_ruler_modifier = {
+            name = fee_ruler_trait_patient
+            duration = -1
+        }
+        add_ruler_modifier = {
+			name = fee_advisor_student_language
+			duration = -1
+		}
+        add_ruler_modifier = {
+			name = fee_advisor_multilingual_ruler
+			duration = -1
+		}
+        set_country_flag = fee_events_for_student_of_language_active
+    }
+    if = {
+        limit = {
+            has_consort = yes
+            NOT = { has_ruler_modifier = consort_of_the_people } 
+        }
+		add_ruler_modifier = { 
+			name = consort_of_the_people
+		}
+    }
+}
+
+extend_golden_age_by_one_year = {
+    extend_golden_age = 12 # 1 more year
+}
+
+reduce_gold_depletion_chance_on_country_and_subjects = {
+    add_country_modifier = { 
+        name = gold_depletion_cheat
+        duration = -1  
+    }
+    every_subject_country = {
+        add_country_modifier = { 
+            name = gold_depletion_cheat
+            duration = -1  
+        }
+    }
+}
+
+set_build_time_reduction_on_country_and_subjects = {
+    add_country_modifier = { 
+        name = jason_mod_lessTime
+        duration = -1  
+    }
+
+    add_country_modifier = {
+        name = jason_global_more_building_slots
+        duration = -1
+    }
+
+    every_subject_country = {
+        add_country_modifier = { 
+            name = jason_mod_lessTime
+            duration = -1  
+        }
+
+        add_country_modifier = {
+            name = jason_global_more_building_slots
+            duration = -1
+        }
+    }
+}
+
+set_supply_cheat_on_country_and_subjects = {
+    add_country_modifier = {
+        name = jason_global_more_building_slots
+        duration = -1
+    }
+    add_country_modifier = {
+        name = supply_cheat_modifier
+        duration = -1
+    }
+
+    every_subject_country = {
+        add_country_modifier = {
+            name = jason_global_more_building_slots
+            duration = -1
+        }
+        add_country_modifier = {
+            name = supply_cheat_modifier
+            duration = -1
+        }
+    }
 }

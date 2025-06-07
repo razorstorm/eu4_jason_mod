@@ -1,3 +1,25 @@
+on_startup = {
+    fix_zero_dev = yes
+    if = {
+        limit = {
+            ai = no
+        }
+        make_immortal_ruling_family = yes
+        reduce_gold_depletion_chance_on_country_and_subjects = yes
+        set_build_time_reduction_on_country_and_subjects = yes
+        set_supply_cheat_on_country_and_subjects = yes
+    }
+}
+
+on_monthly_pulse = {
+    if = {
+        limit = {
+            ai = no
+        }
+        extend_golden_age_by_one_year = yes
+    }
+}
+
 # ROOT = province, FROM = old owner
 on_province_owner_change = {
     if = {
@@ -55,4 +77,48 @@ on_dependency_gained = {
             set_high_defensiveness_on_country = yes
         }
 	}
+
+    ROOT = {
+        if = {
+            limit = {
+                ai = no
+            }
+            reduce_gold_depletion_chance_on_country_and_subjects = yes
+            set_build_time_reduction_on_country_and_subjects = yes
+            set_supply_cheat_on_country_and_subjects = yes
+        }
+    }
+}
+
+on_new_consort = {
+    if = {
+        limit = {
+            ai = no
+        }
+        make_immortal_ruling_family = yes
+    }
+}
+on_new_heir = {
+    if = {
+        limit = {
+            ai = no
+        }
+        make_immortal_ruling_family = yes
+    }
+}
+on_heir_death = {
+    if = {
+        limit = {
+            ai = no
+        }
+        make_immortal_ruling_family = yes
+    }
+}
+on_queen_death = {
+    if = {
+        limit = {
+            ai = no
+        }
+        make_immortal_ruling_family = yes
+    }
 }
