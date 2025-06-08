@@ -294,3 +294,98 @@ set_supply_cheat_on_country_and_subjects = {
         }
     }
 }
+
+prov_trade_power = {
+    add_province_modifier = {
+        name = province_trade_power_modifier_cheat
+        duration = -1
+    }
+    center_of_trade = 3
+    add_center_of_trade_level = 3
+}
+
+set_prov_trade_power_on_all_cot = {
+    every_owned_province = {
+        limit = {
+            province_has_center_of_trade_of_level = 1
+        }
+        add_province_modifier = {
+            name = province_trade_power_modifier_cheat
+            duration = -1
+        }
+        set_local_autonomy = 0
+        if = {
+            limit = {
+                NOT = {
+                    base_production = 30
+                }
+            }
+            set_base_production = 30
+        }
+    }
+}
+
+set_prov_trade_power_on_all = {
+    every_owned_province = {
+        add_province_modifier = {
+            name = province_trade_power_modifier_cheat
+            duration = -1
+        }
+        set_local_autonomy = 0
+        if = {
+            limit = {
+                NOT = {
+                    base_production = 30
+                }
+            }
+            set_base_production = 30
+        }
+    }
+}
+
+set_prov_trade_power_on_all_cot_for_country_and_subjects = {
+    set_prov_trade_power_on_all_cot = yes
+    every_subject_country = {
+        set_prov_trade_power_on_all_cot = yes
+    }
+}
+
+set_prov_trade_power_on_all_for_country_and_subjects = {
+    set_prov_trade_power_on_all = yes
+    every_subject_country = {
+        set_prov_trade_power_on_all = yes
+    }
+}
+
+marry_all_christians = {
+    every_country = {
+        limit = {
+            OR = {
+                religion = catholic
+                religion = orthodox
+                religion = coptic
+                religion = protestant
+                religion = reformed
+    
+                religion_group = christian
+            }
+            NOT = { marriage_with = ROOT }
+        }
+        ROOT = {
+            create_marriage = PREV
+            add_legitimacy = 2
+        }
+    }    
+}
+
+marry_everyone = {
+    every_country = {
+        limit = {
+            NOT = { marriage_with = ROOT }
+        }
+        ROOT = {
+            create_marriage = PREV
+            add_legitimacy = 2
+        }
+    } 
+}

@@ -24,3 +24,22 @@
  enable_high_defensiveness_bonus_on_defensive_marches_desc: "Enables the high defensiveness cheat on defensive marches, which massively increases the defensiveness and garrison sizes of the defensive march."
  disable_high_defensiveness_bonus_on_defensive_marches_title: "Disable High Defensiveness Bonus on Defensive Marches"
  disable_high_defensiveness_bonus_on_defensive_marches_desc: "Disables the high defensiveness cheat on defensive marches, which massively increases the defensiveness and garrison sizes of the defensive march."
+
+ enable_prov_trade_power_on_all_cot_title: "Enable Trade Power cheat on All Centers of Trade"
+ enable_prov_trade_power_on_all_cot_desc: "Enables the trade power cheat on all provinces which contain Centers of Trade for both yourself and all your subjects. Note: There is no way to undo this action. Disabling this decision this will simply stop the trade power cheat from being auto added to new CoT provcines in the future, but will not remove the trade power cheat from any provinces."
+ disable_prov_trade_power_on_all_cot_title: "Disable Trade Power cheat on All Centers of Trade"
+ disable_prov_trade_power_on_all_cot_desc: "Disables auto adding the trade power cheat to all provinces which contain Centers of Trade for both yourself and all your subjects. Note: This will not remove the trade power cheat from provinces that already have it enabled."
+ enable_prov_trade_power_on_all_title: "Enable Trade Power cheat on All Provinces"
+ enable_prov_trade_power_on_all_desc: "Enables the trade power cheat on all provinces for both yourself and all your subjects. Note: There is no way to undo this action. Disabling this decision will simply stop the trade power cheat from being auto added to new provinces in the future, but will not remove the trade power cheat from any provinces."
+ disable_prov_trade_power_on_all_title: "Disable Trade Power cheat on All Provinces"
+ disable_prov_trade_power_on_all_desc: "Disables auto adding the trade power cheat to all provinces for both yourself and all your subjects. Note: This will not remove the trade power cheat from provinces that already have it enabled."
+
+ enable_auto_marry_all_christians_title: "Enable Auto Marry All Christian Nations"
+ enable_auto_marry_all_christians_desc: "Enables auto marrying all Christian nations, which will automatically send royal marriages to all Christian nations in the world."
+ disable_auto_marry_all_christians_title: "Disable Auto Marry All Christian Nations"
+ disable_auto_marry_all_christians_desc: "Disables auto marrying all Christian nations, which will stop automatically sending royal marriages to all Christian nations in the world."
+ enable_auto_marry_everyone_title: "Enable Auto Marry All Nations"
+ enable_auto_marry_everyone_desc: "Enables auto marrying all nations, which will automatically send royal marriages to all nations in the world."
+ disable_auto_marry_everyone_title: "Disable Auto Marry All Nations"
+ disable_auto_marry_everyone_desc: "Disables auto marrying all nations, which will stop automatically sending royal marriages to all nations in the world."
+

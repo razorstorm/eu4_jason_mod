@@ -17,6 +17,21 @@ on_monthly_pulse = {
             ai = no
         }
         extend_golden_age_by_one_year = yes
+
+        if = {
+            limit = {
+                has_country_flag = jason_auto_marry_all_christians_enabled
+            }
+            marry_all_christians = yes
+        }
+
+        
+        if = {
+            limit = {
+                has_country_flag = jason_auto_marry_world_enabled
+            }
+            marry_everyone = yes
+        }
     }
 }
 
@@ -46,6 +61,33 @@ on_province_owner_change = {
             
         owner = {
             set_high_defensiveness_on_country = yes
+        }
+    }
+
+    owner = {
+        if = {
+            limit = {
+                OR = {
+                    has_country_flag = jason_prov_trade_power_on_all_cot_enabled
+                    overlord = {
+                        has_country_flag = jason_prov_trade_power_on_all_cot_enabled
+                    }
+                }
+            }
+
+            set_prov_trade_power_on_all_cot_for_country_and_subjects = yes
+        }
+        if = {
+            limit = {
+                OR = {
+                    has_country_flag = jason_prov_trade_power_on_all_enabled
+                    overlord = {
+                        has_country_flag = jason_prov_trade_power_on_all_enabled
+                    }
+                }
+            }
+
+            set_prov_trade_power_on_all_for_country_and_subjects = yes
         }
     }
 }
@@ -87,6 +129,22 @@ on_dependency_gained = {
             set_build_time_reduction_on_country_and_subjects = yes
             set_supply_cheat_on_country_and_subjects = yes
         }
+
+        if = {
+            limit = {
+                has_country_flag = jason_prov_trade_power_on_all_cot_enabled
+            }
+
+            set_prov_trade_power_on_all_cot_for_country_and_subjects = yes
+        }
+        if = {
+            limit = {
+                has_country_flag = jason_prov_trade_power_on_all_enabled
+            }
+
+            set_prov_trade_power_on_all_for_country_and_subjects = yes
+        }
+
     }
 }
 

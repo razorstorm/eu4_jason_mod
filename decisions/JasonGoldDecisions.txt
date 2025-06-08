@@ -410,4 +410,157 @@ country_decisions = {
             }
         }
     }
+
+    enable_prov_trade_power_on_all_cot = {
+        major = yes
+        potential = {
+            ai = no
+            NOT = {
+                has_country_flag = jason_prov_trade_power_on_all_cot_enabled
+            }
+        }
+        allow = {
+            ai = no
+            NOT = {
+                has_country_flag = jason_prov_trade_power_on_all_cot_enabled
+            }
+        }
+        provinces_to_highlight = {
+            country_or_subject_holds = ROOT
+            province_has_center_of_trade_of_level = 1
+        }
+        effect = {
+            set_country_flag = jason_prov_trade_power_on_all_cot_enabled
+            set_prov_trade_power_on_all_cot_for_country_and_subjects = yes
+        }
+    }
+
+    disable_prov_trade_power_on_all_cot = {
+        major = yes
+        potential = {
+            ai = no
+            has_country_flag = jason_prov_trade_power_on_all_cot_enabled
+        }
+        allow = {
+            ai = no
+            has_country_flag = jason_prov_trade_power_on_all_cot_enabled
+        }
+        provinces_to_highlight = {
+            country_or_subject_holds = ROOT
+            province_has_center_of_trade_of_level = 1
+        }
+        effect = {
+            clr_country_flag = jason_prov_trade_power_on_all_cot_enabled
+        }
+    }
+    enable_prov_trade_power_on_all = {
+        major = yes
+        potential = {
+            ai = no
+            NOT = {
+                has_country_flag = jason_prov_trade_power_on_all_enabled
+            }
+        }
+        allow = {
+            ai = no
+            NOT = {
+                has_country_flag = jason_prov_trade_power_on_all_enabled
+            }
+        }
+        provinces_to_highlight = {
+            country_or_subject_holds = ROOT
+        }
+        effect = {
+            set_country_flag = jason_prov_trade_power_on_all_enabled
+            set_prov_trade_power_on_all_for_country_and_subjects = yes
+        }
+    }
+
+    disable_prov_trade_power_on_all = {
+        major = yes
+        potential = {
+            ai = no
+            has_country_flag = jason_prov_trade_power_on_all_enabled
+        }
+        allow = {
+            ai = no
+            has_country_flag = jason_prov_trade_power_on_all_enabled
+        }
+        provinces_to_highlight = {
+            country_or_subject_holds = ROOT
+        }
+        effect = {
+            clr_country_flag = jason_prov_trade_power_on_all_enabled
+        }
+    }
+
+    enable_auto_marry_all_christians = {
+        major = yes
+        potential = {
+            ai = no
+            NOT = {
+                has_country_flag = jason_auto_marry_all_christians_enabled
+            }
+        }
+        allow = {
+            ai = no
+            NOT = {
+                has_country_flag = jason_auto_marry_all_christians_enabled
+            }
+        }
+        effect = {
+            set_country_flag = jason_auto_marry_all_christians_enabled
+            marry_all_christians = yes
+        }
+    }
+
+    disable_auto_marry_all_christians = {
+        major = yes
+        potential = {
+            ai = no
+            has_country_flag = jason_auto_marry_all_christians_enabled
+        }
+        allow = {
+            ai = no
+            has_country_flag = jason_auto_marry_all_christians_enabled
+        }
+        effect = {
+            clr_country_flag = jason_auto_marry_all_christians_enabled
+        }
+    }
+    
+    enable_auto_marry_everyone = {
+        major = yes
+        potential = {
+            ai = no
+            NOT = {
+                has_country_flag = jason_auto_marry_everyone_enabled
+            }
+        }
+        allow = {
+            ai = no
+            NOT = {
+                has_country_flag = jason_auto_marry_everyone_enabled
+            }
+        }
+        effect = {
+            set_country_flag = jason_auto_marry_everyone_enabled
+            marry_everyone = yes
+        }
+    }
+
+    disable_auto_marry_everyone = {
+        major = yes
+        potential = {
+            ai = no
+            has_country_flag = jason_auto_marry_everyone_enabled
+        }
+        allow = {
+            ai = no
+            has_country_flag = jason_auto_marry_everyone_enabled
+        }
+        effect = {
+            clr_country_flag = jason_auto_marry_everyone_enabled
+        }
+    }
 }
