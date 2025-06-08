@@ -649,31 +649,28 @@ country_decisions = {
     }
 
     set_owned_specific_provinces_to_gold = {
-        major = no
+        major = yes
         potential = {
             ai = no
-            has_country_flag = jason_show_decisions_enabled
+            OR = {
+                has_country_flag = jason_show_decisions_enabled
+                has_country_flag = jason_show_dev_decisions_enabled
+            }
         }
         allow = {
             ai = no
-            any_owned_province = {
-                NOT = { trade_goods = gold }
-                NOT = { trade_goods = silver }
-    
-                is_specific_gold_staked_province = yes
+            OR = {
+                any_province = {
+                    is_specific_gold_staked_province = yes
+                    country_or_subject_holds = ROOT
+                    NOT = { trade_goods = gold }
+                }
             }
         }
         provinces_to_highlight = {
-            OR = {
-                owned_by = ROOT 
-                owner = {
-                    is_subject_of = ROOT
-                }
-            }
-            NOT = { trade_goods = gold }
-            NOT = { trade_goods = silver }
-
+            country_or_subject_holds = ROOT
             is_specific_gold_staked_province = yes
+            NOT = { trade_goods = gold }
         }
         effect = {
             set_owned_specific_provinces_to_gold = yes

@@ -57,3 +57,6 @@
  enable_show_dev_decisions_desc: "Displays development related cheats only"
  disable_show_dev_decisions_title: "Disable Show Development Decisions"
  disable_show_dev_decisions_desc: "Hides development related cheats only"
+
+ set_owned_specific_provinces_to_gold_title: "Set Owned Specific Provinces to Gold"
+ set_owned_specific_provinces_to_gold_desc: "Sets the owned hightlighted provinces to gold producing provinces.."
