@@ -37,7 +37,7 @@ country_decisions = {
     }
 
     upgrade_gold_dev = {
-        major = yes
+        major = no
         potential = {
             ai = no
             has_country_flag = jason_show_decisions_enabled
@@ -74,7 +74,7 @@ country_decisions = {
     }
 
     upgrade_silk_dev = {
-        major = yes
+        major = no
         potential = {
             ai = no
             has_country_flag = jason_show_decisions_enabled
@@ -156,7 +156,10 @@ country_decisions = {
         major = yes
         potential = {
             ai = no
-            has_country_flag = jason_show_decisions_enabled
+            OR = {
+                has_country_flag = jason_show_decisions_enabled
+                has_country_flag = jason_show_dev_decisions_enabled
+            }
         }
         allow = {
             any_province = {
@@ -296,7 +299,7 @@ country_decisions = {
     }
 
     discount_gold_dev = {
-        major = yes
+        major = no
         potential = {
             ai = no
             has_country_flag = jason_show_decisions_enabled
@@ -327,7 +330,7 @@ country_decisions = {
     }
 
     clear_foreign_claims = {
-        major = yes
+        major = no
         potential = {
             ai = no
             has_country_flag = jason_show_decisions_enabled
@@ -360,7 +363,7 @@ country_decisions = {
     }
 
     enable_high_defensiveness_bonus_on_defensive_marches = {
-        major = yes
+        major = no
         potential = {
             ai = no
             has_country_flag = jason_show_decisions_enabled
@@ -396,7 +399,7 @@ country_decisions = {
     }
 
     disable_high_defensiveness_bonus_on_defensive_marches = {
-        major = yes
+        major = no
         potential = {
             ai = no
             has_country_flag = jason_show_decisions_enabled
@@ -428,7 +431,7 @@ country_decisions = {
     }
 
     enable_prov_trade_power_on_all_cot = {
-        major = yes
+        major = no
         potential = {
             ai = no
             has_country_flag = jason_show_decisions_enabled
@@ -453,7 +456,7 @@ country_decisions = {
     }
 
     disable_prov_trade_power_on_all_cot = {
-        major = yes
+        major = no
         potential = {
             ai = no
             has_country_flag = jason_show_decisions_enabled
@@ -472,7 +475,7 @@ country_decisions = {
         }
     }
     enable_prov_trade_power_on_all = {
-        major = yes
+        major = no
         potential = {
             ai = no
             has_country_flag = jason_show_decisions_enabled
@@ -496,7 +499,7 @@ country_decisions = {
     }
 
     disable_prov_trade_power_on_all = {
-        major = yes
+        major = no
         potential = {
             ai = no
             has_country_flag = jason_show_decisions_enabled
@@ -515,7 +518,7 @@ country_decisions = {
     }
 
     enable_auto_marry_all_christians = {
-        major = yes
+        major = no
         potential = {
             ai = no
             has_country_flag = jason_show_decisions_enabled
@@ -556,7 +559,7 @@ country_decisions = {
     }
 
     disable_auto_marry_all_christians = {
-        major = yes
+        major = no
         has_country_flag = jason_show_decisions_enabled
         potential = {
             ai = no
@@ -572,7 +575,7 @@ country_decisions = {
     }
     
     enable_auto_marry_everyone = {
-        major = yes
+        major = no
         potential = {
             ai = no
             has_country_flag = jason_show_decisions_enabled
@@ -593,7 +596,7 @@ country_decisions = {
     }
 
     disable_auto_marry_everyone = {
-        major = yes
+        major = no
         potential = {
             ai = no
             has_country_flag = jason_show_decisions_enabled
@@ -609,7 +612,7 @@ country_decisions = {
     }
     
     enable_auto_upgrade_cot_to_3 = {
-        major = yes
+        major = no
         potential = {
             ai = no
             has_country_flag = jason_show_decisions_enabled
@@ -630,7 +633,7 @@ country_decisions = {
     }
 
     disable_auto_upgrade_cot_to_3 = {
-        major = yes
+        major = no
         potential = {
             ai = no
             has_country_flag = jason_auto_upgrade_cot_to_3_enabled
@@ -642,6 +645,38 @@ country_decisions = {
         }
         effect = {
             clr_country_flag = jason_auto_upgrade_cot_to_3_enabled
+        }
+    }
+
+    set_owned_specific_provinces_to_gold = {
+        major = no
+        potential = {
+            ai = no
+            has_country_flag = jason_show_decisions_enabled
+        }
+        allow = {
+            ai = no
+            any_owned_province = {
+                NOT = { trade_goods = gold }
+                NOT = { trade_goods = silver }
+    
+                is_specific_gold_staked_province = yes
+            }
+        }
+        provinces_to_highlight = {
+            OR = {
+                owned_by = ROOT 
+                owner = {
+                    is_subject_of = ROOT
+                }
+            }
+            NOT = { trade_goods = gold }
+            NOT = { trade_goods = silver }
+
+            is_specific_gold_staked_province = yes
+        }
+        effect = {
+            set_owned_specific_provinces_to_gold = yes
         }
     }
 

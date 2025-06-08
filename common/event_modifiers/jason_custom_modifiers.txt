@@ -519,6 +519,9 @@ jason_mod_more_garrison = {
 jason_mod_more_garrison_huge = {
     garrison_size = 10
 }
+jason_mod_more_manufactories = {
+    allowed_num_of_manufactories = 10
+}
 jason_mod_more_garrison_growth = {
     global_garrison_growth = 100
 }
