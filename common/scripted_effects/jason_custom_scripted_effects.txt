@@ -389,3 +389,75 @@ marry_everyone = {
         }
     } 
 }
+
+upgrade_all_cot_to_level_2 = {
+    every_owned_province = {
+        limit = {
+            province_has_center_of_trade_of_level = 1
+            NOT = {
+                province_has_center_of_trade_of_level = 2
+            }
+            owner = {
+                treasury = 200
+            }
+        }
+        add_center_of_trade_level = 1
+        owner = {
+            add_treasury = -200
+        }
+    }
+
+    every_subject_country = {
+        every_owned_province = {
+            limit = {
+                province_has_center_of_trade_of_level = 1
+                NOT = {
+                    province_has_center_of_trade_of_level = 2
+                }
+                overlord = {
+                    treasury = 200
+                }
+            }
+            add_center_of_trade_level = 1
+            overlord = {
+                add_treasury = -200
+            }
+        }
+    }
+}
+
+upgrade_all_cot_to_level_3 = {
+    every_owned_province = {
+        limit = {
+            province_has_center_of_trade_of_level = 1
+            NOT = {
+                province_has_center_of_trade_of_level = 2
+            }
+            owner = {
+                treasury = 1000
+            }
+        }
+        add_center_of_trade_level = 1
+        owner = {
+            add_treasury = -1000
+        }
+    }
+
+    every_subject_country = {
+        every_owned_province = {
+            limit = {
+                province_has_center_of_trade_of_level = 1
+                NOT = {
+                    province_has_center_of_trade_of_level = 2
+                }
+                overlord = {
+                    treasury = 1000
+                }
+            }
+            add_center_of_trade_level = 1
+            overlord = {
+                add_treasury = -1000
+            }
+        }
+    }
+}

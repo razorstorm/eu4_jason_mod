@@ -563,4 +563,39 @@ country_decisions = {
             clr_country_flag = jason_auto_marry_everyone_enabled
         }
     }
+    
+    enable_auto_upgrade_cot_to_3 = {
+        major = yes
+        potential = {
+            ai = no
+            NOT = {
+                has_country_flag = jason_auto_upgrade_cot_to_3_enabled
+            }
+        }
+        allow = {
+            ai = no
+            NOT = {
+                has_country_flag = jason_auto_upgrade_cot_to_3_enabled
+            }
+        }
+        effect = {
+            set_country_flag = jason_auto_upgrade_cot_to_3_enabled
+            upgrade_all_cot_to_level_3 = yes
+        }
+    }
+
+    disable_auto_upgrade_cot_to_3 = {
+        major = yes
+        potential = {
+            ai = no
+            has_country_flag = jason_auto_upgrade_cot_to_3_enabled
+        }
+        allow = {
+            ai = no
+            has_country_flag = jason_auto_upgrade_cot_to_3_enabled
+        }
+        effect = {
+            clr_country_flag = jason_auto_upgrade_cot_to_3_enabled
+        }
+    }
 }
