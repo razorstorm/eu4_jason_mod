@@ -43,3 +43,17 @@
  disable_auto_marry_everyone_title: "Disable Auto Marry All Nations"
  disable_auto_marry_everyone_desc: "Disables auto marrying all nations, which will stop automatically sending royal marriages to all nations in the world."
 
+ enable_auto_upgrade_cot_to_3_title: "Enable Auto Upgrade Centers of Trade to Level 3"
+ enable_auto_upgrade_cot_to_3_desc: "Enables auto upgrading all Centers of Trade to level 3, which will automatically upgrade all Centers of Trade to level 3 for 1000 ducats each. Happens on every month pulse or whenever acquiring a new subject or province"
+ disable_auto_upgrade_cot_to_3_title: "Disable Auto Upgrade Centers of Trade to Level 3"
+ disable_auto_upgrade_cot_to_3_desc: "Disables auto upgrading all Centers of Trade to level 3, which will stop automatically upgrading all Centers of Trade to level 3 for 1000 ducats each. Note: This will not remove the level 3 Center of Trade from any provinces that already have one."
+
+ enable_show_decisions_title: "Enable Show Decisions"
+ enable_show_decisions_desc: "Displays Cheats"
+ disable_show_decisions_title: "Disable Show Decisions"
+ disable_show_decisions_desc: "Hides Cheats"
+
+ enable_show_dev_decisions_title: "Enable Show Development Decisions"
+ enable_show_dev_decisions_desc: "Displays development related cheats only"
+ disable_show_dev_decisions_title: "Disable Show Development Decisions"
+ disable_show_dev_decisions_desc: "Hides development related cheats only"

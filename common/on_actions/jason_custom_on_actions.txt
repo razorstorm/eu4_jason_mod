@@ -41,6 +41,23 @@ on_monthly_pulse = {
             }
             upgrade_all_cot_to_level_3 = yes
         }
+
+        if = {
+            limit = {
+                has_country_flag = jason_prov_trade_power_on_all_cot_enabled
+            }
+
+            set_prov_trade_power_on_all_cot_for_country_and_subjects = yes
+        }
+
+        if = {
+            limit = {
+                has_country_flag = jason_prov_trade_power_on_all_enabled
+
+            }
+
+            set_prov_trade_power_on_all_for_country_and_subjects = yes
+        }
     }
 }
 

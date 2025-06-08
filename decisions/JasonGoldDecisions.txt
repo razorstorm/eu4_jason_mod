@@ -1,8 +1,13 @@
 country_decisions = {
+    # TODO migrate these to happen on monthly tick / on_province_owner_change instead of being a decision, and make the decision just toggle a flag instead?
     set_gold_dev = {
         major = yes
         potential = {
             ai = no
+            OR = {
+                has_country_flag = jason_show_decisions_enabled
+                has_country_flag = jason_show_dev_decisions_enabled
+            }
         }
         allow = {
             any_province = {
@@ -35,6 +40,7 @@ country_decisions = {
         major = yes
         potential = {
             ai = no
+            has_country_flag = jason_show_decisions_enabled
         }
         provinces_to_highlight = {
             OR = {
@@ -71,6 +77,7 @@ country_decisions = {
         major = yes
         potential = {
             ai = no
+            has_country_flag = jason_show_decisions_enabled
         }
         provinces_to_highlight = {
             OR = {
@@ -106,6 +113,10 @@ country_decisions = {
         major = yes
         potential = {
             ai = no
+            OR = {
+                has_country_flag = jason_show_decisions_enabled
+                has_country_flag = jason_show_dev_decisions_enabled
+            }
         }
         allow = {
             any_owned_province = {
@@ -145,6 +156,7 @@ country_decisions = {
         major = yes
         potential = {
             ai = no
+            has_country_flag = jason_show_decisions_enabled
         }
         allow = {
             any_province = {
@@ -287,6 +299,7 @@ country_decisions = {
         major = yes
         potential = {
             ai = no
+            has_country_flag = jason_show_decisions_enabled
         }
         allow = {
             any_province = {
@@ -317,6 +330,7 @@ country_decisions = {
         major = yes
         potential = {
             ai = no
+            has_country_flag = jason_show_decisions_enabled
         }
         effect = {
             every_country = {
@@ -349,6 +363,7 @@ country_decisions = {
         major = yes
         potential = {
             ai = no
+            has_country_flag = jason_show_decisions_enabled
             NOT = {
                 has_country_flag = jason_defensive_march_enable_high_defensiveness
             }
@@ -384,6 +399,7 @@ country_decisions = {
         major = yes
         potential = {
             ai = no
+            has_country_flag = jason_show_decisions_enabled
             has_country_flag = jason_defensive_march_enable_high_defensiveness
         }
         allow = {
@@ -415,6 +431,7 @@ country_decisions = {
         major = yes
         potential = {
             ai = no
+            has_country_flag = jason_show_decisions_enabled
             NOT = {
                 has_country_flag = jason_prov_trade_power_on_all_cot_enabled
             }
@@ -439,6 +456,7 @@ country_decisions = {
         major = yes
         potential = {
             ai = no
+            has_country_flag = jason_show_decisions_enabled
             has_country_flag = jason_prov_trade_power_on_all_cot_enabled
         }
         allow = {
@@ -457,6 +475,7 @@ country_decisions = {
         major = yes
         potential = {
             ai = no
+            has_country_flag = jason_show_decisions_enabled
             NOT = {
                 has_country_flag = jason_prov_trade_power_on_all_enabled
             }
@@ -480,6 +499,7 @@ country_decisions = {
         major = yes
         potential = {
             ai = no
+            has_country_flag = jason_show_decisions_enabled
             has_country_flag = jason_prov_trade_power_on_all_enabled
         }
         allow = {
@@ -498,14 +518,35 @@ country_decisions = {
         major = yes
         potential = {
             ai = no
+            has_country_flag = jason_show_decisions_enabled
             NOT = {
                 has_country_flag = jason_auto_marry_all_christians_enabled
+            }
+
+            OR = {
+                religion = catholic
+                religion = orthodox
+                religion = coptic
+                religion = protestant
+                religion = reformed
+    
+                religion_group = christian
             }
         }
         allow = {
             ai = no
             NOT = {
                 has_country_flag = jason_auto_marry_all_christians_enabled
+            }
+            
+            OR = {
+                religion = catholic
+                religion = orthodox
+                religion = coptic
+                religion = protestant
+                religion = reformed
+    
+                religion_group = christian
             }
         }
         effect = {
@@ -516,6 +557,7 @@ country_decisions = {
 
     disable_auto_marry_all_christians = {
         major = yes
+        has_country_flag = jason_show_decisions_enabled
         potential = {
             ai = no
             has_country_flag = jason_auto_marry_all_christians_enabled
@@ -533,6 +575,7 @@ country_decisions = {
         major = yes
         potential = {
             ai = no
+            has_country_flag = jason_show_decisions_enabled
             NOT = {
                 has_country_flag = jason_auto_marry_everyone_enabled
             }
@@ -553,6 +596,7 @@ country_decisions = {
         major = yes
         potential = {
             ai = no
+            has_country_flag = jason_show_decisions_enabled
             has_country_flag = jason_auto_marry_everyone_enabled
         }
         allow = {
@@ -568,6 +612,7 @@ country_decisions = {
         major = yes
         potential = {
             ai = no
+            has_country_flag = jason_show_decisions_enabled
             NOT = {
                 has_country_flag = jason_auto_upgrade_cot_to_3_enabled
             }
@@ -589,6 +634,7 @@ country_decisions = {
         potential = {
             ai = no
             has_country_flag = jason_auto_upgrade_cot_to_3_enabled
+            has_country_flag = jason_show_decisions_enabled
         }
         allow = {
             ai = no
@@ -596,6 +642,74 @@ country_decisions = {
         }
         effect = {
             clr_country_flag = jason_auto_upgrade_cot_to_3_enabled
+        }
+    }
+
+    enable_show_decisions = {
+        major = yes
+        potential = {
+            ai = no
+            NOT = {
+                has_country_flag = jason_show_decisions_enabled
+            }
+        }
+        allow = {
+            ai = no
+            NOT = {
+                has_country_flag = jason_show_decisions_enabled
+            }
+        }
+        effect = {
+            set_country_flag = jason_show_decisions_enabled
+        }
+    }
+
+    disable_show_decisions = {
+        major = yes
+        potential = {
+            ai = no
+            has_country_flag = jason_show_decisions_enabled
+        }
+        allow = {
+            ai = no
+            has_country_flag = jason_show_decisions_enabled
+        }
+        effect = {
+            clr_country_flag = jason_show_decisions_enabled
+        }
+    }
+
+    enable_show_dev_decisions = {
+        major = yes
+        potential = {
+            ai = no
+            NOT = {
+                has_country_flag = jason_show_dev_decisions_enabled
+            }
+        }
+        allow = {
+            ai = no
+            NOT = {
+                has_country_flag = jason_show_dev_decisions_enabled
+            }
+        }
+        effect = {
+            set_country_flag = jason_show_dev_decisions_enabled
+        }
+    }
+
+    disable_show_dev_decisions = {
+        major = yes
+        potential = {
+            ai = no
+            has_country_flag = jason_show_dev_decisions_enabled
+        }
+        allow = {
+            ai = no
+            has_country_flag = jason_show_dev_decisions_enabled
+        }
+        effect = {
+            clr_country_flag = jason_show_dev_decisions_enabled
         }
     }
 }

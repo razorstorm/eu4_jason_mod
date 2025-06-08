@@ -414,13 +414,17 @@ upgrade_all_cot_to_level_2 = {
                 NOT = {
                     province_has_center_of_trade_of_level = 2
                 }
-                overlord = {
-                    treasury = 200
+                owner = {
+                    overlord = {
+                        treasury = 200
+                    }
                 }
             }
             add_center_of_trade_level = 1
-            overlord = {
-                add_treasury = -200
+            owner = {
+                overlord = {
+                    add_treasury = -200
+                }
             }
         }
     }
@@ -431,7 +435,7 @@ upgrade_all_cot_to_level_3 = {
         limit = {
             province_has_center_of_trade_of_level = 1
             NOT = {
-                province_has_center_of_trade_of_level = 2
+                province_has_center_of_trade_of_level = 3
             }
             owner = {
                 treasury = 1000
@@ -448,15 +452,19 @@ upgrade_all_cot_to_level_3 = {
             limit = {
                 province_has_center_of_trade_of_level = 1
                 NOT = {
-                    province_has_center_of_trade_of_level = 2
+                    province_has_center_of_trade_of_level = 3
                 }
-                overlord = {
-                    treasury = 1000
+                owner = {
+                    overlord = {
+                        treasury = 1000
+                    }
                 }
             }
             add_center_of_trade_level = 1
-            overlord = {
-                add_treasury = -1000
+            owner = {
+                overlord = {
+                    treasury = -1000
+                }
             }
         }
     }
