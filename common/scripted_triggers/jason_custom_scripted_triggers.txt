@@ -5,6 +5,14 @@ is_mining_corporation = {
     }
 }
 
+is_a_persian_tag = {
+    OR = {
+        tag = ARL
+        tag = PER
+        tag = ERS
+    }
+}
+
 # List of provinces that we want to turn into gold
 is_specific_gold_staked_province = {
     OR = {

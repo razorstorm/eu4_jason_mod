@@ -630,40 +630,9 @@ set_initialize_cheats = {
     # Ruler
     ##########################################################################
     
-    change_adm = 6
-    change_dip = 6
-    change_mil = 6
-    
     if = {
         limit = {
-            NOT = {
-                OR = {
-                    tag = AZT
-                    tag = RUS
-                    tag = TUR
-                    tag = MJZ
-                    tag = BYZ
-                    tag = NHS
-                    tag = ENG
-                    tag = GBR
-                    tag = ARL
-                }
-            }
-        }
-        define_ruler = {
-            dynasty = ROOT
-            culture = ROOT
-            religion = ROOT
-            adm = 10
-            dip = 10
-            mil = 10
-            male = yes
-            fixed = yes
-        }
-    }
-    if = {
-        limit = {
-            tag = ARL
+            is_a_persian_tag = yes
         }
         define_ruler = {
             culture = ROOT
@@ -676,7 +645,7 @@ set_initialize_cheats = {
             fixed = yes
         }
     }
-    if = {
+    else_if = {
         limit = {
             OR = {
                 tag = ENG
@@ -695,7 +664,7 @@ set_initialize_cheats = {
             fixed = yes
         }
     }
-    if = {
+    else_if = {
         limit = {
             tag = MJZ
         }
@@ -711,7 +680,7 @@ set_initialize_cheats = {
             fixed = yes
         }
     }
-    if = {
+    else_if = {
         limit = {
             OR = {
                 tag = BYZ
@@ -730,18 +699,45 @@ set_initialize_cheats = {
             fixed = yes
         }
     }
-    
-    if = {
+    else_if = {
+        limit = {
+            OR = {
+                tag = ETH
+            }
+        }
+        define_ruler = {
+            dynasty = ROOT
+            culture = ROOT
+            religion = ROOT
+            adm = 10
+            dip = 10
+            mil = 10
+            male = yes
+            name = "Menelik II \"The Divine\""
+            fixed = yes
+        }
+    }
+    else_if = {
         limit = {
             tag = AZT
         }
+        # Don't create new ruler, but make sure to set the montezuma flag if it somehow got unset.
         set_ruler_flag = azt_montezuma    
     }
-    
-    add_ruler_personality = ruler_of_destiny_personality
-    add_ruler_personality = immortal_personality
-    add_ruler_personality = legendary_conqueror_personality
-    add_ruler_personality = scholar_personality
+    else = {
+        define_ruler = {
+            dynasty = ROOT
+            culture = ROOT
+            religion = ROOT
+            adm = 10
+            dip = 10
+            mil = 10
+            male = yes
+            fixed = yes
+        }
+    }
+
+    upgrade_ruler = yes
     
     
     # Adding advisor pool
@@ -844,4 +840,71 @@ set_initialize_cheats = {
         duration = -1  
     }
     
+}
+
+
+setup_pax_solis_laws = {
+    # Taxation System - Progressive Tax System
+    remove_country_modifier = hf_estate_int_farmingtax
+    remove_country_modifier = hf_estate_int_headtax
+    remove_country_modifier = hf_estate_int_landtax
+    remove_country_modifier = hf_estate_int_flattax
+    remove_country_modifier = hf_estate_int_salestax
+    remove_country_modifier = hf_estate_int_graintax
+
+    add_country_modifier = {
+        name = hf_estate_int_flattax
+        duration = -1
+    }
+
+    clr_country_flag = hf_viewing_estate_int_tax_event
+
+    # Economic Basis - Mercantilism
+    remove_country_modifier = hf_estate_int_naturaleconomy
+    remove_country_modifier = hf_estate_int_physiocracy
+    remove_country_modifier = hf_estate_int_mercantilism
+
+    add_country_modifier = {
+        name = hf_estate_int_mercantilism
+        duration = -1
+    }
+
+    clr_country_flag = hf_viewing_estate_int_economy_event
+
+    # Trade Principle - Trade Protection
+    remove_country_modifier = hf_estate_int_isolationism
+    remove_country_modifier = hf_estate_int_freetrade
+
+    add_country_modifier = {
+        name = hf_estate_int_protectionism
+        duration = -1
+    }
+
+    clr_country_flag = hf_viewing_estate_int_trade_event
+
+    # Church and State - State Religion
+
+    remove_country_modifier = hf_estate_int_sepchurchstate
+    remove_country_modifier = hf_estate_int_freeconscience
+
+    add_country_modifier = {
+        name = hf_estate_int_statereligion
+        duration = -1
+    }
+
+    clr_country_flag = hf_viewing_estate_int_religion_event
+
+    # Civil Administration - Citizenship Act
+    remove_country_modifier = hf_estate_int_sharecropping
+    remove_country_modifier = hf_estate_int_serfdom
+    remove_country_modifier = hf_estate_int_craftsman
+    remove_country_modifier = hf_estate_int_forcedlabor
+    remove_country_modifier = hf_estate_int_cool_down_population
+
+    add_country_modifier = {
+        name = hf_estate_int_settlemgn
+        duration = -1
+    }
+
+    clr_country_flag = hf_viewing_estate_int_population_event
 }

@@ -169,6 +169,7 @@ country_decisions = {
                 }
                 NOT = { owned_by = ROOT }
             }
+            is_a_persian_tag = yes
         }
         provinces_to_highlight = {
             OR = {
