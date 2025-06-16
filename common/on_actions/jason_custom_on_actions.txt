@@ -212,6 +212,16 @@ on_dependency_gained = {
     }
 }
 
+on_new_monarch = {
+    if = {
+        limit = {
+            ai = no
+        }
+        # No infinite loop since new monarch will have 6/6/6 stats, thus not triggering a new monarch creation.
+        make_immortal_ruling_family = yes
+    }
+}
+
 on_new_consort = {
     if = {
         limit = {
