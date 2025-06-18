@@ -43,11 +43,11 @@ set_high_dev_resource_gathering_operation = {
                 base_production = 25
             }
         }
+        set_base_tax = 20
+        set_base_production = 25
+        set_base_manpower = 15
     }
-    set_base_tax = 20
-    set_base_production = 25
-    set_base_manpower = 15
-
+        
     set_local_autonomy = 0
 }
 
@@ -395,6 +395,15 @@ set_owned_specific_provinces_to_gold = {
             NOT = { trade_goods = gold }
         }
         change_trade_goods = gold
+    }
+}
+
+set_gold_to_slaves = {
+    every_owned_province = {
+        limit = {
+            trade_goods = gold
+        }
+        change_trade_goods = slaves
     }
 }
 
@@ -840,6 +849,23 @@ set_initialize_cheats = {
         duration = -1  
     }
     
+}
+
+set_random_trade_good = {
+    random_list = {
+        25 = {
+            change_trade_goods = spices
+        }
+        25 = {
+            change_trade_goods = tropical_wood
+        }
+        25 = {
+            change_trade_goods = cocoa
+        }
+        25 = {
+            change_trade_goods = ivory
+        }
+    }
 }
 
 

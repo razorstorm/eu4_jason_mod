@@ -686,6 +686,12 @@ country_decisions = {
                 has_country_flag = jason_show_decisions_enabled
                 has_country_flag = jason_show_dev_decisions_enabled
             }
+            OR = {
+                any_province = {
+                    trade_goods = slaves
+                    country_or_subject_holds = ROOT
+                }
+            }
         }
         allow = {
             ai = no
@@ -703,6 +709,47 @@ country_decisions = {
         effect = {
             set_owned_slave_provinces_to_gold = yes
         }
+    }
+
+    set_subject_owned_slave_provinces_to_random = {
+        major = no
+
+        potential = {
+            ai = no
+            OR = {
+                has_country_flag = jason_show_decisions_enabled
+            }
+            OR = {
+                any_province = {
+                    trade_goods = slaves
+                    owned_by_subject_of = ROOT
+                }
+            }
+        }
+        allow = {
+            ai = no
+            OR = {
+                any_province = {
+                    trade_goods = slaves
+                    owned_by_subject_of = ROOT
+                }
+            }
+        }
+        provinces_to_highlight = {
+            trade_goods = slaves
+            owned_by_subject_of = ROOT
+        }
+        effect = {
+            every_subject_country = {
+                every_owned_province = {
+                    limit = {
+                        trade_goods = slaves
+                    }
+            
+                    set_random_trade_good = yes
+                }
+            }
+        }  
     }
 
 

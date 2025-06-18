@@ -20,14 +20,14 @@
  monopolize_silk_and_dyes_title: "Monopolize The Silk Trade"
  monopolize_silk_and_dyes_desc: "Monopolizes the Silk Trade by converting all foreign silk and dyes provinces into cloth provinces and setting an equal number of our own (not silk/gold/silver/dyes producing) provinces into silk producing provinces. If we run out of valid provinces, the process will end early."
 
- enable_high_defensiveness_bonus_on_defensive_marches_title: "Enable High Defensiveness Bonus on Defensive Marches"
+ enable_high_defensiveness_bonus_on_defensive_marches_title: "Enable Defense Bonus on Defensive Marches"
  enable_high_defensiveness_bonus_on_defensive_marches_desc: "Enables the high defensiveness cheat on defensive marches, which massively increases the defensiveness and garrison sizes of the defensive march."
- disable_high_defensiveness_bonus_on_defensive_marches_title: "Disable High Defensiveness Bonus on Defensive Marches"
+ disable_high_defensiveness_bonus_on_defensive_marches_title: "Disable Defense Bonus on Defensive Marches"
  disable_high_defensiveness_bonus_on_defensive_marches_desc: "Disables the high defensiveness cheat on defensive marches, which massively increases the defensiveness and garrison sizes of the defensive march."
 
- enable_prov_trade_power_on_all_cot_title: "Enable Trade Power cheat on All Centers of Trade"
+ enable_prov_trade_power_on_all_cot_title: "Enable Trade Power Cheat on All CoT"
  enable_prov_trade_power_on_all_cot_desc: "Enables the trade power cheat on all provinces which contain Centers of Trade for both yourself and all your subjects. Note: There is no way to undo this action. Disabling this decision this will simply stop the trade power cheat from being auto added to new CoT provcines in the future, but will not remove the trade power cheat from any provinces."
- disable_prov_trade_power_on_all_cot_title: "Disable Trade Power cheat on All Centers of Trade"
+ disable_prov_trade_power_on_all_cot_title: "Disable Trade Power Cheat on All CoT"
  disable_prov_trade_power_on_all_cot_desc: "Disables auto adding the trade power cheat to all provinces which contain Centers of Trade for both yourself and all your subjects. Note: This will not remove the trade power cheat from provinces that already have it enabled."
  enable_prov_trade_power_on_all_title: "Enable Trade Power cheat on All Provinces"
  enable_prov_trade_power_on_all_desc: "Enables the trade power cheat on all provinces for both yourself and all your subjects. Note: There is no way to undo this action. Disabling this decision will simply stop the trade power cheat from being auto added to new provinces in the future, but will not remove the trade power cheat from any provinces."
@@ -43,9 +43,9 @@
  disable_auto_marry_everyone_title: "Disable Auto Marry All Nations"
  disable_auto_marry_everyone_desc: "Disables auto marrying all nations, which will stop automatically sending royal marriages to all nations in the world."
 
- enable_auto_upgrade_cot_to_3_title: "Enable Auto Upgrade Centers of Trade to Level 3"
+ enable_auto_upgrade_cot_to_3_title: "Enable Auto Upgrade CoTs to Level 3"
  enable_auto_upgrade_cot_to_3_desc: "Enables auto upgrading all Centers of Trade to level 3, which will automatically upgrade all Centers of Trade to level 3 for 1000 ducats each. Happens on every month pulse or whenever acquiring a new subject or province"
- disable_auto_upgrade_cot_to_3_title: "Disable Auto Upgrade Centers of Trade to Level 3"
+ disable_auto_upgrade_cot_to_3_title: "Disable Auto Upgrade CoTs to Level 3"
  disable_auto_upgrade_cot_to_3_desc: "Disables auto upgrading all Centers of Trade to level 3, which will stop automatically upgrading all Centers of Trade to level 3 for 1000 ducats each. Note: This will not remove the level 3 Center of Trade from any provinces that already have one."
 
  enable_show_decisions_title: "Enable Show Decisions"
@@ -63,3 +63,6 @@
 
  set_owned_slave_provinces_to_gold_decision_title: "Set Owned Slave Provinces to Gold"
  set_owned_slave_provinces_to_gold_decision_desc: "Sets the owned slave producing provinces to gold producing provinces."
+
+ set_subject_owned_slave_provinces_to_random_title: "Set Subject Slave Provinces to Random"
+ set_subject_owned_slave_provinces_to_random_desc: "Sets the owned slave producing provinces of all subjects to random trade goods: spices, tropical_wood, cocoa, or ivory"
