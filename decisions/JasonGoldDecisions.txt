@@ -2,6 +2,7 @@ country_decisions = {
     # TODO migrate these to happen on monthly tick / on_province_owner_change instead of being a decision, and make the decision just toggle a flag instead?
     set_gold_dev = {
         major = yes
+        color = { 255 255 0 }
         potential = {
             ai = no
             OR = {
@@ -38,6 +39,7 @@ country_decisions = {
 
     upgrade_gold_dev = {
         major = no
+        color = { 0 255 255 }
         potential = {
             ai = no
             has_country_flag = jason_show_decisions_enabled
@@ -75,6 +77,7 @@ country_decisions = {
 
     upgrade_silk_dev = {
         major = no
+        color = { 0 255 255 }
         potential = {
             ai = no
             has_country_flag = jason_show_decisions_enabled
@@ -111,6 +114,7 @@ country_decisions = {
 
     set_silk_dev = {
         major = yes
+        color = { 255 255 0 }
         potential = {
             ai = no
             OR = {
@@ -154,12 +158,14 @@ country_decisions = {
 
     monopolize_silk_and_dyes = {
         major = yes
+        color = { 0 0 255 }
         potential = {
             ai = no
             OR = {
                 has_country_flag = jason_show_decisions_enabled
                 has_country_flag = jason_show_dev_decisions_enabled
             }
+            is_a_persian_tag = yes
         }
         allow = {
             any_province = {
@@ -219,10 +225,9 @@ country_decisions = {
 
             every_owned_province = {
                 limit = {
-                    NOT = { trade_goods = silk }
-                    NOT = { trade_goods = gold }
-                    NOT = { trade_goods = silver }
-                    NOT = { trade_goods = dyes }
+                    NOT = {
+                        is_valuable_goods_producing_province = yes
+                    }
                 }
                 ROOT = {
                     change_variable = {
@@ -252,10 +257,9 @@ country_decisions = {
         
                     random_owned_province = {
                         limit = {
-                            NOT = { trade_goods = silk }
-                            NOT = { trade_goods = gold }
-                            NOT = { trade_goods = silver }
-                            NOT = { trade_goods = dyes }
+                            NOT = {
+                                is_valuable_goods_producing_province = yes
+                            }
                         }
                         change_trade_goods = silk
                         ROOT = {
@@ -299,6 +303,177 @@ country_decisions = {
         }
     }
 
+    monopolize_gold_from_non_mining_subjects = {
+        major = yes
+        color = { 0 0 255 }
+        potential = {
+            ai = no
+            OR = {
+                has_country_flag = jason_show_decisions_enabled
+            }
+            any_province = {
+                OR = {
+                    trade_goods = gold
+                    trade_goods = silver
+                }
+                NOT = { owned_by = ROOT }
+
+                owner = {
+                    is_subject_of = ROOT
+                    NOT = {
+                        is_treasure_fleet_enabled_subject = yes
+                    }
+                }
+            }
+        }
+        allow = {
+            any_province = {
+                OR = {
+                    trade_goods = gold
+                    trade_goods = silver
+                }
+                NOT = { owned_by = ROOT }
+
+                owner = {
+                    is_subject_of = ROOT
+                    NOT = {
+                        is_treasure_fleet_enabled_subject = yes
+                    }
+                }
+            }
+        }
+        provinces_to_highlight = {
+            OR = {
+                trade_goods = gold
+                trade_goods = silver
+            }
+            NOT = { owned_by = ROOT }
+
+            owner = {
+                is_subject_of = ROOT
+                NOT = {
+                    is_treasure_fleet_enabled_subject = yes
+                }
+            }
+        }
+        effect = {
+            log = "Monopolizing gold from tariff-less subjects into home country"
+            ROOT = {
+                set_variable = {
+                    which = numProvincesAffected
+                    value = 0
+                }
+
+                set_variable = {
+                    which = provincesAvailable
+                    value = 0
+                }
+            }
+            every_province = {
+                limit = {
+                    OR = {
+                        trade_goods = gold
+                        trade_goods = silver
+                    }
+                    NOT = { owned_by = ROOT }
+                }
+
+                change_trade_goods = iron
+
+                ROOT = {
+                    change_variable = {
+                        which = numProvincesAffected
+                        value = 1
+                    }
+                }
+                log = "Removed gold/silver from [This.GetName] and changed to iron"
+                ROOT = {
+                    log = "# provinces modified so far: [ROOT.numProvincesAffected.GetValue]"
+                }
+            }
+            ROOT = {
+                log = "Finished removing gold/silver from tariff-less subjects. Total # of modified provinces: [ROOT.numProvincesAffected.GetValue]"
+            }
+
+            every_owned_province = {
+                limit = {
+                    NOT = {
+                        is_valuable_goods_producing_province = yes
+                    }
+                }
+                ROOT = {
+                    change_variable = {
+                        which = provincesAvailable
+                        value = 1
+                    }
+                }
+            }
+            ROOT = {
+                log = "Finished counting number of valid provinces. # provinces available: [ROOT.provincesAvailable.GetValue]"
+            }
+            ROOT = {
+                while = {
+                    limit = {
+                        ROOT = {
+                            check_variable = {
+                                which = numProvincesAffected
+                                value = 1
+                            }
+                            check_variable = {
+                                which = provincesAvailable
+                                value = 1
+                            }
+                        }
+                    }
+        
+                    random_owned_province = {
+                        limit = {
+                            NOT = {
+                                is_valuable_goods_producing_province = yes
+                            }
+                        }
+                        change_trade_goods = gold
+                        ROOT = {
+                            change_variable = {
+                                which = numProvincesAffected
+                                value = -1
+                            }
+                            change_variable = {
+                                which = provincesAvailable
+                                value = -1
+                            }
+                        }
+                        log = "Added gold to [This.GetName]"
+                        
+                        ROOT = {
+                            log = "Provinces left to modify: [ROOT.numProvincesAffected.GetValue], valid provinces left: [ROOT.provincesAvailable.GetValue]"
+                        }
+                    }
+
+                    if = {
+                        limit = {
+                            ROOT = {
+                                NOT = {
+                                    check_variable = {
+                                        which = provincesAvailable
+                                        value = 1
+                                    }
+                                }
+                                check_variable = {
+                                    which = numProvincesAffected
+                                    value = 1
+                                }
+                            }
+                        }
+                        ROOT = {
+                            log = "No more valid provinces to change into gold, but still have [ROOT.numProvincesAffected.GetValue] provinces left to modify, stopping loop early"
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     discount_gold_dev = {
         major = no
         potential = {
@@ -332,6 +507,7 @@ country_decisions = {
 
     clear_foreign_claims = {
         major = no
+        color = { 255 0 0 }
         potential = {
             ai = no
             has_country_flag = jason_show_decisions_enabled
@@ -401,6 +577,7 @@ country_decisions = {
 
     disable_high_defensiveness_bonus_on_defensive_marches = {
         major = no
+        color = { 100 0 0 }
         potential = {
             ai = no
             has_country_flag = jason_show_decisions_enabled
@@ -458,6 +635,7 @@ country_decisions = {
 
     disable_prov_trade_power_on_all_cot = {
         major = no
+        color = { 100 0 0 }
         potential = {
             ai = no
             has_country_flag = jason_show_decisions_enabled
@@ -475,6 +653,7 @@ country_decisions = {
             clr_country_flag = jason_prov_trade_power_on_all_cot_enabled
         }
     }
+
     enable_prov_trade_power_on_all = {
         major = no
         potential = {
@@ -501,6 +680,7 @@ country_decisions = {
 
     disable_prov_trade_power_on_all = {
         major = no
+        color = { 100 0 0 }
         potential = {
             ai = no
             has_country_flag = jason_show_decisions_enabled
@@ -561,9 +741,10 @@ country_decisions = {
 
     disable_auto_marry_all_christians = {
         major = no
-        has_country_flag = jason_show_decisions_enabled
+        color = { 100 0 0 }
         potential = {
             ai = no
+            has_country_flag = jason_show_decisions_enabled
             has_country_flag = jason_auto_marry_all_christians_enabled
         }
         allow = {
@@ -598,6 +779,7 @@ country_decisions = {
 
     disable_auto_marry_everyone = {
         major = no
+        color = { 100 0 0 }
         potential = {
             ai = no
             has_country_flag = jason_show_decisions_enabled
@@ -635,6 +817,7 @@ country_decisions = {
 
     disable_auto_upgrade_cot_to_3 = {
         major = no
+        color = { 100 0 0 }
         potential = {
             ai = no
             has_country_flag = jason_auto_upgrade_cot_to_3_enabled
@@ -712,12 +895,13 @@ country_decisions = {
     }
 
     set_subject_owned_slave_provinces_to_random = {
-        major = no
+        major = yes
 
         potential = {
             ai = no
             OR = {
                 has_country_flag = jason_show_decisions_enabled
+                has_country_flag = jason_show_dev_decisions_enabled
             }
             OR = {
                 any_province = {
@@ -752,9 +936,9 @@ country_decisions = {
         }  
     }
 
-
     enable_show_decisions = {
         major = yes
+        color = { 0 255 0 }
         potential = {
             ai = no
             NOT = {
@@ -774,6 +958,7 @@ country_decisions = {
 
     disable_show_decisions = {
         major = yes
+        color = { 100 0 0 }
         potential = {
             ai = no
             has_country_flag = jason_show_decisions_enabled
@@ -789,6 +974,7 @@ country_decisions = {
 
     enable_show_dev_decisions = {
         major = yes
+        color = { 0 255 0 }
         potential = {
             ai = no
             NOT = {
@@ -808,6 +994,7 @@ country_decisions = {
 
     disable_show_dev_decisions = {
         major = yes
+        color = { 100 0 0 }
         potential = {
             ai = no
             has_country_flag = jason_show_dev_decisions_enabled

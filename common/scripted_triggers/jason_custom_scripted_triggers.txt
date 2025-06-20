@@ -13,6 +13,39 @@ is_a_persian_tag = {
     }
 }
 
+# When monopolizing trade goods into our country, we should skip any of the following provinces because they already produce valuable goods
+is_valuable_goods_producing_province = {
+    OR = {
+        trade_goods = gold
+        trade_goods = silver
+        trade_goods = diamonds
+        
+        AND = {
+            is_a_persian_tag = yes
+            OR = {
+                trade_goods = dyes
+                trade_goods = silk
+            }
+        }
+    }
+}
+
+is_treasure_fleet_enabled_subject = {
+    OR = {
+        is_subject_of_type = mining_corporation
+        is_subject_of_type = dominion
+        is_subject_of_type = dominion_tc
+        is_subject_of_type = colony
+        is_subject_of_type = crown_colony
+        is_subject_of_type = private_enterprise
+        is_subject_of_type = self_governing_colony
+        is_subject_of_type = pirate_brotherhood_vassal
+        is_subject_of_type = persian_satrapy
+        is_subject_of_type = trade_outpost
+        is_subject_of_type = viking_settlement
+    }
+}
+
 # List of provinces that we want to turn into gold
 is_specific_gold_staked_province = {
     OR = {

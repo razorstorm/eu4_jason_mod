@@ -234,10 +234,10 @@ set_prov_trade_power_on_all_cot = {
         if = {
             limit = {
                 NOT = {
-                    base_production = 30
+                    base_production = 15
                 }
             }
-            set_base_production = 30
+            set_base_production = 15
         }
     }
 }
