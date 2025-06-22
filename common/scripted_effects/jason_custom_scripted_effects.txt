@@ -1036,10 +1036,10 @@ fixing_religion_and_culture = {
     }
     every_owned_province = {
         limit = {
-            culture = noreligion
+            religion = noreligion
         }
         # log = "Province [This.GetName] has noreligion"
-        change_culture = owner
+        change_religion = owner
     }
 }
 
