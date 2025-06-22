@@ -8,6 +8,12 @@ on_startup = {
         reduce_gold_depletion_chance_on_country_and_subjects = yes
         set_build_time_reduction_on_country_and_subjects = yes
         set_supply_cheat_on_country_and_subjects = yes
+        convert_trade_company_provinces_for_country_and_subjects = yes
+        adding_all_provinces_to_parliament_and_setting_approval_chance = yes
+        fixing_religion_and_culture = yes
+        remove_country_modifier = lost_hegemony
+        create_homeguard_general = yes
+        updating_subject_loyalties = yes
     }
 }
 
@@ -17,6 +23,10 @@ on_monthly_pulse = {
             ai = no
         }
         extend_golden_age_by_one_year = yes
+        fixing_religion_and_culture = yes
+        remove_country_modifier = lost_hegemony
+        create_homeguard_general = yes
+        updating_subject_loyalties = yes
 
         if = {
             limit = {
@@ -92,6 +102,23 @@ on_province_owner_change = {
         }
     }
 
+    # Actions that apply to every owned province: 
+    # Convert trade company provinces
+    # Adding all provinces to parliament
+    # Fixing noreligion and noculture
+    # Removing guaranteed religious autonomy
+    owner = {
+        if = {
+            limit = {
+                ai = no
+            }
+            convert_trade_company_provinces_for_country_and_subjects = yes
+            adding_all_provinces_to_parliament_and_setting_approval_chance = yes
+            fixing_religion_and_culture = yes
+            create_homeguard_general = yes
+        }
+    }
+
     # Setting trade power cheats on COTs if decision is enabled.
     owner = {
         if = {
@@ -149,7 +176,8 @@ on_province_owner_change = {
 
 # ROOT = overlord, FROM = subject
 on_dependency_gained = {
-	FROM = {
+	# Subject
+    FROM = {
 		if = {
 			limit = {
                 is_mining_corporation = yes
@@ -175,6 +203,7 @@ on_dependency_gained = {
         }
 	}
 
+    # Overlord
     ROOT = {
         if = {
             limit = {
@@ -183,6 +212,9 @@ on_dependency_gained = {
             reduce_gold_depletion_chance_on_country_and_subjects = yes
             set_build_time_reduction_on_country_and_subjects = yes
             set_supply_cheat_on_country_and_subjects = yes
+            convert_trade_company_provinces_for_country_and_subjects = yes
+            create_homeguard_general = yes
+            updating_subject_loyalties = yes
 
             # Upgrading COTs to level 2 or 3
             upgrade_all_cot_to_level_2 = yes
@@ -252,5 +284,19 @@ on_queen_death = {
             ai = no
         }
         make_immortal_ruling_family = yes
+    }
+}
+
+# root = location, from = country doing it
+on_added_to_trade_company = {
+    if = {
+        limit = {
+            owner = {
+                ai = no
+            }
+        }
+        owner = {
+            convert_trade_company_provinces_for_country_and_subjects = yes
+        }
     }
 }

@@ -2,7 +2,7 @@ country_decisions = {
     # TODO migrate these to happen on monthly tick / on_province_owner_change instead of being a decision, and make the decision just toggle a flag instead?
     set_gold_dev = {
         major = yes
-        color = { 255 255 0 }
+        color = { 100 200 0 }
         potential = {
             ai = no
             OR = {
@@ -81,6 +81,7 @@ country_decisions = {
         potential = {
             ai = no
             has_country_flag = jason_show_decisions_enabled
+            is_a_persian_tag = yes
         }
         provinces_to_highlight = {
             OR = {
@@ -96,6 +97,7 @@ country_decisions = {
                     trade_goods = dyes
                 }
             }
+            is_a_persian_tag = yes
         }
         effect = {
             every_owned_province = {
@@ -114,13 +116,14 @@ country_decisions = {
 
     set_silk_dev = {
         major = yes
-        color = { 255 255 0 }
+        color = { 100 200 0 }
         potential = {
             ai = no
             OR = {
                 has_country_flag = jason_show_decisions_enabled
                 has_country_flag = jason_show_dev_decisions_enabled
             }
+            is_a_persian_tag = yes
         }
         allow = {
             any_owned_province = {
@@ -130,6 +133,7 @@ country_decisions = {
                 }
                 NOT = { base_production = 25 }
             }
+            is_a_persian_tag = yes
         }
         provinces_to_highlight = {
             OR = {
@@ -834,6 +838,7 @@ country_decisions = {
 
     set_owned_specific_provinces_to_gold_decision = {
         major = yes
+        color = { 255 255 0 }
         potential = {
             ai = no
             OR = {
@@ -863,6 +868,7 @@ country_decisions = {
 
     set_owned_slave_provinces_to_gold_decision = {
         major = yes
+        color = { 255 255 0 }
         potential = {
             ai = no
             OR = {
@@ -896,7 +902,7 @@ country_decisions = {
 
     set_subject_owned_slave_provinces_to_random = {
         major = yes
-
+        color = { 0 0 0 }
         potential = {
             ai = no
             OR = {
