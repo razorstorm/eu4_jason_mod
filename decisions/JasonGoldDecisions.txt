@@ -1050,6 +1050,44 @@ country_decisions = {
         }  
     }
 
+    enable_automatic_max_tariffs = {
+        major = yes
+        potential = {
+            ai = no
+            has_country_flag = jason_show_decisions_enabled
+            NOT = {
+                has_country_flag = jason_automatic_max_tariffs_enabled
+            }
+        }
+        allow = {
+            ai = no
+            NOT = {
+                has_country_flag = jason_automatic_max_tariffs_enabled
+            }
+        }
+        effect = {
+            set_country_flag = jason_automatic_max_tariffs_enabled
+        } 
+    }
+
+    disable_automatic_max_tariffs = {
+        major = yes
+        color = { 100 0 0 }
+        potential = {
+            ai = no
+            has_country_flag = jason_show_decisions_enabled
+            has_country_flag = jason_automatic_max_tariffs_enabled
+        }
+        allow = {
+            ai = no
+            has_country_flag = jason_automatic_max_tariffs_enabled
+        }
+        effect = {
+            clr_country_flag = jason_automatic_max_tariffs_enabled
+            automatic_reduce_half_tariffs = yes
+        }  
+    }
+
     enable_set_zero_autonomy_on_precious_provinces = {
         major = yes
         potential = {
@@ -1161,39 +1199,40 @@ country_decisions = {
         }
     }
 
-    enable_show_dev_decisions = {
-        major = yes
-        color = { 0 255 0 }
-        potential = {
-            ai = no
-            NOT = {
-                has_country_flag = jason_show_dev_decisions_enabled
-            }
-        }
-        allow = {
-            ai = no
-            NOT = {
-                has_country_flag = jason_show_dev_decisions_enabled
-            }
-        }
-        effect = {
-            set_country_flag = jason_show_dev_decisions_enabled
-        }
-    }
+    # These don't have too much value anymore now that devving is a toggle flag
+    # enable_show_dev_decisions = {
+    #     major = yes
+    #     color = { 0 255 0 }
+    #     potential = {
+    #         ai = no
+    #         NOT = {
+    #             has_country_flag = jason_show_dev_decisions_enabled
+    #         }
+    #     }
+    #     allow = {
+    #         ai = no
+    #         NOT = {
+    #             has_country_flag = jason_show_dev_decisions_enabled
+    #         }
+    #     }
+    #     effect = {
+    #         set_country_flag = jason_show_dev_decisions_enabled
+    #     }
+    # }
 
-    disable_show_dev_decisions = {
-        major = yes
-        color = { 100 0 0 }
-        potential = {
-            ai = no
-            has_country_flag = jason_show_dev_decisions_enabled
-        }
-        allow = {
-            ai = no
-            has_country_flag = jason_show_dev_decisions_enabled
-        }
-        effect = {
-            clr_country_flag = jason_show_dev_decisions_enabled
-        }
-    }
+    # disable_show_dev_decisions = {
+    #     major = yes
+    #     color = { 100 0 0 }
+    #     potential = {
+    #         ai = no
+    #         has_country_flag = jason_show_dev_decisions_enabled
+    #     }
+    #     allow = {
+    #         ai = no
+    #         has_country_flag = jason_show_dev_decisions_enabled
+    #     }
+    #     effect = {
+    #         clr_country_flag = jason_show_dev_decisions_enabled
+    #     }
+    # }
 }

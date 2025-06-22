@@ -495,6 +495,10 @@ set_precious_provinces_to_zero_autonomy = {
             country_or_subject_holds = ROOT
             is_valuable_goods_producing_province = yes
         }
+        add_province_modifier = {
+            name = local_autonomy_cheat
+            duration = -1
+        }
         set_local_autonomy = 0
     }
 }
@@ -503,7 +507,23 @@ set_all_provinces_to_zero_autonomy = {
         limit = {
             country_or_subject_holds = ROOT
         }
+        add_province_modifier = {
+            name = local_autonomy_cheat
+            duration = -1
+        }
         set_local_autonomy = 0
+    }
+}
+
+automatic_max_tariffs = {
+    every_subject_country = {
+        add_tariff_value = 1000
+    }
+}
+
+automatic_reduce_half_tariffs = {
+    every_subject_country = {
+        add_tariff_value = -0.5
     }
 }
 

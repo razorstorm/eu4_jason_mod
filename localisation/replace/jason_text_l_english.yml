@@ -57,6 +57,11 @@
  disable_auto_upgrade_cot_to_3_title: "Disable Auto Upgrade CoTs to Level 3"
  disable_auto_upgrade_cot_to_3_desc: "Disables auto upgrading all Centers of Trade to level 3, which will stop automatically upgrading all Centers of Trade to level 3 for 1000 ducats each. Note: This will not remove the level 3 Center of Trade from any provinces that already have one."
 
+ enable_automatic_max_tariffs_title: "Enable Automatic Max Tariffs"
+ enable_automatic_max_tariffs_desc: "Enables auto-setting tariffs to maximum on all subjects. This will set the tariffs of all such provinces to 100% on monthly tick or on acquisition of new subjects."
+ disable_automatic_max_tariffs_title: "Disable Automatic Max Tariffs"
+ disable_automatic_max_tariffs_desc: "Disables auto-setting tariffs to maximum on all subjects. This will stop auto-setting the tariffs of all such provinces to 100%. And also set the tariffs of all subjects to 50%"
+
  enable_show_decisions_title: "Enable Show Decisions"
  enable_show_decisions_desc: "Displays Cheats"
  disable_show_decisions_title: "Disable Show Decisions"
