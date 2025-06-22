@@ -999,6 +999,38 @@ country_decisions = {
         }  
     }
 
+    enable_set_zero_autonomy_on_precious_provinces = {
+        major = yes
+        potential = {
+            ai = no
+            OR = {
+                has_country_flag = jason_show_decisions_enabled
+            }
+        }
+        allow = {
+            ai = no
+        }
+        effect = {
+            set_country_flag = jason_set_zero_autonomy_on_precious_provinces_enabled
+        }  
+    }
+
+    enable_set_zero_autonomy_on_all_provinces = {
+        major = yes
+        potential = {
+            ai = no
+            OR = {
+                has_country_flag = jason_show_decisions_enabled
+            }
+        }
+        allow = {
+            ai = no
+        }
+        effect = {
+            set_country_flag = jason_set_zero_autonomy_on_all_provinces_enabled
+        }  
+    }
+
     enable_show_decisions = {
         major = yes
         color = { 0 255 0 }

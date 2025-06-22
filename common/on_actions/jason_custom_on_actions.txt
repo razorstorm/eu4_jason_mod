@@ -31,16 +31,16 @@ on_monthly_pulse = {
 
         if = {
             limit = {
-                has_country_flag = jason_set_no_autonomy_on_precious_provinces_enabled
+                has_country_flag = jason_set_zero_autonomy_on_precious_provinces_enabled
             }
-            set_precious_provinces_to_no_autonomy = yes
+            set_precious_provinces_to_zero_autonomy = yes
         }
 
         if = {
             limit = {
-                has_country_flag = jason_set_no_autonomy_on_all_provinces_enabled
+                has_country_flag = jason_set_zero_autonomy_on_all_provinces_enabled
             }
-            set_all_provinces_to_no_autonomy = yes
+            set_all_provinces_to_zero_autonomy = yes
         }
 
         if = {
@@ -160,6 +160,21 @@ on_province_owner_change = {
                 }
                 set_high_diamond_dev = yes
             }
+
+            # Setting autonomy to 0 if the cheat is enabled.
+            if = {
+                limit = {
+                    has_country_flag = jason_set_zero_autonomy_on_precious_provinces_enabled
+                }
+                set_precious_provinces_to_zero_autonomy = yes
+            }
+    
+            if = {
+                limit = {
+                    has_country_flag = jason_set_zero_autonomy_on_all_provinces_enabled
+                }
+                set_all_provinces_to_zero_autonomy = yes
+            }
         }
     }
 
@@ -262,6 +277,21 @@ on_dependency_gained = {
 
             # Upgrading COTs to level 2 or 3
             upgrade_all_cot_to_level_2 = yes
+
+            # Setting autonomy to 0 if the cheat is enabled.
+            if = {
+                limit = {
+                    has_country_flag = jason_set_zero_autonomy_on_precious_provinces_enabled
+                }
+                set_precious_provinces_to_zero_autonomy = yes
+            }
+    
+            if = {
+                limit = {
+                    has_country_flag = jason_set_zero_autonomy_on_all_provinces_enabled
+                }
+                set_all_provinces_to_zero_autonomy = yes
+            }
 
             if = {
                 limit = {

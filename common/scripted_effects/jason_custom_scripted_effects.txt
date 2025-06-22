@@ -489,7 +489,7 @@ set_owned_specific_provinces_to_diamonds = {
     }
 }
 
-set_precious_provinces_to_no_autonomy = {
+set_precious_provinces_to_zero_autonomy = {
     every_province = {
         limit = {
             country_or_subject_holds = ROOT
@@ -498,7 +498,7 @@ set_precious_provinces_to_no_autonomy = {
         set_local_autonomy = 0
     }
 }
-set_all_provinces_to_no_autonomy = {
+set_all_provinces_to_zero_autonomy = {
     every_province = {
         limit = {
             country_or_subject_holds = ROOT
