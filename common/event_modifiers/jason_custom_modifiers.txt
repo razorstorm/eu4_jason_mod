@@ -641,3 +641,15 @@ tropical_resort_modifier_overlord = {
     church_loyalty_modifier = -0.1 # Church is unhappy to have a resort town which invites sinful behaviors
     church_influence_modifier = -0.05 # Churches do not run these resort towns and lose influence
 }
+
+economic_hegemon_benefits = {
+    war_exhaustion = -0.1
+    development_cost_modifier = -0.05
+    mercenary_manpower = 1.0
+    
+    mercenary_discipline = 0.10
+    global_trade_goods_size_modifier = 0.25
+    min_autonomy_in_territories = -0.20
+
+    governing_capacity_modifier = 0.20
+}

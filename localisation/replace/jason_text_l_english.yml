@@ -1,6 +1,15 @@
 ﻿l_english:
- set_gold_dev_title: "Set Development on Gold Provinces"
- set_gold_dev_desc: "Sets all gold producing provinces to 20/25/15."
+ enable_gold_auto_dev_title: "Automatically set development for Gold Provinces"
+ enable_gold_auto_dev_desc: "Automatically sets all gold producing provinces to 20/25/15 on every monthly tick or on acquisition of new provinces."
+
+ disable_gold_auto_dev_title: "Disable Automatic Gold Province Development"
+ disable_gold_auto_dev_desc: "Disables automatic setting of development for gold producing provinces to 20/25/15 on every monthly tick or on acquisition of new provinces."
+
+ enable_diamonds_auto_dev_title: "Automatically set development for Diamonds Provinces"
+ enable_diamonds_auto_dev_desc: "Automatically sets all diamonds producing provinces to 20/25/15 on every monthly tick or on acquisition of new provinces."
+
+ disable_diamonds_auto_dev_title: "Disable Automatic Diamonds Province Development"
+ disable_diamonds_auto_dev_desc: "Disables automatic setting of development for diamonds producing provinces to 20/25/15 on every monthly tick or on acquisition of new provinces."
 
  upgrade_gold_dev_title: "Upgrade Development on Gold Provinces"
  upgrade_gold_dev_desc: "Upgrades all gold producing provinces by 3/5/2."
@@ -11,12 +20,12 @@
  upgrade_silk_dev_title: "Upgrade Development on Silk and Dye Provinces"
  upgrade_silk_dev_desc: "Upgrades all Silk and Dye producing provinces by 2/3/1"
 
- clear_foreign_claims_title: "Remove Foreign Cores and Claims"
- clear_foreign_claims_desc: "Removes all foreign cores and claims from your provinces and those of your subjects."
- 
  set_silk_dev_title: "Set Development on Silk and Dye Provinces"
  set_silk_dev_desc: "Sets all silk/dye producing provinces to 20/25/15."
 
+ clear_foreign_claims_title: "Remove Foreign Cores and Claims"
+ clear_foreign_claims_desc: "Removes all foreign cores and claims from your provinces and those of your subjects."
+ 
  monopolize_silk_and_dyes_title: "Monopolize The Silk Trade"
  monopolize_silk_and_dyes_desc: "Monopolizes the Silk Trade by converting all foreign silk and dyes provinces into cloth provinces and setting an equal number of our own (not silk/gold/silver/dyes/diamonds producing) provinces into silk producing provinces. If we run out of valid provinces, the process will end early."
 
@@ -69,3 +78,21 @@
 
  monopolize_gold_from_non_mining_subjects_title: "Monopolize Gold from Non-Mining Subjects"
  monopolize_gold_from_non_mining_subjects_desc: "Monopolizes gold from all tariff-less subjects by converting all foreign gold provinces into iron provinces and setting an equal number of our own (not gold/silver/silk/dyes/diamonds producing) provinces into gold producing provinces. If we run out of valid provinces, the process will end early."
+
+set_diamonds_dev_title: "Set Development on Diamonds Provinces"
+set_diamonds_dev_desc: "Sets all diamonds producing provinces to 20/25/15."
+
+set_owned_specific_provinces_to_diamonds_decision_title: "Set Owned Specific Provinces to Diamonds"
+set_owned_specific_provinces_to_diamonds_decision_desc: "Sets the owned highlighted provinces to diamonds producing provinces."
+
+enable_set_zero_autonomy_on_precious_provinces_title: "Enable Set Zero Autonomy on Precious Provinces"
+enable_set_zero_autonomy_on_precious_provinces_desc: "Enables auto-setting autonomy to zero on all provinces that produce precious trade goods (gold, silver, diamonds, plus silk and dyes for persian tags). This will auto-set the autonomy of all such provinces to 0% on monthly tick or on acquisition of new provinces."
+
+disable_set_zero_autonomy_on_precious_provinces_title: "Disable Set Zero Autonomy on Precious Provinces"
+disable_set_zero_autonomy_on_precious_provinces_desc: "Disables auto-setting autonomy to zero on all provinces that produce precious trade goods (gold, silver, diamonds, plus silk and dyes for persian tags). This will stop auto-setting the autonomy of all such provinces to 0%."
+
+enable_set_zero_autonomy_on_all_provinces_title: "Enable Set Zero Autonomy on All Provinces"
+enable_set_zero_autonomy_on_all_provinces_desc: "Enables auto-setting autonomy to zero on all provinces. This will set the autonomy of all provinces to 0% on monthly tick or on acquisition of new provinces."
+
+disable_set_zero_autonomy_on_all_provinces_title: "Disable Set Zero Autonomy on All Provinces"
+disable_set_zero_autonomy_on_all_provinces_desc: "Disables auto-setting autonomy to zero on all provinces. This will stop auto-setting the autonomy of all provinces to 0%."

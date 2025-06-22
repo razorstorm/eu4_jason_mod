@@ -67,6 +67,37 @@ set_high_dev_on_all_gold_prov = {
     }
 }
 
+set_high_dev_on_all_dimaond_prov = {
+    every_owned_province = {
+        limit = {
+            OR = {
+                trade_goods = gold
+                trade_goods = silver
+            }
+            NOT = {
+                # Ignore provinces that are already highly devved 
+                base_production = 25
+            }
+        }
+        set_high_dev_resource_gathering_operation = yes
+    }
+}
+
+set_high_diamond_dev = {
+    set_high_dev_on_all_dimaond_prov = yes
+    every_subject_country = {
+        set_high_dev_on_all_dimaond_prov = yes
+    }
+}
+
+set_high_gold_dev = {
+    set_high_dev_on_all_gold_prov = yes
+        
+    every_subject_country = {
+        set_high_dev_on_all_gold_prov = yes
+    }
+}
+
 set_high_defensiveness_on_prov = {
     add_province_modifier = {
         name = jason_mod_more_garrison
@@ -225,6 +256,15 @@ set_prov_trade_power_on_all_cot = {
     every_owned_province = {
         limit = {
             province_has_center_of_trade_of_level = 1
+            OR = {
+                NOT = {
+                    has_province_modifier = province_trade_power_modifier_cheat
+                    base_production = 20
+                    base_tax = 15
+                    base_manpower = 10
+                }
+                local_autonomy = 1
+            }
         }
         add_province_modifier = {
             name = province_trade_power_modifier_cheat
@@ -234,10 +274,26 @@ set_prov_trade_power_on_all_cot = {
         if = {
             limit = {
                 NOT = {
-                    base_production = 15
+                    base_production = 20
                 }
             }
-            set_base_production = 15
+            set_base_production = 20
+        }
+        if = {
+            limit = {
+                NOT = {
+                    base_tax = 15
+                }
+            }
+            set_base_tax = 15
+        }
+        if = {
+            limit = {
+                NOT = {
+                    base_manpower = 10
+                }
+            }
+            set_base_manpower = 10
         }
     }
 }
@@ -264,6 +320,30 @@ set_prov_trade_power_on_all_cot_for_country_and_subjects = {
     set_prov_trade_power_on_all_cot = yes
     every_subject_country = {
         set_prov_trade_power_on_all_cot = yes
+    }
+}
+
+convert_trade_company_provinces = {
+    # Conversion of trade company provinces if country is not confucian
+    if = {
+        limit = {
+            NOT = {
+                religion = confucianism
+            }
+        }
+        every_owned_province = {
+            limit = {
+                is_owned_by_trade_company = yes
+            }
+            change_religion = owner  
+        }
+    }
+}
+
+convert_trade_company_provinces_for_country_and_subjects = {
+    convert_trade_company_provinces = yes
+    every_subject_country = {
+        convert_trade_company_provinces = yes
     }
 }
 
@@ -395,6 +475,35 @@ set_owned_specific_provinces_to_gold = {
             NOT = { trade_goods = gold }
         }
         change_trade_goods = gold
+    }
+}
+
+set_owned_specific_provinces_to_diamonds = {
+    every_province = {
+        limit = {
+            country_or_subject_holds = ROOT
+            is_specific_diamond_staked_province = yes
+            NOT = { trade_goods = diamonds }
+        }
+        change_trade_goods = diamonds
+    }
+}
+
+set_precious_provinces_to_zero_autonomy = {
+    every_province = {
+        limit = {
+            country_or_subject_holds = ROOT
+            is_valuable_goods_producing_province = yes
+        }
+        set_local_autonomy = 0
+    }
+}
+set_all_provinces_to_zero_autonomy = {
+    every_province = {
+        limit = {
+            country_or_subject_holds = ROOT
+        }
+        set_local_autonomy = 0
     }
 }
 
@@ -868,7 +977,6 @@ set_random_trade_good = {
     }
 }
 
-
 setup_pax_solis_laws = {
     # Taxation System - Progressive Tax System
     remove_country_modifier = hf_estate_int_farmingtax
@@ -933,4 +1041,265 @@ setup_pax_solis_laws = {
     }
 
     clr_country_flag = hf_viewing_estate_int_population_event
+}
+
+adding_all_provinces_to_parliament_and_setting_approval_chance = {
+    add_country_modifier = { 
+        name = bill_of_rights_parliament
+        duration = -1  
+    }
+
+    add_country_modifier = { 
+        name = gbr_pax_britannica
+        duration = -1  
+    }
+
+    add_country_modifier = { 
+        name = ave_pax_angevina
+        duration = -1  
+    }
+
+    add_country_modifier = { 
+        name = eng_the_two_houses
+        duration = -1  
+    }
+
+    every_owned_province = {
+        set_seat_in_parliament = yes
+    }
+}
+
+remove_guaranteed_religious_autonomy = {
+    # Remove guaranteed religious autonomy modifiers
+    every_owned_province = {
+        remove_province_modifier = estate_church_lao_animism_mod
+        remove_province_modifier = estate_dhimmi_guaranteed_autonomy_mod
+    }
+}
+
+fixing_religion_and_culture = {
+    # If propagate religion on trade node is enabled, allow propagating to every religion type
+    set_country_flag = can_propagate_religion_in_abrahamic_provinces
+
+    # Remove guaranteed religious autonomy modifiers
+    remove_guaranteed_religious_autonomy = yes
+    every_subject_country = {
+        remove_guaranteed_religious_autonomy = yes
+    }
+
+    every_owned_province = {
+        limit = {
+            culture = noculture
+        }
+        # log = "Province [This.GetName] has noculture"
+        change_culture = owner
+    }
+    every_owned_province = {
+        limit = {
+            religion = noreligion
+        }
+        # log = "Province [This.GetName] has noreligion"
+        change_religion = owner
+    }
+}
+
+create_homeguard_general = {
+    if = {
+        limit = {
+            NOT = { 	
+                has_leader_with = {
+                    shock = 666
+                    fire = 666
+                    manuever = 666666
+                    siege = 666
+                }
+            }
+        }
+
+        define_general = {
+            name = "Homeguard General"
+            shock = 666
+            fire = 666
+            manuever = 666666
+            siege = 666
+            trait = "siege_specialist_personality"
+        }
+    }
+}
+
+confucian_subjects_full_harmonize = {
+    every_subject_country = {
+        limit = {
+            religion = confucianism
+        }
+        if = {
+            limit = {
+                NOT = {
+                    has_harmonized_with = christian
+                }
+            }
+            add_harmonized_religion = catholic
+            add_harmonized_religion = orthodox
+            add_harmonized_religion = coptic
+            add_harmonized_religion = protestant
+            add_harmonized_religion = reformed
+        }
+        if = {
+            limit = {
+                NOT = {
+                    has_harmonized_with = muslim
+                }
+            }
+            add_harmonized_religion = sunni
+        }
+        if = {
+            limit = {
+                NOT = {
+                    has_harmonized_with = mahayana
+                }
+            }
+            add_harmonized_religion = mahayana
+        }
+        if = {
+            limit = {
+                NOT = {
+                    has_harmonized_with = shinto
+                }
+            }
+            add_harmonized_religion = shinto
+        }
+        if = {
+            limit = {
+                NOT = {
+                    has_harmonized_with = vajrayana
+                }
+            }
+            add_harmonized_religion = vajrayana
+        }
+        if = {
+            limit = {
+                NOT = {
+                    has_harmonized_with = buddhism
+                }
+            }
+            add_harmonized_religion = buddhism
+        }
+        if = {
+            limit = {
+                NOT = {
+                    has_harmonized_with = dharmic
+                }
+            }
+            add_harmonized_religion = hinduism
+        }
+        if = {
+            limit = {
+                NOT = {
+                    has_harmonized_with = pagan
+                }
+            }
+            add_harmonized_religion = animism
+        }
+        if = {
+            limit = {
+                NOT = {
+                    has_harmonized_with = jewish_group
+                }
+            }
+            add_harmonized_religion = jewish
+        }
+        if = {
+            limit = {
+                NOT = {
+                    has_harmonized_with = zoroastrian_group
+                }
+            }
+            add_harmonized_religion = zoroastrian
+        }
+    }
+}
+
+updating_subject_loyalties = {
+    every_subject_country = {
+        limit = {
+            AND = {
+                NOT = {    
+                    or = {
+                        is_subject_of_type = muslim_tributary_vassal
+                        is_subject_of_type = self_governing_colony
+                        tag = ETH
+                        religion = jewish
+                    }
+                }
+            }
+        }
+        change_religion = overlord
+    }
+
+    every_subject_country = {
+        limit = {
+            NOT = {
+                OR = {
+                    is_subject_of_type = concentration_camp
+                    is_subject_of_type = revolution_subject
+                }
+            }
+        }
+        overlord = {
+            if = {
+                limit = {
+                    not = {
+                        marriage_with = PREV
+                    }
+                }
+                create_marriage = PREV
+                add_legitimacy = 5
+            }
+        }
+        add_legitimacy = 100
+        add_devotion = 100
+        add_horde_unity = 100
+        set_meritocracy = 100
+        add_republican_tradition = 100
+        add_trust = {
+            who = overlord
+            value = 100
+            mutual = yes
+        }
+        # add_treasury = 100000
+
+        set_dynasty = overlord
+        add_prestige = 100
+        add_stability = 3
+        add_corruption = -100
+        add_war_exhaustion = -100
+
+        every_owned_province = {
+            add_devastation = -100
+        }
+        
+        add_estate_loyalty = {
+            estate = estate_church
+            loyalty = 100
+        }
+        add_estate_loyalty = {
+            estate = estate_nobles
+            loyalty = 100
+        }
+        add_estate_loyalty = {
+            estate = estate_burghers
+            loyalty = 100
+        }
+        add_estate_loyalty = {
+            estate = estate_dhimmi
+            loyalty = 100
+        }
+        add_estate_loyalty = {
+            estate = estate_jains
+            loyalty = 100
+        }
+    }
+
+    # Making confucian subjects harmonize with all religions
+    confucian_subjects_full_harmonize = yes
 }

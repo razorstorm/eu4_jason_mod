@@ -1,23 +1,20 @@
 country_decisions = {
-    # TODO migrate these to happen on monthly tick / on_province_owner_change instead of being a decision, and make the decision just toggle a flag instead?
-    set_gold_dev = {
+    enable_gold_auto_dev = {
         major = yes
-        color = { 255 255 0 }
+        color = { 100 200 0 }
         potential = {
             ai = no
             OR = {
                 has_country_flag = jason_show_decisions_enabled
                 has_country_flag = jason_show_dev_decisions_enabled
             }
+            NOT = {
+                has_country_flag = jason_gold_dev_enabled
+            }
         }
         allow = {
-            any_province = {
-                OR = {
-                    trade_goods = gold
-                    trade_goods = silver
-                }
-                NOT = { base_production = 25 }
-                country_or_subject_holds = ROOT
+            NOT = {
+                has_country_flag = jason_gold_dev_enabled
             }
         }
         provinces_to_highlight = {
@@ -25,15 +22,136 @@ country_decisions = {
                 trade_goods = gold
                 trade_goods = silver
             }
-            NOT = { base_production = 25 }
             country_or_subject_holds = ROOT
         }
         effect = {
-            set_high_dev_on_all_gold_prov = yes
-        
-            every_subject_country = {
-                set_high_dev_on_all_gold_prov = yes
+            set_country_flag = jason_gold_dev_enabled
+        }
+    }
+    
+    disable_gold_auto_dev = {
+        major = yes
+        color = { 100 0 0 }
+        potential = {
+            ai = no
+            OR = {
+                has_country_flag = jason_show_decisions_enabled
+                has_country_flag = jason_show_dev_decisions_enabled
             }
+            has_country_flag = jason_gold_dev_enabled
+        }
+        allow = {
+            has_country_flag = jason_gold_dev_enabled
+        }
+        provinces_to_highlight = {
+            OR = {
+                trade_goods = gold
+                trade_goods = silver
+            }
+            country_or_subject_holds = ROOT
+        }
+        effect = {
+            clr_country_flag = jason_gold_dev_enabled
+        }
+    }
+
+    set_silk_dev = {
+        major = yes
+        color = { 100 200 0 }
+        potential = {
+            ai = no
+            OR = {
+                has_country_flag = jason_show_decisions_enabled
+                has_country_flag = jason_show_dev_decisions_enabled
+            }
+            is_a_persian_tag = yes
+        }
+        allow = {
+            any_owned_province = {
+                OR = {
+                    trade_goods = silk
+                    trade_goods = dyes
+                }
+                NOT = { base_production = 25 }
+            }
+            is_a_persian_tag = yes
+        }
+        provinces_to_highlight = {
+            OR = {
+                trade_goods = silk
+                trade_goods = dyes
+            }
+            NOT = { base_production = 25 }
+            owned_by = ROOT
+        }
+        effect = {
+            every_owned_province = {
+                limit = {
+                    OR = {
+                        trade_goods = silk
+                        trade_goods = dyes
+                    }
+                    NOT = {
+                        # Ignore provinces that are already highly devved 
+                        base_production = 25
+                    }
+                }
+                set_high_dev_resource_gathering_operation = yes
+            }
+        }
+    }
+
+    enable_diamonds_auto_dev = {
+        major = yes
+        color = { 100 200 0 }
+        potential = {
+            ai = no
+            OR = {
+                has_country_flag = jason_show_decisions_enabled
+                has_country_flag = jason_show_dev_decisions_enabled
+            }
+            NOT = {
+                has_country_flag = jason_diamonds_dev_enabled
+            }
+        }
+        allow = {
+            NOT = {
+                has_country_flag = jason_diamonds_dev_enabled
+            }
+        }
+        provinces_to_highlight = {
+            OR = {
+                trade_goods = diamonds
+            }
+            owned_by = ROOT
+        }
+        effect = {
+            set_country_flag = jason_diamonds_dev_enabled
+        }
+    }
+
+    disable_diamonds_auto_dev = {
+        major = yes
+        color = { 100 0 0 }
+        potential = {
+            ai = no
+            OR = {
+                has_country_flag = jason_show_decisions_enabled
+                has_country_flag = jason_show_dev_decisions_enabled
+            }
+            has_country_flag = jason_diamonds_dev_enabled
+        }
+        allow = {
+            has_country_flag = jason_diamonds_dev_enabled
+        }
+        provinces_to_highlight = {
+            OR = {
+                trade_goods = diamonds
+            }
+            country_or_subject_holds = ROOT
+        }
+        effect = {
+            clr_country_flag = jason_diamonds_dev_enabled
         }
     }
 
@@ -81,6 +199,7 @@ country_decisions = {
         potential = {
             ai = no
             has_country_flag = jason_show_decisions_enabled
+            is_a_persian_tag = yes
         }
         provinces_to_highlight = {
             OR = {
@@ -96,6 +215,7 @@ country_decisions = {
                     trade_goods = dyes
                 }
             }
+            is_a_persian_tag = yes
         }
         effect = {
             every_owned_province = {
@@ -108,50 +228,6 @@ country_decisions = {
                 add_base_tax = 2
                 add_base_production = 3
                 add_base_manpower = 1
-            }
-        }
-    }
-
-    set_silk_dev = {
-        major = yes
-        color = { 255 255 0 }
-        potential = {
-            ai = no
-            OR = {
-                has_country_flag = jason_show_decisions_enabled
-                has_country_flag = jason_show_dev_decisions_enabled
-            }
-        }
-        allow = {
-            any_owned_province = {
-                OR = {
-                    trade_goods = silk
-                    trade_goods = dyes
-                }
-                NOT = { base_production = 25 }
-            }
-        }
-        provinces_to_highlight = {
-            OR = {
-                trade_goods = silk
-                trade_goods = dyes
-            }
-            NOT = { base_production = 25 }
-            owned_by = ROOT
-        }
-        effect = {
-            every_owned_province = {
-                limit = {
-                    OR = {
-                        trade_goods = silk
-                        trade_goods = dyes
-                    }
-                    NOT = {
-                        # Ignore provinces that are already highly devved 
-                        base_production = 25
-                    }
-                }
-                set_high_dev_resource_gathering_operation = yes
             }
         }
     }
@@ -834,11 +910,15 @@ country_decisions = {
 
     set_owned_specific_provinces_to_gold_decision = {
         major = yes
+        color = { 255 255 0 }
         potential = {
             ai = no
             OR = {
-                has_country_flag = jason_show_decisions_enabled
-                has_country_flag = jason_show_dev_decisions_enabled
+                any_province = {
+                    is_specific_gold_staked_province = yes
+                    country_or_subject_holds = ROOT
+                    NOT = { trade_goods = gold }
+                }
             }
         }
         allow = {
@@ -861,8 +941,42 @@ country_decisions = {
         }
     }
 
+    set_owned_specific_provinces_to_diamonds_decision = {
+        major = yes
+        color = { 255 255 0 }
+        potential = {
+            ai = no
+            OR = {
+                any_province = {
+                    is_specific_diamond_staked_province = yes
+                    country_or_subject_holds = ROOT
+                    NOT = { trade_goods = diamonds }
+                }
+            }
+        }
+        allow = {
+            ai = no
+            OR = {
+                any_province = {
+                    is_specific_diamond_staked_province = yes
+                    country_or_subject_holds = ROOT
+                    NOT = { trade_goods = diamonds }
+                }
+            }
+        }
+        provinces_to_highlight = {
+            country_or_subject_holds = ROOT
+            is_specific_diamond_staked_province = yes
+            NOT = { trade_goods = diamonds }
+        }
+        effect = {
+            set_owned_specific_provinces_to_diamonds = yes
+        }
+    }
+
     set_owned_slave_provinces_to_gold_decision = {
         major = yes
+        color = { 255 255 0 }
         potential = {
             ai = no
             OR = {
@@ -896,7 +1010,7 @@ country_decisions = {
 
     set_subject_owned_slave_provinces_to_random = {
         major = yes
-
+        color = { 0 0 0 }
         potential = {
             ai = no
             OR = {
@@ -933,6 +1047,81 @@ country_decisions = {
                     set_random_trade_good = yes
                 }
             }
+        }  
+    }
+
+    enable_set_zero_autonomy_on_precious_provinces = {
+        major = yes
+        potential = {
+            ai = no
+            has_country_flag = jason_show_decisions_enabled
+            NOT = {
+                has_country_flag = jason_set_zero_autonomy_on_precious_provinces_enabled
+            }
+        }
+        allow = {
+            ai = no
+            NOT = {
+                has_country_flag = jason_set_zero_autonomy_on_precious_provinces_enabled
+            }
+        }
+        effect = {
+            set_country_flag = jason_set_zero_autonomy_on_precious_provinces_enabled
+        }  
+    }
+
+    
+    disable_set_zero_autonomy_on_precious_provinces = {
+        major = yes
+        color = { 100 0 0 }
+        potential = {
+            ai = no
+            has_country_flag = jason_show_decisions_enabled
+            has_country_flag = jason_set_zero_autonomy_on_precious_provinces_enabled
+        }
+        allow = {
+            ai = no
+            has_country_flag = jason_set_zero_autonomy_on_precious_provinces_enabled
+        }
+        effect = {
+            clr_country_flag = jason_set_zero_autonomy_on_precious_provinces_enabled
+        }  
+    }
+
+    enable_set_zero_autonomy_on_all_provinces = {
+        major = yes
+        potential = {
+            ai = no
+            has_country_flag = jason_show_decisions_enabled
+            NOT = {
+                has_country_flag = jason_set_zero_autonomy_on_all_provinces_enabled
+            }
+        }
+        allow = {
+            ai = no
+            NOT = {
+                has_country_flag = jason_set_zero_autonomy_on_all_provinces_enabled
+            }
+        }
+        effect = {
+            set_country_flag = jason_set_zero_autonomy_on_all_provinces_enabled
+        }  
+    }
+
+    disable_set_zero_autonomy_on_all_provinces = {
+        major = yes
+        color = { 100 0 0 }
+        potential = {
+            ai = no
+            has_country_flag = jason_show_decisions_enabled
+            has_country_flag = jason_set_zero_autonomy_on_all_provinces_enabled
+        }
+        allow = {
+            ai = no
+            has_country_flag = jason_set_zero_autonomy_on_all_provinces_enabled
+        }
+        effect = {
+            clr_country_flag = jason_set_zero_autonomy_on_all_provinces_enabled
         }  
     }
 
