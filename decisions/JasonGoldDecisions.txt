@@ -1185,7 +1185,7 @@ country_decisions = {
 
     disable_show_decisions = {
         major = yes
-        color = { 100 0 0 }
+        color = { 180 0 0 }
         potential = {
             ai = no
             has_country_flag = jason_show_decisions_enabled
