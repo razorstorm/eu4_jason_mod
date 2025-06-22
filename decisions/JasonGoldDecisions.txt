@@ -1,5 +1,4 @@
 country_decisions = {
-    # TODO migrate these to happen on monthly tick / on_province_owner_change instead of being a decision, and make the decision just toggle a flag instead?
     enable_gold_auto_dev = {
         major = yes
         color = { 100 200 0 }
@@ -8,6 +7,9 @@ country_decisions = {
             OR = {
                 has_country_flag = jason_show_decisions_enabled
                 has_country_flag = jason_show_dev_decisions_enabled
+            }
+            NOT = {
+                has_country_flag = jason_gold_dev_enabled
             }
         }
         allow = {
@@ -36,6 +38,7 @@ country_decisions = {
                 has_country_flag = jason_show_decisions_enabled
                 has_country_flag = jason_show_dev_decisions_enabled
             }
+            has_country_flag = jason_gold_dev_enabled
         }
         allow = {
             has_country_flag = jason_gold_dev_enabled
@@ -107,10 +110,13 @@ country_decisions = {
                 has_country_flag = jason_show_decisions_enabled
                 has_country_flag = jason_show_dev_decisions_enabled
             }
+            NOT = {
+                has_country_flag = jason_diamonds_dev_enabled
+            }
         }
         allow = {
             NOT = {
-                has_country_flag = jason_gold_dev_enabled
+                has_country_flag = jason_diamonds_dev_enabled
             }
         }
         provinces_to_highlight = {
@@ -120,7 +126,7 @@ country_decisions = {
             owned_by = ROOT
         }
         effect = {
-            set_country_flag = jason_gold_dev_enabled
+            set_country_flag = jason_diamonds_dev_enabled
         }
     }
 
@@ -133,6 +139,7 @@ country_decisions = {
                 has_country_flag = jason_show_decisions_enabled
                 has_country_flag = jason_show_dev_decisions_enabled
             }
+            has_country_flag = jason_diamonds_dev_enabled
         }
         allow = {
             has_country_flag = jason_diamonds_dev_enabled
