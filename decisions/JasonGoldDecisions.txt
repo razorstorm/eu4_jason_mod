@@ -914,8 +914,11 @@ country_decisions = {
         potential = {
             ai = no
             OR = {
-                has_country_flag = jason_show_decisions_enabled
-                has_country_flag = jason_show_dev_decisions_enabled
+                any_province = {
+                    is_specific_gold_staked_province = yes
+                    country_or_subject_holds = ROOT
+                    NOT = { trade_goods = gold }
+                }
             }
         }
         allow = {
@@ -944,8 +947,11 @@ country_decisions = {
         potential = {
             ai = no
             OR = {
-                has_country_flag = jason_show_decisions_enabled
-                has_country_flag = jason_show_dev_decisions_enabled
+                any_province = {
+                    is_specific_diamond_staked_province = yes
+                    country_or_subject_holds = ROOT
+                    NOT = { trade_goods = diamonds }
+                }
             }
         }
         allow = {
