@@ -67,6 +67,37 @@ set_high_dev_on_all_gold_prov = {
     }
 }
 
+set_high_dev_on_all_dimaond_prov = {
+    every_owned_province = {
+        limit = {
+            OR = {
+                trade_goods = gold
+                trade_goods = silver
+            }
+            NOT = {
+                # Ignore provinces that are already highly devved 
+                base_production = 25
+            }
+        }
+        set_high_dev_resource_gathering_operation = yes
+    }
+}
+
+set_high_diamond_dev = {
+    set_high_dev_on_all_dimaond_prov = yes
+    every_subject_country = {
+        set_high_dev_on_all_dimaond_prov = yes
+    }
+}
+
+set_high_gold_dev = {
+    set_high_dev_on_all_gold_prov = yes
+        
+    every_subject_country = {
+        set_high_dev_on_all_gold_prov = yes
+    }
+}
+
 set_high_defensiveness_on_prov = {
     add_province_modifier = {
         name = jason_mod_more_garrison
@@ -444,6 +475,35 @@ set_owned_specific_provinces_to_gold = {
             NOT = { trade_goods = gold }
         }
         change_trade_goods = gold
+    }
+}
+
+set_owned_specific_provinces_to_diamonds = {
+    every_province = {
+        limit = {
+            country_or_subject_holds = ROOT
+            is_specific_diamond_staked_province = yes
+            NOT = { trade_goods = diamonds }
+        }
+        change_trade_goods = diamonds
+    }
+}
+
+set_precious_provinces_to_no_autonomy = {
+    every_province = {
+        limit = {
+            country_or_subject_holds = ROOT
+            is_valuable_goods_producing_province = yes
+        }
+        set_local_autonomy = 0
+    }
+}
+set_all_provinces_to_no_autonomy = {
+    every_province = {
+        limit = {
+            country_or_subject_holds = ROOT
+        }
+        set_local_autonomy = 0
     }
 }
 

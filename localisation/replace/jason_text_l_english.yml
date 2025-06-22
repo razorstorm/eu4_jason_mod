@@ -69,3 +69,9 @@
 
  monopolize_gold_from_non_mining_subjects_title: "Monopolize Gold from Non-Mining Subjects"
  monopolize_gold_from_non_mining_subjects_desc: "Monopolizes gold from all tariff-less subjects by converting all foreign gold provinces into iron provinces and setting an equal number of our own (not gold/silver/silk/dyes/diamonds producing) provinces into gold producing provinces. If we run out of valid provinces, the process will end early."
+
+set_diamonds_dev_title: "Set Development on Diamonds Provinces"
+set_diamonds_dev_desc: "Sets all diamonds producing provinces to 20/25/15."
+
+set_owned_specific_provinces_to_diamonds_decision_title: "Set Owned Specific Provinces to Diamonds"
+set_owned_specific_provinces_to_diamonds_decision_desc: "Sets the owned highlighted provinces to diamonds producing provinces."

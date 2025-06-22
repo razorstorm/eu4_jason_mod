@@ -31,6 +31,34 @@ on_monthly_pulse = {
 
         if = {
             limit = {
+                has_country_flag = jason_set_no_autonomy_on_precious_provinces_enabled
+            }
+            set_precious_provinces_to_no_autonomy = yes
+        }
+
+        if = {
+            limit = {
+                has_country_flag = jason_set_no_autonomy_on_all_provinces_enabled
+            }
+            set_all_provinces_to_no_autonomy = yes
+        }
+
+        if = {
+            limit = {
+                has_country_flag = jason_gold_dev_enabled
+            }
+            set_high_gold_dev = yes
+        }
+
+        if = {
+            limit = {
+                has_country_flag = jason_diamond_dev_enabled
+            }
+            set_high_diamond_dev = yes
+        }
+
+        if = {
+            limit = {
                 has_country_flag = jason_auto_marry_all_christians_enabled
             }
             marry_all_christians = yes
@@ -108,6 +136,7 @@ on_province_owner_change = {
     # Adding all provinces to parliament
     # Fixing noreligion and noculture
     # Removing guaranteed religious autonomy
+    # Setting high gold and diamond dev
     owner = {
         if = {
             limit = {
@@ -117,6 +146,20 @@ on_province_owner_change = {
             adding_all_provinces_to_parliament_and_setting_approval_chance = yes
             fixing_religion_and_culture = yes
             create_homeguard_general = yes
+            
+            if = {
+                limit = {
+                    has_country_flag = jason_gold_dev_enabled
+                }
+                set_high_gold_dev = yes
+            }
+
+            if = {
+                limit = {
+                    has_country_flag = jason_diamond_dev_enabled
+                }
+                set_high_diamond_dev = yes
+            }
         }
     }
 
