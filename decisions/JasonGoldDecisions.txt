@@ -1054,15 +1054,37 @@ country_decisions = {
         major = yes
         potential = {
             ai = no
-            OR = {
-                has_country_flag = jason_show_decisions_enabled
+            has_country_flag = jason_show_decisions_enabled
+            NOT = {
+                has_country_flag = jason_set_zero_autonomy_on_precious_provinces_enabled
             }
         }
         allow = {
             ai = no
+            NOT = {
+                has_country_flag = jason_set_zero_autonomy_on_precious_provinces_enabled
+            }
         }
         effect = {
             set_country_flag = jason_set_zero_autonomy_on_precious_provinces_enabled
+        }  
+    }
+
+    
+    disable_set_zero_autonomy_on_precious_provinces = {
+        major = yes
+        color = { 100 0 0 }
+        potential = {
+            ai = no
+            has_country_flag = jason_show_decisions_enabled
+            has_country_flag = jason_set_zero_autonomy_on_precious_provinces_enabled
+        }
+        allow = {
+            ai = no
+            has_country_flag = jason_set_zero_autonomy_on_precious_provinces_enabled
+        }
+        effect = {
+            clr_country_flag = jason_set_zero_autonomy_on_precious_provinces_enabled
         }  
     }
 
@@ -1070,15 +1092,36 @@ country_decisions = {
         major = yes
         potential = {
             ai = no
-            OR = {
-                has_country_flag = jason_show_decisions_enabled
+            has_country_flag = jason_show_decisions_enabled
+            NOT = {
+                has_country_flag = jason_set_zero_autonomy_on_all_provinces_enabled
             }
         }
         allow = {
             ai = no
+            NOT = {
+                has_country_flag = jason_set_zero_autonomy_on_all_provinces_enabled
+            }
         }
         effect = {
             set_country_flag = jason_set_zero_autonomy_on_all_provinces_enabled
+        }  
+    }
+
+    disable_set_zero_autonomy_on_all_provinces = {
+        major = yes
+        color = { 100 0 0 }
+        potential = {
+            ai = no
+            has_country_flag = jason_show_decisions_enabled
+            has_country_flag = jason_set_zero_autonomy_on_all_provinces_enabled
+        }
+        allow = {
+            ai = no
+            has_country_flag = jason_set_zero_autonomy_on_all_provinces_enabled
+        }
+        effect = {
+            clr_country_flag = jason_set_zero_autonomy_on_all_provinces_enabled
         }  
     }
 

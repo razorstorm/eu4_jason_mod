@@ -86,7 +86,13 @@ set_owned_specific_provinces_to_diamonds_decision_title: "Set Owned Specific Pro
 set_owned_specific_provinces_to_diamonds_decision_desc: "Sets the owned highlighted provinces to diamonds producing provinces."
 
 enable_set_zero_autonomy_on_precious_provinces_title: "Enable Set Zero Autonomy on Precious Provinces"
-enable_set_zero_autonomy_on_precious_provinces_desc: "Enables auto-setting autonomy to zero on all provinces that produce precious trade goods (gold, silver, diamonds, plus silk and dyes for persian tags). This will set the autonomy of all such provinces to 0%."
+enable_set_zero_autonomy_on_precious_provinces_desc: "Enables auto-setting autonomy to zero on all provinces that produce precious trade goods (gold, silver, diamonds, plus silk and dyes for persian tags). This will auto-set the autonomy of all such provinces to 0% on monthly tick or on acquisition of new provinces."
+
+disable_set_zero_autonomy_on_precious_provinces_title: "Disable Set Zero Autonomy on Precious Provinces"
+disable_set_zero_autonomy_on_precious_provinces_desc: "Disables auto-setting autonomy to zero on all provinces that produce precious trade goods (gold, silver, diamonds, plus silk and dyes for persian tags). This will stop auto-setting the autonomy of all such provinces to 0%."
 
 enable_set_zero_autonomy_on_all_provinces_title: "Enable Set Zero Autonomy on All Provinces"
-enable_set_zero_autonomy_on_all_provinces_desc: "Enables auto-setting autonomy to zero on all provinces. This will set the autonomy of all provinces to 0%."
+enable_set_zero_autonomy_on_all_provinces_desc: "Enables auto-setting autonomy to zero on all provinces. This will set the autonomy of all provinces to 0% on monthly tick or on acquisition of new provinces."
+
+disable_set_zero_autonomy_on_all_provinces_title: "Disable Set Zero Autonomy on All Provinces"
+disable_set_zero_autonomy_on_all_provinces_desc: "Disables auto-setting autonomy to zero on all provinces. This will stop auto-setting the autonomy of all provinces to 0%."
