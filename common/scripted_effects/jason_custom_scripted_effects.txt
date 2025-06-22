@@ -304,7 +304,7 @@ convert_trade_company_provinces = {
             limit = {
                 is_owned_by_trade_company = yes
             }
-            change_religion = ROOT  
+            change_religion = owner  
         }
     }
 }
@@ -1032,14 +1032,14 @@ fixing_religion_and_culture = {
             culture = noculture
         }
         # log = "Province [This.GetName] has noculture"
-        change_culture = ROOT
+        change_culture = owner
     }
     every_owned_province = {
         limit = {
             culture = noreligion
         }
         # log = "Province [This.GetName] has noreligion"
-        change_culture = ROOT
+        change_culture = owner
     }
 }
 
@@ -1173,7 +1173,7 @@ updating_subject_loyalties = {
                 }
             }
         }
-        change_religion = ROOT
+        change_religion = overlord
     }
 
     every_subject_country = {
