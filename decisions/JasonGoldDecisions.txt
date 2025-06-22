@@ -1,6 +1,6 @@
 country_decisions = {
     # TODO migrate these to happen on monthly tick / on_province_owner_change instead of being a decision, and make the decision just toggle a flag instead?
-    set_gold_dev = {
+    enable_gold_auto_dev = {
         major = yes
         color = { 100 200 0 }
         potential = {
@@ -11,13 +11,8 @@ country_decisions = {
             }
         }
         allow = {
-            any_province = {
-                OR = {
-                    trade_goods = gold
-                    trade_goods = silver
-                }
-                NOT = { base_production = 25 }
-                country_or_subject_holds = ROOT
+            NOT = {
+                has_country_flag = jason_gold_dev_enabled
             }
         }
         provinces_to_highlight = {
@@ -25,11 +20,35 @@ country_decisions = {
                 trade_goods = gold
                 trade_goods = silver
             }
-            NOT = { base_production = 25 }
             country_or_subject_holds = ROOT
         }
         effect = {
             set_country_flag = jason_gold_dev_enabled
+        }
+    }
+    
+    disable_gold_auto_dev = {
+        major = yes
+        color = { 100 0 0 }
+        potential = {
+            ai = no
+            OR = {
+                has_country_flag = jason_show_decisions_enabled
+                has_country_flag = jason_show_dev_decisions_enabled
+            }
+        }
+        allow = {
+            has_country_flag = jason_gold_dev_enabled
+        }
+        provinces_to_highlight = {
+            OR = {
+                trade_goods = gold
+                trade_goods = silver
+            }
+            country_or_subject_holds = ROOT
+        }
+        effect = {
+            clr_country_flag = jason_gold_dev_enabled
         }
     }
 
@@ -79,7 +98,7 @@ country_decisions = {
         }
     }
 
-    set_diamonds_dev = {
+    enable_diamonds_auto_dev = {
         major = yes
         color = { 100 200 0 }
         potential = {
@@ -90,23 +109,42 @@ country_decisions = {
             }
         }
         allow = {
-            any_province = {
-                OR = {
-                    trade_goods = diamonds
-                }
-                NOT = { base_production = 25 }
-                owned_by = ROOT
+            NOT = {
+                has_country_flag = jason_gold_dev_enabled
             }
         }
         provinces_to_highlight = {
             OR = {
                 trade_goods = diamonds
             }
-            NOT = { base_production = 25 }
             owned_by = ROOT
         }
         effect = {
-            set_country_flag = jason_diamond_dev_enabled
+            set_country_flag = jason_gold_dev_enabled
+        }
+    }
+
+    disable_diamonds_auto_dev = {
+        major = yes
+        color = { 100 0 0 }
+        potential = {
+            ai = no
+            OR = {
+                has_country_flag = jason_show_decisions_enabled
+                has_country_flag = jason_show_dev_decisions_enabled
+            }
+        }
+        allow = {
+            has_country_flag = jason_diamonds_dev_enabled
+        }
+        provinces_to_highlight = {
+            OR = {
+                trade_goods = diamonds
+            }
+            country_or_subject_holds = ROOT
+        }
+        effect = {
+            clr_country_flag = jason_diamonds_dev_enabled
         }
     }
 

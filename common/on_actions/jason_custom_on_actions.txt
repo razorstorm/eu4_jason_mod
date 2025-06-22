@@ -52,7 +52,7 @@ on_monthly_pulse = {
 
         if = {
             limit = {
-                has_country_flag = jason_diamond_dev_enabled
+                has_country_flag = jason_diamonds_dev_enabled
             }
             set_high_diamond_dev = yes
         }
@@ -156,7 +156,7 @@ on_province_owner_change = {
 
             if = {
                 limit = {
-                    has_country_flag = jason_diamond_dev_enabled
+                    has_country_flag = jason_diamonds_dev_enabled
                 }
                 set_high_diamond_dev = yes
             }
