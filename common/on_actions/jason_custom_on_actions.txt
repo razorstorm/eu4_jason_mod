@@ -29,6 +29,9 @@ on_monthly_pulse = {
         updating_subject_loyalties = yes
         convert_trade_company_provinces_for_country_and_subjects = yes
         adding_all_provinces_to_parliament_and_setting_approval_chance = yes
+        manage_subject_relations_share_maps_and_enforce_peace = yes
+        remove_overlapping_cores_and_claims_between_overlord_and_subject = yes
+        auto_hire_mil_commandant_advisor_if_needed = yes
 
         if = {
             limit = {
@@ -107,6 +110,17 @@ on_monthly_pulse = {
             set_prov_trade_power_on_all_for_country_and_subjects = yes
         }
     }
+
+    if = {
+        limit = {
+            is_subject_of_type = mining_corporation
+        }
+        # Mining corporations should get all their provinces assimilated for maximum gold production.
+        every_owned_province = {
+            change_religion = owner
+            change_culture = owner
+        }
+    }
 }
 
 # ROOT = province, FROM = old owner
@@ -121,6 +135,8 @@ on_province_owner_change = {
         change_trade_goods = gold
         set_high_dev_resource_gathering_operation = yes
         set_high_dev_cost_reduction_on_prov = yes
+        change_religion = owner
+        change_culture = owner
     }
 
     # Upgrading provinces in defensive marches if decision is enabled.
@@ -254,6 +270,10 @@ on_dependency_gained = {
             change_all_provinces_to_gold = yes
             set_high_dev_on_all_gold_prov = yes
             set_high_dev_cost_reduction_on_all_gold_and_silver_prov = yes
+            every_owned_province = {
+                change_religion = owner
+                change_culture = owner
+            }
 		}
 
         if = {
@@ -390,4 +410,19 @@ on_added_to_trade_company = {
             convert_trade_company_provinces_for_country_and_subjects = yes
         }
     }
+}
+
+# # TODO if we save the advisor type in pre fire and then rehire in post we could potentially enable auto-rehiring of advisors
+# on_post_adm_advisor_fired = {
+#     # auto_hire_adm_natural_scientist_advisor = yes
+# }
+
+# # this = country
+# on_post_dip_advisor_fired = {
+#     # Nothing for now
+# }
+
+# # this = country
+on_post_mil_advisor_fired = {
+	auto_hire_mil_commandant_advisor = yes
 }

@@ -1192,6 +1192,36 @@ country_decisions = {
         }  
     }
 
+    enable_estates_decision = {
+        major = yes
+        potential = {
+            ai = no
+            OR = {
+                # If either estate flag is missing, we can enable the estates
+                NOT = { has_country_flag = enables_estate_burghers_flag }
+                NOT = { has_country_flag = enables_estate_church_flag }
+            }
+            # Can't be either of these two tags, as they have their own estate mechanics
+            NOT = { tag = NHS }
+            NOT = { tag = ELY }
+        }
+        allow = {
+            ai = no
+            OR = {
+                # If either estate flag is missing, we can enable the estates
+                NOT = { has_country_flag = enables_estate_burghers_flag }
+                NOT = { has_country_flag = enables_estate_church_flag }
+            }
+            # Can't be either of these two tags, as they have their own estate mechanics
+            NOT = { tag = NHS }
+            NOT = { tag = ELY }
+        }
+        effect = {
+            set_country_flag = enables_estate_burghers_flag
+            set_country_flag = enables_estate_church_flag
+        }
+    }
+
     enable_show_decisions = {
         major = yes
         color = { 0 255 0 }

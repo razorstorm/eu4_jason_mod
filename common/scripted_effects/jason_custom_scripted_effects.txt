@@ -527,6 +527,100 @@ automatic_reduce_half_tariffs = {
     }
 }
 
+end_all_wars_amongst_subjects = {
+    # Blocking all wars amongst subjects
+    every_subject_country = {
+        save_event_target_as = subject
+        overlord = {
+            every_subject_country = {
+                white_peace = event_target:subject 
+                add_truce_with = event_target:subject 
+            }
+        }
+
+        remove_opinion = {
+            who = ROOT
+            modifier = opinion_annex_vassal
+        }
+    }
+}
+
+reset_subject_annexer_opinion = {
+    remove_country_modifier = annexers_legacy
+    every_subject_country = {
+        remove_opinion = {
+            who = overlord
+            modifier = opinion_annex_vassal
+        }
+    }
+}
+
+discover_all_subject_lands = {
+    every_subject_country = {
+        every_owned_province = {
+            discover_country = ROOT
+        }
+    }
+}
+
+subjects_discover_each_other_lands = {
+    every_subject_country = {
+        save_event_target_as = subject_country
+        overlord = {
+            every_subject_country = {
+                every_owned_province = {
+                    discover_country = event_target:subject_country
+                }
+            }
+            every_owned_province = {
+                discover_country = event_target:subject_country
+            }
+        }
+    }
+}
+
+manage_subject_relations_share_maps_and_enforce_peace = {
+    end_all_wars_amongst_subjects = yes
+    reset_subject_annexer_opinion = yes
+    discover_all_subject_lands = yes
+
+    subjects_discover_each_other_lands = yes
+}
+
+remove_overlapping_cores_and_claims_between_overlord_and_subject = {
+    every_subject_country = {
+        save_event_target_as = subject
+        overlord = {
+            every_owned_province = {
+                limit = {
+                    OR = {
+                        is_core = event_target:subject
+                        is_claim = event_target:subject
+                        is_permanent_claim = event_target:subject
+                    }
+                }
+    
+                # log = "Removing Subject core/claim from [This.GetName]"
+                remove_core = event_target:subject
+                remove_claim = event_target:subject
+            }
+        }
+        every_owned_province = {
+            limit = {
+                OR = {
+                    is_core = ROOT
+                    is_claim = ROOT
+                    is_permanent_claim = ROOT
+                }
+            }
+    
+            # log = "Removing Root core/claim from subject in [This.GetName]"
+            remove_core = ROOT
+            remove_claim = ROOT
+        }
+    }
+}
+
 set_gold_to_slaves = {
     every_owned_province = {
         limit = {
@@ -1439,14 +1533,12 @@ fixing_religion_and_culture = {
         limit = {
             culture = noculture
         }
-        # log = "Province [This.GetName] has noculture"
         change_culture = owner
     }
     every_owned_province = {
         limit = {
             religion = noreligion
         }
-        # log = "Province [This.GetName] has noreligion"
         change_religion = owner
     }
 }
@@ -1650,4 +1742,61 @@ updating_subject_loyalties = {
 
     # Making confucian subjects harmonize with all religions
     confucian_subjects_full_harmonize = yes
+}
+
+
+auto_hire_adm_natural_scientist_advisor = {
+    if = {
+        limit = {
+            current_income_balance = 400
+            # is_year = 1500 
+        }
+        add_treasury = -400
+        hire_advisor = {
+            type = natural_scientist
+            skill = 5
+        }
+    } 
+}
+
+auto_hire_mil_commandant_advisor_if_needed = {
+    if = {
+        limit = {
+            NOT = {
+                employed_advisor = {
+                    category = MIL
+                    type = commandant
+                }
+            }
+        }
+        auto_hire_mil_commandant_advisor = yes
+    }
+}
+
+auto_hire_mil_commandant_advisor = {
+    if = {
+        limit = {
+            current_income_balance = 200
+        }
+        add_treasury = -400
+        hire_advisor = {
+            type = commandant
+            skill = 5
+        }
+    } else_if = {
+        limit = {
+            current_income_balance = 100
+        }
+        add_treasury = -200
+        hire_advisor = {
+            type = commandant
+            skill = 3
+        }
+    } else = {
+        add_treasury = -10
+        hire_advisor = {
+            type = commandant
+            skill = 1
+        }
+    }
 }
