@@ -190,6 +190,19 @@ country_decisions = {
                 add_base_production = 3
                 add_base_manpower = 1
             }
+            every_subject_country = {
+                every_owned_province = {
+                    limit = {
+                        OR = {
+                            trade_goods = gold
+                            trade_goods = silver
+                        }
+                    }
+                    add_base_tax = 2
+                    add_base_production = 3
+                    add_base_manpower = 1
+                }
+            }
         }
     }
 
@@ -390,7 +403,6 @@ country_decisions = {
             any_province = {
                 OR = {
                     trade_goods = gold
-                    trade_goods = silver
                 }
                 NOT = { owned_by = ROOT }
 
@@ -406,7 +418,6 @@ country_decisions = {
             any_province = {
                 OR = {
                     trade_goods = gold
-                    trade_goods = silver
                 }
                 NOT = { owned_by = ROOT }
 
@@ -421,7 +432,6 @@ country_decisions = {
         provinces_to_highlight = {
             OR = {
                 trade_goods = gold
-                trade_goods = silver
             }
             NOT = { owned_by = ROOT }
 
@@ -449,7 +459,6 @@ country_decisions = {
                 limit = {
                     OR = {
                         trade_goods = gold
-                        trade_goods = silver
                     }
                     NOT = { owned_by = ROOT }
                 }
@@ -1107,7 +1116,6 @@ country_decisions = {
             set_country_flag = jason_set_zero_autonomy_on_precious_provinces_enabled
         }  
     }
-
     
     disable_set_zero_autonomy_on_precious_provinces = {
         major = yes
@@ -1143,6 +1151,27 @@ country_decisions = {
         }
         effect = {
             set_country_flag = jason_set_zero_autonomy_on_all_provinces_enabled
+        }  
+    }
+
+    discover_world_decision = {
+        major = yes
+        potential = {
+            ai = no
+            has_country_flag = jason_show_decisions_enabled
+            NOT = {
+                has_country_flag = jason_world_discovered
+            }
+        }
+        allow = {
+            ai = no
+            NOT = {
+                has_country_flag = jason_world_discovered
+            }
+        }
+        effect = {
+            discover_world = yes
+            set_country_flag = jason_world_discovered
         }  
     }
 

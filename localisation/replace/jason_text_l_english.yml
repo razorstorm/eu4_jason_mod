@@ -101,3 +101,9 @@ enable_set_zero_autonomy_on_all_provinces_desc: "Enables auto-setting autonomy t
 
 disable_set_zero_autonomy_on_all_provinces_title: "Disable Set Zero Autonomy on All Provinces"
 disable_set_zero_autonomy_on_all_provinces_desc: "Disables auto-setting autonomy to zero on all provinces. This will stop auto-setting the autonomy of all provinces to 0%."
+
+discover_world_decision_title: "Discover the World"
+discover_world_decision_desc: "Discovers the entire world, revealing all provinces, sea tiles, and lake tiles."
+
+enable_estates_decision_title: "Enable Estates"
+enable_estates_decision_desc: "Enables missing estates if possible."

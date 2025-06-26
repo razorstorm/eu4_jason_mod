@@ -242,6 +242,7 @@ on_province_owner_change = {
     }
 }
 
+
 # ROOT = overlord, FROM = subject
 on_dependency_gained = {
 	# Subject

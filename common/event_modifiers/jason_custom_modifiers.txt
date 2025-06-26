@@ -653,3 +653,19 @@ economic_hegemon_benefits = {
 
     governing_capacity_modifier = 0.20
 }
+
+sickly_monarch = {
+    monarch_lifespan = -0.25
+}
+
+very_sickly_monarch = {
+    monarch_lifespan = -0.5
+}
+
+deathly_sickly_monarch = {
+    monarch_lifespan = -0.75
+}
+
+on_deaths_door_monarch = {
+    monarch_lifespan = -0.90
+}
