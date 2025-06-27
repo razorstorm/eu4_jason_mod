@@ -1676,6 +1676,7 @@ updating_subject_loyalties = {
         change_religion = overlord
     }
 
+    # Royal Marriage with all subjects
     every_subject_country = {
         limit = {
             NOT = {
@@ -1696,6 +1697,7 @@ updating_subject_loyalties = {
                 add_legitimacy = 5
             }
         }
+
         add_legitimacy = 100
         add_devotion = 100
         add_horde_unity = 100

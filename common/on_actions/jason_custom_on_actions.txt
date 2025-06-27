@@ -32,6 +32,7 @@ on_monthly_pulse = {
         manage_subject_relations_share_maps_and_enforce_peace = yes
         remove_overlapping_cores_and_claims_between_overlord_and_subject = yes
         auto_hire_mil_commandant_advisor_if_needed = yes
+        target_zero_vassal_taxes = yes
 
         if = {
             limit = {
@@ -304,6 +305,7 @@ on_dependency_gained = {
             convert_trade_company_provinces_for_country_and_subjects = yes
             create_homeguard_general = yes
             updating_subject_loyalties = yes
+            target_zero_vassal_taxes = yes
 
             # Upgrading COTs to level 2 or 3
             upgrade_all_cot_to_level_2 = yes
