@@ -1802,3 +1802,11 @@ auto_hire_mil_commandant_advisor = {
         }
     }
 }
+
+increment_world_tech = {
+    every_country = {
+        add_adm_tech = 1
+        add_dip_tech = 1
+        add_mil_tech = 1
+    }
+}

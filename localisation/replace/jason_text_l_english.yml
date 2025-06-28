@@ -107,3 +107,12 @@ discover_world_decision_desc: "Discovers the entire world, revealing all provinc
 
 enable_estates_decision_title: "Enable Estates"
 enable_estates_decision_desc: "Enables missing estates if possible."
+
+set_high_american_decision_title: "Enable High American Tech Group"
+set_high_american_decision_desc: "Converts country to High American tech group and unit types."
+
+initialize_major_cheats_decision_title: "Initialize Major Cheats"
+initialize_major_cheats_decision_desc: "Initializes suite of major cheats, i.e. from cheats.txt"
+
+reinitialize_major_cheats_decision_title: "Reinitialize Major Cheats"
+reinitialize_major_cheats_decision_desc: "Reinitializes suite of major cheats, i.e. from cheats.txt. This option becomes available if you have already initialized the chceats once. This simply allows you to do it again at any point".

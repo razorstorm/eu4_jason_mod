@@ -1175,6 +1175,65 @@ country_decisions = {
         }  
     }
 
+    set_high_american_decision = {
+        major = yes
+        potential = {
+            ai = no
+            has_country_flag = jason_show_decisions_enabled
+        }
+        allow = {
+            ai = no
+            # If either is not true
+            NOT = {
+                technology_group = high_american
+                unit_type = high_american
+            }
+        }
+        effect = {
+            change_technology_group = high_american
+            change_unit_type = high_american
+        }  
+    }
+
+    initialize_major_cheats_decision = {
+        major = yes
+        color = { 0 255 0 }
+        potential = {
+            ai = no
+            has_country_flag = jason_show_decisions_enabled
+            NOT = {
+                has_country_flag = jason_cheats_initialized
+            }
+        }
+        allow = {
+            ai = no
+            NOT = {
+                has_country_flag = jason_cheats_initialized
+            }
+        }
+        effect = {
+            set_initialize_cheats = yes
+            set_country_flag = jason_cheats_initialized
+        }
+    }
+
+    reinitialize_major_cheats_decision = {
+        major = yes
+        color = { 0 100 0 }
+        potential = {
+            ai = no
+            has_country_flag = jason_show_decisions_enabled
+            has_country_flag = jason_cheats_initialized
+        }
+        allow = {
+            ai = no
+        }
+        effect = {
+            set_initialize_cheats = yes
+            set_country_flag = jason_cheats_initialized
+        }
+    }
+
     disable_set_zero_autonomy_on_all_provinces = {
         major = yes
         color = { 100 0 0 }
