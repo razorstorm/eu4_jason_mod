@@ -101,6 +101,13 @@ on_monthly_pulse = {
 
             set_prov_trade_power_on_all_cot_for_country_and_subjects = yes
         }
+        if = {
+            limit = {
+                has_country_flag = jason_dev_on_all_cot_enabled
+            }
+
+            set_dev_on_all_cot_for_country_and_subjects = yes
+        }
 
         if = {
             limit = {
@@ -217,6 +224,18 @@ on_province_owner_change = {
             }
 
             set_prov_trade_power_on_all_cot_for_country_and_subjects = yes
+        }
+        if = {
+            limit = {
+                OR = {
+                    has_country_flag = jason_dev_on_all_cot_enabled
+                    overlord = {
+                        has_country_flag = jason_dev_on_all_cot_enabled
+                    }
+                }
+            }
+
+            set_dev_on_all_cot_for_country_and_subjects = yes
         }
         if = {
             limit = {
@@ -346,6 +365,13 @@ on_dependency_gained = {
             }
 
             set_prov_trade_power_on_all_cot_for_country_and_subjects = yes
+        }
+        if = {
+            limit = {
+                has_country_flag = jason_dev_on_all_cot_enabled
+            }
+
+            set_dev_on_all_cot_for_country_and_subjects = yes
         }
         if = {
             limit = {

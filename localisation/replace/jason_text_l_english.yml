@@ -43,6 +43,11 @@
  disable_prov_trade_power_on_all_title: "Disable Trade Power cheat on All Provinces"
  disable_prov_trade_power_on_all_desc: "Disables auto adding the trade power cheat to all provinces for both yourself and all your subjects. Note: This will not remove the trade power cheat from provinces that already have it enabled."
 
+ enable_dev_on_all_cot_title: "Enable Development on All CoT"
+ enable_dev_on_all_cot_desc: "Enables auto development on all provinces which contain Centers of Trade for both yourself and all your subjects. This will set the development of all such provinces to 15/20/10 on monthly tick or on acquisition of new subjects or provinces."
+ disable_dev_on_all_cot_title: "Disable Development on All CoT"
+ disable_dev_on_all_cot_desc: "Disables auto development on all provinces which contain Centers of Trade for both yourself and all your subjects. This will stop auto-setting the development of all such provinces to 15/20/10."
+
  enable_auto_marry_all_christians_title: "Enable Auto Marry All Christian Nations"
  enable_auto_marry_all_christians_desc: "Enables auto marrying all Christian nations, which will automatically send royal marriages to all Christian nations in the world."
  disable_auto_marry_all_christians_title: "Disable Auto Marry All Christian Nations"

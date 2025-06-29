@@ -271,6 +271,23 @@ set_prov_trade_power_on_all_cot = {
             duration = -1
         }
         set_local_autonomy = 0
+    }
+}
+
+set_dev_on_all_cot = {
+    every_owned_province = {
+        limit = {
+            province_has_center_of_trade_of_level = 1
+            OR = {
+                NOT = {
+                    base_tax = 15
+                    base_production = 20
+                    base_manpower = 10
+                }
+                local_autonomy = 1
+            }
+        }
+        set_local_autonomy = 0
         if = {
             limit = {
                 NOT = {
@@ -322,6 +339,13 @@ set_prov_trade_power_on_all_cot_for_country_and_subjects = {
         set_prov_trade_power_on_all_cot = yes
     }
 }
+
+set_dev_on_all_cot_for_country_and_subjects = {
+    set_dev_on_all_cot = yes
+    every_subject_country = {
+        set_dev_on_all_cot = yes
+    }
+}   
 
 convert_trade_company_provinces = {
     # Conversion of trade company provinces if country is not confucian
@@ -977,6 +1001,8 @@ upgrade_ruler = {
     add_ruler_personality = immortal_personality
     add_ruler_personality = legendary_conqueror_personality
     add_ruler_personality = scholar_personality
+
+    remove_country_modifier = hf_on_new_monarch
 }
 
 make_immortal_ruling_family = {
@@ -1084,6 +1110,73 @@ make_immortal_ruling_family = {
 			name = consort_of_the_people
 		}
     }
+}
+
+setup_pax_solis_laws = {
+    # Taxation System - Progressive Tax System
+    remove_country_modifier = hf_estate_int_farmingtax
+    remove_country_modifier = hf_estate_int_headtax
+    remove_country_modifier = hf_estate_int_landtax
+    remove_country_modifier = hf_estate_int_flattax
+    remove_country_modifier = hf_estate_int_salestax
+    remove_country_modifier = hf_estate_int_graintax
+
+    add_country_modifier = {
+        name = hf_estate_int_flattax
+        duration = -1
+    }
+
+    clr_country_flag = hf_viewing_estate_int_tax_event
+
+    # Economic Basis - Mercantilism
+    remove_country_modifier = hf_estate_int_naturaleconomy
+    remove_country_modifier = hf_estate_int_physiocracy
+    remove_country_modifier = hf_estate_int_mercantilism
+
+    add_country_modifier = {
+        name = hf_estate_int_mercantilism
+        duration = -1
+    }
+
+    clr_country_flag = hf_viewing_estate_int_economy_event
+
+    # Trade Principle - Trade Protection
+    remove_country_modifier = hf_estate_int_isolationism
+    remove_country_modifier = hf_estate_int_freetrade
+
+    add_country_modifier = {
+        name = hf_estate_int_protectionism
+        duration = -1
+    }
+
+    clr_country_flag = hf_viewing_estate_int_trade_event
+
+    # Church and State - State Religion
+
+    remove_country_modifier = hf_estate_int_sepchurchstate
+    remove_country_modifier = hf_estate_int_freeconscience
+
+    add_country_modifier = {
+        name = hf_estate_int_statereligion
+        duration = -1
+    }
+
+    clr_country_flag = hf_viewing_estate_int_religion_event
+
+    # Civil Administration - Citizenship Act
+    remove_country_modifier = hf_estate_int_sharecropping
+    remove_country_modifier = hf_estate_int_serfdom
+    remove_country_modifier = hf_estate_int_craftsman
+    remove_country_modifier = hf_estate_int_forcedlabor
+    remove_country_modifier = hf_estate_int_cool_down_population
+
+    add_country_modifier = {
+        name = hf_estate_int_settlemgn
+        duration = -1
+    }
+
+    clr_country_flag = hf_viewing_estate_int_population_event
+
 }
 
 set_initialize_cheats = {
@@ -1283,6 +1376,26 @@ set_initialize_cheats = {
         }
         # Don't create new ruler, but make sure to set the montezuma flag if it somehow got unset.
         set_ruler_flag = azt_montezuma    
+    }
+    else_if = {
+        limit = {
+            OR = {
+                tag = MOS
+                tag = RUS
+                tag = NOV
+            }
+        }
+        define_ruler = {
+            dynasty = ROOT
+            culture = ROOT
+            religion = ROOT
+            adm = 10
+            dip = 10
+            mil = 10
+            male = yes
+            name = "Peter I \"The Great\""
+            fixed = yes
+        }   
     }
     else = {
         define_ruler = {
@@ -1808,5 +1921,51 @@ increment_world_tech = {
         add_adm_tech = 1
         add_dip_tech = 1
         add_mil_tech = 1
+    }
+}
+
+
+add_mod = {
+    add_country_modifier = {
+        name = $name$
+        duration = -1  
+    }
+}
+
+add_prov_mod = {
+    add_province_modifier = {
+        name = $name$
+        duration = -1  
+    }
+}
+
+change_tag_with_effects = {
+    change_tag = $tag$
+    swap_non_generic_missions = yes
+    on_change_tag_effect = yes
+    remove_non_electors_emperors_from_empire_effect = yes
+}
+
+culture_convert_all_provinces_of_given_culture = {
+    every_owned_province = {
+        limit = {
+            OR = {
+                culture = $culture$
+                culture_group = $culture_group$
+            }
+        }
+        change_culture = ROOT
+    }
+}
+
+convert_all_provinces_of_given_religion = {
+    every_owned_province = {
+        limit = {
+            OR = {
+                religion = $religion$
+                culture_group = $religion_group$
+            }
+        }
+        change_religion = ROOT
     }
 }

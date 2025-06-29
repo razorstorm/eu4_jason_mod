@@ -693,6 +693,52 @@ country_decisions = {
         }
     }
 
+    enable_dev_on_all_cot = {
+        major = no
+        potential = {
+            ai = no
+            has_country_flag = jason_show_decisions_enabled
+            NOT = {
+                has_country_flag = jason_dev_on_all_cot_enabled
+            }
+        }
+        allow = {
+            ai = no
+            NOT = {
+                has_country_flag = jason_dev_on_all_cot_enabled
+            }
+        }
+        provinces_to_highlight = {
+            country_or_subject_holds = ROOT
+            province_has_center_of_trade_of_level = 1
+        }
+        effect = {
+            set_country_flag = jason_dev_on_all_cot_enabled
+            set_prov_trade_power_on_all_cot_for_country_and_subjects = yes
+        }
+    }
+
+    disable_dev_on_all_cot = {
+        major = no
+        color = { 100 0 0 }
+        potential = {
+            ai = no
+            has_country_flag = jason_show_decisions_enabled
+            has_country_flag = jason_dev_on_all_cot_enabled
+        }
+        allow = {
+            ai = no
+            has_country_flag = jason_dev_on_all_cot_enabled
+        }
+        provinces_to_highlight = {
+            country_or_subject_holds = ROOT
+            province_has_center_of_trade_of_level = 1
+        }
+        effect = {
+            clr_country_flag = jason_dev_on_all_cot_enabled
+        }
+    }
+
     enable_prov_trade_power_on_all_cot = {
         major = no
         potential = {
@@ -1105,6 +1151,10 @@ country_decisions = {
             NOT = {
                 has_country_flag = jason_set_zero_autonomy_on_precious_provinces_enabled
             }
+            # If already enabled on all provinces, no point showing this decision to enable it only in a few
+            NOT = {
+                has_country_flag = jason_set_zero_autonomy_on_all_provinces_enabled
+            }
         }
         allow = {
             ai = no
@@ -1255,6 +1305,7 @@ country_decisions = {
         major = yes
         potential = {
             ai = no
+            has_country_flag = jason_show_decisions_enabled
             OR = {
                 # If either estate flag is missing, we can enable the estates
                 NOT = { has_country_flag = enables_estate_burghers_flag }
