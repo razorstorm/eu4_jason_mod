@@ -33,6 +33,7 @@ on_monthly_pulse = {
         remove_overlapping_cores_and_claims_between_overlord_and_subject = yes
         auto_hire_mil_commandant_advisor_if_needed = yes
         target_zero_vassal_taxes = yes
+        make_immortal_ruling_family = yes
 
         if = {
             limit = {

@@ -89,35 +89,61 @@
  monopolize_gold_from_non_mining_subjects_title: "Monopolize Gold from Non-Mining Subjects"
  monopolize_gold_from_non_mining_subjects_desc: "Monopolizes gold from all tariff-less subjects by converting all foreign gold provinces into iron provinces and setting an equal number of our own (not gold/silver/silk/dyes/diamonds producing) provinces into gold producing provinces. If we run out of valid provinces, the process will end early."
 
-set_diamonds_dev_title: "Set Development on Diamonds Provinces"
-set_diamonds_dev_desc: "Sets all diamonds producing provinces to 20/25/15."
+ set_diamonds_dev_title: "Set Development on Diamonds Provinces"
+ set_diamonds_dev_desc: "Sets all diamonds producing provinces to 20/25/15."
 
-set_owned_specific_provinces_to_diamonds_decision_title: "Set Owned Specific Provinces to Diamonds"
-set_owned_specific_provinces_to_diamonds_decision_desc: "Sets the owned highlighted provinces to diamonds producing provinces."
+ set_owned_specific_provinces_to_diamonds_decision_title: "Set Owned Specific Provinces to Diamonds"
+ set_owned_specific_provinces_to_diamonds_decision_desc: "Sets the owned highlighted provinces to diamonds producing provinces."
+ 
+ enable_set_zero_autonomy_on_precious_provinces_title: "Enable Set Zero Autonomy on Precious Provinces"
+ enable_set_zero_autonomy_on_precious_provinces_desc: "Enables auto-setting autonomy to zero on all provinces that produce precious trade goods (gold, silver, diamonds, plus silk and dyes for persian tags). This will auto-set the autonomy of all such provinces to 0% on monthly tick or on acquisition of new provinces."
+ 
+ disable_set_zero_autonomy_on_precious_provinces_title: "Disable Set Zero Autonomy on Precious Provinces"
+ disable_set_zero_autonomy_on_precious_provinces_desc: "Disables auto-setting autonomy to zero on all provinces that produce precious trade goods (gold, silver, diamonds, plus silk and dyes for persian tags). This will stop auto-setting the autonomy of all such provinces to 0%."
+ 
+ enable_set_zero_autonomy_on_all_provinces_title: "Enable Set Zero Autonomy on All Provinces"
+ enable_set_zero_autonomy_on_all_provinces_desc: "Enables auto-setting autonomy to zero on all provinces. This will set the autonomy of all provinces to 0% on monthly tick or on acquisition of new provinces."
+ 
+ disable_set_zero_autonomy_on_all_provinces_title: "Disable Set Zero Autonomy on All Provinces"
+ disable_set_zero_autonomy_on_all_provinces_desc: "Disables auto-setting autonomy to zero on all provinces. This will stop auto-setting the autonomy of all provinces to 0%."
+ 
+ discover_world_decision_title: "Discover the World"
+ discover_world_decision_desc: "Discovers the entire world, revealing all provinces, sea tiles, and lake tiles."
+ 
+ enable_estates_decision_title: "Enable Estates"
+ enable_estates_decision_desc: "Enables missing estates if possible."
+ 
+ set_high_american_decision_title: "Enable High American Tech Group"
+ set_high_american_decision_desc: "Converts country to High American tech group and unit types."
+ 
+ initialize_major_cheats_decision_title: "Initialize Major Cheats"
+ initialize_major_cheats_decision_desc: "Initializes suite of major cheats, i.e. from cheats.txt"
+ 
+ reinitialize_major_cheats_decision_title: "Reinitialize Major Cheats"
+ reinitialize_major_cheats_decision_desc: "Reinitializes suite of major cheats, i.e. from cheats.txt. This option becomes available if you have already initialized the chceats once. This simply allows you to do it again at any point".
+ 
+ american_empire:0 "American Imperial Directorate"
+ american_empire_legacy:0 "American Imperial Directorate"
+ american_empire_ruler:0 "Imperial Director"
+ american_empire_ruler_female:0 "Imperial Director"
+ american_empire_desc:0 "The American Directorate is an Imperial and consolidated and centralized form of the american Republic. Although still keeping the trappings of a republic, the Imperial Director holds autocratic powers as a form of de jure presidential dictator in the office of the Imperial Directorate. This is  essentially an absolutist monarchy in all but name, but with far more progressive ideals and a stronger ability to project authoritarian power over its subjects due to modernized governing innovations"
+ american_empire_legacy_desc:0 "The American Directorate is an Imperial and consolidated and centralized form of the american Republic. Although still keeping the trappings of a republic, the Imperial Director holds autocratic powers as a form of de jure presidential dictator in the office of the Imperial Directorate. This is  essentially an absolutist monarchy in all but name, but with far more progressive ideals and a stronger ability to project authoritarian power over its subjects due to modernized governing innovations"
 
-enable_set_zero_autonomy_on_precious_provinces_title: "Enable Set Zero Autonomy on Precious Provinces"
-enable_set_zero_autonomy_on_precious_provinces_desc: "Enables auto-setting autonomy to zero on all provinces that produce precious trade goods (gold, silver, diamonds, plus silk and dyes for persian tags). This will auto-set the autonomy of all such provinces to 0% on monthly tick or on acquisition of new provinces."
+ DIRECTORATE:0 "Directorate"
+ GRAND_DIRECTORATE:0 "Grand Directorate"
+ IMPERIAL_DIRECTORATE:0 "Imperial Directorate"
 
-disable_set_zero_autonomy_on_precious_provinces_title: "Disable Set Zero Autonomy on Precious Provinces"
-disable_set_zero_autonomy_on_precious_provinces_desc: "Disables auto-setting autonomy to zero on all provinces that produce precious trade goods (gold, silver, diamonds, plus silk and dyes for persian tags). This will stop auto-setting the autonomy of all such provinces to 0%."
+ DIRECTOR:0 "Director"
+ GRAND_DIRECTOR:0 "Grand Director"
+ IMPERIAL_DIRECTOR:0 "Imperial Director"
 
-enable_set_zero_autonomy_on_all_provinces_title: "Enable Set Zero Autonomy on All Provinces"
-enable_set_zero_autonomy_on_all_provinces_desc: "Enables auto-setting autonomy to zero on all provinces. This will set the autonomy of all provinces to 0% on monthly tick or on acquisition of new provinces."
+ FIRST_LADY:0 "First Lady"
+ GRAND_FIRST_LADY:0 "Grand First Lady"
+ IMPERIAL_FIRST_LADY:0 "Imperial First Lady"
 
-disable_set_zero_autonomy_on_all_provinces_title: "Disable Set Zero Autonomy on All Provinces"
-disable_set_zero_autonomy_on_all_provinces_desc: "Disables auto-setting autonomy to zero on all provinces. This will stop auto-setting the autonomy of all provinces to 0%."
+ FIRST_GENTLEMAN:0 "First Gentleman"
+ GRAND_FIRST_GENTLEMAN:0 "Grand First Gentleman"
+ IMPERIAL_FIRST_GENTLEMAN:0 "Imperial First Gentleman"
 
-discover_world_decision_title: "Discover the World"
-discover_world_decision_desc: "Discovers the entire world, revealing all provinces, sea tiles, and lake tiles."
-
-enable_estates_decision_title: "Enable Estates"
-enable_estates_decision_desc: "Enables missing estates if possible."
-
-set_high_american_decision_title: "Enable High American Tech Group"
-set_high_american_decision_desc: "Converts country to High American tech group and unit types."
-
-initialize_major_cheats_decision_title: "Initialize Major Cheats"
-initialize_major_cheats_decision_desc: "Initializes suite of major cheats, i.e. from cheats.txt"
-
-reinitialize_major_cheats_decision_title: "Reinitialize Major Cheats"
-reinitialize_major_cheats_decision_desc: "Reinitializes suite of major cheats, i.e. from cheats.txt. This option becomes available if you have already initialized the chceats once. This simply allows you to do it again at any point".
+ cb_manifest_destiny: "Manifest Destiny"
+ MANIFEST_DESTINY_WAR_NAME:0 "$ORDER$$FIRST$-$SECOND$ War of Manifest Destiny"

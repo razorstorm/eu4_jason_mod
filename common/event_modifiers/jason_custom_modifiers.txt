@@ -635,11 +635,11 @@ tropical_resort_modifier_overlord = {
     burghers_loyalty_modifier = 0.2 # Burghers are happy to have a resort town
 	burghers_influence_modifier = 0.15 # Burghers tend to run these towns and build up influence
 
-    nobles_loyalty_modifier = 0.1 # Nobles are happy to have a resort town
+    nobles_loyalty_modifier = 0.05 # Nobles are happy to have a resort town
     nobles_influence_modifier = 0.05 # Nobles also tend to run these towns and build up influence
 
-    church_loyalty_modifier = -0.1 # Church is unhappy to have a resort town which invites sinful behaviors
-    church_influence_modifier = -0.05 # Churches do not run these resort towns and lose influence
+    church_loyalty_modifier = -0.01 # Church is unhappy to have a resort town which invites sinful behaviors
+    church_influence_modifier = -0.01 # Churches do not run these resort towns and lose influence
 }
 
 economic_hegemon_benefits = {

@@ -1230,6 +1230,10 @@ country_decisions = {
         potential = {
             ai = no
             has_country_flag = jason_show_decisions_enabled
+            NOT = {
+                technology_group = high_american
+                unit_type = high_american
+            }
         }
         allow = {
             ai = no

@@ -424,7 +424,7 @@ run_periodic_third_odyssey_cheats = {
             is_city = yes
             is_empty = no
         }
-        # log = "Province [This.GetName] not owned by KYK"
+        log = "Province [This.GetName] not owned by KYK"
         cede_province = KYK
     }
     K01 = {
@@ -446,10 +446,10 @@ run_periodic_third_odyssey_cheats = {
                     }
                 }
             }
-            # log = "Kykladia has wrong province in [This.GetName], granting to Kauda"
+            log = "Kykladia has wrong province in [This.GetName], granting to Kauda"
             cede_province = CM1
         }
-    
+        
         if = {
             limit = {
                 NOT = {
@@ -461,13 +461,13 @@ run_periodic_third_odyssey_cheats = {
                     superregion = carribean_superregion
                     is_empty = yes
                 }
-                # log = "Creating KYK siberian frontier in: [This.GetName]"
+                log = "Creating KYK siberian frontier in: [This.GetName]"
                 add_siberian_construction = 1
                 # add_colonysize = -199
                 cede_province = KYK
-            
+                
             }
-
+    
         }
     }
 
@@ -483,35 +483,35 @@ run_periodic_third_odyssey_cheats = {
                     is_empty = yes
                     is_neighbor_of = VIN
                 }
-                # log = "Creating VIN siberian frontier in: [This.GetName]"
+                log = "Creating VIN siberian frontier in: [This.GetName]"
                 add_siberian_construction = 1
                 # add_colonysize = -199
                 cede_province = VIN
-            
+                
             }
         }
     }
 
-    # MSN = {
-    #     if = {
-    #         limit = {
-    #             NOT = {
-    #                 num_of_colonies = 5
-    #             }
-    #         }
-    #         random_province = {
-    #             limit = {
-    #                 is_empty = yes
-    #                 is_neighbor_of = MSN
-    #             }
-    #             log = "Creating MSN siberian frontier in: [This.GetName]"
-    #             add_siberian_construction = 1
-    #             # add_colonysize = -199
-    #             cede_province = MSN
-            
-    #         }
-    #     }
-    # }
+    MSN = {
+        if = {
+            limit = {
+                NOT = {
+                    num_of_colonies = 0
+                }
+            }
+            random_province = {
+                limit = {
+                    is_empty = yes
+                    is_neighbor_of = MSN
+                }
+                log = "Creating MSN siberian frontier in: [This.GetName]"
+                add_siberian_construction = 1
+                # add_colonysize = -199
+                cede_province = MSN
+                
+            }
+        }
+    }
 
     # Subjects colonizing
     every_subject_country = {
@@ -651,9 +651,9 @@ run_periodic_third_odyssey_cheats = {
                 }
                 is_city = yes
             }
-    
+        
             add_building = marketplace
-            # log = "Adding marketplace to [This.GetName]"
+            log = "Adding marketplace to [This.GetName]"
             if = {
                 limit = {
                     NOT = {
@@ -711,14 +711,14 @@ run_periodic_third_odyssey_cheats = {
                     }
                 }
                 undiscover_country = Prev
-                # log = "Forcing European Country: [Prev.GetName] to undiscover province: [This.GetName]."
+                log = "Forcing European Country: [Prev.GetName] to undiscover province: [This.GetName]."
 
                 if = {
                     limit = {
                         owned_by = PREV
                     }
                     decolonize = THIS
-                    # log = "Forcing European Country: [Prev.GetName] to decolonize province: [This.GetName]."
+                    log = "Forcing European Country: [Prev.GetName] to decolonize province: [This.GetName]."
                 }
             }
         }
@@ -938,6 +938,213 @@ target_zero_vassal_taxes = {
             remove_country_modifier = jason_vassal_income_minus_1_4
             remove_country_modifier = jason_vassal_income_minus_1_5
             remove_country_modifier = jason_vassal_income_minus_5_1
+        }
+    }
+}
+
+run_pax_solis_prov = {
+    remove_country_modifier = hf_estate_int_cool_down_trade
+    remove_country_modifier = hf_estate_int_cool_down_economy
+    remove_country_modifier = hf_estate_int_cool_down_tax
+    remove_country_modifier = hf_estate_int_cool_down_religion
+    remove_country_modifier = hf_estate_int_cool_down_population
+    # Intelligentsia
+    add_estate_loyalty = {
+        estate = estate_intelligentsia
+        loyalty = 100
+    }    
+    add_estate_loyalty = {
+        estate = estate_military_residence
+        loyalty = 100
+    }    
+    
+    6702 = {
+        change_province_name = "Kamchatka"
+    }
+    
+    CAPITAL_SCOPE = {
+        if = {
+            limit = {
+                NOT = {
+                    has_building = university
+                }
+            }
+            add_building = university
+        }
+    }
+
+    if = {
+        limit = {
+            is_year = 1500
+        }
+        # log = "Adding University to all provinces"
+        every_owned_province = {
+            limit = { 
+                NOT = {
+                    has_building = university
+                }
+            }
+            add_building = university
+        }
+    }
+    
+    every_subject_country = {
+        every_owned_province = {
+            limit = { 
+                NOT = {
+                    has_building = university
+                }
+            }
+            add_building = university
+        }
+    }
+
+    # Fixing stupid pax solis bug that causes chinese events to fire on non chinese tags
+    every_owned_province = {
+        add_province_modifier = {
+            name = hf_jianbing_modifier
+            duration = -1
+        }
+    }
+
+    add_country_modifier = {
+        name = hf_city_massacre
+        duration = -1
+    }
+
+
+    # Pax Solis Auto Set Town Sizes
+    every_owned_province = {
+        limit = { 
+            NOT = { development = 4 } 
+        }
+        
+        clr_province_flag = hf_prov_settlement
+        clr_province_flag = hf_prov_village
+        clr_province_flag = hf_prov_town
+        clr_province_flag = hf_prov_city
+
+        set_province_flag = hf_prov_settlement
+    }
+    every_owned_province = {
+        limit = { 
+            development = 4
+            NOT = { development = 6 } 
+        }
+        
+        clr_province_flag = hf_prov_settlement
+        clr_province_flag = hf_prov_village
+        clr_province_flag = hf_prov_town
+        clr_province_flag = hf_prov_city
+
+        set_province_flag = hf_prov_village
+    }
+    every_owned_province = {
+        limit = { 
+            development = 6
+            NOT = { development = 8 } 
+        }
+        
+        clr_province_flag = hf_prov_settlement
+        clr_province_flag = hf_prov_village
+        clr_province_flag = hf_prov_town
+        clr_province_flag = hf_prov_city
+
+        set_province_flag = hf_prov_town
+    }
+    every_owned_province = {
+        limit = { 
+            development = 8
+        }
+        
+        clr_province_flag = hf_prov_settlement
+        clr_province_flag = hf_prov_village
+        clr_province_flag = hf_prov_town
+        clr_province_flag = hf_prov_city
+
+        set_province_flag = hf_prov_city
+    }
+
+
+
+    # Pax Solis Inflation
+    add_country_modifier = { 
+        name = strong_treasury
+        duration = -1  
+    }
+    add_country_modifier = { 
+        name = hol_strict_control
+        duration = -1  
+    }
+    add_country_modifier = { 
+        name = master_of_mint_boost
+        duration = -1  
+    }
+
+
+    # buildings
+    every_owned_province = {
+        if = {
+            limit = {
+                NOT = {
+                    has_building = roads
+                }
+            }
+            add_building = roads
+        }
+        if = {
+            limit = {
+                NOT = {
+                    has_building = stage_station
+                }
+            }
+            add_building = stage_station
+        }
+    }
+
+    every_subject_country = {
+        every_owned_province = {
+            if = {
+                limit = {
+                    NOT = {
+                        has_building = roads
+                    }
+                }
+                add_building = roads
+            }
+            if = {
+                limit = {
+                    NOT = {
+                        has_building = stage_station
+                    }
+                }
+                add_building = stage_station
+            }
+        }
+    }
+
+
+    # governor
+    every_owned_province = {
+        limit = {
+            is_state = yes
+            OR = {
+                NOT = {
+                    has_province_flag = hf_gov_estate_burghers
+                }
+                NOT = {
+                    has_province_flag = hf_gov_estate_ruler
+                }
+            }
+        }
+
+        hf_remove_all_prov_ruler = yes
+        set_province_flag = hf_gov_estate_burghers
+        set_province_flag = hf_gov_estate_ruler
+        add_province_modifier = {
+            name = hf_gov_estate_burghers_modifier
+            duration = -1
+         
         }
     }
 }

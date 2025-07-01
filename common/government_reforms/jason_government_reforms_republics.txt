@@ -1,0 +1,88 @@
+american_empire = {
+	icon = "parliament"
+	allow_normal_conversion = yes
+	potential = {
+		has_dlc = "American Dream"
+		OR = {
+			AND = {
+				OR = {
+					tag = USA
+					primary_culture = american
+                    has_country_flag = is_american_empire
+				}
+				NOT = { map_setup = map_setup_random }
+			}
+			AND = {
+				is_playing_custom_nation = yes
+                OR = {
+                    has_country_flag = is_american_empire
+                    have_had_reform = american_republic
+                    have_had_reform = american_empire
+                }
+			}
+		}
+	}
+	trigger = {
+        always = yes
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	nation_designer_trigger = {
+		has_dlc = "American Dream"
+	}
+	legacy_equivalent = american_republic_legacy
+    royal_marriage = yes
+    queen = yes
+    maintain_dynasty = yes
+    republican_name = no
+    fixed_rank = 3
+    rulers_can_be_generals = no
+    # dictatorship = yes
+    has_parliament = yes
+    # is_elective = no
+    # has_meritocracy = yes
+    election_on_death = yes
+    free_concentrate_development = yes
+    mercs_do_not_cost_army_professionalism = yes
+	heirs_can_be_generals = no
+	heir = yes
+
+	modifiers = {
+		war_exhaustion = -0.04
+		stability_cost_modifier = -0.1
+		max_absolutism = 200
+        may_establish_frontier = yes
+        global_colonial_growth = 2
+        tolerance_heretic = 5
+        tolerance_heathen = 5
+        tolerance_of_heretics_capacity = 10
+        tolerance_of_heathens_capacity = 10
+        tolerance_own = 5
+        global_foreign_trade_power = 0.1
+        global_own_trade_power = 0.1
+        discipline = 0.5
+        land_morale = 0.5
+        heavy_ship_power = 0.3
+        light_ship_power = 0.3
+        galley_power = 0.3
+        transport_power = 0.3
+        republican_tradition = 15
+	}
+
+	custom_attributes = {
+		enables_plutocratic_idea_group = yes
+		enables_aristocratic_idea_group = no
+		disables_estate_nobles = no
+        has_term_election = no
+	}
+	conditional = {
+		allow = {
+			OR = {
+				has_dlc = "Common Sense"
+				has_dlc = "Domination"
+			}
+		}
+		has_parliament = yes
+	}
+    duration = 800
+}

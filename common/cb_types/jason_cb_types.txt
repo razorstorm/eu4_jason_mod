@@ -1,0 +1,38 @@
+# INSTRUCTIONS:
+# -------------
+# is_triggered_only - Triggered from within the code or by event effects. DO NOT REMOVE THE STOCK ONES.
+# months - The number of months this CB will be valid. Only works for triggered CBs.
+# prerequisites - A condition that automatically activates a CB. Does not work for triggered CBs.
+# no_opinion_hit - If yes you get no negative opinion from this
+#
+# ROOT = attacker
+# FROM = target
+#
+# NOTE: The order in which the peace options are listed is the order in which the AI will normally prioritize them in peace treaties
+#
+# TRIGGERED - Triggered from within the code or by event effects
+# --------------------------------------------------------------
+
+
+cb_manifest_destiny = {
+    no_opinion_hit = yes
+
+    prerequisites_self = {
+        OR = {
+            tag = USA
+            has_country_flag = is_american_empire
+            was_tag = USA
+            has_reform = american_empire
+        }
+    }
+
+    prerequisites = {
+        FROM = {
+            any_owned_province = {
+                continent = north_america
+            }
+        }
+    }
+
+    war_goal = take_capital_manifest_destiny
+}
