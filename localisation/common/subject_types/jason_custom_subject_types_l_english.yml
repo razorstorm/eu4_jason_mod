@@ -63,3 +63,10 @@
  mining_corporation_long_desc: "A §Mining Corporation§! is a corporation that is granted the right to mine and extract precious metals from a specific area. These corporations are a degree of autonomy to maximize profitability in exchange for providing their overlords a large share of their total revenue."
  mining_corporation_subject: "Mining Corporation"
  mining_corporation_overlord: "Mining Corporation Owner"
+
+ consolidated_dominion: "Consolidated Dominion"
+ consolidated_dominion_title: "Consolidated Dominion"
+ consolidated_dominion_plural: "Consolidated Dominions"
+ consolidated_dominion_title_plural: "Consolidated Dominions"
+ consolidated_dominion_is_our: "§Y$NAME$§! is our Consolidated Dominion."
+ consolidated_dominion_long_desc: "A §Consolidated Dominion§! is a dominion that has been heavily consolidated and suserviented to the metropole. More than a mere colony nor standard dominion, a consolidated dominion is basically all but an annexed piece of land that is under direct administration by its overlord. Consolidated dominions have the similar level of de jure obedience to their overlord as that of a real union junior partner or an administrative region. However, just like with normal dominions, Consolidated Dominions focus more on colonizing, growth, and market expansion. These are large swaths of territory under direct imperial control, which are meant to colonize the new world, exert our political influence abroad, and set up lucrative ventures. Far more expansionist, and nationbuilding oriented than a trade outpost or commercial enterprise. Far more centrally controlled than a dominion or a colony, and with a stronger focus on constant expansion than a vassal or march."

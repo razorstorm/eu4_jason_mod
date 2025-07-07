@@ -609,6 +609,9 @@ jason_naval_movespeed_20_2 = {
 jason_naval_movespeed_50 = {
     movement_speed_in_fleet_modifier = 50
 }
+jason_ignore_coring_distance = {
+    ignore_coring_distance = yes
+}
 
 tropical_resort_modifier_subject = {
     trade_efficiency = 2 # Tourism counts as trade

@@ -547,6 +547,61 @@ automatic_reduce_half_tariffs = {
     }
 }
 
+all_subjects_auto_core_themselves = {
+    every_subject_country = {
+        save_event_target_as = subject
+        every_owned_province = {
+            add_core = event_target:subject 
+        }
+    }
+}
+
+accept_all_american_cultures = {
+    remove_accepted_culture = noculture
+    add_accepted_culture = yamasee
+    add_accepted_culture = iroquois
+    add_accepted_culture = pequot
+    add_accepted_culture = massachusset
+    add_accepted_culture = mahican
+    add_accepted_culture = natchez
+    add_accepted_culture = chickasaw
+    add_accepted_culture = illini
+    add_accepted_culture = osage
+    add_accepted_culture = dakota
+    add_accepted_culture = apache
+    add_accepted_culture = mescalero
+    add_accepted_culture = yuchi
+    add_accepted_culture = lipan
+    add_accepted_culture = shawnee
+    add_accepted_culture = yoron
+    add_accepted_culture = shoshone
+    add_accepted_culture = caddo
+    add_accepted_culture = anishinabe
+    add_accepted_culture = blackfoot
+    add_accepted_culture = miami
+    add_accepted_culture = nakota
+    add_accepted_culture = navajo
+    add_accepted_culture = pawnee
+    add_accepted_culture = plains_cree
+    add_accepted_culture = salish
+    add_accepted_culture = wichita
+    add_accepted_culture = mesquakie
+    add_accepted_culture = piman
+    add_accepted_culture = aztek
+    add_accepted_culture = chinook
+    add_accepted_culture = american
+    add_accepted_culture = delaware
+    add_accepted_culture = polynesian
+    add_accepted_culture = haida
+    add_accepted_culture = melanesian
+    add_accepted_culture = papuan
+    add_accepted_culture = filipino
+    add_accepted_culture = moluccan
+    add_accepted_culture = nusa_tenggara
+    add_accepted_culture = sulawesi
+    add_accepted_culture = sumatran
+}
+
 end_all_wars_amongst_subjects = {
     # Blocking all wars amongst subjects
     every_subject_country = {
@@ -1451,6 +1506,14 @@ increment_world_tech = {
     }
 }
 
+remove_overlord_claims_from_subjects = {
+    every_subject_country = {
+        every_owned_province = {
+            remove_claim = overlord
+            remove_core = overlord
+        }
+    }
+}
 
 
 # Convenience Functions for prov.txt
@@ -1496,5 +1559,103 @@ convert_all_provinces_of_given_religion = {
             }
         }
         change_religion = ROOT
+    }
+}
+
+setup_american_metropolises = {
+    # Main Capital - DC - High population, high tax revenue, and high productivity - would be the economic core of the empire if it wasn't for NYC
+    capital_scope = {
+        set_base_tax = 50
+        set_base_production = 55
+        set_base_manpower = 45
+        add_building = secondary_capital
+        change_trade_goods = diamonds
+    }
+
+    # Secondary Capital - SF
+    4637 = { # SF - A bit of a weird outlier. Second highest productivity in the country, but with relatively low population. High tax revenue and extremely high productivity inspite of a small workforce. 
+        set_base_tax = 30
+        set_base_production = 70
+        set_base_manpower = 15
+        add_building = secondary_capital
+        change_trade_goods = diamonds
+    }
+
+    # Metropolises
+    965 = { # New York City - Primary Metropolis - Highest tax rate, productivity, and manpower of any city in the empire.
+        set_base_tax = 70
+        set_base_production = 85
+        set_base_manpower = 60
+        add_building = secondary_capital
+        change_trade_goods = diamonds
+    }
+    868 = { # Los Angeles - Comparably powerful to DC    
+        set_base_tax = 50
+        set_base_production = 55
+        set_base_manpower = 45
+        add_building = secondary_capital
+        change_trade_goods = diamonds
+    }
+    4903 = { # Chicago - A powerful metropolis with slightly less power than DC
+        set_base_tax = 40
+        set_base_production = 50
+        set_base_manpower = 40
+        add_building = secondary_capital
+        change_trade_goods = diamonds
+    }
+    2665 = { # Houston - Comparable to Chicago
+        set_base_tax = 40
+        set_base_production = 50
+        set_base_manpower = 40
+        add_building = secondary_capital
+        change_trade_goods = diamonds
+    }
+
+    # Selection of Tier 2 Metropolises
+    2476 = { # San Deigo
+        set_base_tax = 35
+        set_base_production = 40
+        set_base_manpower = 30
+        add_building = secondary_capital
+        change_trade_goods = diamonds
+        change_province_name = "San Diego"  
+        rename_capital = "San Diego"
+    }
+    956 = { # Philadelphia
+        set_base_tax = 35
+        set_base_production = 40
+        set_base_manpower = 30
+        add_building = secondary_capital
+        change_trade_goods = diamonds
+        change_province_name = "Philadelphia"  
+        rename_capital = "Philadelphia"
+    }
+    4646 = { # San Antonio
+        set_base_tax = 35
+        set_base_production = 40
+        set_base_manpower = 30
+        add_building = secondary_capital
+        change_trade_goods = diamonds
+        change_province_name = "San Antonio"  
+        rename_capital = "San Antonio"
+
+    }
+    4634 = { # Phoenix
+        set_base_tax = 35
+        set_base_production = 40
+        set_base_manpower = 30
+        add_building = secondary_capital
+        change_trade_goods = diamonds
+        change_province_name = "Phoenix"  
+        rename_capital = "Phoenix"
+    }
+    926 = { # Miami
+        set_base_tax = 35
+        set_base_production = 40
+        set_base_manpower = 30
+        add_building = secondary_capital
+        change_trade_goods = diamonds
+        change_province_name = "Miami"  
+        rename_capital = "Miami"
     }
 }
