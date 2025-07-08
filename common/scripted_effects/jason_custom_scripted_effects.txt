@@ -1707,3 +1707,43 @@ enable_estates = {
     set_country_flag = enables_estate_church_flag
     set_country_flag = enables_estate_intelligentsia_flag
 }
+
+
+add_benefits_for_consolidated_dominions = {
+    every_subject_country = {
+        limit = {
+            OR = {   
+                is_subject_of_type = consolidated_dominion
+            }
+        }
+        add_mod = {
+            name = jason_ignore_coring_distance
+        }
+        add_mod = {
+            name = allow_frontiers_cheat
+        }
+        change_government = monarchy
+        add_government_reform = autocracy_reform
+
+        add_treasury = 100000
+        add_country_modifier = {
+            name = ultra_free_income_cheat
+            duration = -1
+        }
+    }
+}
+
+set_trade_power_for_trade_outposts = {
+    # Trade outposts should have massive trade power | TODO move into mod
+    every_subject_country = {
+        limit = {
+            is_subject_of_type = trade_outpost
+        }
+        capital_scope = {
+            add_province_modifier = {
+                name = province_trade_power_modifier_cheat_100k
+                duration = -1
+            }
+        }
+    }
+}

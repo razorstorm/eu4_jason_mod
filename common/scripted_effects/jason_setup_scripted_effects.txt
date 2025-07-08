@@ -436,7 +436,7 @@ initialize_new_world = {
         cede_province = ZNI
     }    
     992 = {
-        cede_province = ALG
+        cede_province = AGQ
     }   
     988 = {
         cede_province = ATT

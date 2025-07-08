@@ -131,6 +131,24 @@ on_monthly_pulse = {
             change_culture = owner
         }
     }
+
+    if = {
+        limit = {
+            is_subject_of_type = consolidated_dominion
+        }
+        overlord = {
+            add_benefits_for_consolidated_dominions = yes
+        }
+    }
+
+    if = {
+        limit = {
+            is_subject_of_type = trade_outpost
+        }
+        overlord = {
+            set_trade_power_for_trade_outposts = yes
+        }
+    }
 }
 
 # ROOT = province, FROM = old owner
@@ -311,6 +329,24 @@ on_dependency_gained = {
             }
                 
             set_high_defensiveness_on_country = yes
+        }
+
+        if = {
+            limit = {
+                is_subject_of_type = consolidated_dominion
+            }
+            overlord = {
+                add_benefits_for_consolidated_dominions = yes
+            }
+        }
+
+        if = {
+            limit = {
+                is_subject_of_type = trade_outpost
+            }
+            overlord = {
+                set_trade_power_for_trade_outposts = yes
+            }
         }
 	}
 

@@ -646,15 +646,49 @@ tropical_resort_modifier_overlord = {
 }
 
 economic_hegemon_benefits = {
+    # Base
     war_exhaustion = -0.1
     development_cost_modifier = -0.05
     mercenary_manpower = 1.0
     
+    # At max 100% tickup.
     mercenary_discipline = 0.10
     global_trade_goods_size_modifier = 0.25
     min_autonomy_in_territories = -0.20
-
+    
+    # At max
     governing_capacity_modifier = 0.20
+}
+
+naval_hegemon_benefits = {
+    # Base    
+    global_ship_trade_power = 0.2
+    war_exhaustion = -0.1
+    global_naval_engagement_modifier = 0.10
+    
+    # At max 100% tickup.
+    reduced_liberty_desire = 20
+    global_sailors_modifier = 2.0
+    blockade_efficiency = 2.0
+    
+    # At max
+    backrow_artillery_damage = 0.20
+}
+
+cultural_hegemon_benefits = {
+    # Base
+    core_creation = -0.05
+    reinforce_speed = 0.05
+    movement_speed = 0.05
+	
+	# At max 100% tickup.
+    culture_conversion_cost = -0.3
+    culture_conversion_time = -0.25
+    spy_offence = 0.5
+	
+    # At max
+    ae_impact = -0.2
+
 }
 
 sickly_monarch = {
