@@ -1331,8 +1331,7 @@ country_decisions = {
             NOT = { tag = ELY }
         }
         effect = {
-            set_country_flag = enables_estate_burghers_flag
-            set_country_flag = enables_estate_church_flag
+            enable_estates = yes
         }
     }
 

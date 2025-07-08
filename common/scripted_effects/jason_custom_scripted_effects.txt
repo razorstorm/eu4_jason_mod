@@ -1562,14 +1562,18 @@ convert_all_provinces_of_given_religion = {
     }
 }
 
+
 setup_american_metropolises = {
-    # Main Capital - DC - High population, high tax revenue, and high productivity - would be the economic core of the empire if it wasn't for NYC
+   # Main Capital - DC - High population, high tax revenue, and high productivity - would be the economic core of the empire if it wasn't for NYC
     capital_scope = {
         set_base_tax = 50
         set_base_production = 55
         set_base_manpower = 45
         add_building = secondary_capital
         change_trade_goods = diamonds
+        change_province_name = "District of Columbia"  
+        rename_capital = "District of Columbia"
+        add_center_of_trade_level = 3
     }
 
     # Secondary Capital - SF
@@ -1579,6 +1583,9 @@ setup_american_metropolises = {
         set_base_manpower = 15
         add_building = secondary_capital
         change_trade_goods = diamonds
+        change_province_name = "San Francisco"  
+        rename_capital = "San Francisco"
+        add_center_of_trade_level = 3
     }
 
     # Metropolises
@@ -1588,6 +1595,9 @@ setup_american_metropolises = {
         set_base_manpower = 60
         add_building = secondary_capital
         change_trade_goods = diamonds
+        change_province_name = "New York City"  
+        rename_capital = "New York City"
+        add_center_of_trade_level = 3
     }
     868 = { # Los Angeles - Comparably powerful to DC    
         set_base_tax = 50
@@ -1595,6 +1605,9 @@ setup_american_metropolises = {
         set_base_manpower = 45
         add_building = secondary_capital
         change_trade_goods = diamonds
+        change_province_name = "Los Angeles"  
+        rename_capital = "Los Angeles"
+        add_center_of_trade_level = 3
     }
     4903 = { # Chicago - A powerful metropolis with slightly less power than DC
         set_base_tax = 40
@@ -1602,6 +1615,9 @@ setup_american_metropolises = {
         set_base_manpower = 40
         add_building = secondary_capital
         change_trade_goods = diamonds
+        change_province_name = "Chicago"  
+        rename_capital = "Chicago"
+        add_center_of_trade_level = 3
     }
     2665 = { # Houston - Comparable to Chicago
         set_base_tax = 40
@@ -1609,6 +1625,9 @@ setup_american_metropolises = {
         set_base_manpower = 40
         add_building = secondary_capital
         change_trade_goods = diamonds
+        change_province_name = "Houston"  
+        rename_capital = "Houston"
+        add_center_of_trade_level = 3
     }
 
     # Selection of Tier 2 Metropolises
@@ -1620,6 +1639,7 @@ setup_american_metropolises = {
         change_trade_goods = diamonds
         change_province_name = "San Diego"  
         rename_capital = "San Diego"
+        add_center_of_trade_level = 3
     }
     956 = { # Philadelphia
         set_base_tax = 35
@@ -1629,6 +1649,7 @@ setup_american_metropolises = {
         change_trade_goods = diamonds
         change_province_name = "Philadelphia"  
         rename_capital = "Philadelphia"
+        add_center_of_trade_level = 3
     }
     4646 = { # San Antonio
         set_base_tax = 35
@@ -1638,6 +1659,7 @@ setup_american_metropolises = {
         change_trade_goods = diamonds
         change_province_name = "San Antonio"  
         rename_capital = "San Antonio"
+        add_center_of_trade_level = 3
 
     }
     4634 = { # Phoenix
@@ -1648,6 +1670,7 @@ setup_american_metropolises = {
         change_trade_goods = diamonds
         change_province_name = "Phoenix"  
         rename_capital = "Phoenix"
+        add_center_of_trade_level = 3
     }
     926 = { # Miami
         set_base_tax = 35
@@ -1657,5 +1680,30 @@ setup_american_metropolises = {
         change_trade_goods = diamonds
         change_province_name = "Miami"  
         rename_capital = "Miami"
+        add_center_of_trade_level = 3
     }
+}
+
+set_american_colonial_nation_color_flags = {
+    every_subject_country = {
+        clr_country_flag = subject_color_1
+        clr_country_flag = subject_color_2
+        clr_country_flag = subject_color_3
+    }
+
+    CAN = { set_country_flag = subject_color_2 }
+    MEX = { set_country_flag = subject_color_2 }
+    PAN = { set_country_flag = subject_color_1 }
+    COL = { set_country_flag = subject_color_2 }
+    INC = { set_country_flag = subject_color_1 }
+    BRZ = { set_country_flag = subject_color_3 }
+    CHL = { set_country_flag = subject_color_2 }
+    CUB = { set_country_flag = subject_color_1 }
+    AUS = { set_country_flag = subject_color_2 }
+}
+
+enable_estates = {
+    set_country_flag = enables_estate_burghers_flag
+    set_country_flag = enables_estate_church_flag
+    set_country_flag = enables_estate_intelligentsia_flag
 }
