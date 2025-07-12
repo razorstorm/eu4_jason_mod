@@ -67,7 +67,7 @@ set_high_dev_on_all_gold_prov = {
     }
 }
 
-set_high_dev_on_all_dimaond_prov = {
+set_high_dev_on_all_diamond_prov = {
     every_owned_province = {
         limit = {
             OR = {
@@ -83,9 +83,44 @@ set_high_dev_on_all_dimaond_prov = {
 }
 
 set_high_diamond_dev = {
-    set_high_dev_on_all_dimaond_prov = yes
+    set_high_dev_on_all_diamond_prov = yes
     every_subject_country = {
-        set_high_dev_on_all_dimaond_prov = yes
+        set_high_dev_on_all_diamond_prov = yes
+    }
+}
+
+build_mills_for_diamond_provinces = {
+    every_owned_province = {
+        limit = {
+            trade_goods = diamonds
+            NOT = {
+                has_building = mills
+            }
+        }
+        add_building = mills
+        owner = {
+            add_treasury = -475
+        }
+    }
+
+    every_subject_country = {
+        every_owned_province = {
+            limit = {
+                OR = {
+                    trade_goods = diamonds
+                }
+                NOT = {
+                    has_building = mills
+                }
+            }
+            add_building = mills
+
+            owner = {
+                overlord = {
+                    add_treasury = -475
+                }
+            }
+        }
     }
 }
 
@@ -600,6 +635,63 @@ accept_all_american_cultures = {
     add_accepted_culture = nusa_tenggara
     add_accepted_culture = sulawesi
     add_accepted_culture = sumatran
+}
+
+accept_all_cultures = {
+    accept_all_american_cultures = yes
+
+    add_accepted_culture = sumatran
+    add_accepted_culture = evenk
+    add_accepted_culture = fon
+    add_accepted_culture = khoisan
+    add_accepted_culture = kongolese
+    add_accepted_culture = madagasque
+    add_accepted_culture = nguni
+    add_accepted_culture = yakut
+    add_accepted_culture = samoyed
+    add_accepted_culture = tungus
+    add_accepted_culture = yukagyr
+    add_accepted_culture = ostyaki
+    add_accepted_culture = siberian
+    add_accepted_culture = russian
+    add_accepted_culture = donghai
+    add_accepted_culture = kirgiz
+    
+    add_accepted_culture = buryat
+    add_accepted_culture = oirats
+    add_accepted_culture = mongol
+    add_accepted_culture = kazani
+    add_accepted_culture = daur
+
+    add_accepted_culture = khalkha
+    add_accepted_culture = tumed
+    add_accepted_culture = uyghur
+    add_accepted_culture = evenk
+    add_accepted_culture = buryat
+    add_accepted_culture = daur
+    add_accepted_culture = ejin
+
+
+    
+    add_accepted_culture = khalkha
+    add_accepted_culture = yi
+    add_accepted_culture = yugur
+    add_accepted_culture = khazak
+    add_accepted_culture = tumed
+    add_accepted_culture = uyghur
+    add_accepted_culture = qiang
+    add_accepted_culture = kham
+    add_accepted_culture = kipchak
+    add_accepted_culture = amdo
+    add_accepted_culture = hequ
+    add_accepted_culture = evenk
+    add_accepted_culture = buryat
+    add_accepted_culture = daur
+    add_accepted_culture = ejin
+    add_accepted_culture = yao
+    add_accepted_culture = miao
+    add_accepted_culture = assamese
+    add_accepted_culture = monba
 }
 
 end_all_wars_amongst_subjects = {
@@ -1747,3 +1839,47 @@ set_trade_power_for_trade_outposts = {
         }
     }
 }
+
+
+reduce_foreign_country_trade_power = {
+    every_country = {
+        limit = {
+            NOT = {
+                tag = ROOT 
+            }
+            NOT = {
+                is_subject_of = ROOT
+            }
+        }
+
+        add_country_modifier = {
+            name = jason_global_own_trade_power_reduction_10000
+            duration = -1
+        }
+
+        add_country_modifier = {
+            name = jason_global_foreign_trade_power_reduction_10000
+            duration = -1
+        }
+    }
+}
+
+
+increase_colony_growths = {
+    every_owned_province = {
+        limit = {
+            is_colony = yes
+            NOT = {
+                has_province_flag = already_supported_by_natives
+            }
+        }
+        
+        change_native_hostileness = -1
+        add_province_modifier = {
+            name = native_support_for_province
+            duration = -1
+        }
+        set_province_flag = already_supported_by_natives
+    }
+}
+

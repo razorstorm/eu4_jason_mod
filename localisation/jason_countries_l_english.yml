@@ -146,9 +146,6 @@
  BRITISH_EMPIRE_NAME: "British Empire"
  BRITISH_EMPIRE_NAME_ADJ: "Imperial British"
 
- GREAT_QING_EMPIRE_NAME: "Da Qing Empire"
- GREAT_QING_EMPIRE_NAME_ADJ: "Da Qing"
-
  ETHIOPIAN_EMPIRE_NAME: "Ethiopian Empire"
  ETHIOPIAN_EMPIRE_NAME_ADJ: "Imperial Ethiopian"
 
@@ -160,3 +157,15 @@
  
  IMPERIAL_DIRECTORATE_OF_AMERICA_NAME: "Imperial Directorate of America"
  IMPERIAL_DIRECTORATE_OF_AMERICA_NAME_ADJ: "Imperial American"
+
+ GREAT_QING_EMPIRE_NAME: "Great Qing Empire"
+ GREAT_QING_EMPIRE_NAME_ADJ: "Imperial Qing"
+
+ DA_QING_EMPIRE_NAME: "Da Qing Di Guo"
+ DA_QING_EMPIRE_NAME_ADJ: "Imperial Qing"
+
+ LATER_JIN_DYNASTY_NAME: "Later Jin Dynasty"
+ LATER_JIN_DYNASTY_NAME_ADJ: "Imperial Jin"
+
+
+

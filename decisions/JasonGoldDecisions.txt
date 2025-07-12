@@ -1204,6 +1204,60 @@ country_decisions = {
         }  
     }
 
+    disable_set_zero_autonomy_on_all_provinces = {
+        major = yes
+        color = { 100 0 0 }
+        potential = {
+            ai = no
+            has_country_flag = jason_show_decisions_enabled
+            has_country_flag = jason_set_zero_autonomy_on_all_provinces_enabled
+        }
+        allow = {
+            ai = no
+            has_country_flag = jason_set_zero_autonomy_on_all_provinces_enabled
+        }
+        effect = {
+            clr_country_flag = jason_set_zero_autonomy_on_all_provinces_enabled
+        }  
+    }
+
+    enable_subjects_auto_core = {
+        major = yes
+        potential = {
+            ai = no
+            has_country_flag = jason_show_decisions_enabled
+            NOT = {
+                has_country_flag = jason_subjects_auto_core_enabled
+            }
+        }
+        allow = {
+            ai = no
+            NOT = {
+                has_country_flag = jason_subjects_auto_core_enabled
+            }
+        }
+        effect = {
+            set_country_flag = jason_subjects_auto_core_enabled
+        }  
+    }
+
+    disable_subjects_auto_core = {
+        major = yes
+        color = { 100 0 0 }
+        potential = {
+            ai = no
+            has_country_flag = jason_show_decisions_enabled
+            has_country_flag = jason_subjects_auto_core_enabled
+        }
+        allow = {
+            ai = no
+            has_country_flag = jason_subjects_auto_core_enabled
+        }
+        effect = {
+            clr_country_flag = jason_subjects_auto_core_enabled
+        }  
+    }
+
     discover_world_decision = {
         major = yes
         potential = {
@@ -1288,23 +1342,6 @@ country_decisions = {
         }
     }
 
-    disable_set_zero_autonomy_on_all_provinces = {
-        major = yes
-        color = { 100 0 0 }
-        potential = {
-            ai = no
-            has_country_flag = jason_show_decisions_enabled
-            has_country_flag = jason_set_zero_autonomy_on_all_provinces_enabled
-        }
-        allow = {
-            ai = no
-            has_country_flag = jason_set_zero_autonomy_on_all_provinces_enabled
-        }
-        effect = {
-            clr_country_flag = jason_set_zero_autonomy_on_all_provinces_enabled
-        }  
-    }
-
     enable_estates_decision = {
         major = yes
         potential = {
@@ -1332,6 +1369,31 @@ country_decisions = {
         }
         effect = {
             enable_estates = yes
+        }
+    }
+
+    build_mills_for_diamond_provinces_decision = {
+        major = no
+        potential = {
+            ai = no
+            has_country_flag = jason_show_decisions_enabled
+        }
+        allow = {
+            always = yes
+            any_owned_province = {
+                trade_goods = diamonds
+                NOT = { has_building = mills }
+            }
+        }
+        provinces_to_highlight = {
+            OR = {
+                trade_goods = diamonds
+            }
+            has_building = mills
+            owned_by = ROOT
+        }
+        effect = {
+            build_mills_for_diamond_provinces = yes
         }
     }
 

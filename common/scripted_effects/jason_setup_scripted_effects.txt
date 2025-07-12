@@ -123,8 +123,20 @@ set_initialize_cheats = {
         duration = -1
     }
 
+    ##########################################################################
     # Set up Pax Solis laws
+    ##########################################################################
     setup_pax_solis_laws = yes
+
+    ##########################################################################
+    # Accept more cultures
+    ##########################################################################
+
+    add_country_modifier = {
+        # Accept more cultures
+        name = jason_mod_way_more_acc_cultures
+        duration = -1
+    }
     
     ##########################################################################
     # Supply
@@ -207,7 +219,11 @@ set_initialize_cheats = {
     }
     else_if = {
         limit = {
-            tag = MJZ
+            OR = {
+                tag = QNG
+                tag = MJZ
+                primary_culture = manchu
+            }
         }
         define_ruler = {
             dynasty = ROOT
@@ -693,4 +709,51 @@ initialize_new_world = {
     937 = {
         cede_province = TUS
     }
+}
+
+create_mongolia = {
+    every_province = {
+        limit = {
+            OR = {
+                province_id = 1039
+                province_id = 1042
+                province_id = 2116
+                province_id = 2117
+                province_id = 2189
+                province_id = 2190
+                province_id = 2193
+                province_id = 4219
+                province_id = 4220
+                province_id = 4221
+                province_id = 4222
+                province_id = 4667
+                province_id = 4668
+                province_id = 4669
+                province_id = 4676
+                province_id = 4677
+                province_id = 4678
+                province_id = 4679
+                province_id = 4680
+                province_id = 4681
+                province_id = 4682
+                province_id = 4683
+                province_id = 6227
+                province_id = 6228
+                province_id = 6283
+                province_id = 6284
+                province_id = 6337
+                province_id = 6339
+                province_id = 6529
+                province_id = 717
+                province_id = 718
+                province_id = 719
+                province_id = 720
+                province_id = 721
+    
+            }
+        }
+        add_colonysize = 10000
+        cede_province = KHA
+    }
+    
 }

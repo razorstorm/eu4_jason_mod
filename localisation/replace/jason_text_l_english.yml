@@ -148,3 +148,11 @@
 
  cb_manifest_destiny: "Manifest Destiny"
  MANIFEST_DESTINY_WAR_NAME:0 "$ORDER$$FIRST$-$SECOND$ War of Manifest Destiny"
+
+ build_mills_for_diamond_provinces_decision_title: "Build Mills for Diamond Provinces"
+ build_mills_for_diamond_provinces_decision_desc: "Builds a mill in all provinces that produce diamonds. This will increase the production efficiency of these provinces."
+
+ enable_subjects_auto_core_title: "Enable Subjects Auto Core"
+ enable_subjects_auto_core_desc: "Enables auto coring of all provinces owned by your subjects. This will automatically core all provinces owned by your subjects on monthly tick or on acquisition of new subjects / provinces."
+ disable_subjects_auto_core_title: "Disable Subjects Auto Core"
+ disable_subjects_auto_core_desc: "Disables auto coring of all provinces owned by your subjects. This will stop auto coring all provinces owned by your subjects on monthly tick or on acquisition of new subjects / provinces."
