@@ -30,6 +30,13 @@ is_valuable_goods_producing_province = {
     }
 }
 
+# Whether the subject belongs to a subject type that should not switch dynasties ever
+is_subject_of_fixed_dynasty = {
+    OR = {
+        is_subject_of_type = chinese_imperial_altar_state
+    }
+}
+
 is_treasure_fleet_enabled_subject = {
     OR = {
         is_subject_of_type = mining_corporation

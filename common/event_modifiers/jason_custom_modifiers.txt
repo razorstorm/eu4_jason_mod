@@ -56,6 +56,18 @@ slave_state_modifiers = {
     monthly_splendor = -1000
 }
 
+chinese_imperial_altar_state_modifiers = {
+    global_tax_income = 3600 # 300 a month royal stipend
+    global_trade_goods_size_modifier = 0 # No production in this province
+    land_forcelimit_modifier = -10000
+    naval_forcelimit_modifier = -10000
+    land_forcelimit = -1
+    naval_forcelimit = -1 
+    land_maintenance_modifier = 100
+    naval_maintenance_modifier = 100
+    mercenary_cost = 1
+}
+
 free_income_cheat = {
     global_tax_income = 360 # 30 a month
 }
@@ -380,6 +392,12 @@ jason_global_own_trade_power_reduction_10000 = {
 }
 
 
+jason_mod_no_forcelimit = {
+    land_forcelimit_modifier = -10000
+    naval_forcelimit_modifier = -10000
+}
+
+
 # =============================== From Cheats Mod
 
 
@@ -430,6 +448,9 @@ jason_mod_more_acc_cultures = {
 }
 jason_mod_way_more_acc_cultures = {
     num_accepted_cultures = 100
+}
+jason_mod_unlimited_more_acc_cultures = {
+    num_accepted_cultures = 100000
 }
 jason_mod_more_GC = {
     governing_capacity_modifier = 30

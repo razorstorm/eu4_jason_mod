@@ -246,6 +246,8 @@ concentration_camp = {
 	joins_overlords_wars = no
 	takes_diplo_slot = no
 	has_power_projection = no
+    separatists_become_subjects = yes
+    gives_daimyo_bonuses = yes
 	can_use_claims = no
 	uses_military_focus = yes
 	can_set_mil_focus = yes
@@ -662,6 +664,93 @@ chinese_tributary_state = {
     }
 }
 
+
+# Chinese Empires often the surviving members of vanquished states a tiny fiefdom to rule over so they can have some income and spend their times praying for their ancestors rather than causing trouble. 
+# These states are completely subservient to the Empire, but often do not provide much value and thus are given near total autonomy. But they are surveiled carefully and lack any significant ability to conduct diplomacy, foreign affairs, or military action. Their abilities to govern their fiefdom is also severely limited, as they are expected to be little more than mocks who spend their days praying for their ancestors. Their lands are still part of the official imperial system and are still subject to the laws of the land and will also have an imperial Governor appointed in parallel with the fief lord to make sure the day to day administration of the region is still done properly. 
+
+# The feudal lords of these altar states are essentially not really the true leaders, and are only the de jure head of state, with the imperial governor (and the Emperor himself by extension) acting as the de facto head of government. However, since these fiefdoms conduct nearly 0 interactions with other states, there is no real de facto head of state. The head of government (imperial governor) basically just runs the entire government with the Emperor's approval, and the fief lord simply benefits from the rights to a huge portion of the fief's income in return for their loyalty and obligated prayers for the vanquished Ming dynastic ancestors. 
+# Ironically, they are paid by the new dynasty but technically work for their old dynasty, in a confucian arrangement to keep the peace and provide proper respect for both the dead people and the conquered state. 
+
+chinese_imperial_altar_states = {
+    copy_from = default
+
+    pays_overlord = 0.0
+    max_government_rank = 1
+
+	# Graphics:
+	sprite = GFX_icon_brother_kingdom
+	diplomacy_overlord_sprite = GFX_diplomacy_leadbrother_kingdom
+	diplomacy_subject_sprite = GFX_diplomacy_ambrother_kingdom
+
+	# Triggers:
+	is_potential_overlord = {
+		is_subject = no
+		total_development = 100
+        is_emperor_of_china = yes
+	}
+
+	# Properties:
+	transfer_trade_if_merchant_republic = no
+	joins_overlords_wars = no
+	takes_diplo_slot = no
+	has_power_projection = no
+    separatists_become_subjects = yes
+    gives_daimyo_bonuses = yes
+	can_use_claims = no
+	uses_military_focus = yes
+	can_set_mil_focus = yes
+    counts_for_borders = yes
+	extend_trading_range = yes
+    overlord_protects_external = yes
+    overlord_enforce_peace_attacking = yes
+    should_quit_wars_on_activation = yes
+
+	liberty_desire_development_ratio = 0
+	liberty_desire_same_dynasty = 0
+	forcelimit_to_overlord = 0
+	military_focus = 0
+
+	relative_power_class = 1
+	diplomacy_view_class = 1
+
+	can_fight = {
+	}
+	can_rival = {
+	}
+	can_ally = {
+	}
+	can_marry = {
+	}
+
+	# Subject Interactions:
+	# (immediate)
+	siphon_income = yes
+	divert_trade = yes
+    scutage = yes
+    grant_province = yes
+    place_relative_on_throne = no
+    enforce_religion = no
+	enforce_culture = no
+	seize_territory = yes
+
+	divert_trade = yes
+
+     #(enable)
+	force_seppuku = yes
+	contribute_to_capital = yes
+
+    # Modifiers:
+	modifier_overlord = clear #We don't want to duplicate the ones inherited
+	modifier_subject = clear #Ditto
+
+    
+	modifier_subject = {
+		modifier = chinese_imperial_altar_state_modifiers
+	}
+
+    # overlord_opinion_modifier = is_chinese_imperial_altar_state_overlord
+	# subject_opinion_modifier = chinese_imperial_altar_state_subject
+}
 
 
 # Maybe make my own barony, county, duchy, kingdom, subempire feudal subject types? 

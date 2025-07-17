@@ -52,3 +52,37 @@ american_empire = {
 }
 
 
+
+celestial_empire = {
+    rank = {
+		3 = DI_GUO_WANG_CHAO
+	}
+
+    # Emperor and Empress
+	ruler_male = {
+		3 = HUANG_DI
+	}
+    consort_female = {
+        3 = HUANG_HOU
+    }
+    
+    # Empress Regnant and Imperial Husband
+	ruler_female = {
+		3 = HUANG_DI
+	}
+    consort_male = {
+        3 = HUANG_FU
+    }
+
+    # Heir and Princess
+	heir_male = {
+		3 = TAI_ZI
+	}
+	heir_female = {
+		3 = GONG_ZHU
+	}
+
+	trigger = {
+        has_reform = celestial_empire
+	}
+}
