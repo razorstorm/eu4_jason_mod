@@ -1,0 +1,686 @@
+discover_lakes = {
+    1250 = {
+        discover_country = ROOT
+    }
+    1251 = {
+        discover_country = ROOT
+    }
+    1260 = {
+        discover_country = ROOT
+    }
+    1261 = {
+        discover_country = ROOT
+    }
+    1262 = {
+        discover_country = ROOT
+    }
+    1325 = {
+        discover_country = ROOT
+    }
+    1326 = {
+        discover_country = ROOT
+    }
+    1327 = {
+        discover_country = ROOT
+    }
+    1648 = {
+        discover_country = ROOT
+    }
+    1649 = {
+        discover_country = ROOT
+    }
+    1650 = {
+        discover_country = ROOT
+    }
+    1651 = {
+        discover_country = ROOT
+    }
+    1653 = {
+        discover_country = ROOT
+    }
+    1654 = {
+        discover_country = ROOT
+    }
+    1655 = {
+        discover_country = ROOT
+    }
+    1656 = {
+        discover_country = ROOT
+    }
+    1657 = {
+        discover_country = ROOT
+    }
+    1658 = {
+        discover_country = ROOT
+    }
+    1659 = {
+        discover_country = ROOT
+    }
+    1660 = {
+        discover_country = ROOT
+    }
+    1661 = {
+        discover_country = ROOT
+    }
+    1662 = {
+        discover_country = ROOT
+    }
+    1663 = {
+        discover_country = ROOT
+    }
+    1664 = {
+        discover_country = ROOT
+    }
+    1665 = {
+        discover_country = ROOT
+    }
+    1883 = {
+        discover_country = ROOT
+    }
+    1884 = {
+        discover_country = ROOT
+    }
+    1885 = {
+        discover_country = ROOT
+    }
+    1886 = {
+        discover_country = ROOT
+    }
+    1887 = {
+        discover_country = ROOT
+    }
+    1888 = {
+        discover_country = ROOT
+    }
+    1889 = {
+        discover_country = ROOT
+    }
+    1890 = {
+        discover_country = ROOT
+    }
+    1891 = {
+        discover_country = ROOT
+    }
+    1892 = {
+        discover_country = ROOT
+    }
+    1893 = {
+        discover_country = ROOT
+    }
+    1894 = {
+        discover_country = ROOT
+    }
+    1895 = {
+        discover_country = ROOT
+    }
+    1896 = {
+        discover_country = ROOT
+    }
+    1897 = {
+        discover_country = ROOT
+    }
+    1898 = {
+        discover_country = ROOT
+    }
+    1899 = {
+        discover_country = ROOT
+    }
+    1900 = {
+        discover_country = ROOT
+    }
+    1902 = {
+        discover_country = ROOT
+    }
+    1903 = {
+        discover_country = ROOT
+    }
+    1904 = {
+        discover_country = ROOT
+    }
+    1905 = {
+        discover_country = ROOT
+    }
+    1906 = {
+        discover_country = ROOT
+    }
+    1907 = {
+        discover_country = ROOT
+    }
+    1908 = {
+        discover_country = ROOT
+    }
+    1909 = {
+        discover_country = ROOT
+    }
+    1910 = {
+        discover_country = ROOT
+    }
+    1911 = {
+        discover_country = ROOT
+    }
+    1912 = {
+        discover_country = ROOT
+    }
+    1913 = {
+        discover_country = ROOT
+    }
+    1914 = {
+        discover_country = ROOT
+    }
+    1915 = {
+        discover_country = ROOT
+    }
+    1916 = {
+        discover_country = ROOT
+    }
+    1917 = {
+        discover_country = ROOT
+    }
+    1918 = {
+        discover_country = ROOT
+    }
+    1919 = {
+        discover_country = ROOT
+    }
+    1920 = {
+        discover_country = ROOT
+    }
+    1921 = {
+        discover_country = ROOT
+    }
+    1922 = {
+        discover_country = ROOT
+    }
+    1923 = {
+        discover_country = ROOT
+    }
+    1976 = {
+        discover_country = ROOT
+    }
+    1977 = {
+        discover_country = ROOT
+    }
+    2000 = {
+        discover_country = ROOT
+    }
+    2001 = {
+        discover_country = ROOT
+    }
+    2471 = {
+        discover_country = ROOT
+    }
+    2953 = {
+        discover_country = ROOT
+    }
+    4132 = {
+        discover_country = ROOT
+    }
+    4133 = {
+        discover_country = ROOT
+    }
+    4134 = {
+        discover_country = ROOT
+    }
+    4135 = {
+        discover_country = ROOT
+    }
+    4136 = {
+        discover_country = ROOT
+    }
+    4137 = {
+        discover_country = ROOT
+    }
+    4138 = {
+        discover_country = ROOT
+    }
+    4139 = {
+        discover_country = ROOT
+    }
+    4140 = {
+        discover_country = ROOT
+    }
+    4235 = {
+        discover_country = ROOT
+    }
+    3600 = {
+        discover_country = ROOT
+    }
+    3601 = {
+        discover_country = ROOT
+    }
+    3602 = {
+        discover_country = ROOT
+    }
+    3603 = {
+        discover_country = ROOT
+    }
+    3604 = {
+        discover_country = ROOT
+    }
+    3605 = {
+        discover_country = ROOT
+    }
+    3606 = {
+        discover_country = ROOT
+    }
+    3607 = {
+        discover_country = ROOT
+    }
+    3608 = {
+        discover_country = ROOT
+    }
+    3609 = {
+        discover_country = ROOT
+    }
+    3610 = {
+        discover_country = ROOT
+    }
+    3611 = {
+        discover_country = ROOT
+    }
+    3612 = {
+        discover_country = ROOT
+    }
+    3613 = {
+        discover_country = ROOT
+    }
+    3614 = {
+        discover_country = ROOT
+    }
+    3615 = {
+        discover_country = ROOT
+    }
+    3616 = {
+        discover_country = ROOT
+    }
+    3617 = {
+        discover_country = ROOT
+    }
+    3618 = {
+        discover_country = ROOT
+    }
+    3619 = {
+        discover_country = ROOT
+    }
+    4000 = {
+        discover_country = ROOT
+    }
+    4001 = {
+        discover_country = ROOT
+    }
+    4002 = {
+        discover_country = ROOT
+    }
+    4003 = {
+        discover_country = ROOT
+    }
+    4004 = {
+        discover_country = ROOT
+    }
+    4005 = {
+        discover_country = ROOT
+    }
+    4006 = {
+        discover_country = ROOT
+    }
+    4007 = {
+        discover_country = ROOT
+    }
+    4008 = {
+        discover_country = ROOT
+    }
+    4009 = {
+        discover_country = ROOT
+    }
+    4010 = {
+        discover_country = ROOT
+    }
+    4011 = {
+        discover_country = ROOT
+    }
+    4012 = {
+        discover_country = ROOT
+    }
+    4013 = {
+        discover_country = ROOT
+    }
+    4014 = {
+        discover_country = ROOT
+    }
+    4015 = {
+        discover_country = ROOT
+    }
+    4016 = {
+        discover_country = ROOT
+    }
+    4017 = {
+        discover_country = ROOT
+    }
+    4018 = {
+        discover_country = ROOT
+    }
+    4019 = {
+        discover_country = ROOT
+    }
+    6293 = {
+        discover_country = ROOT
+    }
+    6294 = {
+        discover_country = ROOT
+    }
+    6295 = {
+        discover_country = ROOT
+    }
+    6296 = {
+        discover_country = ROOT
+    }
+    6297 = {
+        discover_country = ROOT
+    }
+    6298 = {
+        discover_country = ROOT
+    }
+    6299 = {
+        discover_country = ROOT
+    }
+
+}
+
+discover_lake_provinces = {
+    #Lakes:
+    # Lakes are not included in any areas nor regions in the game so we have to discover them individually
+    #central_asian_lakes_area
+    1326 = {
+        discover_country = ROOT
+    }
+    1327 = {
+        discover_country = ROOT
+    }
+    1653 = {
+        discover_country = ROOT
+    }
+    1654 = {
+        discover_country = ROOT
+    }
+    1888 = {
+        discover_country = ROOT
+    }
+
+    #chinese_lakes_area
+    1655 = {
+        discover_country = ROOT
+    }
+    1895 = {
+        discover_country = ROOT
+    }
+    1896 = {
+        discover_country = ROOT
+    }
+    1897 = {
+        discover_country = ROOT
+    }
+    1898 = {
+        discover_country = ROOT
+    }
+    2000 = {
+        discover_country = ROOT
+    }
+    2001 = {
+        discover_country = ROOT
+    }
+
+    #baltic_lakes_area
+    1260 = {
+        discover_country = ROOT
+    }
+    1261 = {
+        discover_country = ROOT
+    }
+    1262 = {
+        discover_country = ROOT
+    }
+    1250 = {
+        discover_country = ROOT
+    }
+    1251 = {
+        discover_country = ROOT
+    }
+    1883 = {
+        discover_country = ROOT
+    }
+    1884 = {
+        discover_country = ROOT
+    }
+    1885 = {
+        discover_country = ROOT
+    }
+    1886 = {
+        discover_country = ROOT
+    }
+    1887 = {
+        discover_country = ROOT
+    }
+    1977 = {
+        discover_country = ROOT
+    }
+    2953 = {
+        discover_country = ROOT
+    }
+
+    #african_lakes_area
+    1648 = {
+        discover_country = ROOT
+    }
+    1649 = {
+        discover_country = ROOT
+    }
+    1650 = {
+        discover_country = ROOT
+    }
+    1651 = {
+        discover_country = ROOT
+    }
+    1899 = {
+        discover_country = ROOT
+    }
+    1900 = {
+        discover_country = ROOT
+    }
+    1976 = {
+        discover_country = ROOT
+    }
+    2471 = {
+        discover_country = ROOT
+    }
+
+    #north_american_lake_area
+    1658 = {
+        discover_country = ROOT
+    }
+    1659 = {
+        discover_country = ROOT
+    }
+    1660 = {
+        discover_country = ROOT
+    }
+    1661 = {
+        discover_country = ROOT
+    }
+    1662 = {
+        discover_country = ROOT
+    }
+    1663 = {
+        discover_country = ROOT
+    }
+    1664 = {
+        discover_country = ROOT
+    }
+    1665 = {
+        discover_country = ROOT
+    }
+    1903 = {
+        discover_country = ROOT
+    }
+    1904 = {
+        discover_country = ROOT
+    }
+    1905 = {
+        discover_country = ROOT
+    }
+    1906 = {
+        discover_country = ROOT
+    }
+    1907 = {
+        discover_country = ROOT
+    }
+    1908 = {
+        discover_country = ROOT
+    }
+    1909 = {
+        discover_country = ROOT
+    }
+    1910 = {
+        discover_country = ROOT
+    }
+    1911 = {
+        discover_country = ROOT
+    }
+    1912 = {
+        discover_country = ROOT
+    }
+    1913 = {
+        discover_country = ROOT
+    }
+    1914 = {
+        discover_country = ROOT
+    }
+    1915 = {
+        discover_country = ROOT
+    }
+    1916 = {
+        discover_country = ROOT
+    }
+    1917 = {
+        discover_country = ROOT
+    }
+    1923 = {
+        discover_country = ROOT
+    }
+    1918 = {
+        discover_country = ROOT
+    }
+    1919 = {
+        discover_country = ROOT
+    }
+    1920 = {
+        discover_country = ROOT
+    }
+    1921 = {
+        discover_country = ROOT
+    }
+    1922 = {
+        discover_country = ROOT
+    }
+    4940 = {
+        discover_country = ROOT
+    }
+    4941 = {
+        discover_country = ROOT
+    }
+
+    #central_european_lakes_area
+    1325 = {
+        discover_country = ROOT
+    }
+    1889 = {
+        discover_country = ROOT
+    }
+    1890 = {
+        discover_country = ROOT
+    }
+
+    #caucasian_lakes_area
+    1891 = {
+        discover_country = ROOT
+    }
+    1892 = {
+        discover_country = ROOT
+    }
+    1893 = {
+        discover_country = ROOT
+    }
+    1894 = {
+        discover_country = ROOT
+    }
+
+    #south_american_lakes_area
+    1656 = {
+        discover_country = ROOT
+    }
+    1657 = {
+        discover_country = ROOT
+    }
+    1902 = {
+        discover_country = ROOT
+    }
+}
+
+discover_continents = {
+    europe = {
+        discover_country = ROOT
+    }
+    asia = {
+        discover_country = ROOT
+    }
+    africa = {
+        discover_country = ROOT
+    }
+    north_america = {
+        discover_country = ROOT
+    }
+    south_america = {
+        discover_country = ROOT
+    }
+    oceania = {
+        discover_country = ROOT
+    }
+    island_check_provinces = {
+        discover_country = ROOT
+    }
+    new_world = {
+        discover_country = ROOT
+    }
+}
+
+discover_oceans_and_seas = {
+    west_american_sea_superregion = {
+        discover_country = ROOT
+    }
+    east_american_sea_superregion = {
+        discover_country = ROOT
+    }
+    north_european_sea_superregion = {
+        discover_country = ROOT
+    }
+    south_european_sea_superregion = {
+        discover_country = ROOT
+    }
+    west_african_sea_superregion = {
+        discover_country = ROOT
+    }
+    east_african_sea_superregion = {
+        discover_country = ROOT
+    }
+    indian_pacific_sea_superregion = {
+        discover_country = ROOT
+    }
+    north_pacific_sea_superregion = {
+        discover_country = ROOT
+    }
+}
+
+discover_world = {
+    discover_continents = yes
+    discover_oceans_and_seas = yes
+    discover_lake_provinces = yes
+}

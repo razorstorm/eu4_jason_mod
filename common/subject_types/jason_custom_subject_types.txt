@@ -671,7 +671,8 @@ chinese_tributary_state = {
 # The feudal lords of these altar states are essentially not really the true leaders, and are only the de jure head of state, with the imperial governor (and the Emperor himself by extension) acting as the de facto head of government. However, since these fiefdoms conduct nearly 0 interactions with other states, there is no real de facto head of state. The head of government (imperial governor) basically just runs the entire government with the Emperor's approval, and the fief lord simply benefits from the rights to a huge portion of the fief's income in return for their loyalty and obligated prayers for the vanquished Ming dynastic ancestors. 
 # Ironically, they are paid by the new dynasty but technically work for their old dynasty, in a confucian arrangement to keep the peace and provide proper respect for both the dead people and the conquered state. 
 
-chinese_imperial_altar_states = {
+
+chinese_imperial_altar_state = {
     copy_from = default
 
     pays_overlord = 0.0
@@ -750,6 +751,12 @@ chinese_imperial_altar_states = {
 
     # overlord_opinion_modifier = is_chinese_imperial_altar_state_overlord
 	# subject_opinion_modifier = chinese_imperial_altar_state_subject
+}
+
+
+# Deprecated, but keeping around for backwards compatibility. The chinese_imperial_altar_state is the properly named version of this subject type.
+chinese_imperial_altar_states = {
+    copy_from = chinese_imperial_altar_state
 }
 
 

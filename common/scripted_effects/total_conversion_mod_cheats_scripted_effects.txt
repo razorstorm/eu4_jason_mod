@@ -1148,3 +1148,40 @@ run_pax_solis_prov = {
         }
     }
 }
+
+pax_solis_apply_all_eoc_mind_powers = {
+    add_country_modifier = {
+        name = hf_army_attitude
+        duration = -1
+    }
+    add_country_modifier = {
+        name = hf_army_equipment
+        duration = -1
+    }
+    add_country_modifier = {
+        name = hf_army_tactics
+        duration = -1
+    }
+    add_country_modifier = {
+        name = hf_well_being_environment
+        duration = -1
+    }
+    add_country_modifier = {
+        name = hf_legitimacy_dynasty
+        duration = -1
+    }
+    add_country_modifier = {
+        name = hf_military_victory
+        duration = -1
+    }
+}
+
+reset_subject_annexer_opinion = {
+    remove_country_modifier = annexers_legacy
+    every_subject_country = {
+        remove_opinion = {
+            who = overlord
+            modifier = opinion_annex_vassal
+        }
+    }
+}

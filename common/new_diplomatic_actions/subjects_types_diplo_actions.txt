@@ -1,0 +1,807 @@
+# Triggers and effects will be given the Actor's scope, with the Recipient's as FROM
+# Icons are used from the messageicons.dds
+
+
+# Establish Pirate Brotherhood
+establish_pirate_brotherhood = {
+    category = vassalize
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = pirate_brotherhood_vassal }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = pirate_brotherhood_vassal }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = pirate_brotherhood_vassal
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+
+# Establish Tropical Resort
+establish_tropical_resort = {
+    category = vassalize
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = tropical_resort }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = tropical_resort }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = tropical_resort
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+
+# Establish Fiefdom Subject
+establish_fief_subject = {
+    category = vassalize
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = fief_subject }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = fief_subject }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = fief_subject
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+
+# Establish Jimi State
+establish_jimi_state = {
+    category = vassalize
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = jimi_state }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = jimi_state }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = jimi_state
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+
+# Establish Tusi
+establish_sino_jimi_state = {
+    category = vassalize
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = sino_jimi_state }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = sino_jimi_state }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = sino_jimi_state
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+
+# Establish Real Union
+establish_real_union = {
+    category = vassalize
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = real_union_subject }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = real_union_subject }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = real_union_subject
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+
+# Establish Integrated Personal Union
+establish_integrated_personal_union = {
+    category = vassalize
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = se_integrated_personal_union }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = se_integrated_personal_union }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = se_integrated_personal_union
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+
+# Establish Naval March
+establish_naval_march = {
+    category = vassalize
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = naval_march }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = naval_march }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = naval_march
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+
+# Establish Administrative Region
+establish_administrative_region = {
+    category = vassalize
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = administrative_region }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = administrative_region }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = administrative_region
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+
+# Establish Subtribe
+establish_mongolian_tribe = {
+    category = vassalize
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = mongolian_tribe }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = mongolian_tribe }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = mongolian_tribe
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+
+# Establish Horde Subject
+establish_pagan_chiefdom = {
+    category = vassalize
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = pagan_chiefdom }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = pagan_chiefdom }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = pagan_chiefdom
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+
+# Establish Trade Outpost
+establish_trade_outpost = {
+    category = vassalize
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = trade_outpost }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = trade_outpost }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = trade_outpost
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+
+# Establish Commercial Enterprise
+establish_commercial_enterprise = {
+    category = vassalize
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = commercial_enterprise }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = commercial_enterprise }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = commercial_enterprise
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+
+# Establish Dominion
+establish_dominion = {
+    category = vassalize
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = dominion }
+            NOT = { is_subject_of_type = dominion_tc }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = dominion }
+            NOT = { is_subject_of_type = dominion_tc }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = dominion
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+
+# Establish Consolidated Dominion
+establish_consolidated_dominion = {
+    category = vassalize
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = consolidated_dominion }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = consolidated_dominion }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = consolidated_dominion
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+
+# Establish Banking Family Subject
+establish_banking_family_subject = {
+    category = vassalize
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = banking_family_subject }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = banking_family_subject }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = banking_family_subject
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+
+# Establish Brother Kingdom
+establish_brother_kingdom = {
+    category = vassalize
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = brother_kingdom }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = brother_kingdom }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = brother_kingdom
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+
+# Establish Mining Corporation
+establish_mining_corporation = {
+    category = vassalize
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = mining_corporation }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = mining_corporation }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = mining_corporation
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+
+# Establish Protectorate
+establish_protectorate = {
+    category = vassalize
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = protectorate }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = protectorate }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = protectorate
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+
+# Establish Imperial City
+establish_imperial_city = {
+    category = vassalize
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = imperial_city }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = imperial_city }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = imperial_city
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+
+# Establish Native Reserve
+establish_native_reserve = {
+    category = vassalize
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = native_reserve }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = native_reserve }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = native_reserve
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+
+# Establish Chinese Imperial Alter State
+establish_chinese_imperial_altar_state = {
+    category = vassalize
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        is_emperor_of_china = yes
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = chinese_imperial_altar_states }
+            NOT = { is_subject_of_type = chinese_imperial_altar_state }
+        }
+    }
+    is_allowed = {
+        ai = no
+        is_emperor_of_china = yes
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = chinese_imperial_altar_states }
+            NOT = { is_subject_of_type = chinese_imperial_altar_state }
+            OR = {
+                tag = CHI
+                tag = MNG
+                tag = QNG
+                tag = JIN
+                tag = CSH
+                tag = KHA
+                tag = YUA
+                tag = MGE
+                tag = FRM
+
+                culture_group = east_asian
+            }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = chinese_imperial_altar_state
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+
+# Establish Tibetan Ministry
+establish_tb_minister_resident = {
+    category = vassalize
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = tb_minister_resident }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = tb_minister_resident }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = tb_minister_resident
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+
+
+

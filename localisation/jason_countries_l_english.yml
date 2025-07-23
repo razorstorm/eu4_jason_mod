@@ -167,6 +167,8 @@
  LATER_JIN_DYNASTY_NAME: "Later Jin Dynasty"
  LATER_JIN_DYNASTY_NAME_ADJ: "Imperial Jin"
 
+ QING_CANADIAN_DOMINION_NAME: "Qing Canadian Dominion"
+ QING_CANADIAN_DOMINION_NAME_ADJ: "Qing Canadian"
 
  HUANG_DI: "Huang Di" # Emperor | Huang2 Di4
  HUANG_HOU: "Huang Hou" # Empress Regnant | Huang2 Hou4
@@ -174,4 +176,3 @@
  DI_GUO_WANG_CHAO: "Di Guo Wang Chao" # Imperial Dynasty | Di4 Guo2 Wang2 Chao2
  TAI_ZI: "Tai Zi" # Imperial Heir | Tai4 Zi3
  GONG_ZHU: "Gong Zhu" # Princess | Gon1 Zhu3
-

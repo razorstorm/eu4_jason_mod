@@ -1372,6 +1372,20 @@ country_decisions = {
         }
     }
 
+    max_estate_loyalty_decision = {
+        major = no
+        potential = {
+            ai = no
+            has_country_flag = jason_show_decisions_enabled
+        }
+        allow = {
+            ai = no
+        }
+        effect = {
+            maximize_estate_loyalty = yes
+        }
+    }
+
     build_mills_for_diamond_provinces_decision = {
         major = no
         potential = {

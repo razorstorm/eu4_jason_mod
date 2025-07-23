@@ -112,6 +112,9 @@
  
  enable_estates_decision_title: "Enable Estates"
  enable_estates_decision_desc: "Enables missing estates if possible."
+
+ max_estate_loyalty_decision_title: "Set Estate Loyalty to Maximum"
+ max_estate_loyalty_decision_desc: "Sets the loyalty of all estates to maximum
  
  set_high_american_decision_title: "Enable High American Tech Group"
  set_high_american_decision_desc: "Converts country to High American tech group and unit types."

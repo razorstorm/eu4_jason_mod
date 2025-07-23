@@ -8,4 +8,91 @@
  establish_tropical_resort_tooltip: "Set up a Tropical Resort in §Y[From.GetName]§!"
  establish_tropical_resort_desc: "Do you want to set up a Tropical Resort in §Y[From.GetName]§!?"
 
+ establish_establish_pirate_brotherhood_title: "Establish Pirate Brotherhood"
+ establish_establish_pirate_brotherhood_tooltip: "Set up a Pirate Brotherhood in §Y[From.GetName]§!"
+ establish_establish_pirate_brotherhood_desc: "Do you want to set up a Pirate Brotherhood in §Y[From.GetName]§!?"
+
+ establish_fief_subject_title: "Establish Fief Subject"
+ establish_fief_subject_tooltip: "Set up a Fief Subject in §Y[From.GetName]§!"
+ establish_fief_subject_desc: "Do you want to set up a Fief Subject in §Y[From.GetName]§!?"
+
+ establish_jimi_state_title: "Establish Jimi State"
+ establish_jimi_state_tooltip: "Set up a Jimi State in §Y[From.GetName]§!"
+ establish_jimi_state_desc: "Do you want to set up a Jimi State in §Y[From.GetName]§!?"
+
+ establish_sino_jimi_state_title: "Establish Tusi"
+ establish_sino_jimi_state_tooltip: "Set up a Tusi in §Y[From.GetName]§!"
+ establish_sino_jimi_state_desc: "Do you want to set up a Tusi in §Y[From.GetName]§!?"
+
+ establish_real_union_state_title: "Establish Real Union State"
+ establish_real_union_state_tooltip: "Set up a Real Union State in §Y[From.GetName]§!"
+ establish_real_union_state_desc: "Do you want to set up a Real Union State in §Y[From.GetName]§!?"
+
+ establish_integrated_personal_union_title: "Establish Integrated Personal Union"
+ establish_integrated_personal_union_tooltip: "Set up a Integrated Personal Union in §Y[From.GetName]§!"
+ establish_integrated_personal_union_desc: "Do you want to set up a Integrated Personal Union in §Y[From.GetName]§!?"
+
+ establish_naval_march_title: "Establish Naval March"
+ establish_naval_march_tooltip: "Set up a Naval March in §Y[From.GetName]§!"
+ establish_naval_march_desc: "Do you want to set up a Naval March in §Y[From.GetName]§!?"
+
+ establish_administrative_region_title: "Establish Administrative Region"
+ establish_administrative_region_tooltip: "Set up a Administrative Region in §Y[From.GetName]§!"
+ establish_administrative_region_desc: "Do you want to set up a Administrative Region in §Y[From.GetName]§!?"
+
+ establish_mongolian_tribe_title: "Establish Subtribe"
+ establish_mongolian_tribe_tooltip: "Set up a Subtribe in §Y[From.GetName]§!"
+ establish_mongolian_tribe_desc: "Do you want to set up a Subtribe in §Y[From.GetName]§!?"
+
+ establish_pagan_chiefdom_title: "Establish A Horde Subject"
+ establish_pagan_chiefdom_tooltip: "Set up a Horde Subject in §Y[From.GetName]§!"
+ establish_pagan_chiefdom_desc: "Do you want to set up a Horde Subject in §Y[From.GetName]§!?"
+
+ establish_trade_outpost_title: "Establish Trade Outpost"
+ establish_trade_outpost_tooltip: "Set up a Trade Outpost in §Y[From.GetName]§!"
+ establish_trade_outpost_desc: "Do you want to set up a Trade Outpost in §Y[From.GetName]§!?"
+
+ establish_commercial_enterprise_title: "Establish Commercial Enterprise"
+ establish_commercial_enterprise_tooltip: "Set up a Commercial Enterprise in §Y[From.GetName]§!"
+ establish_commercial_enterprise_desc: "Do you want to set up a Commercial Enterprise in §Y[From.GetName]§!?"
+
+ establish_dominion_title: "Establish Dominion"
+ establish_dominion_tooltip: "Set up a Dominion in §Y[From.GetName]§!"
+ establish_dominion_desc: "Do you want to set up a Dominion in §Y[From.GetName]§!?"
+
+ establish_consolidated_dominion_title: "Establish Consolidated Dominion"
+ establish_consolidated_dominion_tooltip: "Set up a Consolidated Dominion in §Y[From.GetName]§!"
+ establish_consolidated_dominion_desc: "Do you want to set up a Consolidated Dominion in §Y[From.GetName]§!?"
+
+ establish_banking_family_subject_title: "Establish Sovereign Bank"
+ establish_banking_family_subject_tooltip: "Set up a Sovereign Banking Subject in §Y[From.GetName]§!"
+ establish_banking_family_subject_desc: "Do you want to set up a Sovereign Banking Subject in §Y[From.GetName]§!?"
+
+ establish_brother_kingdom_title: "Establish Brother Kingdom"
+ establish_brother_kingdom_tooltip: "Set up a Brother Kingdom in §Y[From.GetName]§!"
+ establish_brother_kingdom_desc: "Do you want to set up a Brother Kingdom in §Y[From.GetName]§!?"
+
+ establish_mining_corporation_title: "Establish Mining Corporation"
+ establish_mining_corporation_tooltip: "Set up a Mining Corporation in §Y[From.GetName]§!"
+ establish_mining_corporation_desc: "Do you want to set up a Mining Corporation in §Y[From.GetName]§!"
+
+ establish_protectorate_title: "Establish Protectorate"
+ establish_protectorate_tooltip: "Set up a Protectorate in §Y[From.GetName]§!"
+ establish_protectorate_desc: "Do you want to set up a Protectorate in §Y[From.GetName]§!"
+
+ establish_imperial_city_title: "Establish Imperial City"
+ establish_imperial_city_tooltip: "Set up an Imperial City in §Y[From.GetName]§!"
+ establish_imperial_city_desc: "Do you want to set up an Imperial City in §Y[From.GetName]§!"
+
+ establish_native_reserve_title: "Establish Native Reservation"
+ establish_native_reserve_tooltip: "Set up a Native Reservation in §Y[From.GetName]§!"
+ establish_native_reserve_desc: "Do you want to set up a Native Reservation in §Y[From.GetName]§!"
+
+ establish_chinese_imperial_altar_state_title: "Establish Chinese Imperial Altar State"
+ establish_chinese_imperial_altar_state_tooltip: "Set up a Chinese Imperial Altar State in §Y[From.GetName]§!"
+ establish_chinese_imperial_altar_state_desc: "Do you want to set up a Chinese Imperial Altar State in §Y[From.GetName]§!?"
+
+ establish_tb_minister_resident_title: "Establish Tibetan Ministry"
+ establish_tb_minister_resident_tooltip: "Set up a Tibetan Ministry in §Y[From.GetName]§!"
+ establish_tb_minister_resident_desc: "Do you want to set up a Tibetan Ministry in §Y[From.GetName]§!?"
 
