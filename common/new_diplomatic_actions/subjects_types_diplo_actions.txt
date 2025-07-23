@@ -2,9 +2,33 @@
 # Icons are used from the messageicons.dds
 
 
+# Header for all subject establishment actions
+establish_header = {
+    subjects_diplo_category
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+    }
+    is_allowed = {
+        ai = no
+        always = no
+    }
+    on_accept = {
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+
+
 # Establish Pirate Brotherhood
 establish_pirate_brotherhood = {
-    category = vassalize
+    subjects_diplo_category
 
     require_acceptance = no
 
@@ -38,7 +62,7 @@ establish_pirate_brotherhood = {
 
 # Establish Tropical Resort
 establish_tropical_resort = {
-    category = vassalize
+    subjects_diplo_category
 
     require_acceptance = no
 
@@ -70,9 +94,9 @@ establish_tropical_resort = {
     }
 }
 
-# Establish Fiefdom Subject
-establish_fief_subject = {
-    category = vassalize
+# Establish Fiefdom
+establish_fiefdom = {
+    subjects_diplo_category
 
     require_acceptance = no
 
@@ -106,7 +130,7 @@ establish_fief_subject = {
 
 # Establish Jimi State
 establish_jimi_state = {
-    category = vassalize
+    subjects_diplo_category
 
     require_acceptance = no
 
@@ -140,7 +164,7 @@ establish_jimi_state = {
 
 # Establish Tusi
 establish_sino_jimi_state = {
-    category = vassalize
+    subjects_diplo_category
 
     require_acceptance = no
 
@@ -174,7 +198,7 @@ establish_sino_jimi_state = {
 
 # Establish Real Union
 establish_real_union = {
-    category = vassalize
+    subjects_diplo_category
 
     require_acceptance = no
 
@@ -208,7 +232,7 @@ establish_real_union = {
 
 # Establish Integrated Personal Union
 establish_integrated_personal_union = {
-    category = vassalize
+    subjects_diplo_category
 
     require_acceptance = no
 
@@ -242,7 +266,7 @@ establish_integrated_personal_union = {
 
 # Establish Naval March
 establish_naval_march = {
-    category = vassalize
+    subjects_diplo_category
 
     require_acceptance = no
 
@@ -276,7 +300,7 @@ establish_naval_march = {
 
 # Establish Administrative Region
 establish_administrative_region = {
-    category = vassalize
+    subjects_diplo_category
 
     require_acceptance = no
 
@@ -310,7 +334,7 @@ establish_administrative_region = {
 
 # Establish Subtribe
 establish_mongolian_tribe = {
-    category = vassalize
+    subjects_diplo_category
 
     require_acceptance = no
 
@@ -343,8 +367,8 @@ establish_mongolian_tribe = {
 }
 
 # Establish Horde Subject
-establish_pagan_chiefdom = {
-    category = vassalize
+establish_horde_subject = {
+    subjects_diplo_category
 
     require_acceptance = no
 
@@ -378,7 +402,7 @@ establish_pagan_chiefdom = {
 
 # Establish Trade Outpost
 establish_trade_outpost = {
-    category = vassalize
+    subjects_diplo_category
 
     require_acceptance = no
 
@@ -412,7 +436,7 @@ establish_trade_outpost = {
 
 # Establish Commercial Enterprise
 establish_commercial_enterprise = {
-    category = vassalize
+    subjects_diplo_category
 
     require_acceptance = no
 
@@ -446,7 +470,7 @@ establish_commercial_enterprise = {
 
 # Establish Dominion
 establish_dominion = {
-    category = vassalize
+    subjects_diplo_category
 
     require_acceptance = no
 
@@ -482,7 +506,7 @@ establish_dominion = {
 
 # Establish Consolidated Dominion
 establish_consolidated_dominion = {
-    category = vassalize
+    subjects_diplo_category
 
     require_acceptance = no
 
@@ -514,9 +538,9 @@ establish_consolidated_dominion = {
     }
 }
 
-# Establish Banking Family Subject
-establish_banking_family_subject = {
-    category = vassalize
+# Establish Sovereign Bank Subject
+establish_sovereign_bank_subject = {
+    subjects_diplo_category
 
     require_acceptance = no
 
@@ -550,7 +574,7 @@ establish_banking_family_subject = {
 
 # Establish Brother Kingdom
 establish_brother_kingdom = {
-    category = vassalize
+    subjects_diplo_category
 
     require_acceptance = no
 
@@ -584,7 +608,7 @@ establish_brother_kingdom = {
 
 # Establish Mining Corporation
 establish_mining_corporation = {
-    category = vassalize
+    subjects_diplo_category
 
     require_acceptance = no
 
@@ -618,7 +642,7 @@ establish_mining_corporation = {
 
 # Establish Protectorate
 establish_protectorate = {
-    category = vassalize
+    subjects_diplo_category
 
     require_acceptance = no
 
@@ -652,7 +676,7 @@ establish_protectorate = {
 
 # Establish Imperial City
 establish_imperial_city = {
-    category = vassalize
+    subjects_diplo_category
 
     require_acceptance = no
 
@@ -686,7 +710,7 @@ establish_imperial_city = {
 
 # Establish Native Reserve
 establish_native_reserve = {
-    category = vassalize
+    subjects_diplo_category
 
     require_acceptance = no
 
@@ -720,7 +744,7 @@ establish_native_reserve = {
 
 # Establish Chinese Imperial Alter State
 establish_chinese_imperial_altar_state = {
-    category = vassalize
+    subjects_diplo_category
 
     require_acceptance = no
 
@@ -729,7 +753,6 @@ establish_chinese_imperial_altar_state = {
         is_emperor_of_china = yes
         FROM = {
             is_subject_of = ROOT
-            NOT = { is_subject_of_type = chinese_imperial_altar_states }
             NOT = { is_subject_of_type = chinese_imperial_altar_state }
         }
     }
@@ -738,10 +761,8 @@ establish_chinese_imperial_altar_state = {
         is_emperor_of_china = yes
         FROM = { 
             is_subject_of = ROOT
-            NOT = { is_subject_of_type = chinese_imperial_altar_states }
             NOT = { is_subject_of_type = chinese_imperial_altar_state }
             OR = {
-                tag = CHI
                 tag = MNG
                 tag = QNG
                 tag = JIN
@@ -771,7 +792,7 @@ establish_chinese_imperial_altar_state = {
 
 # Establish Tibetan Ministry
 establish_tb_minister_resident = {
-    category = vassalize
+    subjects_diplo_category
 
     require_acceptance = no
 
@@ -792,6 +813,40 @@ establish_tb_minister_resident = {
     on_accept = {
         create_subject = {
             subject_type = tb_minister_resident
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+
+# Establish Satrapy
+establish_persian_satrapy = {
+    subjects_diplo_category
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = persian_satrapy }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = persian_satrapy }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = persian_satrapy
             subject = FROM
         }
     }
