@@ -2,14 +2,40 @@
 # Icons are used from the messageicons.dds
 
 
-# Header for all subject establishment actions
-establish_header = {
-    subjects_diplo_category
+# # Header for all subject establishment actions
+# establish_header = {
+#     category = subjects
+
+#     require_acceptance = no
+
+#     is_visible = {
+#         ai = no
+#     }
+#     is_allowed = {
+#         ai = no
+#         always = no
+#     }
+#     on_accept = {
+#     }
+#     on_decline = {
+#     }
+
+#     ai_will_do = { # this is a trigger
+#         always = no
+#     }
+# }
+
+# Header for layer A: De Jure Lands of the Empire
+layer_a_header = {
+    category = subjects
 
     require_acceptance = no
 
     is_visible = {
         ai = no
+        FROM = {
+            is_subject_of = ROOT
+        }
     }
     is_allowed = {
         ai = no
@@ -25,282 +51,9 @@ establish_header = {
     }
 }
 
-
-# Establish Pirate Brotherhood
-establish_pirate_brotherhood = {
-    subjects_diplo_category
-
-    require_acceptance = no
-
-    is_visible = {
-        ai = no
-        FROM = {
-            is_subject_of = ROOT
-            NOT = { is_subject_of_type = pirate_brotherhood_vassal }
-        }
-    }
-    is_allowed = {
-        ai = no
-        FROM = {
-            is_subject_of = ROOT
-            NOT = { is_subject_of_type = pirate_brotherhood_vassal }
-        }
-    }
-    on_accept = {
-        create_subject = {
-            subject_type = pirate_brotherhood_vassal
-            subject = FROM
-        }
-    }
-    on_decline = {
-    }
-
-    ai_will_do = { # this is a trigger
-        always = no
-    }
-}
-
-# Establish Tropical Resort
-establish_tropical_resort = {
-    subjects_diplo_category
-
-    require_acceptance = no
-
-    is_visible = {
-        ai = no
-        FROM = {
-            is_subject_of = ROOT
-            NOT = { is_subject_of_type = tropical_resort }
-        }
-    }
-    is_allowed = {
-        ai = no
-        FROM = { 
-            is_subject_of = ROOT
-            NOT = { is_subject_of_type = tropical_resort }
-        }
-    }
-    on_accept = {
-        create_subject = {
-            subject_type = tropical_resort
-            subject = FROM
-        }
-    }
-    on_decline = {
-    }
-
-    ai_will_do = { # this is a trigger
-        always = no
-    }
-}
-
-# Establish Fiefdom
-establish_fiefdom = {
-    subjects_diplo_category
-
-    require_acceptance = no
-
-    is_visible = {
-        ai = no
-        FROM = {
-            is_subject_of = ROOT
-            NOT = { is_subject_of_type = fief_subject }
-        }
-    }
-    is_allowed = {
-        ai = no
-        FROM = { 
-            is_subject_of = ROOT
-            NOT = { is_subject_of_type = fief_subject }
-        }
-    }
-    on_accept = {
-        create_subject = {
-            subject_type = fief_subject
-            subject = FROM
-        }
-    }
-    on_decline = {
-    }
-
-    ai_will_do = { # this is a trigger
-        always = no
-    }
-}
-
-# Establish Jimi State
-establish_jimi_state = {
-    subjects_diplo_category
-
-    require_acceptance = no
-
-    is_visible = {
-        ai = no
-        FROM = {
-            is_subject_of = ROOT
-            NOT = { is_subject_of_type = jimi_state }
-        }
-    }
-    is_allowed = {
-        ai = no
-        FROM = { 
-            is_subject_of = ROOT
-            NOT = { is_subject_of_type = jimi_state }
-        }
-    }
-    on_accept = {
-        create_subject = {
-            subject_type = jimi_state
-            subject = FROM
-        }
-    }
-    on_decline = {
-    }
-
-    ai_will_do = { # this is a trigger
-        always = no
-    }
-}
-
-# Establish Tusi
-establish_sino_jimi_state = {
-    subjects_diplo_category
-
-    require_acceptance = no
-
-    is_visible = {
-        ai = no
-        FROM = {
-            is_subject_of = ROOT
-            NOT = { is_subject_of_type = sino_jimi_state }
-        }
-    }
-    is_allowed = {
-        ai = no
-        FROM = { 
-            is_subject_of = ROOT
-            NOT = { is_subject_of_type = sino_jimi_state }
-        }
-    }
-    on_accept = {
-        create_subject = {
-            subject_type = sino_jimi_state
-            subject = FROM
-        }
-    }
-    on_decline = {
-    }
-
-    ai_will_do = { # this is a trigger
-        always = no
-    }
-}
-
-# Establish Real Union
-establish_real_union = {
-    subjects_diplo_category
-
-    require_acceptance = no
-
-    is_visible = {
-        ai = no
-        FROM = {
-            is_subject_of = ROOT
-            NOT = { is_subject_of_type = real_union_subject }
-        }
-    }
-    is_allowed = {
-        ai = no
-        FROM = { 
-            is_subject_of = ROOT
-            NOT = { is_subject_of_type = real_union_subject }
-        }
-    }
-    on_accept = {
-        create_subject = {
-            subject_type = real_union_subject
-            subject = FROM
-        }
-    }
-    on_decline = {
-    }
-
-    ai_will_do = { # this is a trigger
-        always = no
-    }
-}
-
-# Establish Integrated Personal Union
-establish_integrated_personal_union = {
-    subjects_diplo_category
-
-    require_acceptance = no
-
-    is_visible = {
-        ai = no
-        FROM = {
-            is_subject_of = ROOT
-            NOT = { is_subject_of_type = se_integrated_personal_union }
-        }
-    }
-    is_allowed = {
-        ai = no
-        FROM = { 
-            is_subject_of = ROOT
-            NOT = { is_subject_of_type = se_integrated_personal_union }
-        }
-    }
-    on_accept = {
-        create_subject = {
-            subject_type = se_integrated_personal_union
-            subject = FROM
-        }
-    }
-    on_decline = {
-    }
-
-    ai_will_do = { # this is a trigger
-        always = no
-    }
-}
-
-# Establish Naval March
-establish_naval_march = {
-    subjects_diplo_category
-
-    require_acceptance = no
-
-    is_visible = {
-        ai = no
-        FROM = {
-            is_subject_of = ROOT
-            NOT = { is_subject_of_type = naval_march }
-        }
-    }
-    is_allowed = {
-        ai = no
-        FROM = { 
-            is_subject_of = ROOT
-            NOT = { is_subject_of_type = naval_march }
-        }
-    }
-    on_accept = {
-        create_subject = {
-            subject_type = naval_march
-            subject = FROM
-        }
-    }
-    on_decline = {
-    }
-
-    ai_will_do = { # this is a trigger
-        always = no
-    }
-}
-
-# Establish Administrative Region
+# Tier 2. Core Regions (Admin region, real union subjects, imperial cities, banks, etc)
 establish_administrative_region = {
-    subjects_diplo_category
+    category = subjects
 
     require_acceptance = no
 
@@ -331,10 +84,8 @@ establish_administrative_region = {
         always = no
     }
 }
-
-# Establish Subtribe
-establish_mongolian_tribe = {
-    subjects_diplo_category
+establish_real_union = {
+    category = subjects
 
     require_acceptance = no
 
@@ -342,19 +93,19 @@ establish_mongolian_tribe = {
         ai = no
         FROM = {
             is_subject_of = ROOT
-            NOT = { is_subject_of_type = mongolian_tribe }
+            NOT = { is_subject_of_type = real_union_subject }
         }
     }
     is_allowed = {
         ai = no
         FROM = { 
             is_subject_of = ROOT
-            NOT = { is_subject_of_type = mongolian_tribe }
+            NOT = { is_subject_of_type = real_union_subject }
         }
     }
     on_accept = {
         create_subject = {
-            subject_type = mongolian_tribe
+            subject_type = real_union_subject
             subject = FROM
         }
     }
@@ -365,10 +116,8 @@ establish_mongolian_tribe = {
         always = no
     }
 }
-
-# Establish Horde Subject
-establish_horde_subject = {
-    subjects_diplo_category
+establish_imperial_city = {
+    category = subjects
 
     require_acceptance = no
 
@@ -376,19 +125,19 @@ establish_horde_subject = {
         ai = no
         FROM = {
             is_subject_of = ROOT
-            NOT = { is_subject_of_type = pagan_chiefdom }
+            NOT = { is_subject_of_type = imperial_city }
         }
     }
     is_allowed = {
         ai = no
         FROM = { 
             is_subject_of = ROOT
-            NOT = { is_subject_of_type = pagan_chiefdom }
+            NOT = { is_subject_of_type = imperial_city }
         }
     }
     on_accept = {
         create_subject = {
-            subject_type = pagan_chiefdom
+            subject_type = imperial_city
             subject = FROM
         }
     }
@@ -399,10 +148,8 @@ establish_horde_subject = {
         always = no
     }
 }
-
-# Establish Trade Outpost
-establish_trade_outpost = {
-    subjects_diplo_category
+establish_integrated_personal_union = {
+    category = subjects
 
     require_acceptance = no
 
@@ -410,19 +157,19 @@ establish_trade_outpost = {
         ai = no
         FROM = {
             is_subject_of = ROOT
-            NOT = { is_subject_of_type = trade_outpost }
+            NOT = { is_subject_of_type = se_integrated_personal_union }
         }
     }
     is_allowed = {
         ai = no
         FROM = { 
             is_subject_of = ROOT
-            NOT = { is_subject_of_type = trade_outpost }
+            NOT = { is_subject_of_type = se_integrated_personal_union }
         }
     }
     on_accept = {
         create_subject = {
-            subject_type = trade_outpost
+            subject_type = se_integrated_personal_union
             subject = FROM
         }
     }
@@ -433,114 +180,8 @@ establish_trade_outpost = {
         always = no
     }
 }
-
-# Establish Commercial Enterprise
-establish_commercial_enterprise = {
-    subjects_diplo_category
-
-    require_acceptance = no
-
-    is_visible = {
-        ai = no
-        FROM = {
-            is_subject_of = ROOT
-            NOT = { is_subject_of_type = commercial_enterprise }
-        }
-    }
-    is_allowed = {
-        ai = no
-        FROM = { 
-            is_subject_of = ROOT
-            NOT = { is_subject_of_type = commercial_enterprise }
-        }
-    }
-    on_accept = {
-        create_subject = {
-            subject_type = commercial_enterprise
-            subject = FROM
-        }
-    }
-    on_decline = {
-    }
-
-    ai_will_do = { # this is a trigger
-        always = no
-    }
-}
-
-# Establish Dominion
-establish_dominion = {
-    subjects_diplo_category
-
-    require_acceptance = no
-
-    is_visible = {
-        ai = no
-        FROM = {
-            is_subject_of = ROOT
-            NOT = { is_subject_of_type = dominion }
-            NOT = { is_subject_of_type = dominion_tc }
-        }
-    }
-    is_allowed = {
-        ai = no
-        FROM = { 
-            is_subject_of = ROOT
-            NOT = { is_subject_of_type = dominion }
-            NOT = { is_subject_of_type = dominion_tc }
-        }
-    }
-    on_accept = {
-        create_subject = {
-            subject_type = dominion
-            subject = FROM
-        }
-    }
-    on_decline = {
-    }
-
-    ai_will_do = { # this is a trigger
-        always = no
-    }
-}
-
-# Establish Consolidated Dominion
-establish_consolidated_dominion = {
-    subjects_diplo_category
-
-    require_acceptance = no
-
-    is_visible = {
-        ai = no
-        FROM = {
-            is_subject_of = ROOT
-            NOT = { is_subject_of_type = consolidated_dominion }
-        }
-    }
-    is_allowed = {
-        ai = no
-        FROM = { 
-            is_subject_of = ROOT
-            NOT = { is_subject_of_type = consolidated_dominion }
-        }
-    }
-    on_accept = {
-        create_subject = {
-            subject_type = consolidated_dominion
-            subject = FROM
-        }
-    }
-    on_decline = {
-    }
-
-    ai_will_do = { # this is a trigger
-        always = no
-    }
-}
-
-# Establish Sovereign Bank Subject
 establish_sovereign_bank_subject = {
-    subjects_diplo_category
+    category = subjects
 
     require_acceptance = no
 
@@ -572,9 +213,9 @@ establish_sovereign_bank_subject = {
     }
 }
 
-# Establish Brother Kingdom
-establish_brother_kingdom = {
-    subjects_diplo_category
+# Tier 3. Special Administrative Regions + Direct Commanderies (Marches / Defensive Marches, Appanage, Princely Vassals)
+establish_naval_march_subject = {
+    category = subjects
 
     require_acceptance = no
 
@@ -582,19 +223,19 @@ establish_brother_kingdom = {
         ai = no
         FROM = {
             is_subject_of = ROOT
-            NOT = { is_subject_of_type = brother_kingdom }
+            NOT = { is_subject_of_type = naval_march }
         }
     }
     is_allowed = {
         ai = no
         FROM = { 
             is_subject_of = ROOT
-            NOT = { is_subject_of_type = brother_kingdom }
+            NOT = { is_subject_of_type = naval_march }
         }
     }
     on_accept = {
         create_subject = {
-            subject_type = brother_kingdom
+            subject_type = naval_march
             subject = FROM
         }
     }
@@ -605,10 +246,8 @@ establish_brother_kingdom = {
         always = no
     }
 }
-
-# Establish Mining Corporation
-establish_mining_corporation = {
-    subjects_diplo_category
+establish_horde_subject = {
+    category = subjects
 
     require_acceptance = no
 
@@ -616,19 +255,19 @@ establish_mining_corporation = {
         ai = no
         FROM = {
             is_subject_of = ROOT
-            NOT = { is_subject_of_type = mining_corporation }
+            NOT = { is_subject_of_type = pagan_chiefdom }
         }
     }
     is_allowed = {
         ai = no
         FROM = { 
             is_subject_of = ROOT
-            NOT = { is_subject_of_type = mining_corporation }
+            NOT = { is_subject_of_type = pagan_chiefdom }
         }
     }
     on_accept = {
         create_subject = {
-            subject_type = mining_corporation
+            subject_type = pagan_chiefdom
             subject = FROM
         }
     }
@@ -639,10 +278,8 @@ establish_mining_corporation = {
         always = no
     }
 }
-
-# Establish Protectorate
-establish_protectorate = {
-    subjects_diplo_category
+establish_mongolian_tribe = {
+    category = subjects
 
     require_acceptance = no
 
@@ -650,19 +287,19 @@ establish_protectorate = {
         ai = no
         FROM = {
             is_subject_of = ROOT
-            NOT = { is_subject_of_type = protectorate }
+            NOT = { is_subject_of_type = mongolian_tribe }
         }
     }
     is_allowed = {
         ai = no
         FROM = { 
             is_subject_of = ROOT
-            NOT = { is_subject_of_type = protectorate }
+            NOT = { is_subject_of_type = mongolian_tribe }
         }
     }
     on_accept = {
         create_subject = {
-            subject_type = protectorate
+            subject_type = mongolian_tribe
             subject = FROM
         }
     }
@@ -673,10 +310,8 @@ establish_protectorate = {
         always = no
     }
 }
-
-# Establish Imperial City
-establish_imperial_city = {
-    subjects_diplo_category
+establish_appanage_subject = {
+    category = subjects
 
     require_acceptance = no
 
@@ -684,19 +319,19 @@ establish_imperial_city = {
         ai = no
         FROM = {
             is_subject_of = ROOT
-            NOT = { is_subject_of_type = imperial_city }
+            NOT = { is_subject_of_type = appanage }
         }
     }
     is_allowed = {
         ai = no
         FROM = { 
             is_subject_of = ROOT
-            NOT = { is_subject_of_type = imperial_city }
+            NOT = { is_subject_of_type = appanage }
         }
     }
     on_accept = {
         create_subject = {
-            subject_type = imperial_city
+            subject_type = appanage
             subject = FROM
         }
     }
@@ -707,10 +342,8 @@ establish_imperial_city = {
         always = no
     }
 }
-
-# Establish Native Reserve
-establish_native_reserve = {
-    subjects_diplo_category
+establish_princely_vassal = {
+    category = subjects
 
     require_acceptance = no
 
@@ -718,19 +351,51 @@ establish_native_reserve = {
         ai = no
         FROM = {
             is_subject_of = ROOT
-            NOT = { is_subject_of_type = native_reserve }
+            NOT = { is_subject_of_type = prince_vassal }
         }
     }
     is_allowed = {
         ai = no
         FROM = { 
             is_subject_of = ROOT
-            NOT = { is_subject_of_type = native_reserve }
+            NOT = { is_subject_of_type = prince_vassal }
         }
     }
     on_accept = {
         create_subject = {
-            subject_type = native_reserve
+            subject_type = prince_vassal
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+} 
+establish_tb_minister_resident = {
+    category = subjects
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = tb_minister_resident }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = tb_minister_resident }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = tb_minister_resident
             subject = FROM
         }
     }
@@ -741,10 +406,8 @@ establish_native_reserve = {
         always = no
     }
 }
-
-# Establish Chinese Imperial Alter State
 establish_chinese_imperial_altar_state = {
-    subjects_diplo_category
+    category = subjects
 
     require_acceptance = no
 
@@ -790,9 +453,10 @@ establish_chinese_imperial_altar_state = {
     }
 }
 
-# Establish Tibetan Ministry
-establish_tb_minister_resident = {
-    subjects_diplo_category
+
+# Tier 4. Delegated Semi-autonomous Regions aka Core Subjects (Fief subjects, Resorts, Tusi, Native Reserves, tropical resorts, Mining Corporation)
+establish_tropical_resort = {
+    category = subjects
 
     require_acceptance = no
 
@@ -800,19 +464,115 @@ establish_tb_minister_resident = {
         ai = no
         FROM = {
             is_subject_of = ROOT
-            NOT = { is_subject_of_type = tb_minister_resident }
+            NOT = { is_subject_of_type = tropical_resort }
         }
     }
     is_allowed = {
         ai = no
         FROM = { 
             is_subject_of = ROOT
-            NOT = { is_subject_of_type = tb_minister_resident }
+            NOT = { is_subject_of_type = tropical_resort }
         }
     }
     on_accept = {
         create_subject = {
-            subject_type = tb_minister_resident
+            subject_type = tropical_resort
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+establish_native_reservation = {
+    category = subjects
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = native_reserve }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = native_reserve }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = native_reserve
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+establish_mining_corporation = {
+    category = subjects
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = mining_corporation }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = mining_corporation }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = mining_corporation
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+establish_sino_jimi_state = {
+    category = subjects
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = sino_jimi_state }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = sino_jimi_state }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = sino_jimi_state
             subject = FROM
         }
     }
@@ -824,9 +584,165 @@ establish_tb_minister_resident = {
     }
 }
 
-# Establish Satrapy
-establish_persian_satrapy = {
-    subjects_diplo_category
+# Tier 5. Core Colonies (Consolidated Dominions)
+establish_consolidated_dominion = {
+    category = subjects
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = consolidated_dominion }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = consolidated_dominion }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = consolidated_dominion
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+
+# Header for layer B: De Jure Subjects of the Greater Realm
+layer_b_header = {
+    category = subjects
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+        }
+    }
+    is_allowed = {
+        ai = no
+        always = no
+    }
+    on_accept = {
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+
+# Tier 6. Internal Vassals (Fiefdoms, Brother Kingdoms, Vassals, Commercial Enterprises)
+establish_commercial_enterprise = {
+    category = subjects
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = commercial_enterprise }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = commercial_enterprise }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = commercial_enterprise
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+establish_brother_kingdom = {
+    category = subjects
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = brother_kingdom }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = brother_kingdom }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = brother_kingdom
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+establish_fiefdom = {
+    category = subjects
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = fief_subject }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = fief_subject }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = fief_subject
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+establish_satrapy = {
+    category = subjects
 
     require_acceptance = no
 
@@ -858,5 +774,299 @@ establish_persian_satrapy = {
     }
 }
 
+# Tier 7. Internal Colonies (Dominions)
+establish_dominion = {
+    category = subjects
 
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = dominion }
+            NOT = { is_subject_of_type = dominion_tc }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = dominion }
+            NOT = { is_subject_of_type = dominion_tc }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = dominion
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+
+# Tier 8. Internal Tributaries (Jimi States)
+establish_jimi_state = {
+    category = subjects
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = jimi_state }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = jimi_state }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = jimi_state
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+
+# Header for layer C: De jure subjects of the Greater Hegemony
+layer_c_header = {
+    category = subjects
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+        }
+    }
+    is_allowed = {
+        ai = no
+        always = no
+    }
+    on_accept = {
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+
+# Tier 9. External Vassals (Protectorates, Vassals, Trade Outposts, Puppet States, Pirate Brotherhoods, etc)
+establish_protectorate_subject = {
+    category = subjects
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = protectorate }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = protectorate }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = protectorate
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+establish_trade_outpost_subject = {
+    category = subjects
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = trade_outpost }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = trade_outpost }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = trade_outpost
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+establish_puppet_state_subject = {
+    category = subjects
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = puppet_state }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = puppet_state }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = puppet_state
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+establish_pirate_brotherhood = {
+    category = subjects
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = pirate_brotherhood_vassal }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = pirate_brotherhood_vassal }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = pirate_brotherhood_vassal
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+
+# Tier 10. External Colonies (Colonies)
+establish_crown_colony_action = {
+    category = subjects
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = crown_colony }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = crown_colony }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = crown_colony
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+
+# Tier 11. External Tributaries (Tributaries)
+establish_tributary_action = {
+    category = subjects
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = tributary }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = tributary }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = tributary
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+
+# Tier 12. Miscellaneous
 
