@@ -46,7 +46,7 @@ establish_chinese_tributary = {
 }
 
 # Establish Tropical Resort
-establish_tropical_resort = {
+establish_tropical_resort_category_influence = {
     category = influence
 
     require_acceptance = no

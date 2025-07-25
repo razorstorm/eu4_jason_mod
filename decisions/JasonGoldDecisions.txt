@@ -461,6 +461,11 @@ country_decisions = {
                         trade_goods = gold
                     }
                     NOT = { owned_by = ROOT }
+                    owner = {
+                        NOT = {
+                            is_subject_of_type = mining_corporation
+                        }
+                    }
                 }
 
                 change_trade_goods = iron

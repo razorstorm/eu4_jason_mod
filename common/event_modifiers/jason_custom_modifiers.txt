@@ -727,3 +727,41 @@ deathly_sickly_monarch = {
 on_deaths_door_monarch = {
     monarch_lifespan = -0.90
 }
+
+mandate_cheat_10 = {
+    imperial_mandate = 0.1
+}
+mandate_cheat_10_1 = {
+    imperial_mandate = 0.1
+}
+mandate_cheat_10_2 = {
+    imperial_mandate = 0.1
+}
+mandate_cheat_10_3 = {
+    imperial_mandate = 0.1
+}
+
+mandate_cheat_20 = {
+    imperial_mandate = 0.2
+}
+mandate_cheat_20_1 = {
+    imperial_mandate = 0.2
+}
+mandate_cheat_20_2 = {
+    imperial_mandate = 0.2
+}
+mandate_cheat_20_3 = {
+    imperial_mandate = 0.2
+}
+
+mandate_cheat_50 = {
+    imperial_mandate = 0.5
+}
+
+mandate_cheat_100 = {
+    imperial_mandate = 1
+}
+
+mandate_cheat_1000 = {
+    imperial_mandate = 10
+}
