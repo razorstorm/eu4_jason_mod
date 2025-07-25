@@ -150,3 +150,7 @@ is_specific_diamond_staked_province = {
         province_id = 2769
     } 
 }
+
+is_gold_province = {
+    trade_goods = gold
+}

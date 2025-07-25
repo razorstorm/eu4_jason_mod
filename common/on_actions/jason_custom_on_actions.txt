@@ -14,6 +14,8 @@ on_startup = {
         remove_country_modifier = lost_hegemony
         create_homeguard_general = yes
         updating_subject_loyalties = yes
+
+        set_prov_vars = yes
     }
 }
 

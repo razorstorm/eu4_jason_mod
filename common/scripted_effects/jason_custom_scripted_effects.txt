@@ -591,213 +591,50 @@ all_subjects_auto_core_themselves = {
     }
 }
 
-accept_all_american_cultures = {
-    remove_accepted_culture = noculture
-    add_accepted_culture = yamasee
-    add_accepted_culture = iroquois
-    add_accepted_culture = pequot
-    add_accepted_culture = massachusset
-    add_accepted_culture = mahican
-    add_accepted_culture = natchez
-    add_accepted_culture = chickasaw
-    add_accepted_culture = illini
-    add_accepted_culture = osage
-    add_accepted_culture = dakota
-    add_accepted_culture = apache
-    add_accepted_culture = mescalero
-    add_accepted_culture = yuchi
-    add_accepted_culture = lipan
-    add_accepted_culture = shawnee
-    add_accepted_culture = yoron
-    add_accepted_culture = shoshone
-    add_accepted_culture = caddo
-    add_accepted_culture = anishinabe
-    add_accepted_culture = blackfoot
-    add_accepted_culture = miami
-    add_accepted_culture = nakota
-    add_accepted_culture = navajo
-    add_accepted_culture = pawnee
-    add_accepted_culture = plains_cree
-    add_accepted_culture = salish
-    add_accepted_culture = wichita
-    add_accepted_culture = mesquakie
-    add_accepted_culture = piman
-    add_accepted_culture = aztek
-    add_accepted_culture = chinook
-    add_accepted_culture = american
-    add_accepted_culture = delaware
-    add_accepted_culture = polynesian
-    add_accepted_culture = haida
-    add_accepted_culture = melanesian
-    add_accepted_culture = papuan
-    add_accepted_culture = filipino
-    add_accepted_culture = moluccan
-    add_accepted_culture = nusa_tenggara
-    add_accepted_culture = sulawesi
-    add_accepted_culture = sumatran
-    add_accepted_culture = turkmeni
-    add_accepted_culture = aimaq
+change_one_gold_province_to_random = {
+    random_owned_province = {
+        limit = {
+            trade_goods = gold
+        }
+        set_random_precious_non_gold_trade_good = yes
+    }
 }
 
-accept_all_cultures = {
-    accept_all_american_cultures = yes
-
-    add_accepted_culture = sumatran
-    add_accepted_culture = evenk
-    add_accepted_culture = fon
-    add_accepted_culture = khoisan
-    add_accepted_culture = kongolese
-    add_accepted_culture = madagasque
-    add_accepted_culture = nguni
-    add_accepted_culture = yakut
-    add_accepted_culture = samoyed
-    add_accepted_culture = tungus
-    add_accepted_culture = yukagyr
-    add_accepted_culture = ostyaki
-    add_accepted_culture = siberian
-    add_accepted_culture = russian
-    add_accepted_culture = donghai
-    add_accepted_culture = kirgiz
+change_ten_provinces_to_confucian = {
+    set_variable = {
+        which = religionCounter
+        value = 0
+    }
+    while = {
+        limit = {
+            NOT = {
+                # TODO add early exit for when no more eligible provinces
+                check_variable = {
+                    which = religionCounter
+                    value = 10
+                }
+            }
+        }
+        change_variable = {
+            which = religionCounter
+            value = 1
+        }
     
-    add_accepted_culture = buryat
-    add_accepted_culture = oirats
-    add_accepted_culture = mongol
-    add_accepted_culture = kazani
-    add_accepted_culture = daur
+        random_owned_province = {
+            limit = {
+                NOT = {
+                    religion = confucianism
+                }
+                NOT = {
+                    religion = chinese_religion
+                }
 
-    add_accepted_culture = khalkha
-    add_accepted_culture = tumed
-    add_accepted_culture = uyghur
-    add_accepted_culture = evenk
-    add_accepted_culture = buryat
-    add_accepted_culture = daur
-    add_accepted_culture = ejin
+            }
 
-    add_accepted_culture = khalkha
-    add_accepted_culture = yi
-    add_accepted_culture = yugur
-    add_accepted_culture = khazak
-    add_accepted_culture = tumed
-    add_accepted_culture = uyghur
-    add_accepted_culture = qiang
-    add_accepted_culture = kham
-    add_accepted_culture = kipchak
-    add_accepted_culture = amdo
-    add_accepted_culture = hequ
-    add_accepted_culture = evenk
-    add_accepted_culture = buryat
-    add_accepted_culture = daur
-    add_accepted_culture = ejin
-    add_accepted_culture = yao
-    add_accepted_culture = miao
-    add_accepted_culture = assamese
-    add_accepted_culture = monba
-
-    add_accepted_culture = khalkha
-    add_accepted_culture = dai
-    add_accepted_culture = bai
-    add_accepted_culture = shan
-    add_accepted_culture = nepali
-    add_accepted_culture = tu
-    add_accepted_culture = wa
-    add_accepted_culture = kachin
-    add_accepted_culture = zhong
-    add_accepted_culture = ngari
-    add_accepted_culture = newar
-    add_accepted_culture = rongpa
-    add_accepted_culture = buyi
-    add_accepted_culture = newari
-
-
-    add_accepted_culture = weimo
-    add_accepted_culture = dianqian
-    add_accepted_culture = wa
-    add_accepted_culture = tu
-    add_accepted_culture = buyi
-    add_accepted_culture = dong
-    add_accepted_culture = yao
-    add_accepted_culture = qiang
-    add_accepted_culture = dai
-    add_accepted_culture = jiao
-    add_accepted_culture = kham
-    add_accepted_culture = ngari
-    add_accepted_culture = amdo
-    add_accepted_culture = liao
-    add_accepted_culture = dongbei
-    add_accepted_culture = guiliu
-    add_accepted_culture = magical_g
-    add_accepted_culture = magical
-    add_accepted_culture = ryukyu_g
-    add_accepted_culture = ryukyu
-    add_accepted_culture = pyongan_korean
-    add_accepted_culture = hamgyong_korean
-    add_accepted_culture = cholla_korean
-    add_accepted_culture = gyeongsang_korean
-    add_accepted_culture = jeju_korean
-    add_accepted_culture = basque_g
-    add_accepted_culture = mongolian
-    add_accepted_culture = mughal
-    add_accepted_culture = hulun
-    add_accepted_culture = donghai
-    add_accepted_culture = daur
-    add_accepted_culture = nivkh
-    add_accepted_culture = yakut
-    add_accepted_culture = hungarian_g
-    add_accepted_culture = chukchee
-    add_accepted_culture = samogitian
-    add_accepted_culture = xianbei
-    add_accepted_culture = dai_new
-    add_accepted_culture = zhuang_new
-    add_accepted_culture = transylvanian_saxon
-    add_accepted_culture = szeklers
-    add_accepted_culture = illyrian
-    add_accepted_culture = mesa_ethnicity
-    add_accepted_culture = han
-    add_accepted_culture = tumed
-    add_accepted_culture = ejin
-    add_accepted_culture = hequ
-    add_accepted_culture = qinghai_mongol
-    add_accepted_culture = khitan_new
-    add_accepted_culture = khitan
-    add_accepted_culture = guanzhong
-    add_accepted_culture = manchu_new_new
-    add_accepted_culture = chagatai
-    add_accepted_culture = kipchak
-    add_accepted_culture = yugur
-    add_accepted_culture = monba
-    add_accepted_culture = lhoba
-    add_accepted_culture = rongpa
-    add_accepted_culture = newari
-    add_accepted_culture = ladakhi
-    add_accepted_culture = nakhi
-    add_accepted_culture = tangut
-    add_accepted_culture = mangalai
-    add_accepted_culture = khwarazm
-    add_accepted_culture = lop
-    add_accepted_culture = nepali
-    add_accepted_culture = himalaya_group
-    add_accepted_culture = pamiri
-    add_accepted_culture = oghuz_group
-    add_accepted_culture = levant_turkish
-    add_accepted_culture = lolo_group
-    add_accepted_culture = miaoyao
-    add_accepted_culture = aramic
-    add_accepted_culture = assyrian
-    add_accepted_culture = beijing_culture
-    add_accepted_culture = uralic
-    add_accepted_culture = tajik
-    add_accepted_culture = khorasani
-    add_accepted_culture = kashmiri
-    add_accepted_culture = azerbaijani
-    add_accepted_culture = dyola
-    add_accepted_culture = nyoongah
-    add_accepted_culture = palawa
-
-    add_accepted_culture = aka
-    add_accepted_culture = berber
-    add_accepted_culture = mbundu
-    add_accepted_culture = sawabantu
-    add_accepted_culture = yorumba
+            # log = "PROVINCE [This.GetName] is not Confucian, changing to Confucian"
+            change_religion = ROOT
+        }
+    }
 }
 
 end_all_wars_amongst_subjects = {
@@ -1075,6 +912,38 @@ set_random_trade_good = {
         }
         25 = {
             change_trade_goods = ivory
+        }
+    }
+}
+
+set_random_precious_non_gold_trade_good = {
+    random_list = {
+        15 = {
+            change_trade_goods = tea
+        }
+        15 = {
+            change_trade_goods = paper
+        }
+        2 = {
+            change_trade_goods = diamonds
+        }
+        3 = {
+            change_trade_goods = gems
+        }
+        15 = {
+            change_trade_goods = paintings
+        }
+        5 = {
+            change_trade_goods = iron
+        }
+        20 = {
+            change_trade_goods = chinaware
+        }
+        15 = {
+            change_trade_goods = silk
+        }
+        10 = {
+            change_trade_goods = pearls
         }
     }
 }
@@ -1697,5 +1566,50 @@ increase_colony_growths = {
     }
 }
 
-
-
+set_imperial_city_dev = {
+    # Setting high dev imperial cities
+    every_subject_country = {
+        limit = {
+            is_subject_of_type = imperial_city
+            capital_scope = {
+                OR = {
+                    NOT = {
+                        base_tax = 25
+                    }
+                    NOT = {
+                        base_production = 30
+                    }
+                    NOT = {
+                        base_manpower = 20
+                    } 
+                }
+            }
+        }
+        capital_scope = {
+            if = {
+                limit = {
+                    NOT = {
+                        base_tax = 25
+                    }
+                }
+                set_base_tax = 25
+            }
+            if = {
+                limit = {
+                    NOT = {
+                        base_production = 30
+                    }
+                }
+                set_base_production = 30
+            }
+            if = {
+                limit = {
+                    NOT = {
+                        base_manpower = 20
+                    }
+                }
+                set_base_manpower = 20
+            }
+        }
+    }
+}
