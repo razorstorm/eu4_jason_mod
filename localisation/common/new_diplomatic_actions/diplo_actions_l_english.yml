@@ -1,9 +1,19 @@
 ﻿l_english:
- # Diplo interaction
+ # Influence Category Actions:
+ establish_chinese_tributary_title: "Establish Chinese Imperial Tributary"
+ establish_chinese_tributary_tooltip: "Demand that §Y[From.GetName]§! becomes a Chinese Imperial Tributary"
+ establish_chinese_tributary_desc: "Do you want to ask §Y[From.GetName]§! to become a Chinese Imperial Tributary? A Chinese Imperial Tributary is a more centralized form of tributary where the overlord may divert trade from the subject."
 
-#  establish_header_title: "---- Modify Subject Type ----"
-#  establish_header_tooltip: "A list of possible subject types to update this subject into."
-#  establish_header_desc: "N/A"
+ establish_tropical_resort_category_influence_title: "Establish Tropical Resort"
+ establish_tropical_resort_category_influence_title_tooltip: "Set up a Tropical Resort in §Y[From.GetName]§!"
+ establish_tropical_resort_category_influence_title_desc: "Do you want to set up a Tropical Resort in §Y[From.GetName]§!?"
+
+
+ # Modify Subject Type Category Actions:
+
+ #  establish_header_title: "---- Modify Subject Type ----"
+ #  establish_header_tooltip: "A list of possible subject types to update this subject into."
+ #  establish_header_desc: "N/A"
 
  layer_a_header_title: "---- Imperial Core ----"
  layer_a_header_tooltip: "Subjects that represent the de jure core lands of the Overlord."
@@ -16,10 +26,6 @@
  layer_c_header_title: "---- The Greater Hegemony ----"
  layer_c_header_tooltip: "External subjects that compose the Greater Hegemony of the overlord."
  layer_c_header_desc: "N/A"
-
- establish_chinese_tributary_title: "Establish Chinese Imperial Tributary"
- establish_chinese_tributary_tooltip: "Demand that §Y[From.GetName]§! becomes a Chinese Imperial Tributary"
- establish_chinese_tributary_desc: "Do you want to ask §Y[From.GetName]§! to become a Chinese Imperial Tributary? A Chinese Imperial Tributary is a more centralized form of tributary where the overlord may divert trade from the subject."
 
  establish_tropical_resort_title: "4. Tropical Resort"
  establish_tropical_resort_tooltip: "Set up a Tropical Resort in §Y[From.GetName]§!"
@@ -37,7 +43,7 @@
  establish_jimi_state_tooltip: "Set up a Jimi State in §Y[From.GetName]§!"
  establish_jimi_state_desc: "Do you want to set up a Jimi State in §Y[From.GetName]§!?"
 
- establish_sino_jimi_state_title: "4. Tusi"
+ establish_sino_jimi_state_title: "6. Tusi"
  establish_sino_jimi_state_tooltip: "Set up a Tusi in §Y[From.GetName]§!"
  establish_sino_jimi_state_desc: "Do you want to set up a Tusi in §Y[From.GetName]§!?"
 

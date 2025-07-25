@@ -551,38 +551,6 @@ establish_mining_corporation = {
         always = no
     }
 }
-establish_sino_jimi_state = {
-    category = subjects
-
-    require_acceptance = no
-
-    is_visible = {
-        ai = no
-        FROM = {
-            is_subject_of = ROOT
-            NOT = { is_subject_of_type = sino_jimi_state }
-        }
-    }
-    is_allowed = {
-        ai = no
-        FROM = { 
-            is_subject_of = ROOT
-            NOT = { is_subject_of_type = sino_jimi_state }
-        }
-    }
-    on_accept = {
-        create_subject = {
-            subject_type = sino_jimi_state
-            subject = FROM
-        }
-    }
-    on_decline = {
-    }
-
-    ai_will_do = { # this is a trigger
-        always = no
-    }
-}
 
 # Tier 5. Core Colonies (Consolidated Dominions)
 establish_consolidated_dominion = {
@@ -699,6 +667,38 @@ establish_brother_kingdom = {
     on_accept = {
         create_subject = {
             subject_type = brother_kingdom
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+establish_sino_jimi_state = {
+    category = subjects
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = sino_jimi_state }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = sino_jimi_state }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = sino_jimi_state
             subject = FROM
         }
     }
