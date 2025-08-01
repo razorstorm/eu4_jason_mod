@@ -170,6 +170,12 @@
  QING_CANADIAN_DOMINION_NAME: "Qing Canadian Dominion"
  QING_CANADIAN_DOMINION_NAME_ADJ: "Qing Canadian"
 
+ IMPERIAL_CHINESE_CELESTIAL_EMPIRE: "Imperial Chinese Celestial Empire"
+ IMPERIAL_CHINESE_CELESTIAL_EMPIRE_ADJ: "Imperial Chinese"
+
+ CELESTIAL_EMPIRE_TIAN_XIA: "Great Celestial Empire of Tian-Xia"
+ CELESTIAL_EMPIRE_TIAN_XIA_ADJ: "Imperial Celestial"
+
  HUANG_DI: "Huang Di" # Emperor | Huang2 Di4
  HUANG_HOU: "Huang Hou" # Empress Regnant | Huang2 Hou4
  HUANG_FU: "Huang Fu" # Imperial Husband | Huang2 Fu1
