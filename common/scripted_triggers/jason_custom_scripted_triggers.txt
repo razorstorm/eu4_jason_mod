@@ -30,6 +30,14 @@ is_valuable_goods_producing_province = {
     }
 }
 
+has_trade_good = {
+    trade_goods = $trade_good$
+}
+
+is_cow_dung = {
+    trade_goods = cow_dung
+}
+
 # Whether the subject belongs to a subject type that should not switch dynasties ever
 is_subject_of_fixed_dynasty = {
     OR = {

@@ -886,12 +886,16 @@ accept_all_cultures = {
     add_accepted_culture = dyola
     add_accepted_culture = nyoongah
     add_accepted_culture = palawa
+    add_accepted_culture = walloon
+    add_accepted_culture = irish
 
     add_accepted_culture = aka
     add_accepted_culture = berber
     add_accepted_culture = mbundu
     add_accepted_culture = sawabantu
     add_accepted_culture = yorumba
+
+    add_accepted_culture = novgorodian
 }
 
 # This sets a variable for each province, so we can log out province ids

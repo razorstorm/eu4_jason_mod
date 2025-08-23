@@ -173,8 +173,23 @@
  IMPERIAL_CHINESE_CELESTIAL_EMPIRE: "Imperial Chinese Celestial Empire"
  IMPERIAL_CHINESE_CELESTIAL_EMPIRE_ADJ: "Imperial Chinese"
 
- CELESTIAL_EMPIRE_TIAN_XIA: "Great Celestial Empire of Tian-Xia"
+ CELESTIAL_UNIVERSAL_EMPIRE_TIAN_XIA: "Celestial Global-Empire of TianXia"
+ CELESTIAL_UNIVERSAL_EMPIRE_TIAN_XIA_ADJ: "Imperial Celestial"
+
+ CELESTIAL_EMPIRE_TIAN_XIA: "Divine Celestial Empire of TianXia"
  CELESTIAL_EMPIRE_TIAN_XIA_ADJ: "Imperial Celestial"
+
+ CELESTIAL_PHILLIPINES: "Celestial Appanage of Feilübin"
+ CELESTIAL_PHILLIPINES_ADJ: "Celstial Feilübin"
+
+ HOLY_AUSTRIAN_EMPIRE: "Holy Austrian Empire"
+ HOLY_AUSTRIAN_EMPIRE_ADJ: "Imperial Austrian"
+
+ AUSTRIAN_SPAIN: "Austrian Spain"
+ AUSTRIAN_SPAIN_ADJ: "Spanish"
+ 
+ BRITISH_EMPIRE: "British Empire"
+ BRITISH_EMPIRE_ADJ: "Imperial British"
 
  HUANG_DI: "Huang Di" # Emperor | Huang2 Di4
  HUANG_HOU: "Huang Hou" # Empress Regnant | Huang2 Hou4

@@ -1189,6 +1189,43 @@ country_decisions = {
         }  
     }
 
+    enable_boost_all_marches = {
+        major = yes
+        potential = {
+            ai = no
+            has_country_flag = jason_show_decisions_enabled
+            NOT = {
+                has_country_flag = boost_all_marches_enabled
+            }
+        }
+        allow = {
+            ai = no
+            NOT = {
+                has_country_flag = boost_all_marches_enabled
+            }
+        }
+        effect = {
+            set_country_flag = boost_all_marches_enabled
+        }  
+    }
+
+    disable_boost_all_marches = {
+        major = yes
+        color = { 100 0 0 }
+        potential = {
+            ai = no
+            has_country_flag = jason_show_decisions_enabled
+            has_country_flag = boost_all_marches_enabled
+        }
+        allow = {
+            ai = no
+            has_country_flag = boost_all_marches_enabled
+        }
+        effect = {
+            clr_country_flag = boost_all_marches_enabled
+        }  
+    }
+
     enable_set_zero_autonomy_on_all_provinces = {
         major = yes
         potential = {

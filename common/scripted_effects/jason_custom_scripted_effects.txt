@@ -1030,6 +1030,51 @@ create_homeguard_general = {
     }
 }
 
+boost_all_marches = {
+    every_subject_country = {
+        limit = {
+            is_subject_of_type = march
+        }
+        boost_march_modifiers = yes
+    }
+}
+
+boost_march_modifiers = {
+    add_mod = {
+        name = jason_mod_more_forcelimit
+    }
+    add_mod = {
+        name = jason_mod_more_land_morale
+    }
+    add_mod = {
+        name = jason_mod_more_disc
+    }
+    add_mod = {
+        name = jason_mod_more_leader_limit
+    }
+    add_mod = {
+        name = jason_mod_lessAN_maintenance
+    }
+    add_mod = {
+        name = jason_mod_less_attrition
+    }
+    add_mod = {
+        name = jason_mod_more_garrison_growth
+    }
+    add_mod = {
+        name = jason_mod_more_garrison_huge
+    }
+    add_mod = {
+        name = jason_mod_more_fort
+    }
+    add_mod = {
+        name = jason_mod_more_siege
+    }
+    add_mod = {
+        name = jason_mod_more_tradition
+    }
+}
+
 confucian_subjects_full_harmonize = {
     every_subject_country = {
         limit = {
@@ -1119,6 +1164,19 @@ confucian_subjects_full_harmonize = {
             }
             add_harmonized_religion = zoroastrian
         }
+        add_harmonized_religion = shamanism
+        add_harmonized_religion = tengri_pagan_reformed
+        add_harmonized_religion = taoist
+        add_harmonized_religion = chinese_religion
+    }
+}
+
+change_cow_dung = {
+    every_province = {
+        limit = {
+            trade_goods = cow_dung
+        }
+        change_trade_goods = livestock
     }
 }
 

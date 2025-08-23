@@ -100,7 +100,13 @@
  
  disable_set_zero_autonomy_on_precious_provinces_title: "Disable Set Zero Autonomy on Precious Provinces"
  disable_set_zero_autonomy_on_precious_provinces_desc: "Disables auto-setting autonomy to zero on all provinces that produce precious trade goods (gold, silver, diamonds, plus silk and dyes for persian tags). This will stop auto-setting the autonomy of all such provinces to 0%."
+
+ enable_boost_all_marches_title: "Enable Boost All Marches"
+ enable_boost_all_marches_desc: "Enables automatically applying military bonuses to all marches."
  
+ disable_boost_all_marches_title: "Disable Boost All Marches"
+ disable_boost_all_marches_desc: "Disables automatically applying military bonuses to all marches. This will not remove any bonuses that have already been applied retroactively, and will only be relevant to new marches gained after this decision is taken."
+
  enable_set_zero_autonomy_on_all_provinces_title: "Enable Set Zero Autonomy on All Provinces"
  enable_set_zero_autonomy_on_all_provinces_desc: "Enables auto-setting autonomy to zero on all provinces. This will set the autonomy of all provinces to 0% on monthly tick or on acquisition of new provinces."
  
