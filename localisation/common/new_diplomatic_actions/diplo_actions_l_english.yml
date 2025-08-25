@@ -55,11 +55,15 @@
  establish_integrated_personal_union_tooltip: "Set up a Integrated Personal Union in §Y[From.GetName]§!"
  establish_integrated_personal_union_desc: "Do you want to set up a Integrated Personal Union in §Y[From.GetName]§!?"
 
- establish_princely_vassal_title: "3. Princely Vassal"
+ establish_princely_vassal_title: "4. Princely Vassal"
  establish_princely_vassal_tooltip: "Set up a Princely Vassal in §Y[From.GetName]§!"
  establish_princely_vassal_desc: "Do you want to set up a Princely Vassal in §Y[From.GetName]§!?"
 
- establish_naval_march_subject_title: "3. Naval March"
+ establish_march_subject_title: "4. March"
+ establish_march_subject_tooltip: "Set up a March in §Y[From.GetName]§!"
+ establish_march_subject_desc: "Do you want to set up a March in §Y[From.GetName]§!?"
+
+ establish_naval_march_subject_title: "4. Naval March"
  establish_naval_march_subject_tooltip: "Set up a Naval March in §Y[From.GetName]§!"
  establish_naval_march_subject_desc: "Do you want to set up a Naval March in §Y[From.GetName]§!?"
 
@@ -67,11 +71,11 @@
  establish_administrative_region_tooltip: "Set up a Administrative Region in §Y[From.GetName]§!"
  establish_administrative_region_desc: "Do you want to set up a Administrative Region in §Y[From.GetName]§!?"
 
- establish_mongolian_tribe_title: "3. Subtribe"
+ establish_mongolian_tribe_title: "4. Subtribe"
  establish_mongolian_tribe_tooltip: "Set up a Subtribe in §Y[From.GetName]§!"
  establish_mongolian_tribe_desc: "Do you want to set up a Subtribe in §Y[From.GetName]§!?"
 
- establish_horde_subject_title: "3. Horde Subject"
+ establish_horde_subject_title: "4. Horde Subject"
  establish_horde_subject_tooltip: "Set up a Horde Subject in §Y[From.GetName]§!"
  establish_horde_subject_desc: "Do you want to set up a Horde Subject in §Y[From.GetName]§!?"
 

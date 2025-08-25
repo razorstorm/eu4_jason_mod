@@ -388,7 +388,7 @@ set_dev_on_all_cot_for_country_and_subjects = {
 }
 
 set_trade_power_for_trade_outposts = {
-    # Trade outposts should have massive trade power | TODO move into mod
+    # Trade outposts should have massive trade power province as a capital
     every_subject_country = {
         limit = {
             is_subject_of_type = trade_outpost

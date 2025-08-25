@@ -219,7 +219,107 @@ establish_sovereign_bank_subject = {
     }
 }
 
-# Tier 3. Special Administrative Regions + Direct Commanderies (Marches / Defensive Marches, Appanage, Princely Vassals)
+# Tier 3: Special Administrative Regions + Royal Family Demesnes: (Appanages and Princely Appanages) 
+
+establish_appanage_subject = {
+    category = subjects
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = appanage }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = appanage }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = appanage
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+establish_princely_vassal = {
+    category = subjects
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = prince_vassal }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = prince_vassal }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = prince_vassal
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+} 
+
+# Tier 4: Core Vassals (Tu-Si), Marches Resorts, Native Reserves, tropical resorts, Mining Corporation, etc): 
+
+establish_march_subject = {
+    category = subjects
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = march }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = march }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = march
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
 establish_naval_march_subject = {
     category = subjects
 
@@ -316,70 +416,7 @@ establish_mongolian_tribe = {
         always = no
     }
 }
-establish_appanage_subject = {
-    category = subjects
 
-    require_acceptance = no
-
-    is_visible = {
-        ai = no
-        FROM = {
-            is_subject_of = ROOT
-            NOT = { is_subject_of_type = appanage }
-        }
-    }
-    is_allowed = {
-        ai = no
-        FROM = { 
-            is_subject_of = ROOT
-            NOT = { is_subject_of_type = appanage }
-        }
-    }
-    on_accept = {
-        create_subject = {
-            subject_type = appanage
-            subject = FROM
-        }
-    }
-    on_decline = {
-    }
-
-    ai_will_do = { # this is a trigger
-        always = no
-    }
-}
-establish_princely_vassal = {
-    category = subjects
-
-    require_acceptance = no
-
-    is_visible = {
-        ai = no
-        FROM = {
-            is_subject_of = ROOT
-            NOT = { is_subject_of_type = prince_vassal }
-        }
-    }
-    is_allowed = {
-        ai = no
-        FROM = { 
-            is_subject_of = ROOT
-            NOT = { is_subject_of_type = prince_vassal }
-        }
-    }
-    on_accept = {
-        create_subject = {
-            subject_type = prince_vassal
-            subject = FROM
-        }
-    }
-    on_decline = {
-    }
-
-    ai_will_do = { # this is a trigger
-        always = no
-    }
-} 
 establish_tb_minister_resident = {
     category = subjects
 
@@ -460,7 +497,8 @@ establish_chinese_imperial_altar_state = {
 }
 
 
-# Tier 4. Delegated Semi-autonomous Regions aka Core Subjects (Fief subjects, Resorts, Tusi, Native Reserves, tropical resorts, Mining Corporation)
+# Tier 3: Core Vassals (Tu-Si), Marches Resorts, Native Reserves, tropical resorts, Mining Corporation, etc): 
+
 establish_tropical_resort = {
     category = subjects
 
@@ -559,6 +597,7 @@ establish_mining_corporation = {
 }
 
 # Tier 5. Core Colonies (Consolidated Dominions)
+
 establish_consolidated_dominion = {
     category = subjects
 
