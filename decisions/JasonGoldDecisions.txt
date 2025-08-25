@@ -1263,6 +1263,44 @@ country_decisions = {
         }  
     }
 
+
+    enable_high_trade_power_on_trade_outposts = {
+        major = yes
+        potential = {
+            ai = no
+            has_country_flag = jason_show_decisions_enabled
+            NOT = {
+                has_country_flag = high_trade_power_on_trade_outposts_enabled
+            }
+        }
+        allow = {
+            ai = no
+            NOT = {
+                has_country_flag = high_trade_power_on_trade_outposts_enabled
+            }
+        }
+        effect = {
+            set_country_flag = high_trade_power_on_trade_outposts_enabled
+        }  
+    }
+
+    disable_high_trade_power_on_trade_outposts = {
+        major = yes
+        color = { 100 0 0 }
+        potential = {
+            ai = no
+            has_country_flag = jason_show_decisions_enabled
+            has_country_flag = high_trade_power_on_trade_outposts_enabled
+        }
+        allow = {
+            ai = no
+            has_country_flag = high_trade_power_on_trade_outposts_enabled
+        }
+        effect = {
+            clr_country_flag = high_trade_power_on_trade_outposts_enabled
+        }  
+    }
+
     enable_subjects_auto_core = {
         major = yes
         potential = {

@@ -53,6 +53,7 @@ american_empire = {
 
 
 
+
 celestial_empire = {
     rank = {
 		3 = DI_GUO_WANG_CHAO

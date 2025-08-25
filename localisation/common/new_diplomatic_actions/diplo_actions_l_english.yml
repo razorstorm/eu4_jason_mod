@@ -103,9 +103,9 @@
  establish_sovereign_bank_subject_tooltip: "Set up a Sovereign Banking Subject in §Y[From.GetName]§!"
  establish_sovereign_bank_subject_desc: "Do you want to set up a Sovereign Banking Subject in §Y[From.GetName]§!?"
 
- establish_brother_kingdom_title: "6. Brother Kingdom"
- establish_brother_kingdom_tooltip: "Set up a Brother Kingdom in §Y[From.GetName]§!"
- establish_brother_kingdom_desc: "Do you want to set up a Brother Kingdom in §Y[From.GetName]§!?"
+ establish_brother_kingdom_subject_title: "6. Brother Kingdom"
+ establish_brother_kingdom_subject_tooltip: "Set up a Brother Kingdom in §Y[From.GetName]§!"
+ establish_brother_kingdom_subject_desc: "Do you want to set up a Brother Kingdom in §Y[From.GetName]§!?"
 
  establish_mining_corporation_title: "4. Mining Corporation"
  establish_mining_corporation_tooltip: "Set up a Mining Corporation in §Y[From.GetName]§!"

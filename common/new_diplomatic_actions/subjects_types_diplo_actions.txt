@@ -77,7 +77,13 @@ establish_administrative_region = {
             subject = FROM
         }
     }
+
+    # Create it regardless
     on_decline = {
+        create_subject = {
+            subject_type = administrative_region
+            subject = FROM
+        }
     }
 
     ai_will_do = { # this is a trigger
@@ -645,7 +651,7 @@ establish_commercial_enterprise = {
         always = no
     }
 }
-establish_brother_kingdom = {
+establish_brother_kingdom_subject = {
     category = subjects
 
     require_acceptance = no

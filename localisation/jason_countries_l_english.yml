@@ -188,8 +188,14 @@
  AUSTRIAN_SPAIN: "Austrian Spain"
  AUSTRIAN_SPAIN_ADJ: "Spanish"
  
- BRITISH_EMPIRE: "British Empire"
+ BRITISH_EMPIRE: "Great British Empire"
  BRITISH_EMPIRE_ADJ: "Imperial British"
+
+ ALE_COUNTY: "Alençon County"
+ ALE_COUNTY_ADJ: "Alençon"
+
+ ALE_BARONY: "Alençon Barony"
+ ALE_BARONY_ADJ: "Alençon"
 
  HUANG_DI: "Huang Di" # Emperor | Huang2 Di4
  HUANG_HOU: "Huang Hou" # Empress Regnant | Huang2 Hou4
@@ -197,3 +203,10 @@
  DI_GUO_WANG_CHAO: "Di Guo Wang Chao" # Imperial Dynasty | Di4 Guo2 Wang2 Chao2
  TAI_ZI: "Tai Zi" # Imperial Heir | Tai4 Zi3
  GONG_ZHU: "Gong Zhu" # Princess | Gon1 Zhu3
+
+ # Titles
+ GRAND_EMPEROR: "Grand Emperor"
+ GRAND_EMPRESS: "Grand Empress"
+
+ HEIR_PRINCE_OF_IRELAND: "Prince of Ireland"
+ HEIR_PRINCESS_OF_IRELAND: "Princess of Ireland"

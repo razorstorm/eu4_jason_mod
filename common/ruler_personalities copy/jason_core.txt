@@ -1,0 +1,124 @@
+#Ruler Personalities
+#1st personality will be assigned at 15 years of age.
+#2nd personality will be assigned after ruling for 10 years.
+#3rd personality will be assigned after ruling for 25 years.
+#Most personalities are always available (unless contradictory to existing personality), a few are restricted to good rulers.
+
+### ALL RULER PERSONAILITIES ###
+# incel_personality
+
+
+###############################################
+# Bad
+###############################################
+
+
+asexual_personality = {
+	ruler_allow = {
+		allow = {
+            always = no
+			NOT = { ruler_has_personality = fertile_personality }
+			NOT = { ruler_has_personality = infertile_personality }
+		}
+	
+		chance = {
+			modifier = {
+				factor = 0
+				ruler_age = 40
+			}
+			modifier = {
+				factor = -0.5
+				OR = {
+					ruler_has_personality = malevolent_personality
+					ruler_has_personality = obsessive_perfectionist_personality
+					ruler_has_personality = loose_lips_personality
+					ruler_has_personality = craven_personality
+					ruler_has_personality = naive_personality
+					ruler_has_personality = cruel_personality
+					ruler_has_personality = greedy_personality
+					ruler_has_personality = sinner_personality
+					ruler_has_personality = drunkard_personality
+					ruler_has_personality = embezzler_personality
+					ruler_has_personality = babbling_buffoon_personality
+					ruler_has_personality = petty_personality
+				}
+			}
+		}
+	}
+
+	heir_allow = {
+		allow = {
+			always = no
+		}
+	
+		chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					heir_has_personality = malevolent_personality
+					heir_has_personality = obsessive_perfectionist_personality
+					heir_has_personality = loose_lips_personality
+					heir_has_personality = craven_personality
+					heir_has_personality = naive_personality
+					heir_has_personality = cruel_personality
+					heir_has_personality = greedy_personality
+					heir_has_personality = sinner_personality
+					heir_has_personality = drunkard_personality
+					heir_has_personality = embezzler_personality
+					heir_has_personality = babbling_buffoon_personality
+					heir_has_personality = petty_personality
+				}
+			}
+			modifier = {
+				factor = 0
+				heir_age = 40
+			}
+		}
+	}
+	
+	consort_allow = {
+		allow = {
+			always = no
+		}
+
+		chance = {
+			modifier = {
+				factor = 1
+				consort_age = 40
+			}
+			modifier = {
+				factor = -0.5
+				OR = {
+					consort_has_personality = malevolent_personality
+					consort_has_personality = obsessive_perfectionist_personality
+					consort_has_personality = loose_lips_personality
+					consort_has_personality = craven_personality
+					consort_has_personality = naive_personality
+					consort_has_personality = cruel_personality
+					consort_has_personality = greedy_personality
+					consort_has_personality = sinner_personality
+					consort_has_personality = drunkard_personality
+					consort_has_personality = embezzler_personality
+					consort_has_personality = babbling_buffoon_personality
+					consort_has_personality = petty_personality
+				}
+			}
+		}
+	}
+
+	allow = {
+		NOT = { has_government_attribute = has_harem_events }
+		government = monarchy
+		NOT = { has_government_attribute = states_general_mechanic }
+		has_government_attribute = heir
+	}
+	
+	chance = {
+		
+	}
+	
+	royal_marriage_acceptance = -20
+	
+	heir_chance = -0.5
+	nation_designer_cost = -2
+}

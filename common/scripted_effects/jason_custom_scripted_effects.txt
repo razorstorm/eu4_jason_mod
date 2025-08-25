@@ -402,7 +402,7 @@ convert_trade_company_provinces_for_country_and_subjects = {
     }
 }
 
-set_prov_trade_power_on_all_for_country_and_subjects = {
+set_prov_trade_power_on_all_provinces_for_country_and_subjects = {
     set_prov_trade_power_on_all = yes
     every_subject_country = {
         set_prov_trade_power_on_all = yes
