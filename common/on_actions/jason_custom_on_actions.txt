@@ -50,6 +50,8 @@ on_monthly_pulse = {
         every_subject_country = {
             increase_colony_growths = yes
         }
+        # Set all trade outposts to have powerful trade capitals
+        set_trade_power_for_trade_outposts = yes
 
         if = {
             limit = {
@@ -139,16 +141,6 @@ on_monthly_pulse = {
 
             set_dev_on_all_cot_for_country_and_subjects = yes
         }
-
-        if = {
-            limit = {
-                is_subject_of_type = trade_outpost
-                has_country_flag = jason_prov_trade_power_on_all_enabled
-            }
-            overlord = {
-                set_trade_power_for_trade_outposts = yes
-            }
-        }
     }
 
     if = {
@@ -168,16 +160,6 @@ on_monthly_pulse = {
         }
         overlord = {
             add_benefits_for_consolidated_dominions = yes
-        }
-    }
-
-    if = {
-        limit = {
-            is_subject_of_type = trade_outpost
-            has_country_flag = jason_prov_trade_power_on_all_enabled
-        }
-        overlord = {
-            set_trade_power_for_trade_outposts = yes
         }
     }
 }
