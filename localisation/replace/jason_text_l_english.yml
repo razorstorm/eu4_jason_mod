@@ -167,7 +167,7 @@
  disable_subjects_auto_core_desc: "Disables auto coring of all provinces owned by your subjects. This will stop auto coring all provinces owned by your subjects on monthly tick or on acquisition of new subjects / provinces."
 
  enable_high_trade_power_on_trade_outposts_title: "Enable Free Trade Power on Trade Outposts"
- enable_high_trade_power_on_trade_outposts_desc: "Enables Free  rade power on all trade outposts."
+ enable_high_trade_power_on_trade_outposts_desc: "Enables Free Trade power on all trade outposts."
 
  disable_high_trade_power_on_trade_outposts_title: "Disable Free Trade Power on Trade Outposts"
  disable_high_trade_power_on_trade_outposts_desc: "Disables Free trade power on all trade outposts."
