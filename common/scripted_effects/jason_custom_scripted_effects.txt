@@ -277,34 +277,6 @@ set_supply_cheat_on_country_and_subjects = {
     }
 }
 
-prov_trade_power = {
-    add_province_modifier = {
-        name = province_trade_power_modifier_cheat
-        duration = -1
-    }
-    center_of_trade = 3
-    add_center_of_trade_level = 3
-}
-
-set_prov_trade_power_on_all_cot = {
-    every_owned_province = {
-        limit = {
-            province_has_center_of_trade_of_level = 1
-            OR = {
-                NOT = {
-                    has_province_modifier = province_trade_power_modifier_cheat
-                }
-                local_autonomy = 1
-            }
-        }
-        add_province_modifier = {
-            name = province_trade_power_modifier_cheat
-            duration = -1
-        }
-        set_local_autonomy = 0
-    }
-}
-
 set_dev_on_all_cot = {
     every_owned_province = {
         limit = {
@@ -346,7 +318,44 @@ set_dev_on_all_cot = {
     }
 }
 
-set_prov_trade_power_on_all = {
+prov_trade_power = {
+    add_province_modifier = {
+        name = province_trade_power_modifier_cheat
+        duration = -1
+    }
+    center_of_trade = 3
+    add_center_of_trade_level = 3
+}
+
+prov_trade_power_100k = {
+    add_province_modifier = {
+        name = province_trade_power_modifier_cheat_100k
+        duration = -1
+    }
+    center_of_trade = 3
+    add_center_of_trade_level = 3
+}
+
+set_prov_trade_power_on_all_cot = {
+    every_owned_province = {
+        limit = {
+            province_has_center_of_trade_of_level = 1
+            OR = {
+                NOT = {
+                    has_province_modifier = province_trade_power_modifier_cheat
+                }
+                local_autonomy = 1
+            }
+        }
+        add_province_modifier = {
+            name = province_trade_power_modifier_cheat
+            duration = -1
+        }
+        set_local_autonomy = 0
+    }
+}
+
+set_prov_trade_power_on_all_provinces = {
     every_owned_province = {
         add_province_modifier = {
             name = province_trade_power_modifier_cheat
@@ -376,7 +385,17 @@ set_dev_on_all_cot_for_country_and_subjects = {
     every_subject_country = {
         set_dev_on_all_cot = yes
     }
-}   
+}
+
+set_trade_power_for_trade_outposts = {
+    # Trade outposts should have massive trade power | TODO move into mod
+    every_subject_country = {
+        limit = {
+            is_subject_of_type = trade_outpost
+        }
+        prov_trade_power_100k = yes
+    }
+}
 
 convert_trade_company_provinces = {
     # Conversion of trade company provinces if country is not confucian
@@ -403,9 +422,9 @@ convert_trade_company_provinces_for_country_and_subjects = {
 }
 
 set_prov_trade_power_on_all_provinces_for_country_and_subjects = {
-    set_prov_trade_power_on_all = yes
+    set_prov_trade_power_on_all_provinces = yes
     every_subject_country = {
-        set_prov_trade_power_on_all = yes
+        set_prov_trade_power_on_all_provinces = yes
     }
 }
 
@@ -1562,21 +1581,6 @@ add_benefits_for_consolidated_dominions = {
         add_country_modifier = {
             name = ultra_free_income_cheat
             duration = -1
-        }
-    }
-}
-
-set_trade_power_for_trade_outposts = {
-    # Trade outposts should have massive trade power | TODO move into mod
-    every_subject_country = {
-        limit = {
-            is_subject_of_type = trade_outpost
-        }
-        capital_scope = {
-            add_province_modifier = {
-                name = province_trade_power_modifier_cheat_100k
-                duration = -1
-            }
         }
     }
 }
