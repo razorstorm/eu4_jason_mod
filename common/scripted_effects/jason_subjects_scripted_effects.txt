@@ -1,0 +1,361 @@
+handle_subject_effects = {
+    auto_core_and_coring_range = yes
+
+    # Set correct gov type based on subject type
+    set_correct_government_type = yes
+
+    # Allow special vassal types
+    allow_special_vassal_types = yes
+
+    # Setting high dev imperial cities
+    set_high_dev_on_imperial_cities = yes
+
+    # Giving bonuses to vassal types 
+    set_vassal_specific_bonuses = yes
+
+    # Dominions should self colonize and get benefits
+    set_vassal_specific_bonuses = yes
+
+    # Making concentration camps burn
+    set_vassal_specific_maluses = yes
+}
+
+
+auto_core_and_coring_range = {
+    every_subject_country = {
+        # More governing capacity
+        add_mod = {
+            name = jason_mod_more_GC
+        }
+        # Ignore coring distance for all subjects
+        add_mod = {
+            name = jason_ignore_coring_distance
+        }
+    }
+}
+
+set_correct_government_type = {
+    # Monarchies
+    every_subject_country = {
+        limit = {
+            NOT = { government = monarchy }
+            NOT = { government = republic }
+            NOT = {
+                OR = {
+                    government = tribal
+                    has_reform = steppe_horde
+                }
+            }
+        }
+        change_government = monarchy
+    }
+
+    # Some gov types just have to be monarchies
+    every_subject_country = {
+        limit = {
+            OR = {
+                is_subject_of_type = brother_kingdom
+                is_subject_of_type = personal_union
+                is_subject_of_type = se_integrated_personal_union
+                is_subject_of_type = real_union_subject
+                is_subject_of_type = administrative_region
+            }
+            NOT = {
+                government = monarchy
+            }
+        }
+        change_government = monarchy
+    }
+
+
+    # Fixing Subtribes and pagan chiefdoms to actally be hordes
+    every_subject_country = {
+        limit = {
+            OR = {
+                is_subject_of_type = mongolian_tribe
+                is_subject_of_type = pagan_chiefdom
+            }
+        }
+        change_government = tribal
+        add_government_reform = steppe_horde
+        # log = "[This.GetName] is a mongolian tribe"
+    }
+
+    # Force pirate brotherhoods to actually be pirate republics
+    every_subject_country = {
+        limit = {
+            is_subject_of_type = pirate_brotherhood_vassal
+            NOT = {
+                has_reform = pirate_republic_reform
+            }
+        }
+        change_government = republic
+        add_government_reform = pirate_republic_reform
+    }
+
+    # Banks should be republics 
+    every_subject_country = {
+        limit = {
+            OR = {
+                is_subject_of_type = banking_family_subject
+                is_subject_of_type = sister_republic
+            }
+            NOT = {
+                government = republic
+            }
+        }
+        change_government = republic
+    }
+}
+
+set_global_vassal_income_bonus = {
+    # Every Subject Getting Free income. We set vassal tax rates to 0 to counter act the infinite income.
+    ROOT = {
+        every_subject_country = {
+            limit = {
+                NOT = {
+                    OR = {
+                        # Concentration camps / slave states
+                        is_subject_of_type = revolution_subject
+                        is_subject_of_type = concentration_camp
+                    }
+                }
+            }
+            add_country_modifier = {
+                name = ultra_free_income_cheat
+                duration = -1
+            }
+        }
+    }
+}
+
+set_vassal_specific_bonuses = {
+    # Boosting mining corporations 
+    every_subject_country = {
+        limit = {
+            is_subject_of_type = mining_corporation
+        }
+        add_country_modifier = {
+            name = ultra_free_income_cheat
+            duration = -1
+        }
+    }
+
+    allow_some_vassals_to_self_colonize = yes
+
+    # Naval march upgrades
+    every_subject_country = {
+        limit = {
+            OR = {
+                is_subject_of_type = naval_march
+                is_subject_of_type = pirate_brotherhood_vassal
+            }
+        }
+        capital_scope = {
+            add_province_modifier = {
+                name = per_naval_command_modifier
+                duration = -1
+            }
+            add_province_modifier = {
+                name = devils_gate_modifier
+                duration = -1
+            }
+            add_province_modifier = {
+                name = important_natural_harbor
+                duration = -1
+            }
+            add_province_modifier = {
+                name = trade_post_modifier
+                duration = -1
+            }
+            add_province_modifier = {
+                name = venice_galley_conscription
+                duration = -1
+            }
+            add_province_modifier = {
+                name = expansion_of_the_shipbuilding_industry
+                duration = -1
+            }
+            add_province_modifier = {
+                name = hsa_maritime_hegemon_modifier
+                duration = -1
+            }
+            add_province_modifier = {
+                name = tur_barbary_pirates
+                duration = -1
+            }
+            add_province_modifier = {
+                name = qng_presence_global_market_modifier
+                duration = -1
+            }
+            add_province_modifier = {
+                name = feo_lubeck
+                duration = -1
+            }
+            add_province_modifier = {
+                name = GER_wilhelmshaven_modifier
+                duration = -1
+            }
+            add_province_modifier = {
+                name = jason_mod_more_forcelimit
+                duration = -1
+            }
+        }
+    }
+
+    # Bonuses for pirate brotherhoods
+    every_subject_country = {
+        limit = {
+            OR = {
+                is_subject_of_type = pirate_brotherhood_vassal
+            }
+        }
+        add_country_modifier = {
+            name = hsa_maritime_hegemon_modifier
+            duration = -1
+        }
+        every_owned_province = {
+            add_province_modifier = {
+                name = GER_wilhelmshaven_modifier
+                duration = -1
+            }
+        }
+    }
+}
+
+set_vassal_specific_maluses = {
+    every_subject_country = {
+        limit = {
+            OR = {
+                is_subject_of_type = concentration_camp
+                is_subject_of_type = revolution_subject
+            }
+
+        }
+        # Constant massacres
+        every_owned_province = {
+            add_nationalism = -10
+            add_devastation = 100
+            add_local_autonomy = -1
+            set_base_tax = 0
+            set_base_production = 0
+            set_base_manpower = 0
+            add_base_tax = -1
+            add_base_production = -1
+            add_base_manpower = -1
+            add_province_modifier = {
+                name = hf_prov_massacre
+                duration = -1
+            }
+        }
+    }
+}
+
+allow_some_vassals_to_self_colonize = {
+    every_subject_country = {
+        limit = {
+            OR = {
+                is_subject_of_type = dominion
+                is_subject_of_type = dominion_tc
+                is_subject_of_type = consolidated_dominion
+                AND = {
+                    is_subject_of_type = exarchate_subject
+                    tag = K03
+                }
+            }
+        }
+        # log = "Country is [This.GetName]"
+        add_treasury = 100000
+        add_country_modifier = {
+            name = ultra_free_income_cheat
+            duration = -1
+        }
+        add_country_modifier = {
+            name = colonize_the_continent
+            duration = -1
+        }
+        add_country_modifier = { 
+            name = spice_colony_modifier
+            duration = -1  
+        }
+        add_country_modifier = { 
+            name = cossack_settlers
+            duration = -1  
+        }
+        add_country_modifier = { 
+            name = sea_route_to_india
+            duration = -1  
+        }
+        add_country_modifier = { 
+            name = puritan_colonists
+            duration = -1  
+        }
+    }
+}
+
+allow_special_vassal_types = {
+    set_country_flag = release_invalid_pirate_brotherhoods
+    set_country_flag = release_invalid_native_reserves
+    set_country_flag = releasing_invalid_banking_family_clan
+    set_country_flag = releasing_invalid_sister_republics
+    set_country_flag = releasing_invalid_pagan_chiefdoms
+    set_country_flag = vassalizing_invalid_persian_satrapties
+    set_country_flag = handling_invalid_brother_kingdom_possible_war # Allowing non christians to have brother kingdoms
+
+
+    every_subject_country = {
+        limit = {
+            is_subject_of_type = trade_outpost
+        }
+        # Allows trade outposts to have many provinces
+        set_country_flag = trade_outpost_annexed_province
+    }
+}
+
+set_high_dev_on_imperial_cities = {
+    every_subject_country = {
+        limit = {
+            is_subject_of_type = imperial_city
+            capital_scope = {
+                OR = {
+                    NOT = {
+                        base_tax = 25
+                    }
+                    NOT = {
+                        base_production = 30
+                    }
+                    NOT = {
+                        base_manpower = 20
+                    } 
+                }
+            }
+        }
+        capital_scope = {
+            if = {
+                limit = {
+                    NOT = {
+                        base_tax = 25
+                    }
+                }
+                set_base_tax = 25
+            }
+            if = {
+                limit = {
+                    NOT = {
+                        base_production = 30
+                    }
+                }
+                set_base_production = 30
+            }
+            if = {
+                limit = {
+                    NOT = {
+                        base_manpower = 20
+                    }
+                }
+                set_base_manpower = 20
+            }
+        }
+    }
+}
+

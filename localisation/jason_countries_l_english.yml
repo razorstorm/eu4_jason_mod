@@ -197,6 +197,9 @@
  ALE_BARONY: "Alençon Barony"
  ALE_BARONY_ADJ: "Alençon"
 
+ ORL_COUNTY: "Orléans County"
+ ORL_COUNTY_ADJ: "Orléans"
+
  HUANG_DI: "Huang Di" # Emperor | Huang2 Di4
  HUANG_HOU: "Huang Hou" # Empress Regnant | Huang2 Hou4
  HUANG_FU: "Huang Fu" # Imperial Husband | Huang2 Fu1
@@ -205,8 +208,8 @@
  GONG_ZHU: "Gong Zhu" # Princess | Gon1 Zhu3
 
  # Titles
- GRAND_EMPEROR: "Grand Emperor"
- GRAND_EMPRESS: "Grand Empress"
+ GREAT_EMPEROR:0 "Great Emperor"
+ GREAT_EMPRESS:0 "Great Empress"
 
- HEIR_PRINCE_OF_IRELAND: "Prince of Ireland"
- HEIR_PRINCESS_OF_IRELAND: "Princess of Ireland"
+ HEIR_PRINCE_OF_IRELAND:0 "Prince of Ireland"
+ HEIR_PRINCESS_OF_IRELAND:0 "Princess of Ireland"

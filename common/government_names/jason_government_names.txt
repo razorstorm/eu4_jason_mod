@@ -51,7 +51,62 @@ american_empire = {
 	}
 }
 
+british_empire = {
+	rank = {
+		1 = DUCHY
+		2 = KINGDOM
+		3 = EMPIRE
+	}
 
+	ruler_male = {
+		1 = DUKE
+		2 = KING
+		3 = GREAT_EMPEROR
+	}
+
+	ruler_female = {
+		1 = DUCHESS
+		2 = QUEEN
+		3 = GREAT_EMPRESS
+	}
+
+	consort_male = {
+		1 = DUKE
+		2 = KING
+		3 = EMPEROR
+	}
+
+	consort_female = {
+		1 = QUEEN_CONSORT
+		2 = QUEEN_CONSORT
+		3 = EMPRESS_CONSORT
+	}
+	
+	heir_male = {
+		1 = HEIR_PRINCE_OF_IRELAND
+		2 = HEIR_PRINCE_OF_IRELAND
+		3 = HEIR_PRINCE_OF_IRELAND
+	}
+
+	heir_female = {
+		1 = HEIR_PRINCESS_OF_IRELAND
+		2 = HEIR_PRINCESS_OF_IRELAND
+		3 = HEIR_PRINCESS_OF_IRELAND
+	}
+
+	trigger = {
+        government = monarchy
+        OR = {
+            tag = ENG
+            tag = GBR
+        }
+        has_reform = absolute_british_monarchy
+        # OR = {
+        #     has_reform = english_monarchy
+        #     has_reform = british_monarchy
+        # }
+	}
+}
 
 
 celestial_empire = {

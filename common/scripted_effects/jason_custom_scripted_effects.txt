@@ -756,10 +756,10 @@ set_all_foreign_countries_to_no_trade_power = {
     every_country = {
         limit = {
             NOT = {
-                tag = AKS
+                tag = ROOT
             }
             NOT = {
-                is_subject_of = AKS
+                is_subject_of = ROOT
             }
         }
         add_country_modifier = {
@@ -1674,4 +1674,48 @@ set_imperial_city_dev = {
             }
         }
     }
+}
+
+apply_trade_power_reduction_to_foreign_countries = {
+    remove_trade_power_reduction_from_own_countries = yes
+    every_country = {
+        limit = {
+            NOT = {
+                tag = ROOT
+            }
+            NOT = {
+                is_subject_of = ROOT
+            }
+        }
+        add_country_modifier = {
+            name = jason_global_foreign_trade_power_reduction_100000
+            duration = -1
+        } 
+        add_country_modifier = {
+            name = jason_global_own_trade_power_reduction_100000
+            duration = -1
+        } 
+    }
+}
+
+remove_trade_power_reduction_from_own_countries = {
+    ROOT = {
+        remove_trade_power_reduction = yes
+    }
+    every_subject_country = {
+        remove_trade_power_reduction = yes
+    }
+}
+
+remove_trade_power_reduction_from_all_countries = {
+    every_country = {
+        remove_trade_power_reduction = yes
+    }
+}
+
+remove_trade_power_reduction = {
+    remove_country_modifier = jason_global_foreign_trade_power_reduction_10000
+    remove_country_modifier = jason_global_own_trade_power_reduction_10000
+    remove_country_modifier = jason_global_foreign_trade_power_reduction_100000
+    remove_country_modifier = jason_global_own_trade_power_reduction_100000
 }

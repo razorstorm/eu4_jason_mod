@@ -848,7 +848,7 @@ establish_dominion = {
         }
     }
     on_decline = {
-    }
+    }                                                                                                                                                                                                                  
 
     ai_will_do = { # this is a trigger
         always = no
