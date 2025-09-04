@@ -761,3 +761,5 @@ chinese_imperial_altar_states = {
 
 
 # Maybe make my own barony, county, duchy, kingdom, subempire feudal subject types? 
+
+

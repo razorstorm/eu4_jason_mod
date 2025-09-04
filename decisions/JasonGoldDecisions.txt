@@ -1,3 +1,10 @@
+# TODO either set a one time decision to apply `constitute_new_world = K14` 
+# Or simply just run it in prov.txt
+# Or make decision to turn on a flag that will continually reconstitute the world.
+
+# However, not sure how to programmatically pass in the tag
+# Perhaps we can should use NSA tag for nassau instead
+
 country_decisions = {
     enable_gold_auto_dev = {
         major = yes

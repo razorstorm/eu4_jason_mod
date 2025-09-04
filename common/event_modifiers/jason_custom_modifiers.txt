@@ -18,6 +18,92 @@ liberalism_cheat = {
     monthly_liberalism = 100
 }
 
+# Cheats around Tariff Efficiency Globally
+global_tariffs_cheats_10_1 = {
+    global_tariffs = 0.10
+}
+global_tariffs_cheats_10_2 = {
+    global_tariffs = 0.10
+}
+global_tariffs_cheats_10_3 = {
+    global_tariffs = 0.10
+}
+global_tariffs_cheats_10_4 = {
+    global_tariffs = 0.10
+}
+global_tariffs_cheats_10_5 = {
+    global_tariffs = 0.10
+}
+global_tariffs_cheats_25_1 = {
+    global_tariffs = 0.25
+}
+global_tariffs_cheats_25_2 = {
+    global_tariffs = 0.25
+}
+global_tariffs_cheats_25_3 = {
+    global_tariffs = 0.25
+}
+global_tariffs_cheats_25_4 = {
+    global_tariffs = 0.25
+}
+global_tariffs_cheats_25_5 = {
+    global_tariffs = 0.25
+}
+global_tariffs_cheats_50_1 = {
+    global_tariffs = 0.50
+}
+global_tariffs_cheats_50_2 = {
+    global_tariffs = 0.50
+}
+global_tariffs_cheats_50_3 = {
+    global_tariffs = 0.50
+}
+global_tariffs_cheats_50_4 = {
+    global_tariffs = 0.50
+}
+global_tariffs_cheats_50_5 = {
+    global_tariffs = 0.50
+}
+global_tariffs_cheats_100_1 = {
+    global_tariffs = 1
+}
+global_tariffs_cheats_100_2 = {
+    global_tariffs = 1
+}
+global_tariffs_cheats_100_3 = {
+    global_tariffs = 1
+}
+global_tariffs_cheats_100_4 = {
+    global_tariffs = 1
+}
+global_tariffs_cheats_100_5 = {
+    global_tariffs = 1
+}
+global_tariffs_cheats_200_1 = {
+    global_tariffs = 2
+}
+global_tariffs_cheats_200_2 = {
+    global_tariffs = 2
+}
+global_tariffs_cheats_200_3 = {
+    global_tariffs = 2
+}
+global_tariffs_cheats_200_4 = {
+    global_tariffs = 2
+}
+global_tariffs_cheats_200_5 = {
+    global_tariffs = 2
+}
+global_tariffs_cheats_1000 = {
+    global_tariffs = 10
+}
+global_tariffs_cheats_10000 = {
+    global_tariffs = 100
+}
+global_tariffs_cheats_100000 = {
+    global_tariffs = 1000
+}
+
 perma_broke_cheat = {
     global_tax_income = -36000 # -3000 a month
 }
