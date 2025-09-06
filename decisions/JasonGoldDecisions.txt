@@ -817,7 +817,7 @@ country_decisions = {
         }
         effect = {
             set_country_flag = jason_prov_trade_power_on_all_enabled
-            set_prov_trade_power_on_all_for_country_and_subjects = yes
+            set_prov_trade_power_on_all_provinces_for_country_and_subjects = yes
         }
     }
 

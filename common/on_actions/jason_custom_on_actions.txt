@@ -297,7 +297,7 @@ on_province_owner_change = {
                 }
             }
 
-            set_prov_trade_power_on_all_for_country_and_subjects = yes
+            set_prov_trade_power_on_all_provinces_for_country_and_subjects = yes
         }
 
         # Upgrading COTs to level 2 or 3

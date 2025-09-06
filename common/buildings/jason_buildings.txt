@@ -18,7 +18,10 @@ mills = {
 		glass
         diamonds
 		chinaware
+<<<<<<< Updated upstream
         newcastle_coal
+=======
+>>>>>>> Stashed changes
 	}
 	onmap = yes
 	on_built = {
