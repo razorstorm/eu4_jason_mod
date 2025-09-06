@@ -1,0 +1,34 @@
+spriteTypes = {
+    spriteType = {
+        name = "GFX_resource_icon"
+        texturefile = "gfx/interface/resources.dds"
+        noOfFrames = 48 #Amount of 64x64 images in "resources"
+        loadType = "INGAME"
+        legacy_lazy_load=no 
+    }
+        
+    spriteType = {
+        name = "GFX_resource_icon_small"
+        texturefile = "gfx/interface/resources_small.dds"
+        noOfFrames = 48 #Amount of 28x28 images in "resources_small"
+        loadType = "INGAME"
+        # legacy_lazy_load=no
+    }
+
+	spriteType = {
+		name = "GFX_resource_transparent"
+		texturefile = "gfx/interface/resource_transparent.dds"
+		loadType = "INGAME"
+        # legacy_lazy_load=no
+        alwaystransparent = yes
+	}
+    	
+	spriteType = {
+		name = "GFX_resource_icon_transparent"
+		texturefile = "gfx/interface/resources.dds"
+		noOfFrames = 48
+		loadType = "INGAME"
+		# legacy_lazy_load=no
+		alwaystransparent = yes
+	}
+}
