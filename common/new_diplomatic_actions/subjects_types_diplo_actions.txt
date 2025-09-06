@@ -122,6 +122,7 @@ establish_real_union = {
         always = no
     }
 }
+
 establish_imperial_city = {
     category = subjects
 
@@ -154,6 +155,47 @@ establish_imperial_city = {
         always = no
     }
 }
+
+establish_hre_free_city = {
+    category = subjects
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            OR = {
+                NOT = { has_country_flag = free_city }
+                NOT = { is_subject_of_type = imperial_city }
+            }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = imperial_city
+            subject = FROM
+        }
+        FROM = {
+            set_country_flag = free_city
+        }
+
+        set_imperial_free_cities_with_correct_tags_to_become_HRE_free_cities = yes
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+
 establish_integrated_personal_union = {
     category = subjects
 
@@ -722,7 +764,8 @@ establish_brother_kingdom_subject = {
         always = no
     }
 }
-establish_sino_jimi_state = {
+
+establish_palatinate = {
     category = subjects
 
     require_acceptance = no
@@ -731,19 +774,21 @@ establish_sino_jimi_state = {
         ai = no
         FROM = {
             is_subject_of = ROOT
-            NOT = { is_subject_of_type = sino_jimi_state }
+            NOT = { is_subject_of_type = palatinate_vassal }
         }
     }
     is_allowed = {
         ai = no
         FROM = { 
             is_subject_of = ROOT
-            NOT = { is_subject_of_type = sino_jimi_state }
+            NOT = { is_subject_of_type = palatinate_vassal }
+            
+            is_elector = yes
         }
     }
     on_accept = {
         create_subject = {
-            subject_type = sino_jimi_state
+            subject_type = fief_subject
             subject = FROM
         }
     }
@@ -754,6 +799,7 @@ establish_sino_jimi_state = {
         always = no
     }
 }
+
 establish_fiefdom = {
     category = subjects
 
@@ -786,6 +832,7 @@ establish_fiefdom = {
         always = no
     }
 }
+
 establish_satrapy = {
     category = subjects
 
@@ -818,6 +865,40 @@ establish_satrapy = {
         always = no
     }
 }
+
+establish_sino_jimi_state = {
+    category = subjects
+
+    require_acceptance = no
+
+    is_visible = {
+        ai = no
+        FROM = {
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = sino_jimi_state }
+        }
+    }
+    is_allowed = {
+        ai = no
+        FROM = { 
+            is_subject_of = ROOT
+            NOT = { is_subject_of_type = sino_jimi_state }
+        }
+    }
+    on_accept = {
+        create_subject = {
+            subject_type = sino_jimi_state
+            subject = FROM
+        }
+    }
+    on_decline = {
+    }
+
+    ai_will_do = { # this is a trigger
+        always = no
+    }
+}
+
 
 # Tier 7. Internal Colonies (Dominions)
 establish_dominion = {

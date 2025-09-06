@@ -67,6 +67,9 @@
  disable_automatic_max_tariffs_title: "Disable Automatic Max Tariffs"
  disable_automatic_max_tariffs_desc: "Disables auto-setting tariffs to maximum on all subjects. This will stop auto-setting the tariffs of all such provinces to 100%. And also set the tariffs of all subjects to 50%"
 
+ constitute_new_world_decision_title: "Constitute New World"
+ constitute_new_world_decision_desc: "Reconstitutes the entire new world, reassigning provinces to the correct colonial nations"
+
  enable_show_decisions_title: "Enable Show Decisions"
  enable_show_decisions_desc: "Displays Cheats"
  disable_show_decisions_title: "Disable Show Decisions"

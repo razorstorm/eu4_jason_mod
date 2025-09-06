@@ -1498,6 +1498,20 @@ country_decisions = {
         }
     }
 
+    constitute_new_world_decision = {
+        major = no
+        color = { 0 0 255}
+        potential = {
+            ai = no
+        }
+        allow = {
+            ai = no
+        }
+        effect = {
+            constitute_new_world = yes
+        }
+    }
+
     enable_show_decisions = {
         major = yes
         color = { 0 255 0 }

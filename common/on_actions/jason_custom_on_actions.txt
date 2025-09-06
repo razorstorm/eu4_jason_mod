@@ -16,6 +16,7 @@ on_startup = {
         updating_subject_loyalties = yes
         change_cow_dung = yes
         trade_company_investments = yes
+        set_imperial_free_cities_with_correct_tags_to_become_HRE_free_cities = yes
         
         if = {
             limit = {
@@ -53,6 +54,8 @@ on_monthly_pulse = {
         every_subject_country = {
             increase_colony_growths = yes
         }
+        set_imperial_free_cities_with_correct_tags_to_become_HRE_free_cities = yes
+        
         # Set all trade outposts to have powerful trade capitals
         set_trade_power_for_trade_outposts = yes
 

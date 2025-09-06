@@ -38,9 +38,11 @@ set_high_dev_cost_reduction_on_all_gold_and_silver_prov = {
 set_high_dev_resource_gathering_operation = {
     if = {
         limit = {
-            NOT = {
+            OR = {
                 # Ignore provinces that are already highly devved 
-                base_production = 25
+                NOT = { base_production = 25 }
+                NOT = { base_tax = 20 }
+                NOT = { base_manpower = 15 }
             }
         }
         set_base_tax = 20
@@ -1740,6 +1742,17 @@ remove_colonists_from_non_colonial_subjects = {
     }
 }
 
+set_imperial_free_cities_with_correct_tags_to_become_HRE_free_cities = {
+    every_subject_country = {
+        limit = {
+            is_subject_of_type = imperial_city
+            has_country_flag = free_city
+        }
+        change_government = republic
+        add_government_reform = imperial_city
+    }
+}
+
 trade_company_investments = {
     # Trade Company Investments
     every_owned_province = {
@@ -1875,4 +1888,16 @@ trade_company_investments = {
             add_treasury = -400
         }
     }
+}
+
+
+# Just send and send back some cash to play a sound LOL
+play_completion_sound = {
+    add_treasury = 1
+    add_treasury = -1
+    add_treasury = 1
+    add_treasury = -1
+    add_treasury = 1
+    add_treasury = -1
+    add_treasury = 1`
 }

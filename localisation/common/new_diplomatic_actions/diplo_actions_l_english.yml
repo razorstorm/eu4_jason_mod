@@ -35,6 +35,10 @@
  establish_pirate_brotherhood_tooltip: "Set up a Pirate Brotherhood in §Y[From.GetName]§!"
  establish_pirate_brotherhood_desc: "Do you want to set up a Pirate Brotherhood in §Y[From.GetName]§!?"
 
+ establish_palatinate_title: "6. Palatinate"
+ establish_palatinate_tooltip: "Set up a Palatinate in §Y[From.GetName]§!"
+ establish_palatinate_desc: "Do you want to set up a Palatinate in §Y[From.GetName]§!? Lord Palatines are powerful feudal lords with special amounts of autonomy and privileges over their peers. Towards the early modern era, some Lords Palatines managed to acquire electorate status. In game, we use the Lord Palatine title to represent legitimate electors who are vassals to a country other than the Emperor. The title of Lord Palatine is an explicit recognition from the Emperor that the vassalage between the Elector and its overlord is valid and officially recognized by the Empire. Overlords who maintain Electorates as subject States without acquiring a Palatinate status from the Emperor or Pople are seen as illegally occupying sovereign Holy Roman Imperial lands and the Empire will suffer great maluses due to this embarassment. Emperors who have electors as subjects are thus heavily encouraged to convert them to Palatinates as soon as possible to mitigate the imperial authority maluses." # TODO allow emperors to force convert a subject elector to a palatinate?
+
  establish_fiefdom_title: "6. Fiefdom"
  establish_fiefdom_tooltip: "Set up a Fiefdom in §Y[From.GetName]§!"
  establish_fiefdom_desc: "Do you want to set up a Fiefdom in §Y[From.GetName]§!?"
@@ -123,13 +127,17 @@
  establish_imperial_city_tooltip: "Set up an Imperial City in §Y[From.GetName]§!"
  establish_imperial_city_desc: "Do you want to set up an Imperial City in §Y[From.GetName]§!"
 
- establish_native_reservation_title: "4. Native Reservation"
- establish_native_reservation_tooltip: "Set up a Native Reservation in §Y[From.GetName]§!"
- establish_native_reservation_desc: "Do you want to set up a Native Reservation in §Y[From.GetName]§!"
+ establish_imperial_city_title: "2. HRE Free City"
+ establish_imperial_city_tooltip: "Set up a Holy Roman Empire imperial free city in §Y[From.GetName]§!"
+ establish_imperial_city_desc: "Do you want to set up an HRE Free City in §Y[From.GetName]§? The overlord does not need to be the HRE Emperor, and this is one way to subtly decrease the power of the Emperor by creating free cities that have imperial immediacy but ultimately report to you as an overlord rather than the HRE Emperor."
 
  establish_chinese_imperial_altar_state_title: "3. Chinese Altar-State"
  establish_chinese_imperial_altar_state_tooltip: "Set up a Chinese Imperial Altar State in §Y[From.GetName]§!"
  establish_chinese_imperial_altar_state_desc: "Do you want to set up a Chinese Imperial Altar State in §Y[From.GetName]§!?"
+
+ establish_native_reservation_title: "4. Native Reservation"
+ establish_native_reservation_tooltip: "Set up a Native Reservation in §Y[From.GetName]§!"
+ establish_native_reservation_desc: "Do you want to set up a Native Reservation in §Y[From.GetName]§!"
 
  establish_tb_minister_resident_title: "4. Tibetan Ministry"
  establish_tb_minister_resident_tooltip: "Set up a Tibetan Ministry in §Y[From.GetName]§!"
