@@ -301,6 +301,7 @@ allow_special_vassal_types = {
     set_country_flag = releasing_invalid_pagan_chiefdoms
     set_country_flag = vassalizing_invalid_persian_satrapties
     set_country_flag = handling_invalid_brother_kingdom_possible_war # Allowing non christians to have brother kingdoms
+    set_country_flag = vassalizing_invalid_admin_regions
 
 
     every_subject_country = {

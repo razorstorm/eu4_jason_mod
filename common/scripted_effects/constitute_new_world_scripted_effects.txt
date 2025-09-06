@@ -1735,6 +1735,11 @@ constitute_mexico = {
 }
 
 constitute_canada = {
+    2022 = {
+        constitute_colonial_province = {
+            tag = CAN
+        }
+    }
     2573 = {
         constitute_colonial_province = {
             tag = CAN

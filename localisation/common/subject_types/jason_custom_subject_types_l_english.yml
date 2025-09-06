@@ -28,6 +28,15 @@
  semi_free_vassal_subject: "Semi-Free Vassal Subject"
  semi_free_vassal_overlord: "Semi-Free Vassal Overlord"
 
+ governorate: "Governorate"
+ governorate_title: "Governorate"
+ governorate_plural: "Governorates"
+ governorate_title_plural: "Governorates"
+ governorate_is_our: "§Y$NAME$§! is our Administrative Governorate."
+ governorate_long_desc: "An §Governorate§! is a an administrative subdivision of the country that represents a region with some level of federalized sovereignty but is still de jure 100% core land of its overlord. These are essentially identical to administrative regions and can refer to either: States within a federal system (e.g. the states of the US), overseas provinces of unitary states that have been delegated a bit more home rule due to their geographic distance. Fully dependent provinces within a unitary state should be represented as fully annexed provinces rather than governorates. But despite this, governorates are not subject states, but rather core regions of the overlord itself. Governorates are some of the most tightly held and legitimate homelands of the metropole. Governorates are not considered their own countries and do not conduct external diplomacy nor have their own independent global presence. THey are subsumed into their ovrlord as integral constituencies of the whole, rather than self standing entities in their own right. Think US states or UK Countries for a bit of a weird case. Though homeland states are typically better represented as directly annexed territories, so even the US should likely represent the entirety of the lower 48 as annexed states, and perhaps represent Haawaii / Alaska as governorates for ease of management while staying as true to real life situation as possible."
+ governorate_subject: "Governorate"
+ governorate_overlord: "Governorate Overlord"
+
  imperial_city: "Imperial City"
  imperial_city_title: "Imperial City"
  imperial_city_plural: "Imperial Cities"

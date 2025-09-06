@@ -25,3 +25,7 @@ is_tropical_resort_overlord = {
 is_tropical_resort_subject = {
     opinion = 20
 }
+
+is_governorate = {
+	opinion = 50
+}

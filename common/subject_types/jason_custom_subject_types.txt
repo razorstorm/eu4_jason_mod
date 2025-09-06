@@ -224,6 +224,208 @@ mining_corporation_fallback = {
 	subject_opinion_modifier = is_trade_company
 }
 
+# Identical to administrative region. A piece of de jure imperial land that is ruled by a federalized governor that works for the federal government. 
+# Unitary provinces are represented as fully annexed provinces
+# Overseas unitary provinces or federal States are instead represented as governorates with full tariffs. These are essentially 100% fully overlord owned and controlled lands that happen to have a hired governor to help manage the day to day maintenance of the place. 
+governorate = {
+	copy_from = default
+
+	# Graphics:
+	sprite = GFX_icon_administrative_region
+	diplomacy_overlord_sprite = GFX_diplomacy_leadadministrative_region
+	diplomacy_subject_sprite = GFX_diplomacy_amadministrative_region
+
+	# Triggers:
+	is_potential_overlord = {
+        OR = {
+            ai = no
+        }
+	}
+
+	# Properties:
+    customize_subject = yes
+	transfer_trade_if_merchant_republic = yes
+	joins_overlords_wars = yes
+	takes_diplo_slot = no
+	has_power_projection = no
+	can_use_claims = yes
+	uses_military_focus = yes
+	can_set_mil_focus = yes
+	extend_trading_range = yes
+    uses_tariffs = yes
+
+	max_government_rank = 3
+
+	liberty_desire_development_ratio = 0.075  # Low but not nonexistence chance for revolt owing to being a core part of the nation, the folks here have a stronger sense of identity. 
+	liberty_desire_same_dynasty = -5.0
+	pays_overlord = 0.0
+	forcelimit_to_overlord = 0.5
+	military_focus = 0.5
+
+	relative_power_class = 1
+	diplomacy_view_class = 1
+
+	can_fight = {
+	}
+	can_rival = {
+	}
+	can_ally = {
+	}
+	can_marry = {
+	}
+
+	# Subject Interactions:
+	# (immediate)
+	siphon_income = no
+	contribute_to_capital = yes
+
+	divert_trade = yes
+
+	# Modifiers:
+	modifier_subject = clear
+
+	modifier_subject = {
+		modifier = subject_nation
+	}
+	modifier_subject = {
+		modifier = administrative_region_modifier
+	}
+	modifier_subject = {
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = HAS_ADMINISTRATIVE_REGION_ENABLE_ADMINISTRATIVE_HELP
+				has_country_flag = administrative_region_enable_administrative_help
+			}
+		}
+		modifier = administrative_region_modifier_administrative_help
+	}
+
+	modifier_overlord = clear
+	modifier_overlord = {
+		modifier = administrative_region_overlord_admin_eff_modifier
+	}
+	modifier_overlord = {
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 2
+				development = 20
+			}
+		}
+		modifier = administrative_region_overlord_admin_eff_modifier
+	}
+	modifier_overlord = {
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 3
+				development = 20
+			}
+		}
+		modifier = administrative_region_overlord_admin_eff_modifier
+	}
+	modifier_overlord = {
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 4
+				development = 20
+			}
+		}
+		modifier = administrative_region_overlord_admin_eff_modifier
+	}
+	modifier_overlord = {
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 5
+				development = 20
+			}
+		}
+		modifier = administrative_region_overlord_admin_eff_modifier
+	}
+	modifier_overlord = {
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = HAS_ADMINISTRATIVE_REGION_ENABLE_ADMINISTRATIVE_HELP
+				has_country_flag = administrative_region_enable_administrative_help
+			}
+			NOT = { liberty_desire = 50 }
+			variable_arithmetic_trigger = {
+				custom_tooltip = ADMINISTRATIVE_REGION_HAS_BEST_RULER_SKILL_ADM
+				export_to_variable = {
+					which = adm_var
+					value = ADM
+				}
+				export_to_variable = {
+					which = dip_var
+					value = DIP
+				}
+				export_to_variable = {
+					which = mil_var
+					value = MIL
+				}
+				check_variable = { which = adm_var which = dip_var }
+				check_variable = { which = adm_var which = mil_var }
+			}
+		}
+		modifier = administrative_region_overlord_modifier_administrative_help_adm
+	}
+	modifier_overlord = {
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = HAS_ADMINISTRATIVE_REGION_ENABLE_ADMINISTRATIVE_HELP
+				has_country_flag = administrative_region_enable_administrative_help
+			}
+			NOT = { liberty_desire = 50 }
+			variable_arithmetic_trigger = {
+				custom_tooltip = ADMINISTRATIVE_REGION_HAS_BEST_RULER_SKILL_DIP
+				export_to_variable = {
+					which = adm_var
+					value = ADM
+				}
+				export_to_variable = {
+					which = dip_var
+					value = DIP
+				}
+				export_to_variable = {
+					which = mil_var
+					value = MIL
+				}
+				NOT = { check_variable = { which = adm_var which = dip_var } }
+				check_variable = { which = dip_var which = mil_var }
+			}
+		}
+		modifier = administrative_region_overlord_modifier_administrative_help_dip
+	}
+	modifier_overlord = {
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = HAS_ADMINISTRATIVE_REGION_ENABLE_ADMINISTRATIVE_HELP
+				has_country_flag = administrative_region_enable_administrative_help
+			}
+			NOT = { liberty_desire = 50 }
+			variable_arithmetic_trigger = {
+				custom_tooltip = ADMINISTRATIVE_REGION_HAS_BEST_RULER_SKILL_MIL
+				export_to_variable = {
+					which = adm_var
+					value = ADM
+				}
+				export_to_variable = {
+					which = dip_var
+					value = DIP
+				}
+				export_to_variable = {
+					which = mil_var
+					value = MIL
+				}
+				NOT = { check_variable = { which = adm_var which = mil_var } }
+				NOT = { check_variable = { which = dip_var which = mil_var } }
+			}
+		}
+		modifier = administrative_region_overlord_modifier_administrative_help_mil
+	}
+
+	overlord_opinion_modifier = is_governorate
+	subject_opinion_modifier = is_governorate
+}
+
 
 concentration_camp = {
     copy_from = vassal
