@@ -84,6 +84,13 @@ set_high_dev_on_all_diamond_prov = {
     }
 }
 
+set_high_newcastle_coal_dev = {
+    set_high_dev_on_all_newcastle_coal_prov = yes
+    every_subject_country = {
+        set_high_dev_on_all_newcastle_coal_prov = yes
+    }
+}
+
 set_high_diamond_dev = {
     set_high_dev_on_all_diamond_prov = yes
     every_subject_country = {
@@ -1886,6 +1893,18 @@ trade_company_investments = {
         }
         owner = {
             add_treasury = -400
+        }
+    }
+}
+
+convert_british_coal_to_newcastle_coal = {
+    # Only relevant to Great Britain Island itself
+    GBR  = {
+        every_owned_province = {
+            limit = {
+                trade_goods = coal
+            }
+            change_trade_goods = newcastle_coal
         }
     }
 }

@@ -104,6 +104,13 @@ on_monthly_pulse = {
 
         if = {
             limit = {
+                has_country_flag = jason_newcastle_coal_dev_enabled
+            }
+            set_high_newcastle_coal_dev = yes
+        }
+
+        if = {
+            limit = {
                 has_country_flag = jason_auto_marry_all_christians_enabled
             }
             marry_all_christians = yes
@@ -235,6 +242,13 @@ on_province_owner_change = {
                     has_country_flag = jason_diamonds_dev_enabled
                 }
                 set_high_diamond_dev = yes
+            }
+            
+            if = {
+                limit = {
+                    has_country_flag = jason_newcastle_coal_dev_enabled
+                }
+                set_high_newcastle_coal_dev = yes
             }
 
             if = {

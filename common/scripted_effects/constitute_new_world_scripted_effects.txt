@@ -3988,7 +3988,6 @@ constitute_new_world = {
     constitute_paraguay = yes
 
     play_completion_sound = yes
-    add_treasury = 1
 }
 
 constitute_new_world_and_pirates = {
@@ -4015,5 +4014,4 @@ constitute_new_world_and_pirates = {
     }
 
     play_completion_sound = yes
-    add_treasury = 1
 }

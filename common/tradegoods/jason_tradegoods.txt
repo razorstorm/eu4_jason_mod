@@ -4,7 +4,7 @@
 
 
 newcastle_coal = {
-	color = { 0.0 1.0 1.0 }
+	color = { 0.160784314 0 0.160784314 }
 	is_latent = no
 	is_valuable = yes
 

@@ -108,6 +108,60 @@ country_decisions = {
         }
     }
 
+    enable_newcastle_coal_auto_dev = {
+        major = yes
+        color = { 100 200 0 }
+        potential = {
+            ai = no
+            OR = {
+                has_country_flag = jason_show_decisions_enabled
+                has_country_flag = jason_show_dev_decisions_enabled
+            }
+            NOT = {
+                has_country_flag = jason_newcastle_coal_dev_enabled
+            }
+        }
+        allow = {
+            NOT = {
+                has_country_flag = jason_newcastle_coal_dev_enabled
+            }
+        }
+        provinces_to_highlight = {
+            OR = {
+                trade_goods = newcastle_coal
+            }
+            owned_by = ROOT
+        }
+        effect = {
+            set_country_flag = jason_newcastle_coal_dev_enabled
+        }
+    }
+
+    disablenewcastle_coal_auto_dev = {
+        major = yes
+        color = { 100 0 0 }
+        potential = {
+            ai = no
+            OR = {
+                has_country_flag = jason_show_decisions_enabled
+                has_country_flag = jason_show_dev_decisions_enabled
+            }
+            has_country_flag = jason_newcastle_coal_dev_enabled
+        }
+        allow = {
+            has_country_flag = jason_newcastle_coal_dev_enabled
+        }
+        provinces_to_highlight = {
+            OR = {
+                trade_goods = newcastle_coal
+            }
+            country_or_subject_holds = ROOT
+        }
+        effect = {
+            clr_country_flag = jason_newcastle_coal_dev_enabled
+        }
+    }
+s
     enable_diamonds_auto_dev = {
         major = yes
         color = { 100 200 0 }

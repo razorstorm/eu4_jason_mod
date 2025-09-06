@@ -19,6 +19,7 @@ is_valuable_goods_producing_province = {
         trade_goods = gold
         trade_goods = silver
         trade_goods = diamonds
+        trade_goods = newcastle_coal
         
         AND = {
             is_a_persian_tag = yes
