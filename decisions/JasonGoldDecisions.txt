@@ -161,7 +161,7 @@ country_decisions = {
             clr_country_flag = jason_newcastle_coal_dev_enabled
         }
     }
-s
+
     enable_diamonds_auto_dev = {
         major = yes
         color = { 100 200 0 }

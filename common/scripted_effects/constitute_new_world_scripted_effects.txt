@@ -6,11 +6,19 @@ constitute_colonial_province = {
                 owned_by = ROOT
                 owned_by_subject_of = ROOT
             }
+            # # Make sure the target is actually someone we own so we don't end up accidentally giving away land.
+            # $tag$ = {
+            #     OR = {
+            #         is_subject_of = $ROOT$
+            #         tag = $ROOT$
+            #     }
+            # }
         }
 
         cede_province = $tag$
     }
 }
+
 constitute_colonial_hq = {
     if = {
         limit = {
@@ -19,6 +27,22 @@ constitute_colonial_hq = {
         }
 
         cede_province = ROOT
+    }
+}
+
+make_dominion = {
+    $subject$ = {
+        if = {
+            limit = {
+                NOT = {
+                    is_subject_of = ROOT
+                }
+            }
+            create_subject = {
+                subject_type = dominion
+                subject = $subject$
+            }
+        }
     }
 }
 
@@ -223,6 +247,7 @@ constitute_colombia = {
             tag = COL
         }
     }
+    # Panama
     835 = {
         constitute_colonial_hq = {
             tag = COL
@@ -307,6 +332,9 @@ constitute_colombia = {
         constitute_colonial_province = {
             tag = COL
         }
+    }
+    COL = {
+        set_capital = 825
     }
 }
 
@@ -731,6 +759,9 @@ constitute_brazil = {
             tag = BRZ
         }
     }
+    BRZ = {
+        set_capital = 763
+    }
 }
 
 constitute_la_plata = {
@@ -908,6 +939,9 @@ constitute_la_plata = {
         constitute_colonial_province = {
             tag = LAP
         }
+    }
+    LAP = {
+        set_capital = 778
     }
 }
 
@@ -1196,6 +1230,9 @@ constitute_inca = {
             tag = INC
         }
     }
+    INC = {
+        set_capital = 807   
+    }
 }
 
 constitute_central_america = {
@@ -1299,6 +1336,7 @@ constitute_central_america = {
             tag = CHT
         }
     }
+
 }
 
 constitute_mexico = {
@@ -1731,6 +1769,9 @@ constitute_mexico = {
         constitute_colonial_province = {
             tag =  MEX
         }
+    }
+    MEX = {
+        set_capital = 852
     }
 }
 
@@ -2230,6 +2271,9 @@ constitute_canada = {
             tag = CAN
         }
     }
+    CAN = {
+        set_capital = 2670
+    }
 }
 
 constitute_california = {
@@ -2557,6 +2601,13 @@ constitute_california = {
         constitute_colonial_province = {
             tag = CAL
         }
+    }
+
+    CAL = {
+        set_capital = 4637
+    }
+    4637 = {
+        change_province_name = "San Francisco"
     }
 }
 
@@ -3024,6 +3075,12 @@ constitute_illinois = {
             tag = ILI
         }
     }
+    ILI = {
+        set_capital = 4903
+    }
+    4903 = {
+        change_province_name = "Chicago"
+    }
 }
 
 constitute_louisiana = {
@@ -3202,75 +3259,84 @@ constitute_louisiana = {
             tag = LOU
         }
     }
+    LOU = {
+        set_capital = 893
+    }
 }
 
 
 constitute_alaska = {
-   2611 = {
-       constitute_colonial_province = {
-           tag = ALA
-       }
-   }
-   2613 = {
-       constitute_colonial_province = {
-           tag = ALA
-       }
-   }
-   2612 = {
-       constitute_colonial_province = {
-           tag = ALA
-       }
-   }
-   978 = {
-       constitute_colonial_province = {
-           tag = ALA
-       }
-   }
-   977 = {
-       constitute_colonial_province = {
-           tag = ALA
-       }
-   }
-   976 = {
-       constitute_colonial_province = {
-           tag = ALA
-       }
-   }
-   979 = {
-       constitute_colonial_province = {
-           tag = ALA
-       }
-   }
-   2613 = {
-       constitute_colonial_province = {
-           tag = ALA
-       }
-   }
-   2612 = {
-       constitute_colonial_province = {
-           tag = ALA
-       }
-   }
-   978 = {
-       constitute_colonial_province = {
-           tag = ALA
-       }
-   }
-   977 = {
-       constitute_colonial_province = {
-           tag = ALA
-       }
-   }
-   976 = {
-       constitute_colonial_province = {
-           tag = ALA
-       }
-   }
-   979 = {
-       constitute_colonial_province = {
-           tag = ALA
-       }
-   }
+    2611 = {
+        constitute_colonial_province = {
+            tag = ALA
+        }
+    }
+    2613 = {
+        constitute_colonial_province = {
+            tag = ALA
+        }
+    }
+    2612 = {
+        constitute_colonial_province = {
+            tag = ALA
+        }
+    }
+    978 = {
+        constitute_colonial_province = {
+            tag = ALA
+        }
+    }
+    977 = {
+        constitute_colonial_province = {
+            tag = ALA
+        }
+    }
+    976 = {
+        constitute_colonial_province = {
+            tag = ALA
+        }
+    }
+    979 = {
+        constitute_colonial_province = {
+            tag = ALA
+        }
+    }
+    2613 = {
+        constitute_colonial_province = {
+            tag = ALA
+        }
+    }
+    2612 = {
+        constitute_colonial_province = {
+            tag = ALA
+        }
+    }
+    978 = {
+        constitute_colonial_province = {
+            tag = ALA
+        }
+    }
+    977 = {
+        constitute_colonial_province = {
+            tag = ALA
+        }
+    }
+    976 = {
+        constitute_colonial_province = {
+            tag = ALA
+        }
+    }
+    979 = {
+        constitute_colonial_province = {
+            tag = ALA
+        }
+    }
+    2613 = {
+        change_province_name = "Juneau"
+    }
+    ALA = {
+        set_capital = 2613
+    }
 }
 
 constitute_florida = {
@@ -3408,6 +3474,12 @@ constitute_florida = {
         constitute_colonial_province = {
             tag = FLO
         }
+    }
+    FLO = {
+        set_capital = 926
+    }
+    926 = {
+        change_province_name = "Miami"
     }
 }
 
@@ -3722,6 +3794,13 @@ constitute_american_east_coast = {
             tag = USA
         }
     }
+
+    USA = {
+        set_capital = 953
+    }
+    953 = {
+        change_province_name = "District of Columbia"
+    }
 }
 
 constitute_caribbeans = {
@@ -3895,6 +3974,13 @@ constitute_caribbeans = {
             tag = CUB
         }
     }
+
+    CUB = {
+        set_capital = 484
+    }
+    484 = {
+        change_province_name = "Havana"
+    }
 }
 
 constitute_caribbean_pirates = {
@@ -3902,8 +3988,8 @@ constitute_caribbean_pirates = {
         limit = {
             is_city = yes 
             OR = {
-                owned_by = $ROOT$
-                owned_by_subject_of = $ROOT$
+                owned_by = ROOT
+                owned_by_subject_of = ROOT
             }
             OR = {
                 province_id = 482 # Bahamas - Nassau
@@ -3911,6 +3997,15 @@ constitute_caribbean_pirates = {
             }
         }
         cede_province = $tag$
+
+        $tag$ = {
+            set_capital = 482
+        }
+
+        # TODO figure out how to chagne just the capital of the province to Nassau while keeping province itself still called bahamas
+        # 482 = {
+        #     change_province_name = "Nassau"
+        # }
     }
 }
 
@@ -3967,6 +4062,50 @@ constitute_paraguay = {
     }
 }
 
+constitute_australia = {
+    australia_region = {
+        limit = {
+            owner = {
+                OR = {
+                    is_tag = ROOT
+                    is_subject_of = ROOT
+                }
+            }
+        }
+        cede_province = AUS
+    }
+    make_dominion = {
+        subject = AUS
+    }
+    AUS = {
+        set_capital = 4858
+    }
+    AUS = {
+        if = {
+            limit = {
+                NOT = {
+                    is_subject_of = ROOT
+                    # Just set it as a dominion as long as it is not a a subject of ROOT
+                    # OR = {
+                    #     is_subject_of_type = dominion_tc
+                    #     is_subject_of_type = dominion
+                    #     is_subject_of_type = colony
+                    #     is_subject_of_type = crown_colony
+                    #     is_subject_of_type = consolidated_dominion
+                    # }
+                }
+            }
+            create_subject = {
+                subject_type = dominion
+                subject = AUS
+            }
+        }
+
+        set_capital = 4858
+    }
+        
+}
+
 # Bottoms up approach that only checks provinces from the whitelist. Should be faster by far
 constitute_new_world = {
     constitute_colombia = yes
@@ -3986,28 +4125,13 @@ constitute_new_world = {
     constitute_american_east_coast = yes
     constitute_caribbeans = yes
     constitute_paraguay = yes
+    constitute_australia = yes
 
     play_completion_sound = yes
 }
 
 constitute_new_world_and_pirates = {
-    constitute_colombia = yes
-    constitute_brazil = yes
-    constitute_la_plata = yes
-    constitute_chile = yes
-    constitute_inca = yes
-    constitute_central_america = yes
-    constitute_mexico = yes
-    constitute_canada = yes
-    constitute_california = yes
-    constitute_texas = yes
-    constitute_illinois = yes
-    constitute_louisiana = yes
-    constitute_alaska = yes
-    constitute_florida = yes
-    constitute_american_east_coast = yes
-    constitute_caribbeans = yes
-    constitute_paraguay = yes
+    constitute_new_world = yes
 
     constitute_caribbean_pirates = {
         tag = $tag$
