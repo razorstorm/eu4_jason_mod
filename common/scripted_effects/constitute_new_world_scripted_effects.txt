@@ -2,20 +2,36 @@ constitute_colonial_province = {
     if = {
         limit = {
             is_city = yes
+            # Only do this if the target tag either doesn't exist, or is our subject already. Prevents giving land to foreign countries.
+            # We are either creating a new vassal state from our lands or giving land to one of these new vassal states we recently created. 
+            #
+            # tl;dr: Avoid giving land to independent tags that already exist. 
+            OR = {
+                NOT = {
+                    exists = $tag$
+                }
+                $tag$ = {
+                    OR = {
+                        # Make sure the target country is either our subject or ourselves.
+                        is_subject_of = ROOT
+                        tag = ROOT
+                    }
+                }
+            }
+            # Make sure the province we're trying to cede is actually owned by us.
             OR = {
                 owned_by = ROOT
                 owned_by_subject_of = ROOT
             }
-            # # Make sure the target is actually someone we own so we don't end up accidentally giving away land.
-            # $tag$ = {
-            #     OR = {
-            #         is_subject_of = $ROOT$
-            #         tag = $ROOT$
-            #     }
-            # }
         }
 
         cede_province = $tag$
+
+        # If the target isn't our subject after we gave it a province, that must mean it didn't exist before, so we can safely create it as a colony.
+        # If this was a foreign nation that existed, the limit condition above would have exited this code block before we got here.
+        make_dominion = {
+            subject = $tag$
+        }
     }
 }
 
@@ -38,8 +54,13 @@ make_dominion = {
                     is_subject_of = ROOT
                 }
             }
+            # Try both dominion types, only one will work
             create_subject = {
                 subject_type = dominion
+                subject = $subject$
+            }
+            create_subject = {
+                subject_type = dominion_tc
                 subject = $subject$
             }
         }
@@ -4079,31 +4100,7 @@ constitute_australia = {
     }
     AUS = {
         set_capital = 4858
-    }
-    AUS = {
-        if = {
-            limit = {
-                NOT = {
-                    is_subject_of = ROOT
-                    # Just set it as a dominion as long as it is not a a subject of ROOT
-                    # OR = {
-                    #     is_subject_of_type = dominion_tc
-                    #     is_subject_of_type = dominion
-                    #     is_subject_of_type = colony
-                    #     is_subject_of_type = crown_colony
-                    #     is_subject_of_type = consolidated_dominion
-                    # }
-                }
-            }
-            create_subject = {
-                subject_type = dominion
-                subject = AUS
-            }
-        }
-
-        set_capital = 4858
-    }
-        
+    }   
 }
 
 # Bottoms up approach that only checks provinces from the whitelist. Should be faster by far
