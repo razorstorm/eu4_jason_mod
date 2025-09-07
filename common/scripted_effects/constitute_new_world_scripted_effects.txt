@@ -2721,307 +2721,307 @@ constitute_texas = {
 constitute_illinois = {
     904 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     2551 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     951 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     948 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     910 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     2517 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     908 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     2512 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     4886 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     4905 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     915 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     916 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     4903 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     942 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     4906 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     2513 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     2722 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     943 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     4901 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     902 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     2519 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     4900 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     2016 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     907 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     917 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     903 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     2524 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     4922 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     905 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     946 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     2522 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     2521 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     2523 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     945 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     2526 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     911 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     906 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     2518 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     4902 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     2511 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     944 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     4898 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     4899 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     912 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     913 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     914 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     4875 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     2555 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     954 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     947 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     4907 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     4889 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     958 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     4876 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     959 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     4872 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     2525 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     4888 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     2520 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     4904 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
     900 = {
         constitute_colonial_province = {
-            tag = ILL
+            tag = ILI
         }
     }
 }
