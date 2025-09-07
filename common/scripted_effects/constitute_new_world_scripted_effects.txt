@@ -51,17 +51,17 @@ constitute_colonial_hq = {
 }
 
 make_dominion = {
+    create_subject = {
+        subject_type = dominion
+        subject = $target$
+    }
+    create_subject = {
+        subject_type = dominion_tc
+        subject = $target$
+    }
     $target$ = {
         set_country_flag = jason_should_be_a_dominion
         # Try both dominion types, only one will work
-        create_subject = {
-            subject_type = dominion
-            subject = $target$
-        }
-        create_subject = {
-            subject_type = dominion_tc
-            subject = $target$
-        }
     }
 }
 
