@@ -2,35 +2,39 @@ constitute_colonial_province = {
     if = {
         limit = {
             is_city = yes
-            # Only do this if the target tag either doesn't exist, or is our subject already. Prevents giving land to foreign countries.
-            # We are either creating a new vassal state from our lands or giving land to one of these new vassal states we recently created. 
-            #
-            # tl;dr: Avoid giving land to independent tags that already exist. 
+            
+            # Check that the target either doesn't exist or is our subject. 
+            # Abort if target already exists as an independent state to avoid giving away land.
             OR = {
+                $tag$ = {
+                    is_subject_of = ROOT
+                }
                 NOT = {
                     exists = $tag$
                 }
+
+                # Some how create subject isnt working so we also give the land if the country has this tag
                 $tag$ = {
-                    OR = {
-                        # Make sure the target country is either our subject or ourselves.
-                        is_subject_of = ROOT
-                        tag = ROOT
-                    }
+                    has_country_flag = jason_should_be_a_dominion
                 }
             }
-            # Make sure the province we're trying to cede is actually owned by us.
+
+            # Check that we own the province
             OR = {
                 owned_by = ROOT
                 owned_by_subject_of = ROOT
             }
         }
 
+        # Do not need to create the country since we are not using custom tags
         cede_province = $tag$
 
         # If the target isn't our subject after we gave it a province, that must mean it didn't exist before, so we can safely create it as a colony.
         # If this was a foreign nation that existed, the limit condition above would have exited this code block before we got here.
+        
+        # This only makes dominion if not already a subject
         make_dominion = {
-            subject = $tag$
+            target = $tag$
         }
     }
 }
@@ -47,22 +51,16 @@ constitute_colonial_hq = {
 }
 
 make_dominion = {
-    $subject$ = {
-        if = {
-            limit = {
-                NOT = {
-                    is_subject_of = ROOT
-                }
-            }
-            # Try both dominion types, only one will work
-            create_subject = {
-                subject_type = dominion
-                subject = $subject$
-            }
-            create_subject = {
-                subject_type = dominion_tc
-                subject = $subject$
-            }
+    $target$ = {
+        set_country_flag = jason_should_be_a_dominion
+        # Try both dominion types, only one will work
+        create_subject = {
+            subject_type = dominion
+            subject = $target$
+        }
+        create_subject = {
+            subject_type = dominion_tc
+            subject = $target$
         }
     }
 }
@@ -4005,28 +4003,16 @@ constitute_caribbeans = {
 }
 
 constitute_caribbean_pirates = {
-    every_province = {
-        limit = {
-            is_city = yes 
-            OR = {
-                owned_by = ROOT
-                owned_by_subject_of = ROOT
-            }
-            OR = {
-                province_id = 482 # Bahamas - Nassau
-                province_id = 489 # Tortuga
-            }
+    489 = {
+        constitute_colonial_province = {
+            tag = NSS
         }
-        cede_province = $tag$
+    }
 
-        $tag$ = {
-            set_capital = 482
+    482 = {
+        constitute_colonial_province = {
+            tag = NSS
         }
-
-        # TODO figure out how to chagne just the capital of the province to Nassau while keeping province itself still called bahamas
-        # 482 = {
-        #     change_province_name = "Nassau"
-        # }
     }
 }
 
@@ -4096,7 +4082,7 @@ constitute_australia = {
         cede_province = AUS
     }
     make_dominion = {
-        subject = AUS
+        target = AUS
     }
     AUS = {
         set_capital = 4858
@@ -4123,16 +4109,7 @@ constitute_new_world = {
     constitute_caribbeans = yes
     constitute_paraguay = yes
     constitute_australia = yes
-
-    play_completion_sound = yes
-}
-
-constitute_new_world_and_pirates = {
-    constitute_new_world = yes
-
-    constitute_caribbean_pirates = {
-        tag = $tag$
-    }
+    constitute_caribbean_pirates = yes
 
     play_completion_sound = yes
 }
