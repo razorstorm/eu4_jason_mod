@@ -19,7 +19,7 @@ handle_subject_effects = {
     # Making concentration camps burn
     set_vassal_specific_maluses = yes
 
-    # Making palatinate vassals into thelectors
+    # Making palatinate vassals into electors
     ensure_palatinates_are_electors = yes
 }
 
