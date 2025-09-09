@@ -18,6 +18,9 @@ handle_subject_effects = {
 
     # Making concentration camps burn
     set_vassal_specific_maluses = yes
+
+    # Making palatinate vassals into thelectors
+    ensure_palatinates_are_electors = yes
 }
 
 
@@ -310,6 +313,17 @@ allow_special_vassal_types = {
         }
         # Allows trade outposts to have many provinces
         set_country_flag = trade_outpost_annexed_province
+    }
+}
+
+ensure_palatinates_are_electors = {
+    every_subject_country = {
+        limit = {
+            is_subject_of_type = palatinate_vassal
+            is_elector = no
+        }
+        # log = "[This.GetName] is a palatinate but not an elector, fixing"
+        elector = yes
     }
 }
 

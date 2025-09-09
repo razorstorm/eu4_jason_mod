@@ -783,12 +783,12 @@ establish_palatinate = {
             is_subject_of = ROOT
             NOT = { is_subject_of_type = palatinate_vassal }
             
-            is_elector = yes
+            # is_elector = yes
         }
     }
     on_accept = {
         create_subject = {
-            subject_type = fief_subject
+            subject_type = palatinate_vassal
             subject = FROM
         }
     }

@@ -1899,13 +1899,11 @@ trade_company_investments = {
 
 convert_british_coal_to_newcastle_coal = {
     # Only relevant to Great Britain Island itself
-    GBR  = {
-        every_owned_province = {
-            limit = {
-                trade_goods = coal
-            }
-            change_trade_goods = newcastle_coal
+    every_owned_province = {
+        limit = {
+            trade_goods = coal
         }
+        change_trade_goods = newcastle_coal
     }
 }
 
