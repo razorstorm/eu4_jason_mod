@@ -923,8 +923,13 @@ establish_dominion = {
         }
     }
     on_accept = {
+        # Try both dominion types, only one will work
         create_subject = {
             subject_type = dominion
+            subject = FROM
+        }
+        create_subject = {
+            subject_type = dominion_tc
             subject = FROM
         }
     }
