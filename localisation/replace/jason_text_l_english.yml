@@ -23,6 +23,12 @@
  set_silk_dev_title: "Set Development on Silk and Dye Provinces"
  set_silk_dev_desc: "Sets all silk/dye producing provinces to 20/25/15."
 
+ enable_newcastle_coal_auto_dev_title: "Automatically set development for Newcastle Coal Province"
+ enable_newcastle_coal_auto_dev_desc: "Automatically sets the Newcastle Coal producing provinces to 20/25/15 on every monthly tick or on acquisition of new provinces."
+
+ disable_newcastle_coal_auto_dev_title: "Disable Automatic Newcastle Coal Province Development"
+ disable_newcastle_coal_auto_dev_desc: "Disables automatic setting of development for Newcastle Coal producing provinces"
+
  clear_foreign_claims_title: "Remove Foreign Cores and Claims"
  clear_foreign_claims_desc: "Removes all foreign cores and claims from your provinces and those of your subjects."
  
