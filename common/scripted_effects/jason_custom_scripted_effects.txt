@@ -1933,3 +1933,24 @@ play_completion_sound = {
     add_treasury = -1
     add_treasury = 1`
 }
+
+
+add_furnace_to_coal_provinces = {
+    every_owned_province = {
+        limit = {
+            trade_goods = coal
+        }
+        # log = "Adding furnace to [This.GetName] [This.prov_id.GetValue]"
+        add_building = furnace
+    }
+}
+add_furnace_and_blast_furnace_to_newcastle_coal_provinces = {
+    every_owned_province = {
+        limit = {
+            trade_goods = newcastle_coal
+        }
+        # log = "Adding furnace and blast furnace to [This.GetName] [This.prov_id.GetValue]"
+        add_building = furnace
+        add_building = blast_furnace
+    }
+}

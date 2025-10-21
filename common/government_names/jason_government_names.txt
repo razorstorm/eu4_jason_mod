@@ -51,6 +51,54 @@ american_empire = {
 	}
 }
 
+union_of_soviet_socialist_republics = {
+	rank = {
+		1 = SOVIET_UNION
+		2 = SOVIET_UNION
+		3 = SOVIET_UNION
+	}
+
+	ruler_male = {
+		1 = GENERAL_SECRETARY
+		2 = GENERAL_SECRETARY
+		3 = GENERAL_SECRETARY
+	}
+
+	ruler_female = {
+		1 = GENERAL_SECRETARY
+		2 = GENERAL_SECRETARY
+		3 = GENERAL_SECRETARY
+	}
+
+	consort_male = {
+		1 = FIRST_GENTLEMAN
+		2 = FIRST_GENTLEMAN
+		3 = FIRST_GENTLEMAN
+	}
+
+	consort_female = {
+		1 = FIRST_LADY
+		2 = FIRST_LADY
+		3 = FIRST_LADY
+	}
+	
+	heir_male = {
+		1 = PEOPLES_SON
+		2 = PEOPLES_SON
+		3 = PEOPLES_SON
+	}
+
+	heir_female = {
+		1 = PEOPLES_DAUGHTER
+		2 = PEOPLES_DAUGHTER
+		3 = PEOPLES_DAUGHTER
+	}
+
+	trigger = {
+        has_reform = union_of_soviet_socialist_republics
+	}
+}
+
 british_empire = {
 	rank = {
 		1 = DUCHY

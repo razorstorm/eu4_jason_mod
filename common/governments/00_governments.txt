@@ -634,6 +634,7 @@ republic = {
 				great_veche_republic
 				american_republic
                 american_empire
+                union_of_soviet_socialist_republics
 				federal_republic
 				colonial_government
 				crown_colony_government
@@ -1723,6 +1724,10 @@ pre_dharma_mapping = {
 		legacy_government = american_republic_legacy
 	}
     american_empire = {
+        government = republic
+		legacy_government = american_republic_legacy
+    }
+    union_of_soviet_socialist_republics = {
         government = republic
 		legacy_government = american_republic_legacy
     }

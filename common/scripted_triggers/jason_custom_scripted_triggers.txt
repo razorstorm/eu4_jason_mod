@@ -13,6 +13,20 @@ is_a_persian_tag = {
     }
 }
 
+is_newcastle_coal_province = {
+    trade_goods = newcastle_coal
+}
+is_coal_province = {
+    trade_goods = coal
+}
+
+is_primary_or_secondary_capital = {
+    OR = {
+        has_building = provisional_capital
+        is_capital = yes
+    }
+}
+
 # When monopolizing trade goods into our country, we should skip any of the following provinces because they already produce valuable goods
 is_valuable_goods_producing_province = {
     OR = {

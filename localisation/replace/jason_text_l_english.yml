@@ -147,14 +147,24 @@
  american_empire_desc:0 "The American Directorate is a unique form of government that combines the ruthless efficiency of authoritarian and autocratic absolutist rule with a strong democratic foundation that can take advantage of the large population of highly educated citizens to manage delegated regional policy making, while the central command sets the larger direction of the state and also acts as a supervisory body. The state is broken up into two major components - a democratic republican government apparatus known as the Federal Union, which largely resembles the old American Republic, with its 3 branches of government, a strong president, and a bicameral congress; and an autocratic superior body known as the Imperial Directorate, which is a highly centralized and autocratic body that oversees the Federal Union and acts as a supervisory body to ensure that the Federal Union does not stray too far from the core ideals of the American Directorate. The Imperial Directorate is headed by an Imperial Director, who holds a hereditary role, and has absolute power over the Federal Union and can veto any decision made by it. Most day to day decisions are delegated down to the Federal Union (and the semi-sovereign governments of the various states), but with the Directorate being able to unilaterally remove any delegated power away from the representative government at any time for any reason. In addition to stepping in to resolve crisis or handle major strategic initiatives, the Directorate also operates as a censorate and accountability body that ensures strict obedience and competence in the reprsentative government. Due to the split governance, the American State itself is also in a somewhat odd form of Split-Sovereignty. The Directorate officially holds De Jure and De Facto Sovereignty over the nation and the Monarch is the embodiment of the Sovereignty of the nation. The directorate runs the country as a unitary state, with all sovereignty simply delegated downwards, rather than shared. However, by convention, a large amount of responsibilities are delegated to the Federal Union, which essentially grants it a large amount of de-facto Sovereignty in the state. The Federal Union runs itself as federal state instead, and breaks up its own governance into numerous states, who hold a limited amount of sovereignty that is constitutionally granted to them by the Federal Union and cannot be unilaterally revoked by the Federal Union. However, seeing as the Federal Union's own sovereignty is delegated to it by the Directorate, the Directorate itself does have full power to revoke the semi-sovereign status of any of the states. This form of governance is characterized by progressive and humanist day to day governance, with strong pluralist ideals and mass political participation, but also is strongly authoritarian when dealing with certain issues of national importance, and can respond extremely quickly to evolving situations. From the economic perspective, the Directorate bears resemblance to a Protectionist State Capitalist society where private enterprise is encouraged and funded by the state, and is a huge source of state revenue, but the Directorate holds ultimate power to intervene economically in any domain as needed. Within the Federal Union, a form of corporatism (whereby important elements of society such as cultural groups, religious groups, NGOs, unions, corporations, etc all get representation in addition to individuals)."
 
  american_empire_legacy_desc:0 "The American Directorate is a unique form of government that combines the ruthless efficiency of authoritarian and autocratic absolutist rule with a strong democratic foundation that can take advantage of the large population of highly educated citizens to manage delegated regional policy making, while the central command sets the larger direction of the state and also acts as a supervisory body. The state is broken up into two major components - a democratic republican government apparatus known as the Federal Union, which largely resembles the old American Republic, with its 3 branches of government, a strong president, and a bicameral congress; and an autocratic superior body known as the Imperial Directorate, which is a highly centralized and autocratic body that oversees the Federal Union and acts as a supervisory body to ensure that the Federal Union does not stray too far from the core ideals of the American Directorate. The Imperial Directorate is headed by an Imperial Director, who holds a hereditary role, and has absolute power over the Federal Union and can veto any decision made by it. Most day to day decisions are delegated down to the Federal Union (and the semi-sovereign governments of the various states), but with the Directorate being able to unilaterally remove any delegated power away from the representative government at any time for any reason. In addition to stepping in to resolve crisis or handle major strategic initiatives, the Directorate also operates as a censorate and accountability body that ensures strict obedience and competence in the reprsentative government. Due to the split governance, the American State itself is also in a somewhat odd form of Split-Sovereignty. The Directorate officially holds De Jure and De Facto Sovereignty over the nation and the Monarch is the embodiment of the Sovereignty of the nation. The directorate runs the country as a unitary state, with all sovereignty simply delegated downwards, rather than shared. However, by convention, a large amount of responsibilities are delegated to the Federal Union, which essentially grants it a large amount of de-facto Sovereignty in the state. The Federal Union runs itself as federal state instead, and breaks up its own governance into numerous states, who hold a limited amount of sovereignty that is constitutionally granted to them by the Federal Union and cannot be unilaterally revoked by the Federal Union. However, seeing as the Federal Union's own sovereignty is delegated to it by the Directorate, the Directorate itself does have full power to revoke the semi-sovereign status of any of the states. This form of governance is characterized by progressive and humanist day to day governance, with strong pluralist ideals and mass political participation, but also is strongly authoritarian when dealing with certain issues of national importance, and can respond extremely quickly to evolving situations. From the economic perspective, the Directorate bears resemblance to a Protectionist State Capitalist society where private enterprise is encouraged and funded by the state, and is a huge source of state revenue, but the Directorate holds ultimate power to intervene economically in any domain as needed. Within the Federal Union, a form of corporatism (whereby important elements of society such as cultural groups, religious groups, NGOs, unions, corporations, etc all get representation in addition to individuals)."
+ 
+ union_of_soviet_socialist_republics:0 "Union of Soviet Socialist Republics"
+ union_of_soviet_socialist_republics_legacy:0 "Union of Soviet Socialist Republics"
+ union_of_soviet_socialist_republics_ruler:0 "General Secretary"
+ union_of_soviet_socialist_republics_ruler_female:0 "General Secretary"
+ union_of_soviet_socialist_republics_desc:0 "The Soviet Union is a federated totalitarian single-party collectivist socialist state that rules over a federal union of soviet republics. Although sovereignty is technically split between the central government and the member republics, in practice power is highly concentrated into the central regime. The member republics are merely obedient pawns that obey the central government's every whim, just as the citizens are completely subjugated drones working tirelessly in unison to achieve state-wide greatness. The individual is completely obliterated in lieu of the collective. Religion is suppressed though tolerated, private enterprise is banned, and all production, trade, and industry are solely managed and owned by the state. A powerful vanguard party autocratically dictates all state policy, and the General Secretary is the unquestioned and unopposed supreme leader of the party. State organs exist to facilitate day to day governance, but all state organs are explicitly subservient to party organizations. This single party dominance is enshrined in the constitution, and the party is in essence synonymous with the state. Individuality is severely suppressed but a high degree of cohesion and economic productivity can be achieved if managed well."
 
  DIRECTORATE:0 "Directorate"
  GRAND_DIRECTORATE:0 "Grand Directorate"
  IMPERIAL_DIRECTORATE:0 "Imperial Directorate"
 
+ SOVIET_UNION:0 "Soviet Union"
+
  DIRECTOR:0 "Director"
  GRAND_DIRECTOR:0 "Grand Director"
  IMPERIAL_DIRECTOR:0 "Imperial Director"
+
+ GENERAL_SECRETARY:0 "General Secretary"
 
  FIRST_LADY:0 "First Lady"
  GRAND_FIRST_LADY:0 "Grand First Lady"
@@ -163,6 +173,10 @@
  FIRST_GENTLEMAN:0 "First Gentleman"
  GRAND_FIRST_GENTLEMAN:0 "Grand First Gentleman"
  IMPERIAL_FIRST_GENTLEMAN:0 "Imperial First Gentleman"
+  
+ PEOPLES_SON:0 "The People's Son"
+
+ PEOPLES_DAUGHTER:0 "The People's Daughter"
 
  cb_manifest_destiny: "Manifest Destiny"
  MANIFEST_DESTINY_WAR_NAME:0 "$ORDER$$FIRST$-$SECOND$ War of Manifest Destiny"
@@ -180,3 +194,17 @@
 
  disable_high_trade_power_on_trade_outposts_title: "Disable Free Trade Power on Trade Outposts"
  disable_high_trade_power_on_trade_outposts_desc: "Disables Free trade power on all trade outposts."
+
+
+ ussr_KGB:0 "The KGB"
+ ussr_KGB_influence:0 "The KGB Influence"
+ ussr_KGB_FACTION_DESC:0 "The KGB is the secret police of the USSR state. They can ensure extreme levels of national compliance at the cost of extreme oppression and misery. Corruption may also rise to high levels."
+
+ ussr_proletariat:0 "The Proletariat"
+ ussr_proletariat_influence:0 "The Proletariat Influence"
+ ussr_proletariat_FACTION_DESC:0 "The Proletariat are the working class that has long lived under the tyranny of their oppressors- first the aristocracy and then bourgeoisie. Under the Soviet Revolution, the Proletariat of our motherland has risen up and taken back the means of production."
+
+ ussr_soldiers:0 "The Soviet Military"
+ ussr_soldiers_influence:0 "The Soviety Military Influence"
+ ussr_soldiers_FACTION_DESC:0 "The military of the USSR is a massive military force that projects great strength globally. They can be a powerful pillar of the state."
+
