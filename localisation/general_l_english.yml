@@ -5,3 +5,11 @@
  ruler_of_destiny_general_modifier: "Ruler of Destiny"
  building_blast_furnace: "Blast Furnace"
  blast_furnace: "Blast Furnace"
+ 
+ comintern_modifier: ""
+ comintern_institution_modifier_1: "Comintern leader ahead in institutions"
+ comintern_institution_modifier_2: "Comintern leader far ahead in institutions"
+ comintern_institution_modifier_3: "Comintern leader extremely far ahead in institutions"
+ comintern_adm_liberty_desire_modifier: ""
+ comintern_dip_liberty_desire_modifier: ""
+ comintern_mil_liberty_desire_modifier: ""

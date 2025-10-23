@@ -1053,4 +1053,142 @@ chinese_imperial_altar_states = {
 
 # Maybe make my own barony, county, duchy, kingdom, subempire feudal subject types? 
 
+comintern_member_state = {
+	copy_from = protectorate
+
+	# Graphics:
+	sprite = GFX_icon_protectorate
+	diplomacy_overlord_sprite = GFX_diplomacy_leadprotectorate
+	diplomacy_subject_sprite = GFX_diplomacy_amprotectorate
+
+	# Triggers:
+	is_potential_overlord = {
+		is_subject = no
+        ai = no
+		OR = {
+            has_reform = union_of_soviet_socialist_republics
+		}
+	}
+
+	# Properties:
+	transfer_trade_power = no
+    can_fight_independence_war = yes
+    support_loyalists = yes
+	subsidize_armies = yes
+    uses_tariffs = no
+    can_be_annexed = no
+    can_release_in_peace = no
+	joins_overlords_wars = no
+	joins_colonial_wars = no
+	overlord_can_attack = no
+	can_have_subjects_of_other_types = yes
+	takes_diplo_slot = no
+	uses_military_focus = no
+	overlord_protects_external = yes
+	counts_for_borders = no
+	can_use_claims = no
+	share_rebel_popup = no
+	allows_taking_land_without_independence = yes
+	can_transfer_in_peace = no
+	can_set_mil_focus = no
+	can_send_missionary_to_subject = yes
+	does_overlord_size_count_for_warscore_cost = no
+	can_concentrate_development = no
+	can_have_great_projects_moved_by_overlord = no
+	extend_trading_range = yes
+
+	cities_required_for_bonuses = 0
+	trust_on_start = 10
+
+    base_liberty_desire = -20.0
+	liberty_desire_development_ratio = 0.01
+
+	relative_power_class = 0
+	diplomacy_view_class = 1
+
+	should_quit_wars_on_activation = no
+
+	can_fight = {
+		independent_nations = yes
+        same_overlord = comintern_member_state
+		other_overlord = all
+	}
+	can_rival = {
+		independent_nations = yes
+        same_overlord = comintern_member_state
+		other_overlord = all
+	}
+	can_ally = {
+        independent_nations = yes
+		same_overlord = comintern_member_state
+		other_overlord = all
+	}
+	can_marry = {
+		independent_nations = yes
+		same_overlord = comintern_member_state
+		other_overlord = all
+	}
+
+	# Subject Interactions:
+	# (continuous)
+	embargo_rivals = no
+	divert_trade = yes
+	# (immediate)
+	siphon_income = no
+	bestow_gifts = yes
+	seize_territory = no
+    placate_rulers = yes
+	enforce_culture = no
+	fortify_march = no
+	grant_core_claim = yes
+	conscript_general = yes
+
+	# Modifiers:
+	modifier_subject = clear
+	modifier_subject = {
+		modifier = comintern_modifier
+	}
+	modifier_subject = {
+		trigger = {
+			FROM = {
+				institution_difference = { who = ROOT value = 3 }
+			}
+		}
+		modifier = comintern_institution_modifier_3
+	}
+	modifier_subject = {
+		trigger = {
+			FROM = {
+				institution_difference = { who = ROOT value = 2 }
+				NOT = {
+					institution_difference = { who = ROOT value = 3 }
+				}
+			}
+		}
+		modifier = comintern_institution_modifier_2
+	}
+	modifier_subject = {
+		trigger = {
+			FROM = {
+				institution_difference = { who = ROOT value = 1 }
+				NOT = {
+					institution_difference = { who = ROOT value = 2 }
+				}
+			}
+		}
+		modifier = comintern_institution_modifier_1
+	}
+
+	modifier_overlord = clear
+	modifier_overlord = {
+		modifier = large_colonial_nation
+		trigger = {
+			num_of_cities = 25
+		}
+	}
+
+	overlord_opinion_modifier = is_comintern_member
+	subject_opinion_modifier = is_comintern_member
+}
+
 

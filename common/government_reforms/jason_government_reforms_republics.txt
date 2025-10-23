@@ -94,7 +94,7 @@ union_of_soviet_socialist_republics = {
 	allow_normal_conversion = no
 	valid_for_new_country = yes
 	valid_for_nation_designer = yes
-    allow_convert = no
+    allow_convert = yes
     lock_level_when_selected = yes
     locked_government_type = yes
 	
@@ -151,6 +151,69 @@ union_of_soviet_socialist_republics = {
     government_abilities = {
         russian_mechanic
     }
+
+    factions = {
+        ussr_KGB
+        ussr_proletariat
+        ussr_soldiers
+	}
+}
+
+# Member states of the comintern should have this government rather than USSR government
+soviet_socialist_republic = {
+	icon = "paper_with_seal_3"
+
+    # Potential
+	allow_normal_conversion = no
+	valid_for_new_country = yes
+	valid_for_nation_designer = yes
+    allow_convert = no
+    lock_level_when_selected = yes
+    locked_government_type = yes
+	
+    # Government Type
+	republic = yes
+    dictatorship = yes 
+	republican_name = yes
+	has_term_election = no
+    start_territory_to_estates = 0
+    revolutionary = yes
+    
+    # Ruling Cadre
+    queen = no
+    heir = no
+    rulers_can_be_generals = yes
+
+    # Abilities
+	royal_marriage = yes
+    raze_province = yes 
+    has_parliament = yes
+    militarised_society = yes
+    claim_states = yes
+    boost_income = yes
+
+    # Diplomatic Features
+    different_religion_acceptance = 50
+    different_religion_group_acceptance = 50
+
+	modifiers = {
+		land_morale = 0.1
+    	governing_capacity = 150
+		tolerance_heretic = 2
+		tolerance_heathen = 2
+		tolerance_own = 2
+		global_autonomy = -0.05
+		allowed_rev_guard_fraction = 0.2
+
+        global_manpower_modifier = 0.05
+		merchants = 1
+		yearly_absolutism = 0.05
+		global_autonomy = -0.05
+		embracement_cost = -0.1
+		max_absolutism = 100
+
+        allow_client_states = yes
+	}
 
     factions = {
         ussr_KGB

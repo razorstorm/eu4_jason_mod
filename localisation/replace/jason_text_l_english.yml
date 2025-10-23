@@ -153,12 +153,19 @@
  union_of_soviet_socialist_republics_ruler:0 "General Secretary"
  union_of_soviet_socialist_republics_ruler_female:0 "General Secretary"
  union_of_soviet_socialist_republics_desc:0 "The Soviet Union is a federated totalitarian single-party collectivist socialist state that rules over a federal union of soviet republics. Although sovereignty is technically split between the central government and the member republics, in practice power is highly concentrated into the central regime. The member republics are merely obedient pawns that obey the central government's every whim, just as the citizens are completely subjugated drones working tirelessly in unison to achieve state-wide greatness. The individual is completely obliterated in lieu of the collective. Religion is suppressed though tolerated, private enterprise is banned, and all production, trade, and industry are solely managed and owned by the state. A powerful vanguard party autocratically dictates all state policy, and the General Secretary is the unquestioned and unopposed supreme leader of the party. State organs exist to facilitate day to day governance, but all state organs are explicitly subservient to party organizations. This single party dominance is enshrined in the constitution, and the party is in essence synonymous with the state. Individuality is severely suppressed but a high degree of cohesion and economic productivity can be achieved if managed well."
-
+ 
+ soviet_socialist_republic:0 "Soviet Socialist Republic"
+ soviet_socialist_republic_legacy:0 "Soviet Socialist Republic"
+ soviet_socialist_republic_ruler:0 "General Secretary"
+ soviet_socialist_republic_ruler_female:0 "General Secretary"
+ soviet_socialist_republic_desc:0 "Either a member state of the USSR, a soviet satellite state, or a member of the comintern. Represents a marxist-leninist socialist state."
+ 
  DIRECTORATE:0 "Directorate"
  GRAND_DIRECTORATE:0 "Grand Directorate"
  IMPERIAL_DIRECTORATE:0 "Imperial Directorate"
 
  SOVIET_UNION:0 "Soviet Union"
+ SOVIET_SOCIALIST_REPUBLIC:0 "Soviet Socialist Republic"
 
  DIRECTOR:0 "Director"
  GRAND_DIRECTOR:0 "Grand Director"

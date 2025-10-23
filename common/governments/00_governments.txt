@@ -635,6 +635,7 @@ republic = {
 				american_republic
                 american_empire
                 union_of_soviet_socialist_republics
+                soviet_socialist_republic
 				federal_republic
 				colonial_government
 				crown_colony_government
@@ -1729,7 +1730,11 @@ pre_dharma_mapping = {
     }
     union_of_soviet_socialist_republics = {
         government = republic
-		legacy_government = american_republic_legacy
+		legacy_government = military_dictatorship
+    }
+    soviet_socialist_republic = {
+        government = republic
+		legacy_government = military_dictatorship
     }
 	federal_republic = {
 		government = republic
