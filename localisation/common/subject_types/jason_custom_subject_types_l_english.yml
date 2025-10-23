@@ -79,6 +79,13 @@
  consolidated_dominion_title_plural: "Consolidated Dominions"
  consolidated_dominion_is_our: "§Y$NAME$§! is our Consolidated Dominion."
  consolidated_dominion_long_desc: "A §Consolidated Dominion§! is a dominion that has been heavily consolidated and suserviented to the metropole. More than a mere colony nor standard dominion, a consolidated dominion is basically all but an annexed piece of land that is under direct administration by its overlord. Consolidated dominions have the similar level of de jure obedience to their overlord as that of a real union junior partner or an administrative region. However, just like with normal dominions, Consolidated Dominions focus more on colonizing, growth, and market expansion. These are large swaths of territory under direct imperial control, which are meant to colonize the new world, exert our political influence abroad, and set up lucrative ventures. Far more expansionist, and nationbuilding oriented than a trade outpost or commercial enterprise. Far more centrally controlled than a dominion or a colony, and with a stronger focus on constant expansion than a vassal or march."
+ 
+ comintern_member_state: "Comintern Member State"
+ comintern_member_state_title: "Comintern Member State"
+ comintern_member_state_plural: "Comintern Member States"
+ comintern_member_state_title_plural: "Comintern Member States"
+ comintern_member_state_is_our: "§Y$NAME$§! is a member state of Comintern."
+ comintern_member_state_long_desc: "A §Comintern Member State§! is a soviet socialist republic that is a member of the Comintern led by the international leader of the Comintern who acts the overlord of the global Communist Revolution."
 
 chinese_imperial_altar_state: "Chinese Imperial Altar State"
 chinese_imperial_altar_state_title: "Chinese Imperial Altar State"

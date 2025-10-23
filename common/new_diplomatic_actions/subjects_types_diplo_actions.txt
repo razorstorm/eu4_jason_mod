@@ -78,12 +78,7 @@ establish_administrative_region = {
         }
     }
 
-    # Create it regardless
     on_decline = {
-        create_subject = {
-            subject_type = administrative_region
-            subject = FROM
-        }
     }
 
     ai_will_do = { # this is a trigger

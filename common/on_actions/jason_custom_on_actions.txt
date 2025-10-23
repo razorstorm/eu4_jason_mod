@@ -368,22 +368,13 @@ on_dependency_gained = {
 
         if = {
             limit = {
-                OR = {
-                    is_subject_of_type = comintern_member_state
-
-                    AND = {
-                        overlord = {
-                            has_reform = union_of_soviet_socialist_republics
-                        }
-
-                        OR = {
-                            is_subject_of_type = puppet_state
-                            is_subject_of_type = administrative_region
-                        }
-                    }
+                is_soviet_socialist_republic = yes
+                NOT = {
+                    has_reform = soviet_socialist_republic
                 }
             }
             change_government = dictatorship
+            remove_government_reform = union_of_soviet_socialist_republics
             add_government_reform = soviet_socialist_republic
         }
 

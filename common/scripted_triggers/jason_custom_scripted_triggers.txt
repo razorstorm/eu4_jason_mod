@@ -33,7 +33,10 @@ is_soviet_socialist_republic = {
 
         AND = {
             overlord = {
-                has_reform = union_of_soviet_socialist_republics
+                OR = {
+                    has_country_flag = is_ussr
+                    has_reform = union_of_soviet_socialist_republics
+                }
             }
 
             OR = {
