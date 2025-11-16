@@ -1025,6 +1025,14 @@ remove_guaranteed_religious_autonomy = {
     }
 }
 
+remove_religious_zeal = {
+    # Remove Religious Zeal
+    every_owned_province = {
+        remove_province_modifier = religious_zeal_at_conv
+        remove_province_modifier = conversion_zeal
+    }
+}
+
 fixing_religion_and_culture = {
     # If propagate religion on trade node is enabled, allow propagating to every religion type
     set_country_flag = can_propagate_religion_in_abrahamic_provinces

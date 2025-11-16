@@ -4063,6 +4063,91 @@ constitute_australia = {
     }   
 }
 
+constitute_bolivia = {
+    # Bolivia does not exist so need to take in a tag
+    # Not removing these provinces from other countries for now since bolivia is
+    2838 = {
+        constitute_colonial_province = {
+            tag = $tag$
+        }
+    }
+    2940 = {
+        constitute_colonial_province = {
+            tag = $tag$
+        }
+    }
+    2946 = {
+        constitute_colonial_province = {
+            tag = $tag$
+        }
+    }
+    797 = {
+        constitute_colonial_province = {
+            tag = $tag$
+        }
+    }
+    2831 = {
+        constitute_colonial_province = {
+            tag = $tag$
+        }
+    }
+    802 = {
+        constitute_colonial_province = {
+            tag = $tag$
+        }
+    }
+    795 = {
+        constitute_colonial_province = {
+            tag = $tag$
+        }
+    }
+    2835 = {
+        constitute_colonial_province = {
+            tag = $tag$
+        }
+    }
+    2941 = {
+        constitute_colonial_province = {
+            tag = $tag$
+        }
+    }
+    2942 = {
+        constitute_colonial_province = {
+            tag = $tag$
+        }
+    }
+    803 = {
+        constitute_colonial_province = {
+            tag = $tag$
+        }
+    }
+    2833 = {
+        constitute_colonial_province = {
+            tag = $tag$
+        }
+    }
+    801 = {
+        constitute_colonial_province = {
+            tag = $tag$
+        }
+    }
+    800 = {
+        constitute_colonial_province = {
+            tag = $tag$
+        }
+    }
+    2834 = {
+        constitute_colonial_province = {
+            tag = $tag$
+        }
+    }
+    2832 = {
+        constitute_colonial_province = {
+            tag = $tag$
+        }
+    }
+}
+
 constitute_guyanas = {
     # Guyanas does not exist so need to take in a tag
 
@@ -4123,7 +4208,7 @@ constitute_new_world = {
     play_completion_sound = yes
 }
 
-constitute_non_us_new_world = {
+constitute_non_usa_new_world = {
     constitute_chile = yes
     constitute_colombia = yes
     constitute_paraguay = yes
@@ -4136,5 +4221,9 @@ constitute_non_us_new_world = {
     constitute_mexico = yes
     constitute_canada = yes
 
+    constitute_bolivia = yes
+    constitute_guyanas = yes
+
+    # Constitute guyana and bolivia yourself after
     play_completion_sound = yes
 }
