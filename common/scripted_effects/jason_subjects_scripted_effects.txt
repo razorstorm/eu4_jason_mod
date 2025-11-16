@@ -14,7 +14,7 @@ handle_subject_effects = {
     set_vassal_specific_bonuses = yes
 
     # Dominions should self colonize and get benefits
-    set_vassal_specific_bonuses = yes
+    allow_some_vassals_to_self_colonize = yes
 
     # Making concentration camps burn
     set_vassal_specific_maluses = yes
@@ -43,6 +43,7 @@ set_correct_government_type = {
         limit = {
             NOT = { government = monarchy }
             NOT = { government = republic }
+            NOT = { government = dictatorship }
             NOT = {
                 OR = {
                     government = tribal
@@ -61,7 +62,7 @@ set_correct_government_type = {
                 is_subject_of_type = personal_union
                 is_subject_of_type = se_integrated_personal_union
                 is_subject_of_type = real_union_subject
-                is_subject_of_type = administrative_region
+                # is_subject_of_type = administrative_region
             }
             NOT = {
                 government = monarchy
@@ -133,6 +134,15 @@ set_global_vassal_income_bonus = {
 }
 
 set_vassal_specific_bonuses = {
+    # No Autonomy for conversions    
+    every_subject_country = {
+        remove_country_modifier = estate_burghers_guaranteed_autonomy_mod
+        every_owned_province = {
+            remove_province_modifier = estate_burghers_guaranteed_autonomy_mod
+            discover_country = ROOT
+        }
+    }
+
     # Boosting mining corporations 
     every_subject_country = {
         limit = {

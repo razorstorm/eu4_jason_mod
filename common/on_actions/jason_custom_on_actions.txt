@@ -366,17 +366,17 @@ on_dependency_gained = {
             set_imperial_city_dev = yes
         }
 
-        if = {
-            limit = {
-                is_soviet_socialist_republic = yes
-                NOT = {
-                    has_reform = soviet_socialist_republic
-                }
-            }
-            change_government = dictatorship
-            remove_government_reform = union_of_soviet_socialist_republics
-            add_government_reform = soviet_socialist_republic
-        }
+        # if = {
+        #     limit = {
+        #         is_soviet_socialist_republic = yes
+        #         NOT = {
+        #             has_reform = soviet_socialist_republic
+        #         }
+        #     }
+        #     change_government = dictatorship
+        #     remove_government_reform = union_of_soviet_socialist_republics
+        #     add_government_reform = soviet_socialist_republic
+        # }
 
         if = {
             limit = {

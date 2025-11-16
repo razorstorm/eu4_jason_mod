@@ -1054,7 +1054,7 @@ chinese_imperial_altar_states = {
 # Maybe make my own barony, county, duchy, kingdom, subempire feudal subject types? 
 
 comintern_member_state = {
-	copy_from = protectorate
+	copy_from = default
 
 	# Graphics:
 	sprite = GFX_icon_protectorate

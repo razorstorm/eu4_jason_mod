@@ -31,21 +31,35 @@ american_empire = {
 		has_dlc = "American Dream"
 	}
 	legacy_equivalent = american_republic_legacy
-    royal_marriage = yes
     queen = yes
     maintain_dynasty = yes
-    republican_name = no
+    republican_name = yes
+    allow_consort = yes
+    lock_level_when_selected = yes
+    locked_government_type = yes
     fixed_rank = 3
     rulers_can_be_generals = no
-    # dictatorship = yes
-    has_parliament = yes
+    dictatorship = yes
     # is_elective = no
-    # has_meritocracy = yes
+    has_meritocracy = yes
     election_on_death = yes
     free_concentrate_development = yes
     mercs_do_not_cost_army_professionalism = yes
 	heirs_can_be_generals = no
 	heir = yes
+    revolutionary = yes
+    
+    # Abilities
+	royal_marriage = yes
+    raze_province = no
+    has_parliament = yes
+    militarised_society = yes
+    claim_states = yes
+    boost_income = yes
+
+    # Diplomatic Features
+    different_religion_acceptance = 50
+    different_religion_group_acceptance = 50
 
 	modifiers = {
 		war_exhaustion = -0.04
@@ -67,6 +81,10 @@ american_empire = {
         galley_power = 0.3
         transport_power = 0.3
         republican_tradition = 15
+        max_flagships = 3
+
+        max_absolutism = 100
+        monarch_power_tribute = 1
 	}
 
 	custom_attributes = {
@@ -84,7 +102,6 @@ american_empire = {
 		}
 		has_parliament = yes
 	}
-    duration = 800
 }
 
 union_of_soviet_socialist_republics = {

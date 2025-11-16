@@ -66,11 +66,6 @@ make_dominion = {
 }
 
 constitute_colombia = {
-    746 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
     2803 = {
         constitute_colonial_province = {
             tag = COL
@@ -101,32 +96,12 @@ constitute_colombia = {
             tag = COL
         }
     }
-    745 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
     2807 = {
         constitute_colonial_province = {
             tag = COL
         }
     }
-    743 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    2937 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
     2808 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    2931 = {
         constitute_colonial_province = {
             tag = COL
         }
@@ -749,7 +724,7 @@ constitute_brazil = {
         }
     }
     2901 = {
-        CCCC = {
+        constitute_colonial_province = {
             tag = BRZ
         }
     }
@@ -778,6 +753,11 @@ constitute_brazil = {
             tag = BRZ
         }
     }
+    800 = {
+        constitute_colonial_province = {
+            tag = BRZ
+        }
+    }
     BRZ = {
         set_capital = 763
     }
@@ -785,6 +765,11 @@ constitute_brazil = {
 
 constitute_la_plata = {
     2868 = {
+        constitute_colonial_province = {
+            tag = LAP
+        }
+    }
+    2854 = {
         constitute_colonial_province = {
             tag = LAP
         }
@@ -4022,11 +4007,6 @@ constitute_paraguay = {
             tag = GUY
         }
     }
-    2854 = {
-        constitute_colonial_province = {
-            tag = GUY
-        }
-    }
     799 = {
         constitute_colonial_province = {
             tag = GUY
@@ -4062,21 +4042,15 @@ constitute_paraguay = {
             tag = GUY
         }
     }
-    800 = {
-        constitute_colonial_province = {
-            tag = GUY
-        }
-    }
 }
 
 constitute_australia = {
     australia_region = {
         limit = {
-            owner = {
-                OR = {
-                    is_tag = ROOT
-                    is_subject_of = ROOT
-                }
+            is_city = yes
+            OR = {
+                owned_by = ROOT
+                owned_by_subject_of = ROOT
             }
         }
         cede_province = AUS
@@ -4087,6 +4061,41 @@ constitute_australia = {
     AUS = {
         set_capital = 4858
     }   
+}
+
+constitute_guyanas = {
+    # Guyanas does not exist so need to take in a tag
+
+    743 = {
+        constitute_colonial_province = {
+            tag = $tag$
+        }
+    }
+    2931 = {
+        constitute_colonial_province = {
+            tag = $tag$
+        }
+    }
+    744 = {
+        constitute_colonial_province = {
+            tag = $tag$
+        }
+    }
+    745 = {
+        constitute_colonial_province = {
+            tag = $tag$
+        }
+    }
+    2937 = {
+        constitute_colonial_province = {
+            tag = $tag$
+        }
+    }
+    746 = {
+        constitute_colonial_province = {
+            tag = $tag$
+        }
+    }
 }
 
 # Bottoms up approach that only checks provinces from the whitelist. Should be faster by far
@@ -4110,6 +4119,22 @@ constitute_new_world = {
     constitute_paraguay = yes
     constitute_australia = yes
     constitute_caribbean_pirates = yes
+    
+    play_completion_sound = yes
+}
+
+constitute_non_us_new_world = {
+    constitute_chile = yes
+    constitute_colombia = yes
+    constitute_paraguay = yes
+    constitute_brazil = yes
+    constitute_la_plata = yes
+    constitute_inca = yes
+
+    constitute_australia = yes
+
+    constitute_mexico = yes
+    constitute_canada = yes
 
     play_completion_sound = yes
 }
