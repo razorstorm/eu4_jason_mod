@@ -1,4149 +1,4220 @@
 constitute_colonial_province = {
-    if = {
-        limit = {
-            is_city = yes
-            
-            # Check that the target either doesn't exist or is our subject. 
-            # Abort if target already exists as an independent state to avoid giving away land.
-            OR = {
-                $tag$ = {
-                    is_subject_of = ROOT
-                }
-                NOT = {
-                    exists = $tag$
-                }
-
-                # Some how create subject isnt working so we also give the land if the country has this tag
-                $tag$ = {
-                    has_country_flag = jason_should_be_a_dominion
-                }
-            }
-
-            # Check that we own the province
-            OR = {
-                owned_by = ROOT
-                owned_by_subject_of = ROOT
-            }
-        }
-
-        # Do not need to create the country since we are not using custom tags
-        cede_province = $tag$
-
-        # If the target isn't our subject after we gave it a province, that must mean it didn't exist before, so we can safely create it as a colony.
-        # If this was a foreign nation that existed, the limit condition above would have exited this code block before we got here.
-        
-        # This only makes dominion if not already a subject
-        make_dominion = {
-            target = $tag$
-        }
-    }
+	if = {
+		limit = {
+			is_city = yes
+			# Check that the target either doesn't exist or is our subject. 
+			# Abort if target already exists as an independent state to avoid giving away land.
+			OR = {
+				$tag$ = {
+					is_subject_of = ROOT
+				}
+				NOT = {
+					exists = $tag$
+				}
+				# Some how create subject isnt working so we also give the land if the country has this tag
+				$tag$ = {
+					has_country_flag = jason_should_be_a_dominion
+				}
+			}
+			# Check that we own the province
+			OR = {
+				owned_by = ROOT
+				owned_by_subject_of = ROOT
+			}
+		}
+		# Do not need to create the country since we are not using custom tags
+		cede_province = $tag$
+		# If the target isn't our subject after we gave it a province, that must mean it didn't exist before, so we can safely create it as a colony.
+		# If this was a foreign nation that existed, the limit condition above would have exited this code block before we got here.
+		# This only makes dominion if not already a subject
+		make_dominion = {
+			target = $tag$
+		}
+	}
 }
 
 constitute_colonial_hq = {
-    if = {
-        limit = {
-            is_city = yes
-            owned_by_subject_of = ROOT
-        }
-
-        cede_province = ROOT
-    }
+	if = {
+		limit = {
+			is_city = yes
+			owned_by_subject_of = ROOT
+		}
+		cede_province = ROOT
+	}
 }
 
 make_dominion = {
-    create_subject = {
-        subject_type = dominion
-        subject = $target$
-    }
-    create_subject = {
-        subject_type = dominion_tc
-        subject = $target$
-    }
-    $target$ = {
-        set_country_flag = jason_should_be_a_dominion
-        # Try both dominion types, only one will work
-    }
+	create_subject = {
+		subject_type = dominion
+		subject = $target$
+	}
+	create_subject = {
+		subject_type = dominion_tc
+		subject = $target$
+	}
+	$target$ = {
+		set_country_flag = jason_should_be_a_dominion
+		# Try both dominion types, only one will work
+	}
 }
 
 constitute_colombia = {
-    2803 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    741 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    831 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    4609 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    828 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    830 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    2807 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    2808 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    744 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    2804 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    2806 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    4599 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    829 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    4611 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    4612 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    4616 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    4613 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    827 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    4600 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    4604 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    4605 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    823 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    826 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    2817 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    824 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    2818 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    4607 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    832 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    4603 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    825 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    4602 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    4608 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    4614 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    4596 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    4601 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    # Panama
-    835 = {
-        constitute_colonial_hq = {
-            tag = COL
-        }
-    }
-    4610 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    4615 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    2813 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    2814 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    2805 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    2939 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    742 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    2809 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    2811 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    2810 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    834 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    2812 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    2815 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    4617 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    2816 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    822 = {
-        constitute_colonial_province = {
-            tag = COL
-        }
-    }
-    COL = {
-        set_capital = 825
-    }
+	4599 = {
+		constitute_colonial_province = {
+			tag = COL
+		}
+	}
+	829 = {
+		constitute_colonial_province = {
+			tag = COL
+		}
+	}
+	828 = {
+		constitute_colonial_province = {
+			tag = COL
+		}
+	}
+	827 = {
+		constitute_colonial_province = {
+			tag = COL
+		}
+	}
+	4596 = {
+		constitute_colonial_province = {
+			tag = COL
+		}
+	}
+	4600 = {
+		constitute_colonial_province = {
+			tag = COL
+		}
+	}
+	4601 = {
+		constitute_colonial_province = {
+			tag = COL
+		}
+	}
+	2806 = {
+		constitute_colonial_province = {
+			tag = COL
+		}
+	}
+	4604 = {
+		constitute_colonial_province = {
+			tag = COL
+		}
+	}
+	823 = {
+		constitute_colonial_province = {
+			tag = COL
+		}
+	}
+	826 = {
+		constitute_colonial_province = {
+			tag = COL
+		}
+	}
+	2817 = {
+		constitute_colonial_province = {
+			tag = COL
+		}
+	}
+	2818 = {
+		constitute_colonial_province = {
+			tag = COL
+		}
+	}
+	4607 = {
+		constitute_colonial_province = {
+			tag = COL
+		}
+	}
+	4605 = {
+		constitute_colonial_province = {
+			tag = COL
+		}
+	}
+	824 = {
+		constitute_colonial_province = {
+			tag = COL
+		}
+	}
+	4602 = {
+		constitute_colonial_province = {
+			tag = COL
+		}
+	}
+	822 = {
+		constitute_colonial_province = {
+			tag = COL
+		}
+	}
+	2814 = {
+		constitute_colonial_province = {
+			tag = COL
+		}
+	}
+	832 = {
+		constitute_colonial_province = {
+			tag = COL
+		}
+	}
+	4603 = {
+		constitute_colonial_province = {
+			tag = COL
+		}
+	}
+	825 = {
+		constitute_colonial_province = {
+			tag = COL
+		}
+	}
+	4608 = {
+		constitute_colonial_province = {
+			tag = COL
+		}
+	}
+	2812 = {
+		constitute_colonial_province = {
+			tag = COL
+		}
+	}
+	2815 = {
+		constitute_colonial_province = {
+			tag = COL
+		}
+	}
+	2816 = {
+		constitute_colonial_province = {
+			tag = COL
+		}
+	}
 }
 
 constitute_brazil = {
-    757 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2921 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    755 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    764 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    762 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    751 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    753 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    754 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    763 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2912 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    756 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2886 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2894 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    761 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    760 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    765 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2899 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2897 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    766 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2898 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2916 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2914 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2915 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2913 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    750 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2922 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2924 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    749 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2885 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    759 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2896 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2892 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2927 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    748 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    758 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2890 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2891 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2919 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2893 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2906 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2917 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2918 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2920 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2925 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2929 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2887 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2857 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    747 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2935 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    769 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2895 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2879 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2907 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2930 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2938 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2934 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2933 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2881 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    768 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2903 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2926 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    752 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2923 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2888 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2905 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2908 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2909 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2904 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2902 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2901 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2900 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2889 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2910 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2928 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2911 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    BRZ = {
-        set_capital = 763
-    }
+	757 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2921 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	755 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	764 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	762 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	751 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	753 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	754 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	763 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2912 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	756 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2886 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2894 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	761 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	760 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	765 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2899 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2897 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	766 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2898 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2916 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2914 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2915 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2913 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	750 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2922 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2924 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	749 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2885 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	759 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2896 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2892 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2927 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	748 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	758 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2890 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2891 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2919 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2893 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2906 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2917 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2918 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2920 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2925 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2929 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2887 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2857 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	747 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2935 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	769 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2895 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2879 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2907 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2930 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2938 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2934 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2933 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2881 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	768 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2903 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2926 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	752 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2923 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2888 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2905 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2908 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2909 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2904 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2902 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2901 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2900 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2889 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2910 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2928 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	2911 = {
+		constitute_colonial_province = {
+			tag = BRZ
+		}
+	}
+	BRZ = {
+		set_capital = 763
+	}
 }
 
 constitute_la_plata = {
-    2868 = {
-        constitute_colonial_province = {
-            tag = LAP
-        }
-    }
-    2854 = {
-        constitute_colonial_province = {
-            tag = LAP
-        }
-    }
-    778 = {
-        constitute_colonial_province = {
-            tag = LAP
-        }
-    }
-    2845 = {
-        constitute_colonial_province = {
-            tag = LAP
-        }
-    }
-    2844 = {
-        constitute_colonial_province = {
-            tag = LAP
-        }
-    }
-    2846 = {
-        constitute_colonial_province = {
-            tag = LAP
-        }
-    }
-    2849 = {
-        constitute_colonial_province = {
-            tag = LAP
-        }
-    }
-    2848 = {
-        constitute_colonial_province = {
-            tag = LAP
-        }
-    }
-    779 = {
-        constitute_colonial_province = {
-            tag = LAP
-        }
-    }
-    786 = {
-        constitute_colonial_province = {
-            tag = LAP
-        }
-    }
-    780 = {
-        constitute_colonial_province = {
-            tag = LAP
-        }
-    }
-    781 = {
-        constitute_colonial_province = {
-            tag = LAP
-        }
-    }
-    782 = {
-        constitute_colonial_province = {
-            tag = LAP
-        }
-    }
-    2851 = {
-        constitute_colonial_province = {
-            tag = LAP
-        }
-    }
-    2836 = {
-        constitute_colonial_province = {
-            tag = LAP
-        }
-    }
-    2878 = {
-        constitute_colonial_province = {
-            tag = LAP
-        }
-    }
-    2853 = {
-        constitute_colonial_province = {
-            tag = LAP
-        }
-    }
-    2852 = {
-        constitute_colonial_province = {
-            tag = LAP
-        }
-    }
-    777 = {
-        constitute_colonial_province = {
-            tag = LAP
-        }
-    }
-    790 = {
-        constitute_colonial_province = {
-            tag = LAP
-        }
-    }
-    2871 = {
-        constitute_colonial_province = {
-            tag = LAP
-        }
-    }
-    785 = {
-        constitute_colonial_province = {
-            tag = LAP
-        }
-    }
-    791 = {
-        constitute_colonial_province = {
-            tag = LAP
-        }
-    }
-    794 = {
-        constitute_colonial_province = {
-            tag = LAP
-        }
-    }
-    2842 = {
-        constitute_colonial_province = {
-            tag = LAP
-        }
-    }
-    2843 = {
-        constitute_colonial_province = {
-            tag = LAP
-        }
-    }
-    2847 = {
-        constitute_colonial_province = {
-            tag = LAP
-        }
-    }
-    2860 = {
-        constitute_colonial_province = {
-            tag = LAP
-        }
-    }
-    2861 = {
-        constitute_colonial_province = {
-            tag = LAP
-        }
-    }
-    2863 = {
-        constitute_colonial_province = {
-            tag = LAP
-        }
-    }
-    2865 = {
-        constitute_colonial_province = {
-            tag = LAP
-        }
-    }
-    2866 = {
-        constitute_colonial_province = {
-            tag = LAP
-        }
-    }
-    2867 = {
-        constitute_colonial_province = {
-            tag = LAP
-        }
-    }
-    2870 = {
-        constitute_colonial_province = {
-            tag = LAP
-        }
-    }
-    2872 = {
-        constitute_colonial_province = {
-            tag = LAP
-        }
-    }
-    2877 = {
-        constitute_colonial_province = {
-            tag = LAP
-        }
-    }
-    2855 = {
-        constitute_colonial_province = {
-            tag = LAP
-        }
-    }
-    LAP = {
-        set_capital = 778
-    }
+	2868 = {
+		constitute_colonial_province = {
+			tag = LAP
+		}
+	}
+	2854 = {
+		constitute_colonial_province = {
+			tag = LAP
+		}
+	}
+	778 = {
+		constitute_colonial_province = {
+			tag = LAP
+		}
+	}
+	2845 = {
+		constitute_colonial_province = {
+			tag = LAP
+		}
+	}
+	2844 = {
+		constitute_colonial_province = {
+			tag = LAP
+		}
+	}
+	2846 = {
+		constitute_colonial_province = {
+			tag = LAP
+		}
+	}
+	2849 = {
+		constitute_colonial_province = {
+			tag = LAP
+		}
+	}
+	2848 = {
+		constitute_colonial_province = {
+			tag = LAP
+		}
+	}
+	779 = {
+		constitute_colonial_province = {
+			tag = LAP
+		}
+	}
+	786 = {
+		constitute_colonial_province = {
+			tag = LAP
+		}
+	}
+	780 = {
+		constitute_colonial_province = {
+			tag = LAP
+		}
+	}
+	781 = {
+		constitute_colonial_province = {
+			tag = LAP
+		}
+	}
+	782 = {
+		constitute_colonial_province = {
+			tag = LAP
+		}
+	}
+	2851 = {
+		constitute_colonial_province = {
+			tag = LAP
+		}
+	}
+	2836 = {
+		constitute_colonial_province = {
+			tag = LAP
+		}
+	}
+	2878 = {
+		constitute_colonial_province = {
+			tag = LAP
+		}
+	}
+	2853 = {
+		constitute_colonial_province = {
+			tag = LAP
+		}
+	}
+	2852 = {
+		constitute_colonial_province = {
+			tag = LAP
+		}
+	}
+	777 = {
+		constitute_colonial_province = {
+			tag = LAP
+		}
+	}
+	790 = {
+		constitute_colonial_province = {
+			tag = LAP
+		}
+	}
+	2871 = {
+		constitute_colonial_province = {
+			tag = LAP
+		}
+	}
+	785 = {
+		constitute_colonial_province = {
+			tag = LAP
+		}
+	}
+	791 = {
+		constitute_colonial_province = {
+			tag = LAP
+		}
+	}
+	794 = {
+		constitute_colonial_province = {
+			tag = LAP
+		}
+	}
+	2842 = {
+		constitute_colonial_province = {
+			tag = LAP
+		}
+	}
+	2843 = {
+		constitute_colonial_province = {
+			tag = LAP
+		}
+	}
+	2847 = {
+		constitute_colonial_province = {
+			tag = LAP
+		}
+	}
+	2860 = {
+		constitute_colonial_province = {
+			tag = LAP
+		}
+	}
+	2861 = {
+		constitute_colonial_province = {
+			tag = LAP
+		}
+	}
+	2863 = {
+		constitute_colonial_province = {
+			tag = LAP
+		}
+	}
+	2865 = {
+		constitute_colonial_province = {
+			tag = LAP
+		}
+	}
+	2866 = {
+		constitute_colonial_province = {
+			tag = LAP
+		}
+	}
+	2867 = {
+		constitute_colonial_province = {
+			tag = LAP
+		}
+	}
+	2870 = {
+		constitute_colonial_province = {
+			tag = LAP
+		}
+	}
+	2872 = {
+		constitute_colonial_province = {
+			tag = LAP
+		}
+	}
+	2877 = {
+		constitute_colonial_province = {
+			tag = LAP
+		}
+	}
+	2855 = {
+		constitute_colonial_province = {
+			tag = LAP
+		}
+	}
+	LAP = {
+		set_capital = 778
+	}
 }
 
-
 constitute_chile = {
-    796 = {
-        constitute_colonial_province = {
-            tag = CHL
-        }
-    }
-    783 = {
-        constitute_colonial_province = {
-            tag = CHL
-        }
-    }
-    784 = {
-        constitute_colonial_province = {
-            tag = CHL
-        }
-    }
-    787 = {
-        constitute_colonial_province = {
-            tag = CHL
-        }
-    }
-    792 = {
-        constitute_colonial_province = {
-            tag = CHL
-        }
-    }
-    793 = {
-        constitute_colonial_province = {
-            tag = CHL
-        }
-    }
-    2840 = {
-        constitute_colonial_province = {
-            tag = CHL
-        }
-    }
-    2841 = {
-        constitute_colonial_province = {
-            tag = CHL
-        }
-    }
-    2873 = {
-        constitute_colonial_province = {
-            tag = CHL
-        }
-    }
-    2874 = {
-        constitute_colonial_province = {
-            tag = CHL
-        }
-    }
-    2862 = {
-        constitute_colonial_province = {
-            tag = CHL
-        }
-    }
+	796 = {
+		constitute_colonial_province = {
+			tag = CHL
+		}
+	}
+	783 = {
+		constitute_colonial_province = {
+			tag = CHL
+		}
+	}
+	784 = {
+		constitute_colonial_province = {
+			tag = CHL
+		}
+	}
+	787 = {
+		constitute_colonial_province = {
+			tag = CHL
+		}
+	}
+	792 = {
+		constitute_colonial_province = {
+			tag = CHL
+		}
+	}
+	793 = {
+		constitute_colonial_province = {
+			tag = CHL
+		}
+	}
+	2840 = {
+		constitute_colonial_province = {
+			tag = CHL
+		}
+	}
+	2841 = {
+		constitute_colonial_province = {
+			tag = CHL
+		}
+	}
+	2873 = {
+		constitute_colonial_province = {
+			tag = CHL
+		}
+	}
+	2874 = {
+		constitute_colonial_province = {
+			tag = CHL
+		}
+	}
+	2862 = {
+		constitute_colonial_province = {
+			tag = CHL
+		}
+	}
 }
 
 constitute_inca = {
-    807 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    808 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    2829 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    2830 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    811 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    810 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    2947 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    804 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    2825 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    2827 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    814 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    816 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    2821 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    2822 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    2826 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    812 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    2823 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    2943 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    817 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    819 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    2820 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    820 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    2824 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    813 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    2944 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    809 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    805 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    2828 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    818 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    2002 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    806 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    815 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    821 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    2837 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    2945 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    INC = {
-        set_capital = 807   
-    }
+	807 = {
+		constitute_colonial_province = {
+			tag = INC
+		}
+	}
+	808 = {
+		constitute_colonial_province = {
+			tag = INC
+		}
+	}
+	2829 = {
+		constitute_colonial_province = {
+			tag = INC
+		}
+	}
+	2830 = {
+		constitute_colonial_province = {
+			tag = INC
+		}
+	}
+	811 = {
+		constitute_colonial_province = {
+			tag = INC
+		}
+	}
+	810 = {
+		constitute_colonial_province = {
+			tag = INC
+		}
+	}
+	2947 = {
+		constitute_colonial_province = {
+			tag = INC
+		}
+	}
+	804 = {
+		constitute_colonial_province = {
+			tag = INC
+		}
+	}
+	2825 = {
+		constitute_colonial_province = {
+			tag = INC
+		}
+	}
+	2827 = {
+		constitute_colonial_province = {
+			tag = INC
+		}
+	}
+	814 = {
+		constitute_colonial_province = {
+			tag = INC
+		}
+	}
+	816 = {
+		constitute_colonial_province = {
+			tag = INC
+		}
+	}
+	2821 = {
+		constitute_colonial_province = {
+			tag = INC
+		}
+	}
+	2822 = {
+		constitute_colonial_province = {
+			tag = INC
+		}
+	}
+	2826 = {
+		constitute_colonial_province = {
+			tag = INC
+		}
+	}
+	812 = {
+		constitute_colonial_province = {
+			tag = INC
+		}
+	}
+	2823 = {
+		constitute_colonial_province = {
+			tag = INC
+		}
+	}
+	2943 = {
+		constitute_colonial_province = {
+			tag = INC
+		}
+	}
+	2824 = {
+		constitute_colonial_province = {
+			tag = INC
+		}
+	}
+	813 = {
+		constitute_colonial_province = {
+			tag = INC
+		}
+	}
+	2944 = {
+		constitute_colonial_province = {
+			tag = INC
+		}
+	}
+	809 = {
+		constitute_colonial_province = {
+			tag = INC
+		}
+	}
+	805 = {
+		constitute_colonial_province = {
+			tag = INC
+		}
+	}
+	2828 = {
+		constitute_colonial_province = {
+			tag = INC
+		}
+	}
+	2002 = {
+		constitute_colonial_province = {
+			tag = INC
+		}
+	}
+	806 = {
+		constitute_colonial_province = {
+			tag = INC
+		}
+	}
+	815 = {
+		constitute_colonial_province = {
+			tag = INC
+		}
+	}
+	821 = {
+		constitute_colonial_province = {
+			tag = INC
+		}
+	}
+	2837 = {
+		constitute_colonial_province = {
+			tag = INC
+		}
+	}
+	2945 = {
+		constitute_colonial_province = {
+			tag = INC
+		}
+	}
+	INC = {
+		set_capital = 807
+	}
+}
+
+constitute_peru = {
+	807 = {
+		constitute_colonial_province = {
+			tag = PEU
+		}
+	}
+	808 = {
+		constitute_colonial_province = {
+			tag = PEU
+		}
+	}
+	2829 = {
+		constitute_colonial_province = {
+			tag = PEU
+		}
+	}
+	2830 = {
+		constitute_colonial_province = {
+			tag = PEU
+		}
+	}
+	811 = {
+		constitute_colonial_province = {
+			tag = PEU
+		}
+	}
+	810 = {
+		constitute_colonial_province = {
+			tag = PEU
+		}
+	}
+	2947 = {
+		constitute_colonial_province = {
+			tag = PEU
+		}
+	}
+	804 = {
+		constitute_colonial_province = {
+			tag = PEU
+		}
+	}
+	2825 = {
+		constitute_colonial_province = {
+			tag = PEU
+		}
+	}
+	2827 = {
+		constitute_colonial_province = {
+			tag = PEU
+		}
+	}
+	814 = {
+		constitute_colonial_province = {
+			tag = PEU
+		}
+	}
+	816 = {
+		constitute_colonial_province = {
+			tag = PEU
+		}
+	}
+	2821 = {
+		constitute_colonial_province = {
+			tag = PEU
+		}
+	}
+	2822 = {
+		constitute_colonial_province = {
+			tag = PEU
+		}
+	}
+	2826 = {
+		constitute_colonial_province = {
+			tag = PEU
+		}
+	}
+	812 = {
+		constitute_colonial_province = {
+			tag = PEU
+		}
+	}
+	2823 = {
+		constitute_colonial_province = {
+			tag = PEU
+		}
+	}
+	2943 = {
+		constitute_colonial_province = {
+			tag = PEU
+		}
+	}
+	2824 = {
+		constitute_colonial_province = {
+			tag = PEU
+		}
+	}
+	813 = {
+		constitute_colonial_province = {
+			tag = PEU
+		}
+	}
+	2944 = {
+		constitute_colonial_province = {
+			tag = PEU
+		}
+	}
+	809 = {
+		constitute_colonial_province = {
+			tag = PEU
+		}
+	}
+	805 = {
+		constitute_colonial_province = {
+			tag = PEU
+		}
+	}
+	2828 = {
+		constitute_colonial_province = {
+			tag = PEU
+		}
+	}
+	2002 = {
+		constitute_colonial_province = {
+			tag = PEU
+		}
+	}
+	806 = {
+		constitute_colonial_province = {
+			tag = PEU
+		}
+	}
+	815 = {
+		constitute_colonial_province = {
+			tag = PEU
+		}
+	}
+	821 = {
+		constitute_colonial_province = {
+			tag = PEU
+		}
+	}
+	2837 = {
+		constitute_colonial_province = {
+			tag = PEU
+		}
+	}
+	2945 = {
+		constitute_colonial_province = {
+			tag = PEU
+		}
+	}
+	PEU = {
+		set_capital = 807
+	}
 }
 
 constitute_central_america = {
-    2637 = {
-        constitute_colonial_province = {
-            tag = CHT
-        }
-    }
-    839 = {
-        constitute_colonial_province = {
-            tag = CHT
-        }
-    }
-    4593 = {
-        constitute_colonial_province = {
-            tag = CHT
-        }
-    }
-    2640 = {
-        constitute_colonial_province = {
-            tag = CHT
-        }
-    }
-    837 = {
-        constitute_colonial_province = {
-            tag = CHT
-        }
-    }
-    2660 = {
-        constitute_colonial_province = {
-            tag = CHT
-        }
-    }
-    4597 = {
-        constitute_colonial_province = {
-            tag = CHT
-        }
-    }
-    2663 = {
-        constitute_colonial_province = {
-            tag = CHT
-        }
-    }
-    836 = {
-        constitute_colonial_province = {
-            tag = CHT
-        }
-    }
-    4595 = {
-        constitute_colonial_province = {
-            tag = CHT
-        }
-    }
-    2664 = {
-        constitute_colonial_province = {
-            tag = CHT
-        }
-    }
-    2662 = {
-        constitute_colonial_province = {
-            tag = CHT
-        }
-    }
-    840 = {
-        constitute_colonial_province = {
-            tag = CHT
-        }
-    }
-    2661 = {
-        constitute_colonial_province = {
-            tag = CHT
-        }
-    }
-    838 = {
-        constitute_colonial_province = {
-            tag = CHT
-        }
-    }
-    4592 = {
-        constitute_colonial_province = {
-            tag = CHT
-        }
-    }
-    2819 = {
-        constitute_colonial_province = {
-            tag = CHT
-        }
-    }
-    2653 = {
-        constitute_colonial_province = {
-            tag = CHT
-        }
-    }
-    841 = {
-        constitute_colonial_province = {
-            tag = CHT
-        }
-    }
-    2636 = {
-        constitute_colonial_province = {
-            tag = CHT
-        }
-    }
-
+	2637 = {
+		constitute_colonial_province = {
+			tag = CHT
+		}
+	}
+	839 = {
+		constitute_colonial_province = {
+			tag = CHT
+		}
+	}
+	4593 = {
+		constitute_colonial_province = {
+			tag = CHT
+		}
+	}
+	2640 = {
+		constitute_colonial_province = {
+			tag = CHT
+		}
+	}
+	837 = {
+		constitute_colonial_province = {
+			tag = CHT
+		}
+	}
+	2660 = {
+		constitute_colonial_province = {
+			tag = CHT
+		}
+	}
+	4597 = {
+		constitute_colonial_province = {
+			tag = CHT
+		}
+	}
+	2663 = {
+		constitute_colonial_province = {
+			tag = CHT
+		}
+	}
+	836 = {
+		constitute_colonial_province = {
+			tag = CHT
+		}
+	}
+	4595 = {
+		constitute_colonial_province = {
+			tag = CHT
+		}
+	}
+	2664 = {
+		constitute_colonial_province = {
+			tag = CHT
+		}
+	}
+	2662 = {
+		constitute_colonial_province = {
+			tag = CHT
+		}
+	}
+	840 = {
+		constitute_colonial_province = {
+			tag = CHT
+		}
+	}
+	2661 = {
+		constitute_colonial_province = {
+			tag = CHT
+		}
+	}
+	838 = {
+		constitute_colonial_province = {
+			tag = CHT
+		}
+	}
+	4592 = {
+		constitute_colonial_province = {
+			tag = CHT
+		}
+	}
+	2819 = {
+		constitute_colonial_province = {
+			tag = CHT
+		}
+	}
+	2653 = {
+		constitute_colonial_province = {
+			tag = CHT
+		}
+	}
+	841 = {
+		constitute_colonial_province = {
+			tag = CHT
+		}
+	}
+	2636 = {
+		constitute_colonial_province = {
+			tag = CHT
+		}
+	}
 }
 
 constitute_mexico = {
-    849 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    2627 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    2648 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    851 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    2629 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    847 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    2638 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    2649 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    4584 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    844 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    4588 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    4594 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    842 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    2646 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    2628 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    4582 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    2643 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    4579 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    4580 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    2657 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    865 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    866 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    2620 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    4639 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    859 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    4649 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    855 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    862 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    4577 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    2616 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    4576 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    4578 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    854 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    4574 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    4575 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    2624 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    2650 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    845 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    4587 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    2631 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    2647 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    2632 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    2630 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    2634 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    4589 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    843 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    2635 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    4586 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    4585 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    2652 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    4591 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    2633 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    2651 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    4590 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    846 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    4598 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    4642 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    2645 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    4570 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    4571 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    2642 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    4581 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    2644 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    853 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    852 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    4583 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    850 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    2623 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    4572 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    2626 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    848 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    2615 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    856 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    4573 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    4641 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    858 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    2668 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    2641 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    2617 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    2621 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    2622 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    4640 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    4643 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    857 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    2667 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    4645 = {
-        constitute_colonial_province = {
-            tag =  MEX
-        }
-    }
-    MEX = {
-        set_capital = 852
-    }
+	849 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	2627 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	2648 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	851 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	2629 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	847 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	2638 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	2649 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	4584 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	844 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	4588 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	4594 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	842 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	2646 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	2628 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	4582 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	2643 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	4579 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	4580 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	2657 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	865 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	866 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	2620 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	4639 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	859 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	4649 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	855 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	862 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	4577 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	2616 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	4576 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	4578 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	854 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	4574 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	4575 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	2624 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	2650 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	845 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	4587 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	2631 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	2647 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	2632 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	2630 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	2634 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	4589 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	843 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	2635 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	4586 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	4585 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	2652 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	4591 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	2633 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	2651 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	4590 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	846 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	4598 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	4642 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	2645 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	4570 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	4571 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	2642 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	4581 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	2644 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	853 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	852 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	4583 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	850 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	2623 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	4572 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	2626 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	848 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	2615 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	856 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	4573 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	4641 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	858 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	2668 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	2641 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	2617 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	2621 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	2622 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	4640 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	4643 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	857 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	2667 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	4645 = {
+		constitute_colonial_province = {
+			tag = MEX
+		}
+	}
+	MEX = {
+		set_capital = 852
+	}
 }
 
 constitute_canada = {
-    2022 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2573 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2577 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2600 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2574 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2575 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    981 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    980 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2595 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    974 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2610 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2604 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2606 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2607 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    972 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2609 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    975 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    973 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2605 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2003 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2599 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2597 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2582 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2583 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    997 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2572 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    986 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    994 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2017 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2596 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2601 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    1813 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2018 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    4893 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    1011 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    990 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2603 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    995 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    993 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2580 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2602 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    1010 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2005 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    4919 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    1008 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    998 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2576 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2004 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    1000 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    996 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    1006 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2578 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    1005 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2592 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2594 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    1009 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    1004 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    1003 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2591 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2593 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    1007 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2015 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2590 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2589 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2588 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    991 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2581 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    4894 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    1002 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2598 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    4920 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    999 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2579 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2571 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    4896 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2570 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    983 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    4891 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    982 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2569 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    984 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    985 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2568 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2012 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2584 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    4895 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    992 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    1001 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2587 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2671 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    4897 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2585 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    989 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    4890 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    988 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    987 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2586 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    2670 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    4892 = {
-        constitute_colonial_province = {
-            tag = CAN
-        }
-    }
-    CAN = {
-        set_capital = 2670
-    }
+	2022 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2573 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2577 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2600 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2574 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2575 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	981 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	980 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2595 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	974 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2610 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2604 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2606 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2607 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	972 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2609 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	975 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	973 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2605 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2003 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2599 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2597 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2582 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2583 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	997 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2572 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	986 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	994 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2017 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2596 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2601 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	1813 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2018 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	4893 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	1011 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	990 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2603 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	995 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	993 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2580 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2602 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	1010 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2005 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	4919 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	1008 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	998 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2576 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2004 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	1000 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	996 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	1006 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2578 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	1005 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2592 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2594 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	1009 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	1004 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	1003 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2591 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2593 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	1007 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2015 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2590 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2589 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2588 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	991 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2581 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	4894 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	1002 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2598 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	4920 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	999 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2579 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2571 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	4896 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2570 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	983 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	4891 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	982 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2569 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	984 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	985 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2568 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2012 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2584 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	4895 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	992 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	1001 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2587 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2671 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	4897 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2585 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	989 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	4890 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	988 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	987 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2586 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	2670 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	4892 = {
+		constitute_colonial_province = {
+			tag = CAN
+		}
+	}
+	CAN = {
+		set_capital = 2670
+	}
 }
 
 constitute_california = {
-    4637 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    869 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    2477 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    2021 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    868 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    4638 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    870 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    876 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    2478 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    2480 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    867 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    2476 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    4635 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    877 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    4633 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    879 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    2492 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    871 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    2479 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    4636 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    2493 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    4634 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    2494 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    873 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    872 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    874 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    2484 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    2481 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    2482 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    2483 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    2488 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    2486 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    2487 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    2019 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    2485 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    2020 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    2490 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    2489 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    2491 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    881 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    4631 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    2506 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    4632 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    2495 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    878 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    880 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    2501 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    2006 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    4917 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    1809 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    2504 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    2502 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    2009 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    2508 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    2510 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    909 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    2007 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    901 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    4915 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    4916 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    898 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    890 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    2625 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    2509 = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-    899   = {
-        constitute_colonial_province = {
-            tag = CAL
-        }
-    }
-
-    CAL = {
-        set_capital = 4637
-    }
-    4637 = {
-        change_province_name = "San Francisco"
-    }
+	4637 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	869 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	2477 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	2021 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	868 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	4638 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	870 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	876 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	2478 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	2480 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	867 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	2476 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	4635 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	877 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	4633 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	879 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	2492 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	871 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	2479 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	4636 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	2493 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	4634 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	2494 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	873 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	872 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	874 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	2484 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	2481 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	2482 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	2483 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	2488 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	2486 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	2487 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	2019 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	2485 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	2020 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	2490 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	2489 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	2491 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	881 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	4631 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	2506 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	4632 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	2495 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	878 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	880 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	2501 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	2006 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	4917 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	1809 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	2504 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	2502 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	2009 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	2508 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	2510 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	909 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	2007 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	901 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	4915 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	4916 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	898 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	890 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	2625 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	2509 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	899 = {
+		constitute_colonial_province = {
+			tag = CAL
+		}
+	}
+	CAL = {
+		set_capital = 4637
+	}
+	4637 = {
+		change_province_name = "San Francisco"
+	}
 }
 
 constitute_texas = {
-    2498 = {
-        constitute_colonial_province = {
-            tag = TEX
-        }
-    }
-    2497 = {
-        constitute_colonial_province = {
-            tag = TEX
-        }
-    }
-    4630 = {
-        constitute_colonial_province = {
-            tag = TEX
-        }
-    }
-    4629 = {
-        constitute_colonial_province = {
-            tag = TEX
-        }
-    }
-    864 = {
-        constitute_colonial_province = {
-            tag = TEX
-        }
-    }
-    2666 = {
-        constitute_colonial_province = {
-            tag = TEX
-        }
-    }
-    2499 = {
-        constitute_colonial_province = {
-            tag = TEX
-        }
-    }
-    883 = {
-        constitute_colonial_province = {
-            tag = TEX
-        }
-    }
-    884 = {
-        constitute_colonial_province = {
-            tag = TEX
-        }
-    }
-    888 = {
-        constitute_colonial_province = {
-            tag = TEX
-        }
-    }
-    4627 = {
-        constitute_colonial_province = {
-            tag = TEX
-        }
-    }
-    860 = {
-        constitute_colonial_province = {
-            tag = TEX
-        }
-    }
-    861 = {
-        constitute_colonial_province = {
-            tag = TEX
-        }
-    }
-    4646 = {
-        constitute_colonial_province = {
-            tag = TEX
-        }
-    }
-    2665 = {
-        constitute_colonial_province = {
-            tag = TEX
-        }
-    }
-    2669 = {
-        constitute_colonial_province = {
-            tag = TEX
-        }
-    }
-    4911 = {
-        constitute_colonial_province = {
-            tag = TEX
-        }
-    }
-    887 = {
-        constitute_colonial_province = {
-            tag = TEX
-        }
-    }
-    886 = {
-        constitute_colonial_province = {
-            tag = TEX
-        }
-    }
-    2496 = {
-        constitute_colonial_province = {
-            tag = TEX
-        }
-    }
-    885 = {
-        constitute_colonial_province = {
-            tag = TEX
-        }
-    }
-    4909 = {
-        constitute_colonial_province = {
-            tag = TEX
-        }
-    }
-    4910 = {
-        constitute_colonial_province = {
-            tag = TEX
-        }
-    }
-    892 = {
-        constitute_colonial_province = {
-            tag = TEX
-        }
-    }
-    896 = {
-        constitute_colonial_province = {
-            tag = TEX
-        }
-    }
-    4908 = {
-        constitute_colonial_province = {
-            tag = TEX
-        }
-    }
-    891 = {
-        constitute_colonial_province = {
-            tag = TEX
-        }
-    }
-    863 = {
-        constitute_colonial_province = {
-            tag = TEX
-        }
-    }
-    882 = {
-        constitute_colonial_province = {
-            tag = TEX
-        }
-    }
-    4914 = {
-        constitute_colonial_province = {
-            tag = TEX
-        }
-    }
-    2505 = {
-        constitute_colonial_province = {
-            tag = TEX
-        }
-    }
+	2498 = {
+		constitute_colonial_province = {
+			tag = TEX
+		}
+	}
+	2497 = {
+		constitute_colonial_province = {
+			tag = TEX
+		}
+	}
+	4630 = {
+		constitute_colonial_province = {
+			tag = TEX
+		}
+	}
+	4629 = {
+		constitute_colonial_province = {
+			tag = TEX
+		}
+	}
+	864 = {
+		constitute_colonial_province = {
+			tag = TEX
+		}
+	}
+	2666 = {
+		constitute_colonial_province = {
+			tag = TEX
+		}
+	}
+	2499 = {
+		constitute_colonial_province = {
+			tag = TEX
+		}
+	}
+	883 = {
+		constitute_colonial_province = {
+			tag = TEX
+		}
+	}
+	884 = {
+		constitute_colonial_province = {
+			tag = TEX
+		}
+	}
+	888 = {
+		constitute_colonial_province = {
+			tag = TEX
+		}
+	}
+	4627 = {
+		constitute_colonial_province = {
+			tag = TEX
+		}
+	}
+	860 = {
+		constitute_colonial_province = {
+			tag = TEX
+		}
+	}
+	861 = {
+		constitute_colonial_province = {
+			tag = TEX
+		}
+	}
+	4646 = {
+		constitute_colonial_province = {
+			tag = TEX
+		}
+	}
+	2665 = {
+		constitute_colonial_province = {
+			tag = TEX
+		}
+	}
+	2669 = {
+		constitute_colonial_province = {
+			tag = TEX
+		}
+	}
+	4911 = {
+		constitute_colonial_province = {
+			tag = TEX
+		}
+	}
+	887 = {
+		constitute_colonial_province = {
+			tag = TEX
+		}
+	}
+	886 = {
+		constitute_colonial_province = {
+			tag = TEX
+		}
+	}
+	2496 = {
+		constitute_colonial_province = {
+			tag = TEX
+		}
+	}
+	885 = {
+		constitute_colonial_province = {
+			tag = TEX
+		}
+	}
+	4909 = {
+		constitute_colonial_province = {
+			tag = TEX
+		}
+	}
+	4910 = {
+		constitute_colonial_province = {
+			tag = TEX
+		}
+	}
+	892 = {
+		constitute_colonial_province = {
+			tag = TEX
+		}
+	}
+	896 = {
+		constitute_colonial_province = {
+			tag = TEX
+		}
+	}
+	4908 = {
+		constitute_colonial_province = {
+			tag = TEX
+		}
+	}
+	891 = {
+		constitute_colonial_province = {
+			tag = TEX
+		}
+	}
+	863 = {
+		constitute_colonial_province = {
+			tag = TEX
+		}
+	}
+	882 = {
+		constitute_colonial_province = {
+			tag = TEX
+		}
+	}
+	4914 = {
+		constitute_colonial_province = {
+			tag = TEX
+		}
+	}
+	2505 = {
+		constitute_colonial_province = {
+			tag = TEX
+		}
+	}
 }
 
 constitute_illinois = {
-    904 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    2551 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    951 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    948 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    910 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    2517 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    908 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    2512 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    4886 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    4905 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    915 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    916 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    4903 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    942 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    4906 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    2513 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    2722 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    943 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    4901 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    902 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    2519 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    4900 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    2016 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    907 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    917 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    903 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    2524 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    4922 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    905 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    946 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    2522 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    2521 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    2523 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    945 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    2526 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    911 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    906 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    2518 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    4902 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    2511 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    944 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    4898 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    4899 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    912 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    913 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    914 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    4875 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    2555 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    954 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    947 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    4907 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    4889 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    958 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    4876 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    959 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    4872 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    2525 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    4888 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    2520 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    4904 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    900 = {
-        constitute_colonial_province = {
-            tag = ILI
-        }
-    }
-    ILI = {
-        set_capital = 4903
-    }
-    4903 = {
-        change_province_name = "Chicago"
-    }
+	904 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	2551 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	951 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	948 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	910 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	2517 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	908 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	2512 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	4886 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	4905 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	915 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	916 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	4903 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	942 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	4906 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	2513 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	2722 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	943 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	4901 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	902 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	2519 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	4900 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	2016 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	907 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	917 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	903 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	2524 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	4922 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	905 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	946 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	2522 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	2521 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	2523 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	945 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	2526 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	911 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	906 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	2518 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	4902 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	2511 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	944 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	4898 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	4899 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	912 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	913 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	914 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	4875 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	2555 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	954 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	947 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	4907 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	4889 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	958 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	4876 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	959 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	4872 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	2525 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	4888 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	2520 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	4904 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	900 = {
+		constitute_colonial_province = {
+			tag = ILI
+		}
+	}
+	ILI = {
+		set_capital = 4903
+	}
+	4903 = {
+		change_province_name = "Chicago"
+	}
 }
 
 constitute_louisiana = {
-    922 = {
-        constitute_colonial_province = {
-            tag = LOU
-        }
-    }
-    923 = {
-        constitute_colonial_province = {
-            tag = LOU
-        }
-    }
-    2530 = {
-        constitute_colonial_province = {
-            tag = LOU
-        }
-    }
-    893 = {
-        constitute_colonial_province = {
-            tag = LOU
-        }
-    }
-    921 = {
-        constitute_colonial_province = {
-            tag = LOU
-        }
-    }
-    2533 = {
-        constitute_colonial_province = {
-            tag = LOU
-        }
-    }
-    924 = {
-        constitute_colonial_province = {
-            tag = LOU
-        }
-    }
-    2516 = {
-        constitute_colonial_province = {
-            tag = LOU
-        }
-    }
-    2014 = {
-        constitute_colonial_province = {
-            tag = LOU
-        }
-    }
-    894 = {
-        constitute_colonial_province = {
-            tag = LOU
-        }
-    }
-    2672 = {
-        constitute_colonial_province = {
-            tag = LOU
-        }
-    }
-    2876 = {
-        constitute_colonial_province = {
-            tag = LOU
-        }
-    }
-    2875 = {
-        constitute_colonial_province = {
-            tag = LOU
-        }
-    }
-    2514 = {
-        constitute_colonial_province = {
-            tag = LOU
-        }
-    }
-    4923 = {
-        constitute_colonial_province = {
-            tag = LOU
-        }
-    }
-    918 = {
-        constitute_colonial_province = {
-            tag = LOU
-        }
-    }
-    939 = {
-        constitute_colonial_province = {
-            tag = LOU
-        }
-    }
-    4884 = {
-        constitute_colonial_province = {
-            tag = LOU
-        }
-    }
-    920 = {
-        constitute_colonial_province = {
-            tag = LOU
-        }
-    }
-    4883 = {
-        constitute_colonial_province = {
-            tag = LOU
-        }
-    }
-    2532 = {
-        constitute_colonial_province = {
-            tag = LOU
-        }
-    }
-    4913 = {
-        constitute_colonial_province = {
-            tag = LOU
-        }
-    }
-    919 = {
-        constitute_colonial_province = {
-            tag = LOU
-        }
-    }
-    4887 = {
-        constitute_colonial_province = {
-            tag = LOU
-        }
-    }
-    4921 = {
-        constitute_colonial_province = {
-            tag = LOU
-        }
-    }
-    940 = {
-        constitute_colonial_province = {
-            tag = LOU
-        }
-    }
-    934 = {
-        constitute_colonial_province = {
-            tag = LOU
-        }
-    }
-    941 = {
-        constitute_colonial_province = {
-            tag = LOU
-        }
-    }
-    4885 = {
-        constitute_colonial_province = {
-            tag = LOU
-        }
-    }
-    2528 = {
-        constitute_colonial_province = {
-            tag = LOU
-        }
-    }
-    895 = {
-        constitute_colonial_province = {
-            tag = LOU
-        }
-    }
-    2500 = {
-        constitute_colonial_province = {
-            tag = LOU
-        }
-    }
-    897 = {
-        constitute_colonial_province = {
-            tag = LOU
-        }
-    }
-    2529 = {
-        constitute_colonial_province = {
-            tag = LOU
-        }
-    }
-    2515 = {
-        constitute_colonial_province = {
-            tag = LOU
-        }
-    }
-    LOU = {
-        set_capital = 893
-    }
+	922 = {
+		constitute_colonial_province = {
+			tag = LOU
+		}
+	}
+	923 = {
+		constitute_colonial_province = {
+			tag = LOU
+		}
+	}
+	2530 = {
+		constitute_colonial_province = {
+			tag = LOU
+		}
+	}
+	893 = {
+		constitute_colonial_province = {
+			tag = LOU
+		}
+	}
+	921 = {
+		constitute_colonial_province = {
+			tag = LOU
+		}
+	}
+	2533 = {
+		constitute_colonial_province = {
+			tag = LOU
+		}
+	}
+	924 = {
+		constitute_colonial_province = {
+			tag = LOU
+		}
+	}
+	2516 = {
+		constitute_colonial_province = {
+			tag = LOU
+		}
+	}
+	2014 = {
+		constitute_colonial_province = {
+			tag = LOU
+		}
+	}
+	894 = {
+		constitute_colonial_province = {
+			tag = LOU
+		}
+	}
+	2672 = {
+		constitute_colonial_province = {
+			tag = LOU
+		}
+	}
+	2876 = {
+		constitute_colonial_province = {
+			tag = LOU
+		}
+	}
+	2875 = {
+		constitute_colonial_province = {
+			tag = LOU
+		}
+	}
+	2514 = {
+		constitute_colonial_province = {
+			tag = LOU
+		}
+	}
+	4923 = {
+		constitute_colonial_province = {
+			tag = LOU
+		}
+	}
+	918 = {
+		constitute_colonial_province = {
+			tag = LOU
+		}
+	}
+	939 = {
+		constitute_colonial_province = {
+			tag = LOU
+		}
+	}
+	4884 = {
+		constitute_colonial_province = {
+			tag = LOU
+		}
+	}
+	920 = {
+		constitute_colonial_province = {
+			tag = LOU
+		}
+	}
+	4883 = {
+		constitute_colonial_province = {
+			tag = LOU
+		}
+	}
+	2532 = {
+		constitute_colonial_province = {
+			tag = LOU
+		}
+	}
+	4913 = {
+		constitute_colonial_province = {
+			tag = LOU
+		}
+	}
+	919 = {
+		constitute_colonial_province = {
+			tag = LOU
+		}
+	}
+	4887 = {
+		constitute_colonial_province = {
+			tag = LOU
+		}
+	}
+	4921 = {
+		constitute_colonial_province = {
+			tag = LOU
+		}
+	}
+	940 = {
+		constitute_colonial_province = {
+			tag = LOU
+		}
+	}
+	934 = {
+		constitute_colonial_province = {
+			tag = LOU
+		}
+	}
+	941 = {
+		constitute_colonial_province = {
+			tag = LOU
+		}
+	}
+	4885 = {
+		constitute_colonial_province = {
+			tag = LOU
+		}
+	}
+	2528 = {
+		constitute_colonial_province = {
+			tag = LOU
+		}
+	}
+	895 = {
+		constitute_colonial_province = {
+			tag = LOU
+		}
+	}
+	2500 = {
+		constitute_colonial_province = {
+			tag = LOU
+		}
+	}
+	897 = {
+		constitute_colonial_province = {
+			tag = LOU
+		}
+	}
+	2529 = {
+		constitute_colonial_province = {
+			tag = LOU
+		}
+	}
+	2515 = {
+		constitute_colonial_province = {
+			tag = LOU
+		}
+	}
+	LOU = {
+		set_capital = 893
+	}
 }
 
-
 constitute_alaska = {
-    2611 = {
-        constitute_colonial_province = {
-            tag = ALA
-        }
-    }
-    2613 = {
-        constitute_colonial_province = {
-            tag = ALA
-        }
-    }
-    2612 = {
-        constitute_colonial_province = {
-            tag = ALA
-        }
-    }
-    978 = {
-        constitute_colonial_province = {
-            tag = ALA
-        }
-    }
-    977 = {
-        constitute_colonial_province = {
-            tag = ALA
-        }
-    }
-    976 = {
-        constitute_colonial_province = {
-            tag = ALA
-        }
-    }
-    979 = {
-        constitute_colonial_province = {
-            tag = ALA
-        }
-    }
-    2613 = {
-        constitute_colonial_province = {
-            tag = ALA
-        }
-    }
-    2612 = {
-        constitute_colonial_province = {
-            tag = ALA
-        }
-    }
-    978 = {
-        constitute_colonial_province = {
-            tag = ALA
-        }
-    }
-    977 = {
-        constitute_colonial_province = {
-            tag = ALA
-        }
-    }
-    976 = {
-        constitute_colonial_province = {
-            tag = ALA
-        }
-    }
-    979 = {
-        constitute_colonial_province = {
-            tag = ALA
-        }
-    }
-    2613 = {
-        change_province_name = "Juneau"
-    }
-    ALA = {
-        set_capital = 2613
-    }
+	2611 = {
+		constitute_colonial_province = {
+			tag = ALA
+		}
+	}
+	2613 = {
+		constitute_colonial_province = {
+			tag = ALA
+		}
+	}
+	2612 = {
+		constitute_colonial_province = {
+			tag = ALA
+		}
+	}
+	978 = {
+		constitute_colonial_province = {
+			tag = ALA
+		}
+	}
+	977 = {
+		constitute_colonial_province = {
+			tag = ALA
+		}
+	}
+	976 = {
+		constitute_colonial_province = {
+			tag = ALA
+		}
+	}
+	979 = {
+		constitute_colonial_province = {
+			tag = ALA
+		}
+	}
+	2613 = {
+		constitute_colonial_province = {
+			tag = ALA
+		}
+	}
+	2612 = {
+		constitute_colonial_province = {
+			tag = ALA
+		}
+	}
+	978 = {
+		constitute_colonial_province = {
+			tag = ALA
+		}
+	}
+	977 = {
+		constitute_colonial_province = {
+			tag = ALA
+		}
+	}
+	976 = {
+		constitute_colonial_province = {
+			tag = ALA
+		}
+	}
+	979 = {
+		constitute_colonial_province = {
+			tag = ALA
+		}
+	}
+	2613 = {
+		change_province_name = "Juneau"
+	}
+	ALA = {
+		set_capital = 2613
+	}
 }
 
 constitute_florida = {
-    4626 = {
-        constitute_colonial_province = {
-            tag = FLO
-        }
-    }
-    4882 = {
-        constitute_colonial_province = {
-            tag = FLO
-        }
-    }
-    2536 = {
-        constitute_colonial_province = {
-            tag = FLO
-        }
-    }
-    927 = {
-        constitute_colonial_province = {
-            tag = FLO
-        }
-    }
-    2534 = {
-        constitute_colonial_province = {
-            tag = FLO
-        }
-    }
-    928 = {
-        constitute_colonial_province = {
-            tag = FLO
-        }
-    }
-    2535 = {
-        constitute_colonial_province = {
-            tag = FLO
-        }
-    }
-    4625 = {
-        constitute_colonial_province = {
-            tag = FLO
-        }
-    }
-    926 = {
-        constitute_colonial_province = {
-            tag = FLO
-        }
-    }
-    2539 = {
-        constitute_colonial_province = {
-            tag = FLO
-        }
-    }
-    2537 = {
-        constitute_colonial_province = {
-            tag = FLO
-        }
-    }
-    4881 = {
-        constitute_colonial_province = {
-            tag = FLO
-        }
-    }
-    4650 = {
-        constitute_colonial_province = {
-            tag = FLO
-        }
-    }
-    4644 = {
-        constitute_colonial_province = {
-            tag = FLO
-        }
-    }
-    929 = {
-        constitute_colonial_province = {
-            tag = FLO
-        }
-    }
-    2538 = {
-        constitute_colonial_province = {
-            tag = FLO
-        }
-    }
-    4880 = {
-        constitute_colonial_province = {
-            tag = FLO
-        }
-    }
-    2618 = {
-        constitute_colonial_province = {
-            tag = FLO
-        }
-    }
-    930 = {
-        constitute_colonial_province = {
-            tag = FLO
-        }
-    }
-    2541 = {
-        constitute_colonial_province = {
-            tag = FLO
-        }
-    }
-    2542 = {
-        constitute_colonial_province = {
-            tag = FLO
-        }
-    }
-    925 = {
-        constitute_colonial_province = {
-            tag = FLO
-        }
-    }
-    2531 = {
-        constitute_colonial_province = {
-            tag = FLO
-        }
-    }
-    2540 = {
-        constitute_colonial_province = {
-            tag = FLO
-        }
-    }
-    931 = {
-        constitute_colonial_province = {
-            tag = FLO
-        }
-    }
-    935 = {
-        constitute_colonial_province = {
-            tag = FLO
-        }
-    }
-    2527 = {
-        constitute_colonial_province = {
-            tag = FLO
-        }
-    }
-    FLO = {
-        set_capital = 926
-    }
-    926 = {
-        change_province_name = "Miami"
-    }
+	4626 = {
+		constitute_colonial_province = {
+			tag = FLO
+		}
+	}
+	4882 = {
+		constitute_colonial_province = {
+			tag = FLO
+		}
+	}
+	2536 = {
+		constitute_colonial_province = {
+			tag = FLO
+		}
+	}
+	927 = {
+		constitute_colonial_province = {
+			tag = FLO
+		}
+	}
+	2534 = {
+		constitute_colonial_province = {
+			tag = FLO
+		}
+	}
+	928 = {
+		constitute_colonial_province = {
+			tag = FLO
+		}
+	}
+	2535 = {
+		constitute_colonial_province = {
+			tag = FLO
+		}
+	}
+	4625 = {
+		constitute_colonial_province = {
+			tag = FLO
+		}
+	}
+	926 = {
+		constitute_colonial_province = {
+			tag = FLO
+		}
+	}
+	2539 = {
+		constitute_colonial_province = {
+			tag = FLO
+		}
+	}
+	2537 = {
+		constitute_colonial_province = {
+			tag = FLO
+		}
+	}
+	4881 = {
+		constitute_colonial_province = {
+			tag = FLO
+		}
+	}
+	4650 = {
+		constitute_colonial_province = {
+			tag = FLO
+		}
+	}
+	4644 = {
+		constitute_colonial_province = {
+			tag = FLO
+		}
+	}
+	929 = {
+		constitute_colonial_province = {
+			tag = FLO
+		}
+	}
+	2538 = {
+		constitute_colonial_province = {
+			tag = FLO
+		}
+	}
+	4880 = {
+		constitute_colonial_province = {
+			tag = FLO
+		}
+	}
+	2618 = {
+		constitute_colonial_province = {
+			tag = FLO
+		}
+	}
+	930 = {
+		constitute_colonial_province = {
+			tag = FLO
+		}
+	}
+	2541 = {
+		constitute_colonial_province = {
+			tag = FLO
+		}
+	}
+	2542 = {
+		constitute_colonial_province = {
+			tag = FLO
+		}
+	}
+	925 = {
+		constitute_colonial_province = {
+			tag = FLO
+		}
+	}
+	2531 = {
+		constitute_colonial_province = {
+			tag = FLO
+		}
+	}
+	2540 = {
+		constitute_colonial_province = {
+			tag = FLO
+		}
+	}
+	931 = {
+		constitute_colonial_province = {
+			tag = FLO
+		}
+	}
+	935 = {
+		constitute_colonial_province = {
+			tag = FLO
+		}
+	}
+	2527 = {
+		constitute_colonial_province = {
+			tag = FLO
+		}
+	}
+	FLO = {
+		set_capital = 926
+	}
+	926 = {
+		change_province_name = "Miami"
+	}
 }
 
 constitute_american_east_coast = {
-    962 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    2567 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    965 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    966 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    969 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    2013 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    956 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    2562 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    968 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    2023 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    967 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    2559 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    2563 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    2564 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    2553 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    2556 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    2554 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    953 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    2557 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    2010 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    955 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    971 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    2566 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    970 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    2614 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    4877 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    4878 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    936 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    2549 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    2547 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    938 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    2550 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    2011 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    2552 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    949 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    4873 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    2565 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    2561 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    4871 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    4912 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    963 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    4874 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    2558 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    2560 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    964 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    961 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    960 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    2639 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    957 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    952 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    950 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    2543 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    2546 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    932 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    933 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    4647 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    937 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    2545 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    4648 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    4879 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    2544 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-    2548 = {
-        constitute_colonial_province = {
-            tag = USA
-        }
-    }
-
-    USA = {
-        set_capital = 953
-    }
-    953 = {
-        change_province_name = "District of Columbia"
-    }
+	962 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	2567 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	965 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	966 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	969 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	2013 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	956 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	2562 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	968 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	2023 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	967 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	2559 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	2563 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	2564 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	2553 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	2556 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	2554 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	953 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	2557 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	2010 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	955 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	971 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	2566 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	970 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	2614 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	4877 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	4878 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	936 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	2549 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	2547 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	938 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	2550 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	2011 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	2552 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	949 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	4873 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	2565 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	2561 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	4871 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	4912 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	963 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	4874 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	2558 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	2560 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	964 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	961 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	960 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	2639 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	957 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	952 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	950 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	2543 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	2546 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	932 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	933 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	4647 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	937 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	2545 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	4648 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	4879 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	2544 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	2548 = {
+		constitute_colonial_province = {
+			tag = USA
+		}
+	}
+	USA = {
+		set_capital = 953
+	}
+	953 = {
+		change_province_name = "District of Columbia"
+	}
 }
 
 constitute_caribbeans = {
-    501 = {
-        constitute_colonial_province = {
-            tag = CUB
-        }
-    }
-    499 = {
-        constitute_colonial_province = {
-            tag = CUB
-        }
-    }
-    4622 = {
-        constitute_colonial_province = {
-            tag = CUB
-        }
-    }
-    2654 = {
-        constitute_colonial_province = {
-            tag = CUB
-        }
-    }
-    486 = {
-        constitute_colonial_province = {
-            tag = CUB
-        }
-    }
-    4623 = {
-        constitute_colonial_province = {
-            tag = CUB
-        }
-    }
-    2655 = {
-        constitute_colonial_province = {
-            tag = CUB
-        }
-    }
-    485 = {
-        constitute_colonial_province = {
-            tag = CUB
-        }
-    }
-    484 = {
-        constitute_colonial_province = {
-            tag = CUB
-        }
-    }
-    2656 = {
-        constitute_colonial_province = {
-            tag = CUB
-        }
-    }
-    4624 = {
-        constitute_colonial_province = {
-            tag = CUB
-        }
-    }
-    487 = {
-        constitute_colonial_province = {
-            tag = CUB
-        }
-    }
-    494 = {
-        constitute_colonial_province = {
-            tag = CUB
-        }
-    }
-    495 = {
-        constitute_colonial_province = {
-            tag = CUB
-        }
-    }
-    500 = {
-        constitute_colonial_province = {
-            tag = CUB
-        }
-    }
-    496 = {
-        constitute_colonial_province = {
-            tag = CUB
-        }
-    }
-    483 = {
-        constitute_colonial_province = {
-            tag = CUB
-        }
-    }
-    6562 = {
-        constitute_colonial_province = {
-            tag = CUB
-        }
-    }
-    493 = {
-        constitute_colonial_province = {
-            tag = CUB
-        }
-    }
-    6558 = {
-        constitute_colonial_province = {
-            tag = CUB
-        }
-    }
-    497 = {
-        constitute_colonial_province = {
-            tag = CUB
-        }
-    }
-    498 = {
-        constitute_colonial_province = {
-            tag = CUB
-        }
-    }
-    502 = {
-        constitute_colonial_province = {
-            tag = CUB
-        }
-    }
-    4621 = {
-        constitute_colonial_province = {
-            tag = CUB
-        }
-    }
-    4620 = {
-        constitute_colonial_province = {
-            tag = CUB
-        }
-    }
-    2659 = {
-        constitute_colonial_province = {
-            tag = CUB
-        }
-    }
-    4619 = {
-        constitute_colonial_province = {
-            tag = CUB
-        }
-    }
-    2658 = {
-        constitute_colonial_province = {
-            tag = CUB
-        }
-    }
-    488 = {
-        constitute_colonial_province = {
-            tag = CUB
-        }
-    }
-    4618 = {
-        constitute_colonial_province = {
-            tag = CUB
-        }
-    }
-    492 = {
-        constitute_colonial_province = {
-            tag = CUB
-        }
-    }
-    491 = {
-        constitute_colonial_province = {
-            tag = CUB
-        }
-    }
-    1881 = {
-        constitute_colonial_province = {
-            tag = CUB
-        }
-    }
-    490 = {
-        constitute_colonial_province = {
-            tag = CUB
-        }
-    }
-
-    CUB = {
-        set_capital = 484
-    }
-    484 = {
-        change_province_name = "Havana"
-    }
+	501 = {
+		constitute_colonial_province = {
+			tag = CUB
+		}
+	}
+	499 = {
+		constitute_colonial_province = {
+			tag = CUB
+		}
+	}
+	4622 = {
+		constitute_colonial_province = {
+			tag = CUB
+		}
+	}
+	2654 = {
+		constitute_colonial_province = {
+			tag = CUB
+		}
+	}
+	486 = {
+		constitute_colonial_province = {
+			tag = CUB
+		}
+	}
+	4623 = {
+		constitute_colonial_province = {
+			tag = CUB
+		}
+	}
+	2655 = {
+		constitute_colonial_province = {
+			tag = CUB
+		}
+	}
+	485 = {
+		constitute_colonial_province = {
+			tag = CUB
+		}
+	}
+	484 = {
+		constitute_colonial_province = {
+			tag = CUB
+		}
+	}
+	2656 = {
+		constitute_colonial_province = {
+			tag = CUB
+		}
+	}
+	4624 = {
+		constitute_colonial_province = {
+			tag = CUB
+		}
+	}
+	487 = {
+		constitute_colonial_province = {
+			tag = CUB
+		}
+	}
+	494 = {
+		constitute_colonial_province = {
+			tag = CUB
+		}
+	}
+	495 = {
+		constitute_colonial_province = {
+			tag = CUB
+		}
+	}
+	500 = {
+		constitute_colonial_province = {
+			tag = CUB
+		}
+	}
+	496 = {
+		constitute_colonial_province = {
+			tag = CUB
+		}
+	}
+	483 = {
+		constitute_colonial_province = {
+			tag = CUB
+		}
+	}
+	6562 = {
+		constitute_colonial_province = {
+			tag = CUB
+		}
+	}
+	493 = {
+		constitute_colonial_province = {
+			tag = CUB
+		}
+	}
+	6558 = {
+		constitute_colonial_province = {
+			tag = CUB
+		}
+	}
+	497 = {
+		constitute_colonial_province = {
+			tag = CUB
+		}
+	}
+	498 = {
+		constitute_colonial_province = {
+			tag = CUB
+		}
+	}
+	502 = {
+		constitute_colonial_province = {
+			tag = CUB
+		}
+	}
+	4621 = {
+		constitute_colonial_province = {
+			tag = CUB
+		}
+	}
+	4620 = {
+		constitute_colonial_province = {
+			tag = CUB
+		}
+	}
+	2659 = {
+		constitute_colonial_province = {
+			tag = CUB
+		}
+	}
+	4619 = {
+		constitute_colonial_province = {
+			tag = CUB
+		}
+	}
+	2658 = {
+		constitute_colonial_province = {
+			tag = CUB
+		}
+	}
+	488 = {
+		constitute_colonial_province = {
+			tag = CUB
+		}
+	}
+	4618 = {
+		constitute_colonial_province = {
+			tag = CUB
+		}
+	}
+	492 = {
+		constitute_colonial_province = {
+			tag = CUB
+		}
+	}
+	491 = {
+		constitute_colonial_province = {
+			tag = CUB
+		}
+	}
+	1881 = {
+		constitute_colonial_province = {
+			tag = CUB
+		}
+	}
+	490 = {
+		constitute_colonial_province = {
+			tag = CUB
+		}
+	}
+	CUB = {
+		set_capital = 484
+	}
+	484 = {
+		change_province_name = "Havana"
+	}
 }
 
 constitute_caribbean_pirates = {
-    489 = {
-        constitute_colonial_province = {
-            tag = NSS
-        }
-    }
-
-    482 = {
-        constitute_colonial_province = {
-            tag = NSS
-        }
-    }
+	489 = {
+		constitute_colonial_province = {
+			tag = NSS
+		}
+	}
+	482 = {
+		constitute_colonial_province = {
+			tag = NSS
+		}
+	}
 }
 
 constitute_paraguay = {
-    2883 = {
-        constitute_colonial_province = {
-            tag = GUY
-        }
-    }
-    799 = {
-        constitute_colonial_province = {
-            tag = GUY
-        }
-    }
-    2882 = {
-        constitute_colonial_province = {
-            tag = GUY
-        }
-    }
-    776 = {
-        constitute_colonial_province = {
-            tag = GUY
-        }
-    }
-    2884 = {
-        constitute_colonial_province = {
-            tag = GUY
-        }
-    }
-    775 = {
-        constitute_colonial_province = {
-            tag = GUY
-        }
-    }
-    2858 = {
-        constitute_colonial_province = {
-            tag = GUY
-        }
-    }
-    2859 = {
-        constitute_colonial_province = {
-            tag = GUY
-        }
-    }
+	2883 = {
+		constitute_colonial_province = {
+			tag = GUY
+		}
+	}
+	799 = {
+		constitute_colonial_province = {
+			tag = GUY
+		}
+	}
+	2882 = {
+		constitute_colonial_province = {
+			tag = GUY
+		}
+	}
+	776 = {
+		constitute_colonial_province = {
+			tag = GUY
+		}
+	}
+	2884 = {
+		constitute_colonial_province = {
+			tag = GUY
+		}
+	}
+	775 = {
+		constitute_colonial_province = {
+			tag = GUY
+		}
+	}
+	2858 = {
+		constitute_colonial_province = {
+			tag = GUY
+		}
+	}
+	2859 = {
+		constitute_colonial_province = {
+			tag = GUY
+		}
+	}
+}
+
+constitute_ecuador = {
+	2820 = {
+		constitute_colonial_province = {
+			tag = QTO
+		}
+	}
+	819 = {
+		constitute_colonial_province = {
+			tag = QTO
+		}
+	}
+	817 = {
+		constitute_colonial_province = {
+			tag = QTO
+		}
+	}
+	820 = {
+		constitute_colonial_province = {
+			tag = QTO
+		}
+	}
+	818 = {
+		constitute_colonial_province = {
+			tag = QTO
+		}
+	}
+}
+
+constitute_paraguay = {
+	2883 = {
+		constitute_colonial_province = {
+			tag = GUY
+		}
+	}
+	799 = {
+		constitute_colonial_province = {
+			tag = GUY
+		}
+	}
+	2882 = {
+		constitute_colonial_province = {
+			tag = GUY
+		}
+	}
+	776 = {
+		constitute_colonial_province = {
+			tag = GUY
+		}
+	}
+	2884 = {
+		constitute_colonial_province = {
+			tag = GUY
+		}
+	}
+	775 = {
+		constitute_colonial_province = {
+			tag = GUY
+		}
+	}
+	2858 = {
+		constitute_colonial_province = {
+			tag = GUY
+		}
+	}
+	2859 = {
+		constitute_colonial_province = {
+			tag = GUY
+		}
+	}
 }
 
 constitute_australia = {
-    australia_region = {
-        limit = {
-            is_city = yes
-            OR = {
-                owned_by = ROOT
-                owned_by_subject_of = ROOT
-            }
-        }
-        cede_province = AUS
-    }
-    AUS = {
-        set_capital = 4858
-    }   
+	australia_region = {
+		limit = {
+			is_city = yes
+			OR = {
+				owned_by = ROOT
+				owned_by_subject_of = ROOT
+			}
+		}
+		cede_province = AUS
+	}
+	AUS = {
+		set_capital = 4858
+	}
 }
 
 constitute_bolivia = {
-    # Bolivia does not exist so need to take in a tag
-    # Not removing these provinces from other countries for now since bolivia is
-    2838 = {
-        constitute_colonial_province = {
-            tag = $tag$
-        }
-    }
-    2940 = {
-        constitute_colonial_province = {
-            tag = $tag$
-        }
-    }
-    2946 = {
-        constitute_colonial_province = {
-            tag = $tag$
-        }
-    }
-    797 = {
-        constitute_colonial_province = {
-            tag = $tag$
-        }
-    }
-    2831 = {
-        constitute_colonial_province = {
-            tag = $tag$
-        }
-    }
-    802 = {
-        constitute_colonial_province = {
-            tag = $tag$
-        }
-    }
-    795 = {
-        constitute_colonial_province = {
-            tag = $tag$
-        }
-    }
-    2835 = {
-        constitute_colonial_province = {
-            tag = $tag$
-        }
-    }
-    2941 = {
-        constitute_colonial_province = {
-            tag = $tag$
-        }
-    }
-    2942 = {
-        constitute_colonial_province = {
-            tag = $tag$
-        }
-    }
-    803 = {
-        constitute_colonial_province = {
-            tag = $tag$
-        }
-    }
-    2833 = {
-        constitute_colonial_province = {
-            tag = $tag$
-        }
-    }
-    801 = {
-        constitute_colonial_province = {
-            tag = $tag$
-        }
-    }
-    800 = {
-        constitute_colonial_province = {
-            tag = $tag$
-        }
-    }
-    2834 = {
-        constitute_colonial_province = {
-            tag = $tag$
-        }
-    }
-    2832 = {
-        constitute_colonial_province = {
-            tag = $tag$
-        }
-    }
+	# Bolivia does not exist so need to take in a tag
+	# Not removing these provinces from other countries for now since bolivia is
+	2838 = {
+		constitute_colonial_province = {
+			tag = $tag$
+		}
+	}
+	2940 = {
+		constitute_colonial_province = {
+			tag = $tag$
+		}
+	}
+	2946 = {
+		constitute_colonial_province = {
+			tag = $tag$
+		}
+	}
+	797 = {
+		constitute_colonial_province = {
+			tag = $tag$
+		}
+	}
+	2831 = {
+		constitute_colonial_province = {
+			tag = $tag$
+		}
+	}
+	802 = {
+		constitute_colonial_province = {
+			tag = $tag$
+		}
+	}
+	795 = {
+		constitute_colonial_province = {
+			tag = $tag$
+		}
+	}
+	2835 = {
+		constitute_colonial_province = {
+			tag = $tag$
+		}
+	}
+	2941 = {
+		constitute_colonial_province = {
+			tag = $tag$
+		}
+	}
+	2942 = {
+		constitute_colonial_province = {
+			tag = $tag$
+		}
+	}
+	803 = {
+		constitute_colonial_province = {
+			tag = $tag$
+		}
+	}
+	2833 = {
+		constitute_colonial_province = {
+			tag = $tag$
+		}
+	}
+	801 = {
+		constitute_colonial_province = {
+			tag = $tag$
+		}
+	}
+	800 = {
+		constitute_colonial_province = {
+			tag = $tag$
+		}
+	}
+	2834 = {
+		constitute_colonial_province = {
+			tag = $tag$
+		}
+	}
+	2832 = {
+		constitute_colonial_province = {
+			tag = $tag$
+		}
+	}
 }
 
 constitute_guyanas = {
-    # Guyanas does not exist so need to take in a tag
-
-    743 = {
-        constitute_colonial_province = {
-            tag = $tag$
-        }
-    }
-    2931 = {
-        constitute_colonial_province = {
-            tag = $tag$
-        }
-    }
-    744 = {
-        constitute_colonial_province = {
-            tag = $tag$
-        }
-    }
-    745 = {
-        constitute_colonial_province = {
-            tag = $tag$
-        }
-    }
-    2937 = {
-        constitute_colonial_province = {
-            tag = $tag$
-        }
-    }
-    746 = {
-        constitute_colonial_province = {
-            tag = $tag$
-        }
-    }
+	# Guyanas does not exist so need to take in a tag
+	743 = {
+		constitute_colonial_province = {
+			tag = $tag$
+		}
+	}
+	2931 = {
+		constitute_colonial_province = {
+			tag = $tag$
+		}
+	}
+	744 = {
+		constitute_colonial_province = {
+			tag = $tag$
+		}
+	}
+	745 = {
+		constitute_colonial_province = {
+			tag = $tag$
+		}
+	}
+	2937 = {
+		constitute_colonial_province = {
+			tag = $tag$
+		}
+	}
+	746 = {
+		constitute_colonial_province = {
+			tag = $tag$
+		}
+	}
 }
+
 constitute_uruguay = {
-    # Uruguay does not exist so need to take in a tag
-    772 = {
-        constitute_colonial_province = {
-            tag = $tag$
-        }
-    }
-    2850 = {
-        constitute_colonial_province = {
-            tag = $tag$
-        }
-    }
-    773 = {
-        constitute_colonial_province = {
-            tag = $tag$
-        }
-    }
+	772 = {
+		constitute_colonial_province = {
+			tag = $tag$
+		}
+	}
+	2850 = {
+		constitute_colonial_province = {
+			tag = $tag$
+		}
+	}
+	773 = {
+		constitute_colonial_province = {
+			tag = $tag$
+		}
+	}
+}
+
+constitute_venezuela = {
+	maracaibo_area = {
+		constitute_colonial_province = {
+			tag = VNZ
+		}
+	}
+	venezuela_area = {
+		constitute_colonial_province = {
+			tag = VNZ
+		}
+	}
+	central_llanos_area = {
+		constitute_colonial_province = {
+			tag = VNZ
+		}
+	}
+	eastern_llanos = {
+		constitute_colonial_province = {
+			tag = VNZ
+		}
+	}
+	upper_guyana_area = {
+		constitute_colonial_province = {
+			tag = VNZ
+		}
+	}
 }
 
 # Bottoms up approach that only checks provinces from the whitelist. Should be faster by far
 constitute_new_world = {
-    constitute_colombia = yes
-    constitute_brazil = yes
-    constitute_la_plata = yes
-    constitute_chile = yes
-    constitute_inca = yes
-    constitute_central_america = yes
-    constitute_mexico = yes
-    constitute_canada = yes
-    constitute_california = yes
-    constitute_texas = yes
-    constitute_illinois = yes
-    constitute_louisiana = yes
-    constitute_alaska = yes
-    constitute_florida = yes
-    constitute_american_east_coast = yes
-    constitute_caribbeans = yes
-    constitute_paraguay = yes
-    constitute_australia = yes
-    constitute_caribbean_pirates = yes
-    
-    play_completion_sound = yes
+	constitute_non_usa_new_world = yes
+	# 
+	constitute_central_america = yes
+	constitute_california = yes
+	constitute_texas = yes
+	constitute_illinois = yes
+	constitute_louisiana = yes
+	constitute_alaska = yes
+	constitute_florida = yes
+	constitute_american_east_coast = yes
+	constitute_caribbean_pirates = yes
+	play_completion_sound = yes
 }
 
 constitute_non_usa_new_world = {
-    constitute_chile = yes
-    constitute_colombia = yes
-    constitute_paraguay = yes
-    constitute_brazil = yes
-    constitute_la_plata = yes
-    constitute_inca = yes
-
-    constitute_australia = yes
-
-    constitute_mexico = yes
-    constitute_canada = yes
-
-    constitute_bolivia = yes
-    constitute_guyanas = yes
-
-    # Constitute guyana and bolivia yourself after
-    play_completion_sound = yes
+	constitute_chile = yes
+	constitute_colombia = yes
+	constitute_paraguay = yes
+	constitute_brazil = yes
+	constitute_la_plata = yes
+	constitute_peru = yes
+	constitute_ecuador = yes
+	constitute_australia = yes
+	constitute_mexico = yes
+	constitute_canada = yes
+	constitute_bolivia = yes
+	constitute_guyanas = yes
+	constitute_caribbeans = yes
+	constitute_venezuela = yes
+	# Constitute guyana and bolivia yourself after
+	play_completion_sound = yes
 }

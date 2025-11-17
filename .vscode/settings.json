@@ -1,5 +1,6 @@
 {
     "[eu4]": {
-        "editor.insertSpaces": true
+        "editor.insertSpaces": true,
+        "editor.defaultFormatter": "tboby.cwtools-vscode"
     }
 }
