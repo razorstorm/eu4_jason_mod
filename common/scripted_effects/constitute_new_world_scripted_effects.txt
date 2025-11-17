@@ -573,17 +573,7 @@ constitute_brazil = {
             tag = BRZ
         }
     }
-    773 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
     2935 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2850 = {
         constitute_colonial_province = {
             tag = BRZ
         }
@@ -599,11 +589,6 @@ constitute_brazil = {
         }
     }
     2879 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    772 = {
         constitute_colonial_province = {
             tag = BRZ
         }
@@ -633,26 +618,6 @@ constitute_brazil = {
             tag = BRZ
         }
     }
-    2833 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    803 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2834 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    801 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
     2881 = {
         constitute_colonial_province = {
             tag = BRZ
@@ -663,17 +628,7 @@ constitute_brazil = {
             tag = BRZ
         }
     }
-    2855 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
     2903 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    2832 = {
         constitute_colonial_province = {
             tag = BRZ
         }
@@ -749,11 +704,6 @@ constitute_brazil = {
         }
     }
     2911 = {
-        constitute_colonial_province = {
-            tag = BRZ
-        }
-    }
-    800 = {
         constitute_colonial_province = {
             tag = BRZ
         }
@@ -944,6 +894,11 @@ constitute_la_plata = {
             tag = LAP
         }
     }
+    2855 = {
+        constitute_colonial_province = {
+            tag = LAP
+        }
+    }
     LAP = {
         set_capital = 778
     }
@@ -1039,52 +994,12 @@ constitute_inca = {
             tag = INC
         }
     }
-    802 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
     2947 = {
         constitute_colonial_province = {
             tag = INC
         }
     }
     804 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    2831 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    797 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    2942 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    795 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    2941 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    2946 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    2835 = {
         constitute_colonial_province = {
             tag = INC
         }
@@ -1165,16 +1080,6 @@ constitute_inca = {
         }
     }
     813 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    2838 = {
-        constitute_colonial_province = {
-            tag = INC
-        }
-    }
-    2940 = {
         constitute_colonial_province = {
             tag = INC
         }
@@ -4055,9 +3960,6 @@ constitute_australia = {
         }
         cede_province = AUS
     }
-    make_dominion = {
-        target = AUS
-    }
     AUS = {
         set_capital = 4858
     }   
@@ -4177,6 +4079,24 @@ constitute_guyanas = {
         }
     }
     746 = {
+        constitute_colonial_province = {
+            tag = $tag$
+        }
+    }
+}
+constitute_uruguay = {
+    # Uruguay does not exist so need to take in a tag
+    772 = {
+        constitute_colonial_province = {
+            tag = $tag$
+        }
+    }
+    2850 = {
+        constitute_colonial_province = {
+            tag = $tag$
+        }
+    }
+    773 = {
         constitute_colonial_province = {
             tag = $tag$
         }
