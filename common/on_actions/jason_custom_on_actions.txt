@@ -125,6 +125,13 @@ on_monthly_pulse = {
 
         if = {
             limit = {
+                has_country_flag = jason_no_flu_enabled
+            }
+            remove_influenza_from_all_provinces = yes
+        }
+
+        if = {
+            limit = {
                 has_country_flag = jason_subjects_auto_core_enabled
             }
             all_subjects_auto_core_themselves = yes

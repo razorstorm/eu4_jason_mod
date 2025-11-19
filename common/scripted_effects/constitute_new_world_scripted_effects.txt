@@ -4011,9 +4011,26 @@ constitute_australia = {
 				owned_by = ROOT
 				owned_by_subject_of = ROOT
 			}
+            NOT = {
+                area = new_zealand_area
+            }
 		}
 		cede_province = AUS
 	}
+
+    new_zealand_area = {
+        limit = {
+            is_city = yes
+            OR = {
+                owned_by = ROOT
+                owned_by_subject_of = ROOT
+            }
+        }
+        cede_province = NZL
+    }
+    NZL = {
+        set_capital = 1107
+    }
 	AUS = {
 		set_capital = 4858
 	}

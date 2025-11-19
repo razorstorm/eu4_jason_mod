@@ -191,10 +191,24 @@
  build_mills_for_diamond_provinces_decision_title: "Build Mills for Diamond Provinces"
  build_mills_for_diamond_provinces_decision_desc: "Builds a mill in all provinces that produce diamonds. This will increase the production efficiency of these provinces."
 
+ dev_provinces_to_fourty_decision_title: "Auto-dev Provinces to 40."
+ dev_provinces_to_fourty_decision_desc: "Automatically develops all provinces with less than 40 development to at least 40."
+
+ dev_provinces_to_twenty_decision_title: "Auto-dev Provinces to 20."
+ dev_provinces_to_twenty_decision_desc: "Automatically develops all provinces with less than 20 development to at least 20."
+
+ dev_provinces_to_ten_decision_title: "Auto-dev Provinces to 10."
+ dev_provinces_to_ten_decision_desc: "Automatically develops all provinces with less than 10 development to at least 10."
+
  enable_subjects_auto_core_title: "Enable Subjects Auto Core"
  enable_subjects_auto_core_desc: "Enables auto coring of all provinces owned by your subjects. This will automatically core all provinces owned by your subjects on monthly tick or on acquisition of new subjects / provinces."
  disable_subjects_auto_core_title: "Disable Subjects Auto Core"
  disable_subjects_auto_core_desc: "Disables auto coring of all provinces owned by your subjects. This will stop auto coring all provinces owned by your subjects on monthly tick or on acquisition of new subjects / provinces."
+
+ enable_no_flu_title: "Enable Absolute Influenza Prevention Measures"
+ enable_no_flu_desc: "Enables measures to prevent influenza from infecting our lands, protecting our population and maintaining stability. Competent physicians are deployed and provinces have flags applied to prevent the flu spread event from firing."
+ disable_no_flu_title: "Disable Influenza Prevention"
+ disable_no_flu_desc: "Disables measures to prevent influenza from infecting our lands, potentially exposing our population to the disease."
 
  enable_high_trade_power_on_trade_outposts_title: "Enable Free Trade Power on Trade Outposts"
  enable_high_trade_power_on_trade_outposts_desc: "Enables Free Trade power on all trade outposts."

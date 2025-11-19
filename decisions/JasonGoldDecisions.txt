@@ -1405,6 +1405,43 @@ country_decisions = {
             clr_country_flag = jason_subjects_auto_core_enabled
         }  
     }
+    
+    enable_no_flu = {
+        major = yes
+        potential = {
+            ai = no
+            has_country_flag = jason_show_decisions_enabled
+            NOT = {
+                has_country_flag = jason_no_flu_enabled
+            }
+        }
+        allow = {
+            ai = no
+            NOT = {
+                has_country_flag = jason_no_flu_enabled
+            }
+        }
+        effect = {
+            set_country_flag = jason_no_flu_enabled
+        }  
+    }
+
+    disable_no_flu = {
+        major = yes
+        color = { 100 0 0 }
+        potential = {
+            ai = no
+            has_country_flag = jason_show_decisions_enabled
+            has_country_flag = jason_no_flu_enabled
+        }
+        allow = {
+            ai = no
+            has_country_flag = jason_no_flu_enabled
+        }
+        effect = {
+            clr_country_flag = jason_no_flu_enabled
+        }  
+    }
 
     discover_world_decision = {
         major = yes
@@ -1538,7 +1575,10 @@ country_decisions = {
         major = no
         potential = {
             ai = no
-            has_country_flag = jason_show_decisions_enabled
+            any_owned_province = {
+                trade_goods = diamonds
+                NOT = { has_building = mills }
+            }
         }
         allow = {
             always = yes
@@ -1558,18 +1598,114 @@ country_decisions = {
             build_mills_for_diamond_provinces = yes
         }
     }
-
+    
     constitute_new_world_decision = {
         major = no
         color = { 0 0 255}
         potential = {
             ai = no
+            has_country_flag = jason_show_decisions_enabled
         }
         allow = {
             ai = no
         }
         effect = {
             constitute_new_world = yes
+        }
+    }
+
+    dev_provinces_to_fourty_decision = {
+        major = no
+        potential = {
+            ai = no
+            OR = {
+                has_country_flag = jason_show_decisions_enabled
+                has_country_flag = jason_show_dev_decisions_enabled
+            }
+            any_owned_province = {
+                NOT = {
+                    development = 40
+                }
+            }
+        }
+        allow = {
+            ai = no
+            any_owned_province = {
+                NOT = {
+                    development = 40
+                }
+            }
+        }
+        provinces_to_highlight = {
+            owned_by = ROOT
+            NOT = {
+                development = 20
+            }
+        }
+        effect = {
+            upgrade_low_dev_provinces = {
+                dev = 40
+            }
+        }
+    }
+
+    dev_provinces_to_twenty_decision = {
+        major = no
+        potential = {
+            ai = no
+            OR = {
+                has_country_flag = jason_show_decisions_enabled
+                has_country_flag = jason_show_dev_decisions_enabled
+            }
+        }
+        allow = {
+            ai = no
+            any_owned_province = {
+                NOT = {
+                    development = 20
+                }
+            }
+        }
+        provinces_to_highlight = {
+            owned_by = ROOT
+            NOT = {
+                development = 20
+            }
+        }
+        effect = {
+            upgrade_low_dev_provinces = {
+                dev = 20
+            }
+        }
+    }
+
+    dev_provinces_to_ten_decision = {
+        major = no
+        potential = {
+            ai = no
+            OR = {
+                has_country_flag = jason_show_decisions_enabled
+                has_country_flag = jason_show_dev_decisions_enabled
+            }
+        }
+        allow = {
+            ai = no
+            any_owned_province = {
+                NOT = {
+                    development = 10
+                }
+            }
+        }
+        provinces_to_highlight = {
+            owned_by = ROOT
+            NOT = {
+                development = 10
+            }
+        }
+        effect = {
+            upgrade_low_dev_provinces = {
+                dev = 10
+            }
         }
     }
 

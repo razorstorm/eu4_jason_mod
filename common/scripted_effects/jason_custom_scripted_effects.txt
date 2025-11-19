@@ -1606,8 +1606,8 @@ add_benefits_for_consolidated_dominions = {
         add_mod = {
             name = allow_frontiers_cheat
         }
-        change_government = monarchy
-        add_government_reform = autocracy_reform
+        # change_government = monarchy
+        # add_government_reform = autocracy_reform
 
         add_treasury = 100000
         add_country_modifier = {
@@ -1960,5 +1960,30 @@ add_furnace_and_blast_furnace_to_newcastle_coal_provinces = {
         # log = "Adding furnace and blast furnace to [This.GetName] [This.prov_id.GetValue]"
         add_building = furnace
         add_building = blast_furnace
+    }
+}
+
+remove_influenza_from_all_provinces = {
+    add_mod = {
+        name = has_competent_doctors
+        duration = -1
+    }
+    every_province = {
+        set_province_flag = province_had_influenza
+    }
+}
+
+upgrade_low_dev_provinces = {
+    every_owned_province = {
+        if = {
+            limit = {
+                NOT = {
+                    development = $dev$
+                }
+            }
+            add_base_tax = 2
+            add_base_production = 3
+            add_base_manpower = 1
+        }
     }
 }

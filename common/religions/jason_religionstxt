@@ -1,0 +1,796 @@
+# atheism_group = {
+# 	flags_with_emblem_percentage = 33
+# 	flag_emblem_index_range = { 58 80 }
+
+# 	syncretic_atheism = {
+#         color = { 90 140 250 }
+# 		icon = 42
+# 		allowed_conversion = {
+# 			jingtian_fazu
+# 			chinese_religion
+# 			taoist
+# 			chuanzhu
+# 		}
+# 		allowed_center_conversion = {
+# 			#animism
+# 			#ryukyuan
+# 			#bon
+# 			mahayana
+# 			#early_buddhism
+# 			buddhism
+# 			#vajrayana
+# 			#white_lotus
+# 			#luoisme
+# 			#shinto
+# 			#taoist
+# 			#jingtian_fazu
+# 			#tengri_pagan_reformed
+# 			#shamanism_new
+# 		}
+# 		country = {
+# 			all_estate_loyalty_equilibrium = 0.1
+# 			adm_tech_cost_modifier = -0.1
+# 		}
+# 		country_as_secondary = {
+# 			adm_tech_cost_modifier = -0.1
+# 			stability_cost_modifier = -0.1
+# 		}
+# 		on_convert = {
+# 			add_prestige = -100
+# 			add_stability = -1
+# 			add_country_modifier = {
+# 				name = "conversion_zeal"
+# 				duration = 3650
+# 			}
+# 			if = {
+# 				limit = {
+# 					has_country_flag = reformation_money
+# 					NOT = {
+# 						calc_true_if = {
+# 							all_province = {
+# 								religion = confucianism
+# 								is_reformation_center = yes
+# 							}
+# 							amount = 3
+# 						}
+# 					}
+# 				}
+# 				hidden_effect = {
+# 					random_owned_province = {
+# 						limit = {
+# 							hf_confucianism_can_have_center_of_reformation_trigger = {
+# 								RELIGION = confucianism
+# 							}
+# 						}
+# 						change_religion = confucianism
+# 						add_reform_center = confucianism
+# 					}
+# 				}
+# 				custom_tooltip = CENTER_OF_REFORMATION_POSSIBLE
+# 			}
+# 			if = {
+# 				limit = {
+# 					NOT = { has_country_flag = reformation_money }
+# 					NOT = {
+# 						calc_true_if = {
+# 							all_province = {
+# 								religion = confucianism
+# 								is_reformation_center = yes
+# 							}
+# 							amount = 3
+# 						}
+# 					}
+# 				}
+# 				add_years_of_income = 1.0
+# 				hidden_effect = {
+# 					random_owned_province = {
+# 						limit = {
+# 							hf_confucianism_can_have_center_of_reformation_trigger = {
+# 								RELIGION = confucianism
+# 							}
+# 						}
+# 						change_religion = confucianism
+# 						add_reform_center = confucianism
+# 					}
+# 				}
+# 				custom_tooltip = CENTER_OF_REFORMATION_POSSIBLE
+# 			}
+# 		}
+# 		will_get_center = { #Refered to even for initial CoR Spawn
+# 			any_owned_province = {
+# 				hf_can_have_center_of_reformation_trigger = {
+# 					RELIGION = confucianism
+# 				}
+# 			}
+# 		}
+# 		misguided_heretic = yes
+# 		aspects_name = CHINESE_ASPECTS
+# 		gurus = {
+# 			#
+# 				#master_kongzi = { #孔子
+# 				#	trigger = {
+# 				#		#NOT = { has_global_flag = guru_event_happening }
+# 				#		always = no
+# 				#	}
+# 				#	chance = {
+# 				#		factor = 1000
+# 				#	}
+# 				#	modifier = {
+# 				#		tolerance_own = 2
+# 				#	}
+# 				#	teachings = {
+# 				#		kongzi_1 = { #仁义
+# 				#			type = ADM
+# 				#			cost = 50
+	
+# 				#			global_unrest = -1
+# 				#		}
+# 				#		kongzi_2 = { #礼乐
+# 				#			type = DIP
+# 				#			cost = 50
+	
+# 				#			production_efficiency = 0.05
+# 				#		}
+# 				#		kongzi_3 = { #君子中庸
+# 				#			type = MIL
+# 				#			cost = 50
+
+# 				#			institution_spread_from_true_faith = 0.1
+# 				#		}
+# 				#	}
+# 				#}
+# 				#master_mengzi = { #孟子
+# 				#	trigger = {
+# 				#		#NOT = { has_global_flag = guru_event_happening }
+# 				#		always = no
+# 				#	}
+# 				#	chance = {
+# 				#		factor = 1000
+# 				#	}
+# 				#	modifier = {
+# 				#		free_policy = 1
+# 				#	}
+# 				#	teachings = {
+# 				#		mengzi_1 = { #君轻民贵
+# 				#			type = ADM
+# 				#			cost = 50
+
+# 				#			global_unrest = -1
+# 				#		}
+# 				#		mengzi_2 = { #不忍人之心
+# 				#			type = DIP
+# 				#			cost = 50
+	
+# 				#			diplomatic_reputation = 1
+# 				#		}
+# 				#		mengzi_3 = { #浩然正气
+# 				#			type = MIL
+# 				#			cost = 50
+	
+# 				#			defensiveness = 0.05
+# 				#		}
+# 				#	}
+# 				#}
+# 				#master_xunzi = { #荀子
+# 				#	trigger = {
+# 				#		#NOT = { has_global_flag = guru_event_happening }
+# 				#		always = no
+# 				#	}
+# 				#	chance = {
+# 				#		factor = 1000
+# 				#	}
+# 				#	modifier = {
+# 				#		harsh_treatment_cost = -0.2
+# 				#	}
+# 				#	teachings = {
+# 				#		xunzi_1 = { #忠君之道
+# 				#			type = ADM
+# 				#			cost = 50
+	
+# 				#			all_estate_loyalty_equilibrium = 0.1
+# 				#		}
+# 				#		xunzi_2 = { #天行有常
+# 				#			type = DIP
+# 				#			cost = 50
+	
+# 				#			stability_cost_modifier = -0.05
+# 				#		}
+# 				#		xunzi_3 = { #化性起伪
+# 				#			type = MIL
+# 				#			cost = 50
+	
+# 				#			ae_impact = -0.1
+# 				#		}
+# 				#	}
+# 				#}
+# 				#master_gongyang = { #董仲舒谶纬学
+# 				#	trigger = {
+# 				#		#NOT = { has_global_flag = guru_event_happening }
+# 				#		always = no
+# 				#	}
+# 				#	chance = {
+# 				#		factor = 1000
+# 				#	}
+# 				#	modifier = {
+# 				#		years_of_nationalism = -5
+# 				#	}
+# 				#	teachings = {
+# 				#		gongyang_1 = { #大一统者，天地之常经
+# 				#			type = ADM
+# 				#			cost = 50
+	
+# 				#			all_estate_loyalty_equilibrium = 0.1
+# 				#		}
+# 				#		gongyang_2 = { #天人之际，合而为一
+# 				#			type = DIP
+# 				#			cost = 50
+	
+# 				#			stability_cost_modifier = -0.05
+# 				#		}
+# 				#		gongyang_3 = { #君为臣纲﹑夫为妻纲﹑父为子纲
+# 				#			type = MIL
+# 				#			cost = 50
+	
+# 				#			ae_impact = -0.1
+# 				#		}
+# 				#	}
+# 				#}
+# 				#master_hanyu = { #韩柳古文
+# 				#	trigger = {
+# 				#		#NOT = { has_global_flag = guru_event_happening }
+# 				#		always = no
+# 				#	}
+# 				#	chance = {
+# 				#		factor = 1000
+# 				#	}
+# 				#	modifier = {
+# 				#		infantry_cost = -0.1
+# 				#	}
+# 				#	teachings = {
+# 				#		hanyu_1 = { #文道合一，明道为主
+# 				#			type = ADM
+# 				#			cost = 50
+	
+# 				#			church_loyalty_modifier = 0.1
+# 				#		}
+# 				#		hanyu_2 = { #呵抵释迦，申明夷夏之大防
+# 				#			type = DIP
+# 				#			cost = 50
+
+# 				#			global_missionary_strength = 0.01
+# 				#		}
+# 				#		hanyu_3 = { #闻道有先后，术业有专攻
+# 				#			type = MIL
+# 				#			cost = 50
+	
+# 				#			army_tradition_decay = -0.02
+# 				#		}
+# 				#	}
+# 				#}
+# 				#master_zhou = { #周敦颐
+# 				#	trigger = {
+# 				#		#NOT = { has_global_flag = guru_event_happening }
+# 				#		always = no
+# 				#	}
+# 				#	chance = {
+# 				#		factor = 1000
+# 				#	}
+# 				#	modifier = {
+# 				#		tolerance_own = 2
+# 				#	}
+# 				#	teachings = {
+# 				#		zhou_1 = { #无极而生太极
+# 				#			type = ADM
+# 				#			cost = 50
+	
+# 				#			idea_cost = -0.1
+# 				#		}
+# 				#		zhou_2 = { #出淤泥而不染
+# 				#			type = DIP
+# 				#			cost = 50
+	
+# 				#			advisor_cost = -0.15
+# 				#		}
+# 				#	}
+# 				#}
+# 				#master_chengs = { #二程洛学
+# 				#	trigger = {
+# 				#		#NOT = { has_global_flag = guru_event_happening }
+# 				#		always = no
+# 				#	}
+# 				#	chance = {
+# 				#		factor = 1000
+# 				#	}
+# 				#	modifier = {
+# 				#		technology_cost = -0.05
+# 				#	}
+# 				#	teachings = {
+# 				#		chengs_1 = { #明心见性，格物致知
+# 				#			type = DIP
+# 				#			cost = 50
+	
+# 				#			improve_relation_modifier = 0.1
+# 				#		}
+# 				#	}
+# 				#}
+# 				#master_sus = { #三苏蜀学
+# 				#	trigger = {
+# 				#		#NOT = { has_global_flag = guru_event_happening }
+# 				#		always = no
+# 				#	}
+# 				#	chance = {
+# 				#		factor = 1000
+# 				#	}
+# 				#	modifier = {
+# 				#		tolerance_own = 2
+# 				#	}
+# 				#	teachings = {
+# 				#		sus_1 = { #三教合流
+# 				#			type = ADM
+# 				#			cost = 50
+	
+# 				#			tolerance_heretic = 3
+# 				#		}
+# 				#	}
+# 				#}
+# 				#master_wanganshi = { #王安石荆公新学
+# 				#	trigger = {
+# 				#		#NOT = { has_global_flag = guru_event_happening }
+# 				#		always = no
+# 				#	}
+# 				#	chance = {
+# 				#		factor = 1000
+# 				#	}
+# 				#	modifier = {
+# 				#		monthly_reform_progress_modifier = 0.15
+# 				#	}
+# 				#	teachings = {
+# 				#		wanganshi_1 = { #人道，天变不足畏
+# 				#			type = ADM
+# 				#			cost = 50
+	
+# 				#			state_maintenance_modifier = -0.15
+# 				#		}
+# 				#		wanganshi_2 = { #疑古之风
+# 				#			type = ADM
+# 				#			cost = 50
+	
+# 				#			global_institution_spread = 0.15
+# 				#		}
+# 				#	}
+# 				#}
+# 				#master_zhang = { #张载气学
+# 				#	trigger = {
+# 				#		#NOT = { has_global_flag = guru_event_happening }
+# 				#		always = no
+# 				#	}
+# 				#	chance = {
+# 				#		factor = 1000
+# 				#	}
+# 				#	modifier = {
+# 				#		drill_gain_modifier = 0.1
+# 				#	}
+# 				#	teachings = {
+# 				#		zhang_1 = { #为天地立心，为生民立命
+# 				#			type = ADM
+# 				#			cost = 50
+	
+# 				#			build_cost = -0.1
+# 				#		}
+# 				#		zhang_2 = { #为往圣继绝学，为万世开太平
+# 				#			type = DIP
+# 				#			cost = 50
+	
+# 				#			core_creation = -0.1
+# 				#		}
+# 				#	}
+# 				#}
+# 				#master_zhu = { #朱子理学
+# 				#	trigger = {
+# 				#		#NOT = { has_global_flag = guru_event_happening }
+# 				#		always = no
+# 				#	}
+# 				#	chance = {
+# 				#		factor = 1000
+# 				#	}
+# 				#	modifier = {
+# 				#		stability_cost_modifier = -0.1
+# 				#	}
+# 				#	teachings = {
+# 				#		zhu_1 = { #明天理、灭人欲
+# 				#			type = ADM
+# 				#			cost = 50
+	
+# 				#			global_unrest = -2
+# 				#		}
+# 				#		zhu_2 = { #山环水抱，藏风聚气
+# 				#			type = DIP
+# 				#			cost = 50
+	
+# 				#			prestige = 0.25
+# 				#		}
+# 				#	}
+# 				#}
+# 				#master_lu = { #陆九渊心学
+# 				#	trigger = {
+# 				#		#NOT = { has_global_flag = guru_event_happening }
+# 				#		always = no
+# 				#	}
+# 				#	chance = {
+# 				#		factor = 1000
+# 				#	}
+# 				#	modifier = {
+# 				#		global_monthly_devastation = -0.1
+# 				#	}
+# 				#	teachings = {
+# 				#		lu_1 = { #吾心即是宇宙
+# 				#			type = ADM
+# 				#			cost = 50
+	
+# 				#			idea_cost = -0.1
+# 				#		}
+# 				#		lu_2 = { #阴阳形而上之道
+# 				#			type = DIP
+# 				#			cost = 50
+	
+# 				#			relation_with_other_culture = 5
+# 				#		}
+# 				#	}
+# 				#}
+# 			#
+# 			master_chen = { #陈献章岭南学派
+# 				trigger = {
+# 					#NOT = { has_global_flag = guru_event_happening }
+# 				}
+# 				chance = {
+# 					factor = 1000
+# 				}
+# 				modifier = {
+# 					global_monthly_devastation = -0.1
+# 				}
+# 				teachings = {
+# 					chen_1 = { #自得虚明静一
+# 						type = ADM
+# 						cost = 50
+
+# 						global_trade_power = 0.15
+# 					}
+# 					chen_2 = { #天理者，体认于心
+# 						type = DIP
+# 						cost = 50
+
+# 						colony_cost_modifier = -0.1
+# 					}
+# 				}
+# 			}
+# 			master_wang = { #王守仁阳明学
+# 				trigger = {
+# 					is_year = 1506
+# 					#NOT = { has_global_flag = guru_event_happening }
+# 				}
+# 				chance = {
+# 					factor = 1000
+# 				}
+# 				modifier = {
+# 					leader_siege = 1
+# 				}
+# 				teachings = {
+# 					wang_1 = { #自得虚明静一
+# 						type = ADM
+# 						cost = 50
+
+# 						idea_cost = -0.1
+# 					}
+# 					wang_2 = { #天理者，体认于心
+# 						type = DIP
+# 						cost = 50
+
+# 						relation_with_other_culture = 5
+# 					}
+# 				}
+# 			}
+# 			master_huang = { #黄宗羲浙东学派
+# 				trigger = {
+# 					is_year = 1630
+# 					#NOT = { has_global_flag = guru_event_happening }
+# 				}
+# 				chance = {
+# 					factor = 1000
+# 				}
+# 				modifier = {
+# 					global_tax_modifier = 0.05
+# 				}
+# 				teachings = {
+# 					huang_1 = { #盈天地皆心也
+# 						type = ADM
+# 						cost = 50
+
+# 						global_institution_spread = 0.15
+# 					}
+# 					huang_2 = { #天下为主君为客
+# 						type = MIL
+# 						cost = 50
+
+# 						ae_impact = -0.1
+# 					}
+# 					huang_3 = { #工商皆本
+# 						type = DIP
+# 						cost = 50
+
+# 						production_efficiency = 0.05
+# 					}
+# 				}
+# 			}
+# 			master_wang = { #王夫之船山学
+# 				trigger = {
+# 					is_year = 1660
+# 					#NOT = { has_global_flag = guru_event_happening }
+# 				}
+# 				chance = {
+# 					factor = 1000
+# 				}
+# 				modifier = {
+# 					global_tax_modifier = 0.05
+# 				}
+# 				teachings = {
+# 					wang_1 = { #气一元论
+# 						type = ADM
+# 						cost = 50
+
+# 						technology_cost = -0.05
+# 					}
+# 					wang_2 = { #反禁欲
+# 						type = DIP
+# 						cost = 50
+
+# 						production_efficiency = 0.05
+# 					}
+# 				}
+# 			}
+# 			master_gu = { #顾炎武朴学
+# 				trigger = {
+# 					is_year = 1660
+# 					#NOT = { has_global_flag = guru_event_happening }
+# 				}
+# 				chance = {
+# 					factor = 1000
+# 				}
+# 				modifier = {
+# 					defensiveness = 0.1
+# 				}
+# 				teachings = {
+# 					gu_1 = { #经世致用
+# 						type = ADM
+# 						cost = 50
+
+# 						technology_cost = -0.05
+# 					}
+# 					gu_2 = { #保天下者，匹夫之贱，与有责焉
+# 						type = DIP
+# 						cost = 50
+
+# 						meritocracy = 2
+# 					}
+# 				}
+# 			}
+# 			master_dai = { #戴震皖学
+# 				trigger = {
+# 					is_year = 1660
+# 					#NOT = { has_global_flag = guru_event_happening }
+# 				}
+# 				chance = {
+# 					factor = 1000
+# 				}
+# 				modifier = {
+# 					imperial_mandate = 0.01
+# 				}
+# 				teachings = {
+# 					dai_1 = { #天理者，节其欲而不穷人欲也
+# 						type = ADM
+# 						cost = 50
+
+# 						embracement_cost = -0.1
+# 					}
+# 				}
+# 			}
+
+# 			#master_fujiwara_seika = { #藤原惺窝
+# 				#trigger = {
+# 				#	is_year = 1580
+# 				#	#NOT = { has_global_flag = guru_event_happening }
+# 				#	capital_scope = {
+# 				#		region = japan_region
+# 				#	}
+# 				#}
+# 				#chance = {
+# 				#	factor = 1000
+# 				#}
+# 				#modifier = {
+# 				#	stability_cost_modifier = -0.05
+# 				#}
+# 				#teachings = {
+# 				#	fujiwara_1 = { #京学派
+# 				#		type = ADM
+# 				#		cost = 50
+
+# 				#		idea_cost = -0.05
+# 				#	}
+# 				#}
+# 			#}
+# 		}
+# 		#can_have_secondary_religion = yes
+# 		heretic = { TAOIST }
+# 		uses_harmony = yes
+# 		harmonized_modifier = harmonized_confucianism
+# 	}
+# 	chinese_religion = {
+# 		color = { 214 178 140 }
+# 		icon = 30
+# 		allowed_conversion = {
+# 			confucianism
+# 			jingtian_fazu
+# 			taoist
+# 			chuanzhu
+# 		}
+# 		allowed_center_conversion = {
+# 			#animism
+# 			#ryukyuan
+# 			#bon
+# 			mahayana
+# 			#early_buddhism
+# 			buddhism
+# 			#vajrayana
+# 			white_lotus
+# 			luoisme
+# 			shinto
+# 			#taoist
+# 			#jingtian_fazu
+# 			tengri_pagan_reformed
+# 			shamanism_new
+# 		}
+# 		country = {
+# 			all_estate_loyalty_equilibrium = 0.1
+# 			adm_tech_cost_modifier = -0.1
+# 		}
+# 		country_as_secondary = {
+# 			adm_tech_cost_modifier = -0.1
+# 			stability_cost_modifier = -0.1
+# 		}
+# 		harmonized_modifier = harmonized_chinese_religion
+# 		on_convert = {
+# 			change_religion = chinese_religion
+# 			add_prestige = -100
+# 			add_stability = -1
+# 			add_country_modifier = {
+# 				name = "conversion_zeal"
+# 				duration = 3650
+# 			}
+# 		}
+# 		uses_church_power = yes			# Uses church power/aspect mechanics
+# 		aspects = {
+# 			# basic
+# 			well_weather_aspect			# 风调雨顺
+# 			more_manpower_aspect		# 人丁兴旺
+# 			peaceful_and_safe_aspect	# 国泰民安
+
+# 			# eastern
+# 			jingtian_fazu_1_aspect 		# 尊奉宗庙祖先
+# 			jingtian_fazu_2_aspect 		# 钦崇昊天上帝
+
+# 			confucianism_new_1_aspect 	# 天人合一
+# 			confucianism_new_2_aspect 	# 仁义礼智信
+# 			confucianism_new_3_aspect 	# 纲常伦理
+# 			confucianism_new_4_aspect 	# 道德天理
+
+# 			taoist_1_aspect 			# 道、德、三清
+# 			taoist_2_aspect 			# 修身长生
+# 			taoist_3_aspect 			# 方术炼丹
+
+# 			chuanzhu_1_aspect 			# 庇佑水旱灾害
+
+# 			# buddhism g
+# 			buddhism_group_1_aspect 	# 诸恶莫作，众善奉行
+# 			buddhism_group_2_aspect 	# 因果六道轮回
+# 			buddhism_group_3_aspect 	# 阿弥陀佛极乐净土
+# 			buddhism_group_4_aspect 	# 灌顶修行
+# 			buddhism_group_5_aspect 	# 无生老母，弥勒救世
+# 			buddhism_group_6_aspect 	# 天照大神御德
+
+# 			# christian
+# 			christian_1_aspect 			# 三位一体
+# 			christian_2_aspect 			# 天主造物
+# 			christian_3_aspect 			# 原罪论
+# 			christian_4_aspect 			# 耶稣救世
+
+# 			# muslim
+# 			muslim_1_aspect 			# 真主一位论
+# 			muslim_2_aspect 			# 先知启示
+# 			muslim_3_aspect 			# 斋戒
+# 			muslim_4_aspect 			# 沙里亚法规
+
+# 			# dharmic
+# 			dharmic_1_aspect 			# 梵我合一
+# 			dharmic_2_aspect 			# 业力轮回
+# 			dharmic_3_aspect 			# 种姓制度
+# 			dharmic_4_aspect 			# 尊崇古鲁祖师
+
+# 			# pagan
+# 			pagan_1_aspect 				# 自然神崇拜
+# 			pagan_2_aspect 				# 灵器
+# 			pagan_3_aspect 				# 图腾精神
+# 			pagan_4_aspect 				# 活人献祭
+
+# 			# jewish_group
+# 			jewish_group_1_aspect 		# 雅威一神论
+# 			jewish_group_2_aspect 		# 摩西预言
+
+# 			# zoroastrian_group
+# 			zoroastrian_group_1_aspect 	# 波斯古经
+# 			zoroastrian_group_2_aspect 	# 善恶二元
+
+# 			# tengri_g
+# 			tengri_g_1_aspect 			# 通灵
+# 			tengri_g_2_aspect 			# 永恒苍天
+# 			tengri_g_3_aspect 			# 成吉思汗崇拜
+# 		}
+# 		misguided_heretic = yes
+# 		uses_harmony = yes
+# 		heretic = { TAOIST }
+# 		#can_have_secondary_religion = yes
+# 	}
+# 	taoist = {
+# 		color = { 90 148 255 }
+# 		icon = 9
+# 		allowed_conversion = {
+# 			jingtian_fazu
+# 			confucianism
+# 			chinese_religion
+# 			chuanzhu
+# 		}
+# 		country = {
+# 			tolerance_heathen = 1
+# 			global_unrest = -1
+# 		}
+# 		country_as_secondary = {
+# 			tolerance_own = 2
+# 			stability_cost_modifier = -0.1
+# 		}
+# 		on_convert = {
+# 			add_prestige = -100
+# 			add_stability = -1
+# 		}
+# 		can_have_secondary_religion = yes
+# 		harmonized_modifier = harmonized_taoist
+# 		misguided_heretic = yes
+# 		heretic = { ZEN }
+# 		personal_deity = yes
+# 	}
+# 	chuanzhu = {
+# 		color = { 12 101 255 }
+# 		icon = 41
+# 		allowed_conversion = {
+# 			jingtian_fazu
+# 			taoist
+# 			confucianism
+# 			chinese_religion
+# 		}
+# 		country = {
+# 			development_cost = -0.1
+# 			global_unrest = -1
+# 		}
+# 		country_as_secondary = {
+# 			tolerance_own = 2
+# 			development_cost = -0.05
+# 		}
+# 		on_convert = {
+# 			add_prestige = -100
+# 			add_stability = -1
+# 		}
+# 		can_have_secondary_religion = yes
+# 		harmonized_modifier = harmonized_taoist
+# 		misguided_heretic = yes
+# 		heretic = { ZEN }
+# 		uses_karma = yes
+# 	}
+# 	crusade_name = CRUSADE
+# }

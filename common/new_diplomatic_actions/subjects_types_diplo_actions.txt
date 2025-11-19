@@ -75,6 +75,7 @@ establish_administrative_region = {
         create_subject = {
             subject_type = administrative_region
             subject = FROM
+            keep_liberty_desire = yes
         }
     }
 
