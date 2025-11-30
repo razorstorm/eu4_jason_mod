@@ -754,14 +754,14 @@ remove_overlapping_cores_and_claims_between_overlord_and_subject = {
         every_owned_province = {
             limit = {
                 OR = {
-                    is_core = ROOT
+                    # is_core = ROOT
                     is_claim = ROOT
                     is_permanent_claim = ROOT
                 }
             }
     
             # log = "Removing Root core/claim from subject in [This.GetName]"
-            remove_core = ROOT
+            # remove_core = ROOT
             remove_claim = ROOT
         }
     }
